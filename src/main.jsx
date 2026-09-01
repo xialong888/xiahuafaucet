@@ -1127,12 +1127,12 @@ function App() {
               <div className="relative mx-auto max-w-[420px] lg:max-w-none rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 p-3">
                 <img 
                   src="/assets/images/hero-faucet.jpg" 
-                  alt="Sleek chrome handle being weighed on a balance" 
+                  alt="Premium chrome shower slider sleeve with adjustable friction" 
                   className="w-full h-[380px] object-cover rounded-2xl grayscale-[5%] brightness-95"
                 />
                 <div className="absolute inset-x-3 bottom-3 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent p-5 rounded-2xl flex flex-col justify-end text-left">
-                  <span className="text-xs font-extrabold text-blue-400 uppercase tracking-widest">{t.specModel}: XH-FC-03</span>
-                  <h3 className="text-base sm:text-lg font-bold text-white mt-1">99g Heavy Duty Solid Cast Brass</h3>
+                  <span className="text-xs font-extrabold text-blue-400 uppercase tracking-widest">{t.specModel}: XH-SHSL-202</span>
+                  <h3 className="text-base sm:text-lg font-bold text-white mt-1">Double-Friction Adjustable Shower Slider</h3>
                 </div>
               </div>
             </div>
