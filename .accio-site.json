@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "siteId": "xiahuafaucet-004a8d22",
+  "name": "xiahuafaucet",
+  "kind": "react-vite",
+  "devCommand": "vite",
+  "buildCommand": "vite build",
+  "outputDir": "dist",
+  "entry": "index.html",
+  "databaseUrl": "",
+  "createdBy": "accio-site-builder",
+  "createdAt": "2026-09-01T01:48:00.087Z",
+  "installedAt": "2026-09-01T01:58:49.543Z"
+}
