@@ -1126,7 +1126,7 @@ function App() {
             <div className="lg:col-span-5 relative">
               <div className="relative mx-auto max-w-[420px] lg:max-w-none rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 p-3">
                 <img 
-                  src="/assets/images/hero-faucet.jpg" 
+                  src="/assets/images/hero-slider.jpg" 
                   alt="Premium chrome shower slider sleeve with adjustable friction" 
                   className="w-full h-[380px] object-cover rounded-2xl grayscale-[5%] brightness-95"
                 />
