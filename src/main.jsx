@@ -17,11 +17,13 @@ import {
   Send, 
   Users,
   Check,
-  FileText
+  FileText,
+  Play,
+  Maximize2
 } from 'lucide-react';
 import './styles.css';
 
-// Multilingual Dictionary with high-fidelity PDF data
+// Multilingual Dictionary with high-fidelity PDF data & new multimedia sections
 const trans = {
   en: {
     navHome: "Home",
@@ -60,10 +62,17 @@ const trans = {
     specFinish: "Finish",
     specCert: "Compliance",
     btnDetail: "View Specifications",
+    galleryTitle: "Custom Mold & Real Product Gallery",
+    galleryLede: "Interactive catalog showing 25+ real custom molds, precision faucet levers, brackets, and raw factory parts. Click any image to examine our flawless mirror-chrome finish and tooling details.",
     factoryTitle: "Our Factory & Quality Control",
     factoryLede: "Established on 2006-02-27 in Nan'an Luncang Plumbing High-Tech Park, Quanzhou, Fujian.",
     factParagraph1: "Fujian Xialong Sanitary Ware Co., Ltd. (also known as Fujian Nan'an Luncang Xiahua Sanitary Ware Factory) was established in 2006 in Luncang, Nan'an, Quanzhou, Fujian, the world-renowned capital of plumbing and sanitary fittings. Our facility features a dedicated 3,000+ sqm production area, housing advanced high-precision injection-molding equipment, automated plating lines, and strict water/air pressure test benches.",
     factParagraph2: "Operating with 80 highly skilled workers and top-tier quality inspectors, we have built stable, long-term partnerships with major sanitary corporations. Over the past 17 years, our insistence on using virgin premium materials and strict ISO9001-compliant production has earned the absolute trust of global importers, wholesales, and engineering procurement managers across Southeast Asia, South America, and the Middle East.",
+    videoTitle: "Watch Our Factory & Production Lines",
+    video1Name: "1. Corporate Headquarters & Showroom Tour",
+    video1Desc: "Explore our state-of-the-art office building, testing labs, and completed sanitary products showroom.",
+    video2Name: "2. Precision Molding & 100% Pressure-Testing Process",
+    video2Desc: "See our heavy injection-molding machines, automated electroplating, and rigorous leak testing on every component.",
     patentTitle: "National Patents & Certifications",
     patentLede: "Fujian Xialong (Xiahua) holds multiple utility model patents registered under the State Intellectual Property Office of China, ensuring elite design authority.",
     pat1Name: "Utility Model Patent: Easy-to-Manufacture Mixing Valve Handle",
@@ -129,10 +138,17 @@ const trans = {
     specFinish: "Отделка",
     specCert: "Стандарты",
     btnDetail: "Посмотреть спецификации",
+    galleryTitle: "Галерея пресс-форм и реальной продукции",
+    galleryLede: "Интерактивный каталог, демонстрирующий 25+ реальных индивидуальных пресс-форм, рычагов смесителей, держателей и заводских деталей. Нажмите на изображение для детального осмотра.",
     factoryTitle: "Наше производство и контроль качества",
     factoryLede: "Основано 2006-02-27 в индустриальном парке сантехники Луньцань, Наньань, Цюаньчжоу, Фуцзянь.",
     factParagraph1: "Компания Fujian Xialong Sanitary Ware Co., Ltd. (также известная как завод сантехники Сяхуа) была основана в 2006 году в городе Луньцань — всемирно известной столице сантехнического литья. Наша фабрика площадью более 3000 кв.м оснащена автоматизированными инжекционными линиями, цехом гальваники и передовыми испытательными стендами.",
     factParagraph2: "На заводе работают 80 высококвалифицированных рабочих и первоклассных инспекторов качества. За последние 17 лет наше стремление использовать только первичное сырье и соответствие стандартам ISO9001 принесли нам абсолютное доверие импортеров и дистрибьюторов в Юго-Восточной Азии, Южной Америке и на Ближнем Востоке.",
+    videoTitle: "Видеоэкскурсия по нашему заводу и линиям",
+    video1Name: "1. Экскурсия по штаб-квартире и шоуруму",
+    video1Desc: "Посетите наше современное офисное здание, испытательные лаборатории и шоурум готовой сантехники.",
+    video2Name: "2. Высокоточное литье и 100% проверка давлением",
+    video2Desc: "Посмотрите на тяжелые термопластавтоматы, автоматическую гальванику и строгие испытания на утечку каждого компонента.",
     patentTitle: "Национальные патенты и сертификаты",
     patentLede: "Fujian Xialong (Xiahua) владеет многочисленными патентами на полезные модели, зарегистрированными Государственным управлением интеллектуальной собственности Китая.",
     pat1Name: "Патент на полезную модель: Простая в производстве ручка смесителя",
@@ -198,10 +214,17 @@ const trans = {
     specFinish: "Acabamento",
     specCert: "Conformidade",
     btnDetail: "Ver Especificações",
+    galleryTitle: "Galeria de Moldes Personalizados e Produtos Reais",
+    galleryLede: "Catálogo interativo com mais de 25 moldes personalizados reais, alavancas de torneira de precisão e componentes. Clique em qualquer imagem para ampliar os detalhes.",
     factoryTitle: "Nossa Fábrica e Controle de Qualidade",
     factoryLede: "Fundada em 27/02/2006 na Zona de Alta Tecnologia de Metais Sanitários de Luncang, Nan'an, Quanzhou, Fujian.",
     factParagraph1: "A Fujian Xialong Sanitary Ware Co., Ltd. (também conhecida como Fábrica de Metais Sanitários Xiahua) foi fundada em 2006 em Luncang, Nan'an, Quanzhou, a renomada capital de metais sanitários da China. Nossa fábrica possui área industrial própria de mais de 3.000m² com injetoras de última geração.",
     factParagraph2: "Operando com uma equipe de 80 operários e inspetores altamente qualificados, fornecemos peças premium em ABS e latão. Nosso foco em conformidade e qualidade rígida ISO9001 garantiu parcerias estáveis de longo prazo com grandes importadores e marcas no Sudeste Asiático, América do Sul e Oriente Médio.",
+    videoTitle: "Assista aos Vídeos de Nossa Fábrica e Linhas",
+    video1Name: "1. Tour pela Sede e Showroom",
+    video1Desc: "Explore nosso moderno edifício administrativo, laboratórios de testes e o showroom de metais sanitários.",
+    video2Name: "2. Moldagem de Precisão e Processo de Teste de Pressão 100%",
+    video2Desc: "Veja nossas injetoras de alta capacidade, galvânica automatizada e o rigoroso teste de estanqueidade em cada componente.",
     patentTitle: "Patentes Nacionais & Certificações",
     patentLede: "A Fujian Xialong (Xiahua) detém várias patentes de modelos de utilidade devidamente registradas no órgão oficial de patentes da China.",
     pat1Name: "Patente de Modelo de Utilidade: Volante de Misturador Fácil de Produzir",
@@ -238,7 +261,7 @@ const trans = {
     navFAQ: "अक्सर पूछे जाने वाले प्रश्न",
     navContact: "संपर्क करें",
     heroBadge: "17+ वर्ष परिशुद्धता विनिर्माण | एबीएस नल हैंडल के अग्रणी",
-    heroTitle: "नल हैंडल और सेनेटरी फिटिंग के लिए वैश्विक OEM/ODM भागीदार",
+    heroTitle: "नल हैंडल & सेनेटरी फिटिंग के लिए वैश्विक OEM/ODM भागीदार",
     heroLede: "फ़ुज़ियान शियालॉन्ग सेनेटरी वेयर कंपनी लिमिटेड (शिआहुआ सेनेटरी वेयर फैक्ट्री) 2006 से उच्च-प्रदर्शन वाले एबीएस नल हैंडल, शावर स्लाइडर और पीतल फिटिंग के निर्माण में अग्रणी है।",
     btnRFQ: "कोटेशन के लिए अनुरोध",
     btnWhatsApp: "व्हाट्सएप पर पूछताछ",
@@ -267,10 +290,17 @@ const trans = {
     specFinish: "फिनिश",
     specCert: "अनुपालन",
     btnDetail: "विनिर्देश देखें",
+    galleryTitle: "कस्टम मोल्ड और वास्तविक उत्पाद गैलरी",
+    galleryLede: "25+ वास्तविक मोल्ड्स, नल लीवर और पार्ट्स दिखाने वाली गैलरी। विवरण ज़ूम करने के लिए किसी भी छवि पर क्लिक करें।",
     factoryTitle: "हमारी फैक्टरी और गुणवत्ता नियंत्रण",
     factoryLede: "फ़ुज़ियान, चीन के नान'आन लुनचांग नलसाजी विनिर्माण पार्क में 27-02-2006 को स्थापित।",
     factParagraph1: "फ़ुज़ियान शियालॉन्ग सेनेटरी वेयर कंपनी लिमिटेड की स्थापना 2006 में लुनचांग, नान'आन, फ़ुज़ियान में हुई थी। हमारा 3000+ वर्गमीटर का विनिर्माण संयंत्र उच्च-परिशुद्धता इंजेक्शन-मोल्डिंग लाइनों और परीक्षण बेंचों से लैस है।",
     factParagraph2: "80 कुशल श्रमिकों और समर्पित निरीक्षकों के साथ, हम वैश्विक卫浴 ब्रांडों को दोषरहित उत्पाद प्रदान करते हैं। पिछले 17 वर्षों में हमारे सख्त विनिर्माण ने दक्षिण पूर्व एशिया, दक्षिण अमेरिका और मध्य पूर्व के खरीदारों का विश्वास जीता है।",
+    videoTitle: "हमारे कारखाने और विनिर्माण वीडियो देखें",
+    video1Name: "1. कॉर्पोरेट मुख्यालय और शोरूम यात्रा",
+    video1Desc: "हमारे कार्यालय, परीक्षण प्रयोगशालाओं और तैयार उत्पादों के शोरूम का अन्वेषण करें।",
+    video2Name: "2. इंजेक्शन मोल्डिंग और 100% दबाव परीक्षण",
+    video2Desc: "हमारे इंजेक्शन-मोल्डिंग, विद्युत लेपन और रिसाव परीक्षण कार्यप्रवाह देखें।",
     patentTitle: "राष्ट्रीय पेटेंट और प्रमाण पत्र",
     patentLede: "फ़ुज़ियान शियालॉन्ग (शियाहुआ) के पास चीन के पेटेंट कार्यालय (SIPO) द्वारा अधिकृत कई पेटेंट अधिकार हैं, जो हमारे डिजाइन की मौलिकता की गारंटी देते हैं।",
     pat1Name: "उपयोगिता मॉडल पेटेंट: निर्माण में आसान नल मिक्सर हैंडल",
@@ -291,7 +321,7 @@ const trans = {
     formMsg: "खरीद आवश्यकताएं और मात्रा (मॉडल, मात्रा, पैकिंग आदि)",
     formSubmit: "आरएफक्यू जमा करें",
     formSuccessTitle: "पूछताछ सफलतापूर्वक सबमिट की गई!",
-    formSuccessDesc: "फ़ुज़ियान शियालॉन्ग से संपर्क करने के लिए धन्यवाद। हमारी निर्यात टीम 12 घंटे के भीतर आपसे संपर्क करेगी।",
+    formSuccessDesc: "थैंक यू फॉर कॉन्टैक्टिंग फ़ुज़ियान शियालॉन्ग। हमारी निर्यात टीम 12 घंटे के भीतर आपसे संपर्क करेगी।",
     btnClose: "बंद करें",
     footerCopyright: "© 2026 फ़ुज़ियान शियालॉन्ग सेनेटरी वेयर कंपनी लिमिटेड। सर्वाधिकार सुरक्षित।",
     footerAddress: "पता: लुनचांग विनिर्माण क्षेत्र, नान'आन, क्वानझोउ, फ़ुज़ियान, चीन",
@@ -303,12 +333,12 @@ const trans = {
     navHome: "独立站首页",
     navProducts: "核心产品",
     navPatents: "国家专利与资质",
-    navAbout: "企业厂区 showroom",
+    navAbout: "企业厂区 Showroom",
     navFAQ: "大宗采销答疑",
     navContact: "提交询盘",
     heroBadge: "始于 2006 年 | 首创塑料 ABS 材质水龙头手柄先驱 | 17 年精工制造",
     heroTitle: "全球大型卫浴品牌可信赖的龙头手柄及五金配件 OEM/ODM 合作伙伴",
-    heroLede: "福建夏龙卫浴有限公司（又名福建南安仑苍厦华卫浴洁具制造厂），坐落于中国水暖之都南安仑苍。自 2006 年创立以来，首创 ABS 材质龙头手柄，彻底解决传统手柄易腐蚀、高成本痛点。17年耕耘，已成为多家国际知名卫浴集团的长期战略供应商。",
+    heroLede: "福建夏龙卫浴有限公司（又名福建南安仑苍厦华卫浴洁具制造厂），坐落于中国水暖之都南安仑苍。自 2006 年创立以来，首创 ABS 材质龙头手柄，彻底解决传统手柄易腐蚀、高成本痛点。17年精工代工，已成为多家国际知名卫浴集团的长期战略供应商。",
     btnRFQ: "大宗采购询盘 (RFQ)",
     btnWhatsApp: "WhatsApp 业务直联",
     statClients: "大型合作卫浴品牌",
@@ -336,10 +366,17 @@ const trans = {
     specFinish: "表面镀层工艺",
     specCert: "权威合规/专利",
     btnDetail: "查看技术规格",
+    galleryTitle: "大宗定制开模与实拍案例展区",
+    galleryLede: "本区域汇总了工厂 25 套真实的卫浴手柄、五金配件实拍与高精图纸。点击任意图片可弹窗灯箱放大，看清卓越的镜面电镀表面和精细开模螺纹齿轮。",
     factoryTitle: "现代化厂房与质量控制体系",
     factoryLede: "工厂于 2006-02-27 创立于福建南安仑苍镇水暖高新技术园区。",
-    factParagraph1: "福建夏龙卫浴有限公司（又名福建南安仑苍厦华卫浴洁具制造厂）座落于举世闻名的中国水暖卫浴制造中心——福建省泉州南安市仑苍镇水暖高新技术园区。我们拥有一座面积逾3000平方米的现代化工业厂房，引进了国内外先进的自动化精密注塑机、模具精密数控雕刻机、电镀表面处理流水线以及全套气密性/液压疲劳测试设备。",
+    factParagraph1: "福建夏龙卫浴有限公司（又名福建南安仑苍厦华卫浴洁具制造厂）座落于举世闻名的中国水暖卫浴制造中心——福建省泉州南安市仑苍镇水暖高新技术园区。我们拥有一座面积逾3000平方米的现代化工业厂房，引进了国内外先进的自动化精密注塑机、模具精密数控雕刻机、电镀表面处理流水线以及全套气密性/液压测试设备。",
     factParagraph2: "工厂现有在职资深技工 80 余人，由经验丰富的检验人员层层把关，严格遵循 ISO9001 质量管理体系运行。作为首创塑料 ABS 材质水龙头手柄的先驱，过去17年间我们与多家知名中大型卫浴企业建立了长期、稳固的开模与贴牌代工战略合作关系。诚实、守信、积极、创新是我们始终坚守的核心信条，我们全力跟随客户需求，提供最可靠的产品供应链服务。",
+    videoTitle: "大厂车间实拍与装配工艺流程视频",
+    video1Name: "1. 夏龙/厦华官方研发大楼与生产基地实地探厂",
+    video1Desc: "点击播放视频，实地考察我们的高新技术园区大楼、模具测试车间和全品类高端卫浴展厅，彰显大厂硬核底气。",
+    video2Name: "2. ABS 龙头手柄与花洒配件注塑、装配及 100% 水压测试流程",
+    video2Desc: "点击播放视频，全景还原全自动精密注塑成型机组运行、高光无暇电镀以及出厂前 100% 气密性/液压全检装配流程。",
     patentTitle: "国家实用新型专利证书展示",
     patentLede: "夏龙卫浴（厦华手柄）系列研发产品已获得国家知识产权局多项实用新型专利授权，确保您的采购合规无忧、技术卓越。",
     pat1Name: "国家实用新型专利：便于生产的混水阀手柄",
@@ -466,6 +503,9 @@ const products = [
   }
 ];
 
+// Generates 25 sequentially named custom mold photos
+const customGalleryImages = Array.from({ length: 25 }, (_, i) => `/assets/products/xh-product-${i + 1}.jpg`);
+
 // High-Fidelity FAQs
 const faqs = [
   {
@@ -522,6 +562,7 @@ function App() {
   const [lang, setLang] = useState('en');
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedGalleryImg, setSelectedGalleryImg] = useState(null);
   const [rfqName, setRfqName] = useState('');
   const [rfqEmail, setRfqEmail] = useState('');
   const [rfqWhatsApp, setRfqWhatsApp] = useState('');
@@ -625,7 +666,7 @@ function App() {
               <select 
                 value={lang} 
                 onChange={(e) => setLang(e.target.value)}
-                className="bg-transparent text-sm font-bold text-slate-700 cursor-pointer focus:outline-none pr-1.5 animate-fade-in"
+                className="bg-transparent text-sm font-bold text-slate-700 cursor-pointer focus:outline-none pr-1.5"
               >
                 <option value="en">English {flags.en}</option>
                 <option value="ru">Русский {flags.ru}</option>
@@ -676,7 +717,7 @@ function App() {
 
         {/* Mobile Flyout Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-200 bg-white py-4 px-6 space-y-4 animate-fade-in shadow-inner text-left">
+          <div className="lg:hidden border-t border-slate-200 bg-white py-4 px-6 space-y-4 shadow-inner text-left">
             <nav className="flex flex-col gap-3">
               <a href="#home" onClick={() => setIsMobileMenuOpen(false)} className="text-base font-bold text-slate-700">{t.navHome}</a>
               <a href="#products" onClick={() => setIsMobileMenuOpen(false)} className="text-base font-bold text-slate-700">{t.navProducts}</a>
@@ -926,6 +967,33 @@ function App() {
             ))}
           </div>
 
+          {/* EXTENDED REAL PRODUCTS GALLERY (Grid representation of 25 actual custom molds) */}
+          <div className="pt-16 border-t border-slate-200 space-y-8" data-component="product-gallery">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <h3 className="text-2xl font-extrabold text-slate-900 tracking-tight">{t.galleryTitle}</h3>
+              <p className="text-slate-500 text-sm font-semibold leading-relaxed">{t.galleryLede}</p>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-4">
+              {customGalleryImages.map((imgUrl, i) => (
+                <div 
+                  key={i} 
+                  onClick={() => setSelectedGalleryImg(imgUrl)}
+                  className="group relative aspect-square bg-slate-100 border border-slate-200 rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-all duration-300"
+                >
+                  <img 
+                    src={imgUrl} 
+                    alt={`Xiahua custom mold item ${i + 1}`} 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/30 transition-all flex items-center justify-center">
+                    <Maximize2 size={24} className="text-white opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -1002,7 +1070,7 @@ function App() {
         </div>
       </section>
 
-      {/* FACTORY AND QC SECTION */}
+      {/* FACTORY AND QC SECTION (with embedded custom MP4 players) */}
       <section id="factory" className="py-20 bg-slate-50 border-t border-slate-200" data-component="factory-showroom">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
@@ -1059,132 +1127,59 @@ function App() {
 
           </div>
 
-        </div>
-      </section>
+          {/* ACTIVE MULTIMEDIA VIDEO PLAYERS SECTION */}
+          <div className="pt-16 border-t border-slate-200 space-y-8" data-component="video-showcase">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <h3 className="text-2xl font-extrabold text-slate-900 tracking-tight">{t.videoTitle}</h3>
+            </div>
 
-      {/* RFQ CONTACT FORM SECTION */}
-      <section id="contact" className="py-20 bg-slate-50 border-t border-slate-200" data-component="contact-form">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-              {t.contactTitle}
-            </h2>
-            <p className="text-slate-500 text-lg leading-relaxed">
-              {t.contactLede}
-            </p>
-          </div>
-
-          <div className="bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-md">
-            
-            {isSubmitted ? (
-              <div className="text-center py-8 space-y-6 animate-fade-in">
-                <div className="mx-auto w-16 h-16 bg-blue-100 text-blue-800 rounded-full flex items-center justify-center">
-                  <CheckCircle2 size={36} className="stroke-[2.5]" />
+            <div className="grid md:grid-cols-2 gap-8 text-left">
+              {/* Video 1 Player */}
+              <div className="bg-white border border-slate-200 p-5 rounded-3xl space-y-4 shadow-sm hover:shadow-md transition-shadow">
+                <div className="relative rounded-2xl overflow-hidden bg-slate-950 aspect-video">
+                  <video 
+                    controls 
+                    className="w-full h-full object-contain"
+                    preload="metadata"
+                  >
+                    <source src="/assets/videos/633776121.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-extrabold text-slate-900">{t.formSuccessTitle}</h3>
-                  <p className="text-slate-600 text-base max-w-lg mx-auto leading-relaxed">
-                    {t.formSuccessDesc}
+                <div className="space-y-1.5 px-1">
+                  <h4 className="font-extrabold text-slate-900 text-base flex items-center gap-2">
+                    <Play size={16} className="text-blue-700 fill-blue-700/10 shrink-0" />
+                    <span>{t.video1Name}</span>
+                  </h4>
+                  <p className="text-slate-500 text-sm font-semibold leading-relaxed">
+                    {t.video1Desc}
                   </p>
                 </div>
-                <div className="pt-4">
-                  <button 
-                    onClick={() => {
-                      setIsSubmitted(false);
-                      setRfqMsg('');
-                    }}
-                    className="bg-blue-800 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-900 transition-colors"
+              </div>
+
+              {/* Video 2 Player */}
+              <div className="bg-white border border-slate-200 p-5 rounded-3xl space-y-4 shadow-sm hover:shadow-md transition-shadow">
+                <div className="relative rounded-2xl overflow-hidden bg-slate-950 aspect-video">
+                  <video 
+                    controls 
+                    className="w-full h-full object-contain"
+                    preload="metadata"
                   >
-                    Send Another RFQ
-                  </button>
+                    <source src="/assets/videos/713225503.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div className="space-y-1.5 px-1">
+                  <h4 className="font-extrabold text-slate-900 text-base flex items-center gap-2">
+                    <Play size={16} className="text-blue-700 fill-blue-700/10 shrink-0" />
+                    <span>{t.video2Name}</span>
+                  </h4>
+                  <p className="text-slate-500 text-sm font-semibold leading-relaxed">
+                    {t.video2Desc}
+                  </p>
                 </div>
               </div>
-            ) : (
-              <form onSubmit={handleRfqSubmit} className="grid sm:grid-cols-2 gap-6 text-left">
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wider block">{t.formName} *</label>
-                  <input 
-                    type="text" 
-                    required
-                    value={rfqName}
-                    onChange={(e) => setRfqName(e.target.value)}
-                    placeholder="e.g. John Doe"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                  />
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wider block">{t.formEmail} *</label>
-                  <input 
-                    type="email" 
-                    required
-                    value={rfqEmail}
-                    onChange={(e) => setRfqEmail(e.target.value)}
-                    placeholder="john@yourcompany.com"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                  />
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wider block">{t.formWhatsApp}</label>
-                  <input 
-                    type="text" 
-                    value={rfqWhatsApp}
-                    onChange={(e) => setRfqWhatsApp(e.target.value)}
-                    placeholder="e.g. +1 234 567 890"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                  />
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wider block">{t.formCompany}</label>
-                  <input 
-                    type="text" 
-                    value={rfqCompany}
-                    onChange={(e) => setRfqCompany(e.target.value)}
-                    placeholder="Global Plumbing Co."
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                  />
-                </div>
-
-                <div className="sm:col-span-2 space-y-1.5">
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wider block">{t.formCategory}</label>
-                  <select 
-                    value={rfqCategory} 
-                    onChange={(e) => setRfqCategory(e.target.value)}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                  >
-                    <option value="ABS Handles">{t.catHandles}</option>
-                    <option value="Shower Sliders">{t.catSliders}</option>
-                    <option value="Bathroom Hardware">{t.catHardware}</option>
-                  </select>
-                </div>
-
-                <div className="sm:col-span-2 space-y-1.5">
-                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wider block">{t.formMsg}</label>
-                  <textarea 
-                    rows={4}
-                    value={rfqMsg}
-                    onChange={(e) => setRfqMsg(e.target.value)}
-                    placeholder="Tell us what you are looking for (e.g. Model XH-ABS-101, 5000pcs, custom laser logo...)"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
-                  />
-                </div>
-
-                <div className="sm:col-span-2 pt-2">
-                  <button 
-                    type="submit"
-                    className="w-full bg-blue-800 hover:bg-blue-900 text-white py-4 rounded-xl font-extrabold text-base flex items-center justify-center gap-2 shadow-lg shadow-blue-800/20 transition-all"
-                  >
-                    <Send size={18} />
-                    <span>{t.formSubmit}</span>
-                  </button>
-                </div>
-
-              </form>
-            )}
-
+            </div>
           </div>
 
         </div>
@@ -1261,7 +1256,7 @@ function App() {
 
       {/* PRODUCT SPECIFICATION MODAL */}
       {selectedProduct && (
-        <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto animate-fade-in">
+        <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
           <div className="bg-white w-full max-w-3xl rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col justify-between max-h-[90vh]">
             
             {/* Header bar */}
@@ -1338,7 +1333,7 @@ function App() {
               <div className="flex gap-2">
                 <button 
                   onClick={() => handleModalRfqSubmit(selectedProduct.model)}
-                  className="bg-blue-800 hover:bg-blue-900 text-white px-5 py-3 rounded-xl text-sm font-extrabold flex items-center justify-center gap-1.5 shadow-md shadow-blue-800/10"
+                  className="bg-blue-800 hover:bg-blue-900 text-white px-5 py-3 rounded-xl text-sm font-extrabold flex items-center justify-center gap-1.5 shadow-md"
                 >
                   <Send size={15} />
                   <span>{t.modalBtnSubmit}</span>
@@ -1346,6 +1341,31 @@ function App() {
               </div>
             </div>
 
+          </div>
+        </div>
+      )}
+
+      {/* FULLSCREEN LIGHTBOX FOR REAL PRODUCTS GALLERY */}
+      {selectedGalleryImg && (
+        <div className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur flex items-center justify-center p-4">
+          <div className="relative max-w-4xl max-h-[85vh] overflow-hidden flex items-center justify-center rounded-2xl border border-slate-800 shadow-2xl">
+            <img 
+              src={selectedGalleryImg} 
+              alt="High resolution zoom of custom mold item" 
+              className="max-w-full max-h-[80vh] object-contain rounded-xl"
+            />
+            {/* Close button */}
+            <button 
+              onClick={() => setSelectedGalleryImg(null)}
+              className="absolute top-4 right-4 bg-slate-900/80 backdrop-blur text-white p-2.5 rounded-full hover:bg-slate-800 transition-colors shadow-lg"
+            >
+              <X size={20} />
+            </button>
+            <div className="absolute bottom-4 inset-x-4 text-center">
+              <span className="bg-slate-950/80 backdrop-blur text-white px-4 py-2 rounded-xl text-sm font-bold border border-slate-800 shadow-lg">
+                Fujian Xialong / Xiahua Precision Mold Showroom
+              </span>
+            </div>
           </div>
         </div>
       )}
