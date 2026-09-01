@@ -13,6 +13,7 @@ import {
   Menu, 
   X, 
   ChevronRight, 
+  ChevronLeft,
   MessageSquare, 
   Send, 
   Users,
@@ -408,6 +409,7 @@ const trans = {
 };
 
 // High-Fidelity Product Database linked directly to real photos
+// Distribute 25 product images across 4 main product categories
 const products = [
   {
     id: 1,
@@ -430,7 +432,8 @@ const products = [
       hi: "हमारे चीनी राष्ट्रीय पेटेंट के अनुसार निर्मित। जंग प्रतिरोधी और चमकदार सतह।",
       zh: "严格按照国家实用新型专利 ZL 2016 2 0363475.1 制造。注塑壁厚提升30%，防滑阻尼平衡优异，能通过48小时严苛乙酸雾测试，历久不剥落。"
     },
-    img: "/assets/images/product-abs-handle.jpg"
+    images: ["/assets/products/xh-product-1.jpg", "/assets/products/xh-product-2.jpg", "/assets/products/xh-product-3.jpg", "/assets/products/xh-product-4.jpg", "/assets/products/xh-product-5.jpg", "/assets/products/xh-product-6.jpg"],
+    img: "/assets/products/xh-product-1.jpg"
   },
   {
     id: 2,
@@ -453,7 +456,8 @@ const products = [
       hi: "आसान स्लाइड रेल समायोजन की अनुमति देता है। 22 मिमी / 25 मिमी मानक शावर छड़ के लिए उपयुक्त।",
       zh: "适配国际标准 22mm 及 25mm 淋浴管。独创内自锁重摩擦力结构，挂载 1.5kg 重载黄铜花洒不产生滑落、不晃动，移动手感如丝绸般顺滑。"
     },
-    img: "/assets/images/product-shower-slider.jpg"
+    images: ["/assets/products/xh-product-7.jpg", "/assets/products/xh-product-8.jpg", "/assets/products/xh-product-9.jpg", "/assets/products/xh-product-10.jpg", "/assets/products/xh-product-11.jpg", "/assets/products/xh-product-12.jpg"],
+    img: "/assets/products/xh-product-7.jpg"
   },
   {
     id: 3,
@@ -476,7 +480,8 @@ const products = [
       hi: "सटीक पानी के मिश्रण के लिए पेटेंट। चिकनी पकड़ के लिए पैटर्न डिजाइन।",
       zh: "采用国家实用新型专利 ZL 2016 2 0363465.8 精准控温结构。表面精密加工的防滑滚花图案，即便手覆肥皂水也依然能精准转动调节，是五星级酒店淋浴器代工首选配件。"
     },
-    img: "/assets/images/product-hardware.jpg"
+    images: ["/assets/products/xh-product-13.jpg", "/assets/products/xh-product-14.jpg", "/assets/products/xh-product-15.jpg", "/assets/products/xh-product-16.jpg", "/assets/products/xh-product-17.jpg", "/assets/products/xh-product-18.jpg"],
+    img: "/assets/products/xh-product-13.jpg"
   },
   {
     id: 4,
@@ -499,7 +504,8 @@ const products = [
       hi: "भारी पीतल शरीर 99g वजन की गारंटी देता है। शून्य हवा के बुलबुले।",
       zh: "主体采用精密重力浇铸，出厂逐个精密电子天平复称，保证其 99克 的扎实净重与壁厚。无气孔沙眼，彻底断绝寒冷冬季管道上冻时壳体膨胀开裂的风险。"
     },
-    img: "/assets/images/hero-faucet.jpg"
+    images: ["/assets/products/xh-product-19.jpg", "/assets/products/xh-product-20.jpg", "/assets/products/xh-product-21.jpg", "/assets/products/xh-product-22.jpg", "/assets/products/xh-product-23.jpg", "/assets/products/xh-product-24.jpg", "/assets/products/xh-product-25.jpg"],
+    img: "/assets/products/xh-product-19.jpg"
   }
 ];
 
@@ -558,8 +564,160 @@ const faqs = [
   }
 ];
 
+// Multilingual translations for the Interactive B2B Customization Lab
+const configTrans = {
+  en: {
+    labTitle: "3D-Style Customization Lab",
+    labSub: "Configure structural materials, surface coatings, spline teeth, and export packaging in real-time. Instantly apply custom specs to RFQ.",
+    selectProduct: "Select Base Faucet Fitting Model",
+    customizeMaterial: "1. Core Structural Material",
+    customizeFinish: "2. Surface Electroplating & Finish",
+    customizeSpec: "3. Connection Spline / Size Specifications",
+    customizePkg: "4. B2B Export Packaging Solution",
+    moq: "Recommended MOQ",
+    leadTime: "Custom Sampling Lead Time",
+    capacity: "Monthly Production Capacity",
+    patentStatus: "IP & Compliance Backing",
+    btnGenRfq: "Apply Specifications to RFQ Form",
+    btnGenRfqSuccess: "Specifications Applied! Scrolled to submit business details.",
+    matAbs: "Premium Virgin ABS Plastic",
+    matBrass: "H59-1 Gravity-Casted Solid Brass",
+    matSteel: "304 Food-Grade Stainless Steel",
+    finChrome: "9-Class Mirror electroplated Chrome",
+    finBlack: "Anti-scratch Electrophoretic Matte Black",
+    finGold: "Vacuum Ion PVD Brushed Gold",
+    spec15: "Standard 15-Teeth Spline Axis (Ø 7.6mm)",
+    spec20: "European 20-Teeth Spline Axis (Ø 8.2mm)",
+    specSlider: "Universal Friction Slider Sleeve (Ø 22-25mm)",
+    specCustom: "Custom Drawing / Non-standard Spec",
+    pkgColor: "OEM Customized High-End Color Box",
+    pkgBulk: "Neutral Bubble Polybag Industrial Pack",
+    pkgCarton: "Reinforced 5-layer Double-Wall Export Carton"
+  },
+  ru: {
+    labTitle: "Интерактивная B2B-лаборатория",
+    labSub: "Настраивайте материалы, отделку и характеристики деталей в реальном времени. Мгновенно формируйте спецификации в RFQ.",
+    selectProduct: "Выберите базовую модель фитинга",
+    customizeMaterial: "1. Материал корпуса / основы",
+    customizeFinish: "2. Гальваническое покрытие и отделка",
+    customizeSpec: "3. Шлицы клапана / характеристики резьбы",
+    customizePkg: "4. Решение для экспортной упаковки B2B",
+    moq: "Рекомендуемый MOQ",
+    leadTime: "Срок создания прототипа",
+    capacity: "Месячная производственная мощность",
+    patentStatus: "Защита интеллектуальной собственности",
+    btnGenRfq: "Применить спецификации к форме RFQ",
+    btnGenRfqSuccess: "Спецификации применены! Заполните контактные данные.",
+    matAbs: "Первичный высокопрочный ABS-пластик",
+    matBrass: "Латунь H59-1 гравитационного литья",
+    matSteel: "Пищевая нержавеющая сталь 304",
+    finChrome: "Зеркальный хром 9-го класса",
+    finBlack: "Устойчивый к царапинам матовый черный",
+    finGold: "Вакуумное напыление PVD-золото",
+    spec15: "Стандартный 15-зубчатый вал (Ø 7,6 мм)",
+    spec20: "Европейский 20-зубчатый вал (Ø 8,2 мм)",
+    specSlider: "Универсальный держатель лейки (Ø 22-25 мм)",
+    specCustom: "Чертеж / Нестандартная спецификация",
+    pkgColor: "Фирменная цветная коробка OEM",
+    pkgBulk: "Промышленная воздушно-пузырьковая пленка",
+    pkgCarton: "Усиленный 5-слойный экспортный гофрокороб"
+  },
+  pt: {
+    labTitle: "Laboratório Interativo B2B",
+    labSub: "Configure materiais estruturais, acabamentos e estrias de acoplamento em tempo real. Importe especificações ao RFQ.",
+    selectProduct: "Selecione o Modelo Base de Metal Sanitário",
+    customizeMaterial: "1. Material Estrutural Principal",
+    customizeFinish: "2. Processo de Acabamento e Cromagem",
+    customizeSpec: "3. Estria de Encaixe / Tamanho do Acoplamento",
+    customizePkg: "4. Solução de Embalagem de Exportação B2B",
+    moq: "MOQ Recomendado pela Fábrica",
+    leadTime: "Prazo de Prototipagem / Amostra",
+    capacity: "Capacidade de Produção Mensal",
+    patentStatus: "Proteção de Patente e Conformidade",
+    btnGenRfq: "Aplicar Especificações ao Formulário RFQ",
+    btnGenRfqSuccess: "Especificações Aplicadas! Preencha os dados abaixo.",
+    matAbs: "Plástico ABS Virgem de Alta Resistência",
+    matBrass: "Latão Maciço H59-1 Fundido por Gravidade",
+    matSteel: "Aço Inoxidável Grau Alimentício 304",
+    finChrome: "Cromagem Espelhada Multicamada Classe 9",
+    finBlack: "Preto Fosco Eletroforético Anti-risco",
+    finGold: "PVD Escovado a Vácuo de Alta Performance",
+    spec15: "Eixo de Estria Padrão de 15 Dentes (Ø 7.6mm)",
+    spec20: "Eixo de Estria Europeu de 20 Dentes (Ø 8.2mm)",
+    specSlider: "Suporte Deslizador com Dupla Fricção (Ø 22-25mm)",
+    specCustom: "Desenho Técnico / Especificação Não-padrão",
+    pkgColor: "Caixa Colorida de Alta Qualidade OEM",
+    pkgBulk: "Embalagem Plástico Bolha Industrial Neutro",
+    pkgCarton: "Caixa de Papelão Duplo Reforçado para Exportação"
+  },
+  hi: {
+    labTitle: "इंटरएक्टिव बी2बी अनुकूलन प्रयोगशाला",
+    labSub: "वास्तविक समय में सामग्री, फिनिश और विनिर्देशों को कॉन्फ़िगर करें। तुरंत RFQ उत्पन्न करें।",
+    selectProduct: "आधार मॉडल चुनें",
+    customizeMaterial: "1. मुख्य सामग्री",
+    customizeFinish: "2. सतह फिनिश",
+    customizeSpec: "3. कनेक्शन विनिर्देश",
+    customizePkg: "4. बी2बी निर्यात पैकेजिंग",
+    moq: "अनुशंसित MOQ",
+    leadTime: "प्रोटोटाइप लीड समय",
+    capacity: "मासिक क्षमता",
+    patentStatus: "आईपी संरक्षण",
+    btnGenRfq: "विनिर्देशों को आरएफक्यू फॉर्म में लागू करें",
+    btnGenRfqSuccess: "विनिर्देश लागू! जमा करने के लिए नीचे स्क्रॉल करें।",
+    matAbs: "प्रीमियम वर्जिन एबीएस",
+    matBrass: "H59 ठोस पीतल",
+    matSteel: "304 स्टेनलेस स्टील",
+    finChrome: "9-श्रेणी दर्पण क्रोम",
+    finBlack: "मैट ब्लैक",
+    finGold: "PVD ब्रश गोल्ड",
+    spec15: "15-दांतेदार स्प्लिन (7.6 मिमी)",
+    spec20: "20-दांतेदार स्प्लिन (8.2 मिमी)",
+    specSlider: "यूनिवर्सल स्लाइडर (22-25 मिमी)",
+    specCustom: "कस्टम विनिर्देश",
+    pkgColor: "ब्रांड रंग बॉक्स",
+    pkgBulk: "तटस्थ बुलबुला पॉलीबैग",
+    pkgCarton: "मजबूत निर्यात कार्टन"
+  },
+  zh: {
+    labTitle: "夏龙精密卫浴 · B2B 智能选配定制实验室",
+    labSub: "实时在线调配核心主材、表面电镀工艺、花键齿轴规格及环保包装方案，点击生成最精准的出口技术参数询盘包。",
+    selectProduct: "选择基准卫浴产品型号",
+    customizeMaterial: "1. 核心承载主材 (Core Material)",
+    customizeFinish: "2. 表面电镀/涂层工艺 (Surface Finish)",
+    customizeSpec: "3. 连接阀芯花键轴/滑动规格 (Connection Spec)",
+    customizePkg: "4. 大宗出口环保包装方案 (Export Packaging)",
+    moq: "工厂推荐大宗起订量",
+    leadTime: "磨具微调与极速打样",
+    capacity: "注塑与精密浇铸月产能",
+    patentStatus: "知识产权与质量背书",
+    btnGenRfq: "将定制规格一键导入询盘表 (RFQ)",
+    btnGenRfqSuccess: "定制参数成功导入！页面已自动滑动到下方，请填写联系人提交询盘。",
+    matAbs: "进口原生高坚韧级 ABS 原料",
+    matBrass: "H59-1 重力浇铸低铅国标黄铜",
+    matSteel: "304 食品级无缝精密不锈钢",
+    finChrome: "9级高光镜面酸铜镍铬联合电镀 (盐雾测试超48小时)",
+    finBlack: "防滑防指纹耐刮擦电泳哑光黑",
+    finGold: "物理真空气相沉积 (PVD) 真空拉丝金",
+    spec15: "国标标准 15 齿精密花键轴 (Ø 7.6mm)",
+    spec20: "欧标标准 20 齿精密花键轴 (Ø 8.2mm)",
+    specSlider: "标准自锁重载双阻尼花洒滑套 (Ø 22-25mm 淋浴管)",
+    specCustom: "非标开模定制 (提供图纸/实物样件)",
+    pkgColor: "采购商专属贴牌高档加强型五层彩盒",
+    pkgBulk: "大宗工业中性厚气泡袋双层减震安全袋装",
+    pkgCarton: "出口级重型双瓦楞高强度牛皮纸箱"
+  }
+};
+
 function App() {
   const [lang, setLang] = useState('en');
+  const [activeCatalogView, setActiveCatalogView] = useState('lab'); // 'lab' = Interactive configurator, 'catalog' = Standard Grid
+  const [selectedLabProduct, setSelectedLabProduct] = useState(products[0]);
+  const [labMaterial, setLabMaterial] = useState('abs');
+  const [labFinish, setLabFinish] = useState('chrome');
+  const [labSpec, setLabSpec] = useState('15t');
+  const [labPkg, setLabPkg] = useState('carton');
+  const [rfqApplied, setRfqApplied] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedGalleryImg, setSelectedGalleryImg] = useState(null);
@@ -571,6 +729,7 @@ function App() {
   const [rfqMsg, setRfqMsg] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [carouselIndex, setCarouselIndex] = useState({});
 
   const t = trans[lang] || trans.en;
 
@@ -597,18 +756,103 @@ function App() {
     setIsSubmitted(true);
   };
 
-  // Handle Modal RFQ Form Submit
-  const handleModalRfqSubmit = (productModel) => {
-    console.log(`=== SPECIAL MODAL RFQ SUBMITTED FOR MODEL: ${productModel} ===`);
-    console.log(`Name: ${rfqName || "Prospect Buyer"}`);
-    console.log(`Email: ${rfqEmail || "Pending"}`);
-    console.log(`Sending to target email: 375039137@qq.com`);
-    
-    setIsSubmitted(true);
-    setSelectedProduct(null);
-  };
+   // Handle Modal RFQ Form Submit
+   const handleModalRfqSubmit = (productModel) => {
+     console.log(`=== SPECIAL MODAL RFQ SUBMITTED FOR MODEL: ${productModel} ===`);
+     console.log(`Name: ${rfqName || "Prospect Buyer"}`);
+     console.log(`Email: ${rfqEmail || "Pending"}`);
+     console.log(`Sending to target email: 375039137@qq.com`);
+     
+     setIsSubmitted(true);
+     setSelectedProduct(null);
+   };
 
-  const getWhatsAppLink = (text) => {
+   // Carousel handlers
+   const getCarouselIndex = (productId) => carouselIndex[productId] || 0;
+   
+   const setProductCarouselIndex = (productId, index) => {
+     setCarouselIndex(prev => ({ ...prev, [productId]: index }));
+   };
+
+   const handlePrevImage = (productId, totalImages) => {
+     const current = getCarouselIndex(productId);
+     const newIndex = current === 0 ? totalImages - 1 : current - 1;
+     setProductCarouselIndex(productId, newIndex);
+   };
+
+    const handleNextImage = (productId, totalImages) => {
+      const current = getCarouselIndex(productId);
+      const newIndex = (current + 1) % totalImages;
+      setProductCarouselIndex(productId, newIndex);
+    };
+
+    const handleApplySpecsToRfq = () => {
+      const currentConfigTrans = configTrans[lang] || configTrans.en;
+      
+      let materialName = "";
+      if (labMaterial === 'abs') materialName = currentConfigTrans.matAbs;
+      else if (labMaterial === 'brass') materialName = currentConfigTrans.matBrass;
+      else materialName = currentConfigTrans.matSteel;
+
+      let finishName = "";
+      if (labFinish === 'chrome') finishName = currentConfigTrans.finChrome;
+      else if (labFinish === 'black') finishName = currentConfigTrans.finBlack;
+      else finishName = currentConfigTrans.finGold;
+
+      let specName = "";
+      if (labSpec === '15t') specName = currentConfigTrans.spec15;
+      else if (labSpec === '20t') specName = currentConfigTrans.spec20;
+      else if (labSpec === 'slider') specName = currentConfigTrans.specSlider;
+      else specName = currentConfigTrans.specCustom;
+
+      let pkgName = "";
+      if (labPkg === 'color') pkgName = currentConfigTrans.pkgColor;
+      else if (labPkg === 'bulk') pkgName = currentConfigTrans.pkgBulk;
+      else pkgName = currentConfigTrans.pkgCarton;
+
+      const baseModel = selectedLabProduct.model;
+      const productName = selectedLabProduct.nameMap[lang];
+
+      let rfqText = "";
+      if (lang === 'zh') {
+        rfqText = `您好，我需要采购 【${productName}】(型号: ${baseModel}) 的大宗定制版本。\n\n我的 B2B 规格选配清单如下：\n- 结构主材 (Material)：${materialName}\n- 表面工艺 (Finish)：${finishName}\n- 阀芯花键/尺寸 (Spec)：${specName}\n- 出口包装方案 (Packaging)：${pkgName}\n\n请在 12 小时内安排大客户外贸经理与我对接，并发送专属的阶梯批发报价单 (Wholesale Price Sheet) 与 CAD 出口开模规格书。`;
+      } else if (lang === 'ru') {
+        rfqText = `Здравствуйте, меня интересует оптовая закупка кастомизированной версии 【${productName}】 (Модель: ${baseModel}).\n\nМои спецификации:\n- Материал (Material): ${materialName}\n- Отделка поверхности (Finish): ${finishName}\n- Спецификация соединения (Spec): ${specName}\n- Экспортная упаковка (Packaging): ${pkgName}\n\nПожалуйста, отправьте оптовые цены и спецификации в течение 12 часов.`;
+      } else if (lang === 'pt') {
+        rfqText = `Olá, estou interessado na compra em lote da versão personalizada de 【${productName}】 (Modelo: ${baseModel}).\n\nMinhas especificações customizadas:\n- Material Estrutural (Material): ${materialName}\n- Acabamento de Superfície (Finish): ${finishName}\n- Estria de Conexão/Tamanho (Spec): ${specName}\n- Solução de Embalagem (Packaging): ${pkgName}\n\nPor favor, envie a tabela de preços de atacado e especificações dentro de 12 horas.`;
+      } else if (lang === 'hi') {
+        rfqText = `नमस्ते, मैं 【${productName}】 (मॉडल: ${baseModel}) के कस्टमाइज्ड संस्करण की थोक खरीद में रुचि रखता हूँ।\n\nमेरे विनिर्देश:\n- मुख्य सामग्री (Material): ${materialName}\n- सतह फिनिश (Finish): ${finishName}\n- कनेक्शन विनिर्देश (Spec): ${specName}\n- निर्यात पैकेजिंग (Packaging): ${pkgName}\n\nकृपया 12 घंटे के भीतर थोक मूल्य सूची और विनिर्देश पत्रक भेजें।`;
+      } else {
+        rfqText = `Hello, I am interested in bulk procurement of a customized version of 【${productName}】 (Model: ${baseModel}).\n\nMy custom B2B specifications:\n- Core Material (Material): ${materialName}\n- Surface Finish (Finish): ${finishName}\n- Connection Spline/Size (Spec): ${specName}\n- Export Packaging (Packaging): ${pkgName}\n\nPlease have an export manager contact me within 12 hours with a volume-based tier quotation and technical specifications.`;
+      }
+
+      setRfqMsg(rfqText);
+      
+      if (selectedLabProduct.category === 'handles') {
+        setRfqCategory('ABS Handles');
+      } else if (selectedLabProduct.category === 'sliders') {
+        setRfqCategory('Shower Sliders');
+      } else {
+        setRfqCategory('Bathroom Hardware');
+      }
+
+      setRfqApplied(true);
+      setToastMessage(currentConfigTrans.btnGenRfqSuccess);
+      
+      setTimeout(() => {
+        const contactSec = document.getElementById('contact');
+        if (contactSec) {
+          contactSec.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 200);
+
+      setTimeout(() => {
+        setRfqApplied(false);
+        setToastMessage('');
+      }, 5000);
+    };
+
+    const getWhatsAppLink = (text) => {
     const defaultText = text || "Hello, I am interested in Fujian Xialong / Xiahua patented bathroom accessories.";
     return `https://wa.me/8618965758892?text=${encodeURIComponent(defaultText)}`;
   };
@@ -890,109 +1134,477 @@ function App() {
             </p>
           </div>
 
-          {/* Filtering tabs */}
-          <div className="flex flex-wrap justify-center gap-2">
-            {[
-              ['all', t.catAll],
-              ['handles', t.catHandles],
-              ['sliders', t.catSliders],
-              ['hardware', t.catHardware]
-            ].map(([key, label]) => (
-              <button
-                key={key}
-                onClick={() => setCategoryFilter(key)}
-                className={`px-5 py-2.5 rounded-full text-sm font-bold border transition-all ${
-                  categoryFilter === key 
-                    ? 'bg-blue-800 border-blue-800 text-white shadow-md' 
-                    : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-100'
-                }`}
-              >
-                {label}
-              </button>
-            ))}
+          {/* Dual-Mode View Switcher Tabs (Highly interactive layout switcher) */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 border-b border-slate-200 pb-8 max-w-2xl mx-auto">
+            <button
+              onClick={() => setActiveCatalogView('lab')}
+              className={`w-full sm:w-auto px-6 py-3.5 rounded-xl text-sm font-extrabold flex items-center justify-center gap-2.5 border transition-all duration-300 ${
+                activeCatalogView === 'lab'
+                  ? 'bg-blue-800 border-blue-800 text-white shadow-lg shadow-blue-800/10'
+                  : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-100 shadow-sm'
+              }`}
+            >
+              <Zap size={16} className={activeCatalogView === 'lab' ? "animate-pulse text-yellow-400 fill-yellow-400" : "text-slate-400"} />
+              <span>{configTrans[lang]?.labTitle || configTrans.en.labTitle}</span>
+            </button>
+            <button
+              onClick={() => setActiveCatalogView('catalog')}
+              className={`w-full sm:w-auto px-6 py-3.5 rounded-xl text-sm font-extrabold flex items-center justify-center gap-2.5 border transition-all duration-300 ${
+                activeCatalogView === 'catalog'
+                  ? 'bg-blue-800 border-blue-800 text-white shadow-lg shadow-blue-800/10'
+                  : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-100 shadow-sm'
+              }`}
+            >
+              <FileText size={16} className={activeCatalogView === 'catalog' ? "text-blue-200" : "text-slate-400"} />
+              <span>{lang === 'zh' ? '查看标准型录 (Standard Grid)' : 'Standard Grid Specifications'}</span>
+            </button>
           </div>
 
-          {/* Product Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {filteredProducts.map((p) => (
-              <article 
-                key={p.id} 
-                className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
-                data-component="product-card"
-              >
-                <div>
-                  <div className="relative aspect-[4/3] bg-slate-100 border-b border-slate-100 overflow-hidden cursor-pointer" onClick={() => setSelectedProduct(p)}>
-                    <img 
-                      src={p.img} 
-                      alt={p.nameMap[lang]} 
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                    />
-                    <div className="absolute top-3 left-3 bg-slate-900/85 backdrop-blur text-white px-2.5 py-1 rounded-md text-[11px] font-black tracking-widest uppercase">
-                      {p.model}
+          {/* SECTION A: B2B INTERACTIVE CUSTOMIZATION SHOWROOM (Default, Highly Interactive!) */}
+          {activeCatalogView === 'lab' && (
+            <div className="space-y-8 animate-fade-in" data-component="b2b-configurator-showroom">
+              
+              {/* Product Base Model Select Cards */}
+              <div className="bg-white border border-slate-200 p-6 rounded-3xl shadow-sm text-left">
+                <span className="block text-xs font-black tracking-widest text-slate-400 uppercase mb-4">
+                  {configTrans[lang]?.selectProduct || configTrans.en.selectProduct}
+                </span>
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                  {products.map((p) => (
+                    <button
+                      key={p.id}
+                      onClick={() => {
+                        setSelectedLabProduct(p);
+                        // Sensible auto-defaults based on product category for B2B precision
+                        if (p.category === 'handles') {
+                          setLabMaterial('abs');
+                          setLabSpec('15t');
+                        } else if (p.category === 'sliders') {
+                          setLabMaterial('abs');
+                          setLabSpec('slider');
+                        } else {
+                          setLabMaterial('brass');
+                          setLabSpec('20t');
+                        }
+                      }}
+                      className={`p-4 rounded-2xl border text-left transition-all duration-300 ${
+                        selectedLabProduct.id === p.id
+                          ? 'border-blue-800 bg-blue-50/40 ring-4 ring-blue-500/10 shadow-sm'
+                          : 'border-slate-200 bg-slate-50/50 hover:bg-slate-100 hover:border-slate-300'
+                      }`}
+                    >
+                      <span className="inline-block text-[10px] font-black text-blue-800 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded leading-none uppercase tracking-wider">{p.model}</span>
+                      <span className="block font-black text-slate-800 text-sm mt-2 truncate">{p.nameMap[lang]}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Split Configurator Interface */}
+              <div className="grid lg:grid-cols-12 gap-8 items-start">
+                
+                {/* Left Column: Variant Showroom Gallery (All 25 images distributed beautifully here!) */}
+                <div className="lg:col-span-6 space-y-6">
+                  
+                  {/* Big Active Image display with smooth hover & metadata */}
+                  <div className="relative bg-white border border-slate-200 rounded-3xl p-3 shadow-sm group overflow-hidden">
+                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100">
+                      <img
+                        src={selectedLabProduct.images[getCarouselIndex(selectedLabProduct.id)] || selectedLabProduct.img}
+                        alt={selectedLabProduct.nameMap[lang]}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      
+                      {/* Technical Backing overlay badges */}
+                      <div className="absolute top-4 left-4 flex flex-col gap-2 pointer-events-none">
+                        <span className="bg-slate-950/80 backdrop-blur text-white py-1.5 px-3 rounded-lg text-[10px] font-black tracking-widest uppercase shadow-md inline-block text-left w-fit leading-none">
+                          {selectedLabProduct.model}
+                        </span>
+                        <span className="bg-blue-800/90 backdrop-blur text-white py-1 px-2 rounded-md text-[9px] font-black tracking-wider uppercase shadow-sm inline-block text-left w-fit leading-none">
+                          {selectedLabProduct.category === 'handles' || selectedLabProduct.id === 3 ? "ZL 2016 2 0363475.1 Patent" : "SGS Wear-Tested"}
+                        </span>
+                      </div>
+
+                      {/* Previous Variant button */}
+                      <button
+                        onClick={() => handlePrevImage(selectedLabProduct.id, selectedLabProduct.images.length)}
+                        className="absolute left-3 top-1/2 -translate-y-1/2 bg-slate-900/80 hover:bg-slate-900 text-white p-2.5 rounded-full transition-all opacity-0 group-hover:opacity-100 duration-300 z-10 shadow-lg"
+                        aria-label="Previous variant image"
+                      >
+                        <ChevronLeft size={20} className="stroke-[2.5]" />
+                      </button>
+
+                      {/* Next Variant button */}
+                      <button
+                        onClick={() => handleNextImage(selectedLabProduct.id, selectedLabProduct.images.length)}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 bg-slate-900/80 hover:bg-slate-900 text-white p-2.5 rounded-full transition-all opacity-0 group-hover:opacity-100 duration-300 z-10 shadow-lg"
+                        aria-label="Next variant image"
+                      >
+                        <ChevronRight size={20} className="stroke-[2.5]" />
+                      </button>
+
+                      {/* Variant Indicator Counter */}
+                      <div className="absolute bottom-4 right-4 bg-slate-950/80 backdrop-blur text-white px-3 py-1.5 rounded-lg text-xs font-black tracking-wider">
+                        {getCarouselIndex(selectedLabProduct.id) + 1} / {selectedLabProduct.images.length}
+                      </div>
                     </div>
                   </div>
 
-                  <div className="p-6 space-y-4">
-                    <h3 className="font-extrabold text-slate-900 text-base leading-snug line-clamp-2 min-h-[44px] text-left">
-                      {p.nameMap[lang]}
-                    </h3>
-                    
-                    {/* Tiny Specs */}
-                    <div className="space-y-1.5 pt-2 border-t border-slate-100 text-xs text-left">
-                      <div className="grid grid-cols-12 gap-1">
-                        <span className="col-span-4 font-bold text-slate-400">{t.specMaterial}:</span>
-                        <span className="col-span-8 font-semibold text-slate-700 truncate">{p.materialMap[lang]}</span>
-                      </div>
-                      <div className="grid grid-cols-12 gap-1">
-                        <span className="col-span-4 font-bold text-slate-400">{t.specFinish}:</span>
-                        <span className="col-span-8 font-semibold text-slate-700 truncate">{p.finishMap[lang]}</span>
-                      </div>
+                  {/* Horizontal Variant Ribbon - Click to swap active variant image */}
+                  <div className="bg-white border border-slate-200 p-5 rounded-3xl shadow-sm text-left space-y-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs font-black tracking-widest text-slate-400 uppercase">
+                        {lang === 'zh' ? '点击查看该型号的不同开模角度与变体' : 'Variant / Custom Mold Details'}
+                      </span>
+                      <span className="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded">
+                        {selectedLabProduct.images.length} Molds Available
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-7 gap-2">
+                      {selectedLabProduct.images.map((imgUrl, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setProductCarouselIndex(selectedLabProduct.id, idx)}
+                          className={`relative aspect-square rounded-xl overflow-hidden border-2 transition-all duration-300 ${
+                            idx === getCarouselIndex(selectedLabProduct.id)
+                              ? 'border-blue-800 scale-95 ring-4 ring-blue-500/10'
+                              : 'border-slate-200 hover:border-slate-400 hover:scale-105'
+                          }`}
+                        >
+                          <img
+                            src={imgUrl}
+                            alt={`Variant detailing ${idx + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </button>
+                      ))}
                     </div>
                   </div>
+
                 </div>
 
-                <div className="p-6 pt-0">
-                  <button 
-                    onClick={() => {
-                      setSelectedProduct(p);
-                      setRfqMsg(`RFQ for model: ${p.model}. Please send us quotation and technical specsheet.`);
-                    }}
-                    className="w-full bg-slate-900 hover:bg-blue-800 text-white py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-1.5 transition-all"
+                {/* Right Column: Custom Interactive B2B Configurator Panel */}
+                <div className="lg:col-span-6 bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
+                  
+                  <div className="border-b border-slate-100 pb-4 text-left">
+                    <h4 className="font-extrabold text-slate-900 text-lg leading-tight">{selectedLabProduct.nameMap[lang]}</h4>
+                    <span className="text-xs font-bold text-slate-500 tracking-wider uppercase mt-1 block">Base Model: {selectedLabProduct.model}</span>
+                  </div>
+
+                  <div className="space-y-5">
+                    {/* Material Section */}
+                    <div className="space-y-2 text-left">
+                      <label className="block text-xs font-black tracking-widest text-slate-400 uppercase">
+                        {configTrans[lang]?.customizeMaterial || configTrans.en.customizeMaterial}
+                      </label>
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          ['abs', configTrans[lang]?.matAbs || configTrans.en.matAbs],
+                          ['brass', configTrans[lang]?.matBrass || configTrans.en.matBrass],
+                          ['steel', configTrans[lang]?.matSteel || configTrans.en.matSteel]
+                        ].map(([val, label]) => (
+                          <button
+                            key={val}
+                            onClick={() => setLabMaterial(val)}
+                            className={`px-4 py-2.5 rounded-xl text-sm font-bold border transition-all duration-200 ${
+                              labMaterial === val
+                                ? 'bg-blue-800 border-blue-800 text-white shadow-md'
+                                : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:border-slate-300'
+                            }`}
+                          >
+                            {label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Finish Section */}
+                    <div className="space-y-2 text-left">
+                      <label className="block text-xs font-black tracking-widest text-slate-400 uppercase">
+                        {configTrans[lang]?.customizeFinish || configTrans.en.customizeFinish}
+                      </label>
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          ['chrome', configTrans[lang]?.finChrome || configTrans.en.finChrome],
+                          ['black', configTrans[lang]?.finBlack || configTrans.en.finBlack],
+                          ['gold', configTrans[lang]?.finGold || configTrans.en.finGold]
+                        ].map(([val, label]) => (
+                          <button
+                            key={val}
+                            onClick={() => setLabFinish(val)}
+                            className={`px-4 py-2.5 rounded-xl text-sm font-bold border transition-all duration-200 ${
+                              labFinish === val
+                                ? 'bg-blue-800 border-blue-800 text-white shadow-md'
+                                : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:border-slate-300'
+                            }`}
+                          >
+                            {label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Connection Spline Section */}
+                    <div className="space-y-2 text-left">
+                      <label className="block text-xs font-black tracking-widest text-slate-400 uppercase">
+                        {configTrans[lang]?.customizeSpec || configTrans.en.customizeSpec}
+                      </label>
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          ['15t', configTrans[lang]?.spec15 || configTrans.en.spec15],
+                          ['20t', configTrans[lang]?.spec20 || configTrans.en.spec20],
+                          ['slider', configTrans[lang]?.specSlider || configTrans.en.specSlider],
+                          ['custom', configTrans[lang]?.specCustom || configTrans.en.specCustom]
+                        ].map(([val, label]) => (
+                          <button
+                            key={val}
+                            onClick={() => setLabSpec(val)}
+                            className={`px-4 py-2.5 rounded-xl text-sm font-bold border transition-all duration-200 ${
+                              labSpec === val
+                                ? 'bg-blue-800 border-blue-800 text-white shadow-md'
+                                : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:border-slate-300'
+                            }`}
+                          >
+                            {label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Packaging Section */}
+                    <div className="space-y-2 text-left">
+                      <label className="block text-xs font-black tracking-widest text-slate-400 uppercase">
+                        {configTrans[lang]?.customizePkg || configTrans.en.customizePkg}
+                      </label>
+                      <div className="flex flex-wrap gap-2">
+                        {[
+                          ['carton', configTrans[lang]?.pkgCarton || configTrans.en.pkgCarton],
+                          ['color', configTrans[lang]?.pkgColor || configTrans.en.pkgColor],
+                          ['bulk', configTrans[lang]?.pkgBulk || configTrans.en.pkgBulk]
+                        ].map(([val, label]) => (
+                          <button
+                            key={val}
+                            onClick={() => setLabPkg(val)}
+                            className={`px-4 py-2.5 rounded-xl text-sm font-bold border transition-all duration-200 ${
+                              labPkg === val
+                                ? 'bg-blue-800 border-blue-800 text-white shadow-md'
+                                : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:border-slate-300'
+                            }`}
+                          >
+                            {label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* B2B Live Technical Specifications Validation Card */}
+                  <div className="bg-slate-50 border border-slate-100 rounded-2xl p-5 space-y-3 text-left text-sm font-semibold">
+                    <div className="flex justify-between items-center pb-2.5 border-b border-slate-200/60">
+                      <span className="text-slate-400">{configTrans[lang]?.moq || configTrans.en.moq}</span>
+                      <span className="text-blue-900 font-extrabold text-base">
+                        {labMaterial === 'brass' ? '2,000 Pcs (Low Lead Brass Core)' : '5,000 Pcs (Plastic Injection Scale)'}
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center pb-2.5 border-b border-slate-200/60">
+                      <span className="text-slate-400">{configTrans[lang]?.leadTime || configTrans.en.leadTime}</span>
+                      <span className="text-slate-800 font-extrabold flex items-center gap-1.5">
+                        <Zap size={14} className="text-yellow-600 fill-yellow-600" />
+                        <span>{lang === 'zh' ? '极速 24 小时 3D 制样' : 'Ultra-fast 24h Prototyping'}</span>
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center pb-2.5 border-b border-slate-200/60">
+                      <span className="text-slate-400">{configTrans[lang]?.capacity || configTrans.en.capacity}</span>
+                      <span className="text-slate-800 font-extrabold">800,000 Pcs / Month</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-400">{configTrans[lang]?.patentStatus || configTrans.en.patentStatus}</span>
+                      <span className="text-green-700 font-extrabold flex items-center gap-1">
+                        <ShieldCheck size={14} className="stroke-[2.5]" />
+                        <span>
+                          {selectedLabProduct.category === 'handles' || selectedLabProduct.id === 3
+                            ? (lang === 'zh' ? '中国国家实用新型专利授权' : 'Patent Protected')
+                            : (lang === 'zh' ? 'SGS 10万次摩擦力测试合规' : 'SGS Wear-Tested')}
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Apply specs to RFQ Button */}
+                  <button
+                    onClick={handleApplySpecsToRfq}
+                    className={`w-full py-4.5 rounded-2xl text-base font-extrabold flex items-center justify-center gap-2 shadow-lg transition-all duration-300 transform active:scale-[0.98] ${
+                      rfqApplied
+                        ? 'bg-green-600 hover:bg-green-700 text-white shadow-green-900/10'
+                        : 'bg-blue-800 hover:bg-blue-950 text-white shadow-blue-900/20'
+                    }`}
                   >
-                    <span>{t.btnDetail}</span>
-                    <ChevronRight size={14} />
+                    {rfqApplied ? (
+                      <>
+                        <CheckCircle2 size={18} className="stroke-[3]" />
+                        <span>{configTrans[lang]?.btnGenRfqSuccess || configTrans.en.btnGenRfqSuccess}</span>
+                      </>
+                    ) : (
+                      <>
+                        <Send size={18} />
+                        <span>{configTrans[lang]?.btnGenRfq || configTrans.en.btnGenRfq}</span>
+                      </>
+                    )}
                   </button>
-                </div>
-              </article>
-            ))}
-          </div>
 
-          {/* EXTENDED REAL PRODUCTS GALLERY (Grid representation of 25 actual custom molds) */}
-          <div className="pt-16 border-t border-slate-200 space-y-8" data-component="product-gallery">
-            <div className="text-center max-w-3xl mx-auto space-y-3">
-              <h3 className="text-2xl font-extrabold text-slate-900 tracking-tight">{t.galleryTitle}</h3>
-              <p className="text-slate-500 text-sm font-semibold leading-relaxed">{t.galleryLede}</p>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-4">
-              {customGalleryImages.map((imgUrl, i) => (
-                <div 
-                  key={i} 
-                  onClick={() => setSelectedGalleryImg(imgUrl)}
-                  className="group relative aspect-square bg-slate-100 border border-slate-200 rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-md transition-all duration-300"
-                >
-                  <img 
-                    src={imgUrl} 
-                    alt={`Xiahua custom mold item ${i + 1}`} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/30 transition-all flex items-center justify-center">
-                    <Maximize2 size={24} className="text-white opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300" />
-                  </div>
                 </div>
-              ))}
+
+              </div>
+
             </div>
-          </div>
+          )}
+
+          {/* SECTION B: STANDARD B2B CATALOG GRID */}
+          {activeCatalogView === 'catalog' && (
+            <div className="space-y-8 animate-fade-in" data-component="standard-catalog-grid">
+              
+              {/* Category Filter Sub-tabs */}
+              <div className="flex flex-wrap justify-center gap-2">
+                {[
+                  ['all', t.catAll],
+                  ['handles', t.catHandles],
+                  ['sliders', t.catSliders],
+                  ['hardware', t.catHardware]
+                ].map(([key, label]) => (
+                  <button
+                    key={key}
+                    onClick={() => setCategoryFilter(key)}
+                    className={`px-5 py-2 rounded-full text-xs font-black border transition-all duration-300 ${
+                      categoryFilter === key 
+                        ? 'bg-blue-800 border-blue-800 text-white shadow-md' 
+                        : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-100'
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Product Grid */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {filteredProducts.map((p) => (
+                  <article 
+                    key={p.id} 
+                    className="bg-white border border-slate-200 rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                    data-component="product-card"
+                  >
+                    <div>
+                      <div className="relative aspect-[4/3] bg-slate-100 border-b border-slate-100 overflow-hidden">
+                        {p.images && p.images.length > 0 ? (
+                          <>
+                            <img 
+                              src={p.images[getCarouselIndex(p.id)]} 
+                              alt={p.nameMap[lang]} 
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            
+                            {/* Previous Button */}
+                            <button
+                              onClick={() => handlePrevImage(p.id, p.images.length)}
+                              className="absolute left-2 top-1/2 -translate-y-1/2 bg-slate-900/70 hover:bg-slate-900 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 duration-300 z-10 shadow-md"
+                              aria-label="Previous image"
+                            >
+                              <ChevronLeft size={18} />
+                            </button>
+
+                            {/* Next Button */}
+                            <button
+                              onClick={() => handleNextImage(p.id, p.images.length)}
+                              className="absolute right-2 top-1/2 -translate-y-1/2 bg-slate-900/70 hover:bg-slate-900 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 duration-300 z-10 shadow-md"
+                              aria-label="Next image"
+                            >
+                              <ChevronRight size={18} />
+                            </button>
+
+                            {/* Image Counter */}
+                            <div className="absolute bottom-3 right-3 bg-slate-900/85 backdrop-blur text-white px-2.5 py-1 rounded-md text-[10px] font-bold">
+                              {getCarouselIndex(p.id) + 1} / {p.images.length}
+                            </div>
+
+                            {/* Thumbnail Indicators */}
+                            {p.images.length > 1 && (
+                              <div className="absolute bottom-3 left-3 flex gap-1 flex-wrap max-w-[140px]">
+                                {p.images.map((_, idx) => (
+                                  <button
+                                    key={idx}
+                                    onClick={() => setProductCarouselIndex(p.id, idx)}
+                                    className={`w-1.5 h-1.5 rounded-full transition-all ${
+                                      idx === getCarouselIndex(p.id) 
+                                        ? 'bg-white w-3' 
+                                        : 'bg-white/50 hover:bg-white/75'
+                                    }`}
+                                    aria-label={`Go to image ${idx + 1}`}
+                                  />
+                                ))}
+                              </div>
+                            )}
+                          </>
+                        ) : (
+                          <img 
+                            src={p.img} 
+                            alt={p.nameMap[lang]} 
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        )}
+                        
+                        <div className="absolute top-3 right-3 bg-slate-900/85 backdrop-blur text-white px-2.5 py-1 rounded-md text-[11px] font-black tracking-widest uppercase">
+                          {p.model}
+                        </div>
+                      </div>
+
+                      <div className="p-6 space-y-4 text-left">
+                        <h3 className="font-extrabold text-slate-900 text-base leading-snug line-clamp-2 min-h-[44px]">
+                          {p.nameMap[lang]}
+                        </h3>
+                        
+                        {/* Tiny Specs */}
+                        <div className="space-y-1.5 pt-2 border-t border-slate-100 text-xs">
+                          <div className="grid grid-cols-12 gap-1">
+                            <span className="col-span-4 font-bold text-slate-400">{t.specMaterial}:</span>
+                            <span className="col-span-8 font-semibold text-slate-700 truncate">{p.materialMap[lang]}</span>
+                          </div>
+                          <div className="grid grid-cols-12 gap-1">
+                            <span className="col-span-4 font-bold text-slate-400">{t.specFinish}:</span>
+                            <span className="col-span-8 font-semibold text-slate-700 truncate">{p.finishMap[lang]}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="p-6 pt-0">
+                      <button 
+                        onClick={() => {
+                          setSelectedProduct(p);
+                          setRfqMsg(`RFQ for model: ${p.model}. Please send us quotation and technical specsheet.`);
+                        }}
+                        className="w-full bg-slate-900 hover:bg-blue-800 text-white py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-1.5 transition-all"
+                      >
+                        <span>{t.btnDetail}</span>
+                        <ChevronRight size={14} />
+                      </button>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+            </div>
+          )}
+
+          {/* Interactive Absolute Success Toast for Configurator */}
+          {rfqApplied && (
+            <div className="fixed bottom-6 right-6 z-50 bg-green-600 border border-green-500 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 animate-slide-in hover:translate-y-[-2px] transition-transform">
+              <CheckCircle2 size={22} className="stroke-[2.5] text-green-100" />
+              <div className="text-left">
+                <span className="block font-black text-sm">B2B Specifications Loaded</span>
+                <span className="block text-xs font-semibold text-green-100 mt-0.5">{toastMessage}</span>
+              </div>
+            </div>
+          )}
 
         </div>
       </section>
