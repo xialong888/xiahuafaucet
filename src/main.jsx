@@ -20,7 +20,9 @@ import {
   Check,
   FileText,
   Play,
-  Maximize2
+  Maximize2,
+  GitCompare,
+  Sliders
 } from 'lucide-react';
 import './styles.css';
 
@@ -718,6 +720,10 @@ function App() {
   const [labPkg, setLabPkg] = useState('carton');
   const [rfqApplied, setRfqApplied] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
+  const [compareList, setCompareList] = useState([]);
+  const [isCompareOpen, setIsCompareOpen] = useState(false);
+  const [procureVolume, setProcureVolume] = useState(10000);
+  const [isHoverRotating, setIsHoverRotating] = useState({});
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedGalleryImg, setSelectedGalleryImg] = useState(null);
@@ -784,6 +790,74 @@ function App() {
       const current = getCarouselIndex(productId);
       const newIndex = (current + 1) % totalImages;
       setProductCarouselIndex(productId, newIndex);
+    };
+
+    const handle3DSpinMouseMove = (e, productId, totalImages) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const width = rect.width;
+      const percentage = Math.max(0, Math.min(1, x / width));
+      const imageIndex = Math.floor(percentage * totalImages);
+      setProductCarouselIndex(productId, Math.min(imageIndex, totalImages - 1));
+      setIsHoverRotating(prev => ({ ...prev, [productId]: true }));
+    };
+
+    const handle3DSpinMouseLeave = (productId) => {
+      setIsHoverRotating(prev => ({ ...prev, [productId]: false }));
+    };
+
+    const handleToggleCompare = (product) => {
+      setCompareList(prev => {
+        const exists = prev.find(p => p.id === product.id);
+        if (exists) {
+          return prev.filter(p => p.id !== product.id);
+        } else {
+          if (prev.length >= 4) {
+            alert(lang === 'zh' ? '大宗技术对比一次最多支持 4 款产品' : 'Up to 4 products can be compared at once.');
+            return prev;
+          }
+          return [...prev, product];
+        }
+      });
+    };
+
+    const calculateLivePrice = () => {
+      let baseUnitCost = 0.85; // Base abs handle
+      if (selectedLabProduct.model === 'XH-SHSL-202') baseUnitCost = 1.20;
+      else if (selectedLabProduct.model === 'XH-BRFC-303') baseUnitCost = 1.50;
+      else if (selectedLabProduct.model === 'XH-FC-03') baseUnitCost = 2.40;
+
+      // Material Surcharges
+      let materialAdd = 0;
+      if (labMaterial === 'brass') materialAdd = 1.60;
+      else if (labMaterial === 'steel') materialAdd = 0.95;
+
+      // Finish Surcharges
+      let finishAdd = 0;
+      if (labFinish === 'black') finishAdd = 0.35;
+      else if (labFinish === 'gold') finishAdd = 0.75;
+
+      // Packaging Surcharges
+      let pkgAdd = 0;
+      if (labPkg === 'color') pkgAdd = 0.18;
+
+      let unitPrice = baseUnitCost + materialAdd + finishAdd + pkgAdd;
+
+      // Tier Discounts
+      let discount = 0;
+      if (procureVolume >= 5000 && procureVolume < 10000) discount = 0.10;
+      else if (procureVolume >= 10000 && procureVolume < 20000) discount = 0.18;
+      else if (procureVolume >= 20000 && procureVolume < 40000) discount = 0.25;
+      else if (procureVolume >= 40000) discount = 0.35;
+
+      const finalUnit = unitPrice * (1 - discount);
+      const totalCost = finalUnit * procureVolume;
+
+      return {
+        unitPrice: finalUnit.toFixed(2),
+        totalCost: Math.round(totalCost).toLocaleString(),
+        discountPercent: (discount * 100).toFixed(0)
+      };
     };
 
     const handleApplySpecsToRfq = () => {
@@ -1206,14 +1280,24 @@ function App() {
                 {/* Left Column: Variant Showroom Gallery (All 25 images distributed beautifully here!) */}
                 <div className="lg:col-span-6 space-y-6">
                   
-                  {/* Big Active Image display with smooth hover & metadata */}
+                  {/* Big Active Image display with smooth hover & 360° Interactive Rotate */}
                   <div className="relative bg-white border border-slate-200 rounded-3xl p-3 shadow-sm group overflow-hidden">
                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100">
                       <img
                         src={selectedLabProduct.images[getCarouselIndex(selectedLabProduct.id)] || selectedLabProduct.img}
                         alt={selectedLabProduct.nameMap[lang]}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="w-full h-full object-cover transition-all duration-300 transform group-hover:scale-105 cursor-ew-resize"
+                        onMouseMove={(e) => handle3DSpinMouseMove(e, selectedLabProduct.id, selectedLabProduct.images.length)}
+                        onMouseLeave={() => handle3DSpinMouseLeave(selectedLabProduct.id)}
                       />
+                      
+                      {/* Interactive 3D Guideline overlay */}
+                      <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                        <div className="bg-slate-900/85 backdrop-blur px-4 py-2 rounded-xl border border-white/10 flex items-center gap-2 text-white text-xs font-black shadow-xl">
+                          <span className="animate-spin text-blue-400">🔄</span>
+                          <span>{lang === 'zh' ? '左右滑动鼠标 360° 旋转细节' : 'Move mouse left/right to spin 360°'}</span>
+                        </div>
+                      </div>
                       
                       {/* Technical Backing overlay badges */}
                       <div className="absolute top-4 left-4 flex flex-col gap-2 pointer-events-none">
@@ -1377,7 +1461,7 @@ function App() {
                         {configTrans[lang]?.customizePkg || configTrans.en.customizePkg}
                       </label>
                       <div className="flex flex-wrap gap-2">
-                        {[
+                         {[
                           ['carton', configTrans[lang]?.pkgCarton || configTrans.en.pkgCarton],
                           ['color', configTrans[lang]?.pkgColor || configTrans.en.pkgColor],
                           ['bulk', configTrans[lang]?.pkgBulk || configTrans.en.pkgBulk]
@@ -1396,6 +1480,66 @@ function App() {
                         ))}
                       </div>
                     </div>
+
+                    {/* B2B Procurement Volume & Price Calculator */}
+                    <div className="bg-blue-50/30 border border-blue-100 p-5 rounded-2xl space-y-4 text-left shadow-sm">
+                      <div className="flex justify-between items-center">
+                        <label className="block text-xs font-black tracking-widest text-blue-800 uppercase flex items-center gap-1">
+                          <Sliders size={12} />
+                          <span>{lang === 'zh' ? '5. 预估大宗采购量 (Estimated Volume)' : '5. Estimated Volume'}</span>
+                        </label>
+                        <span className="text-sm font-black text-blue-900 bg-blue-100 border border-blue-200 px-2.5 py-1 rounded-xl">
+                          {procureVolume.toLocaleString()} Pcs
+                        </span>
+                      </div>
+                      <div className="space-y-1">
+                        <input
+                          type="range"
+                          min="1000"
+                          max="50000"
+                          step="1000"
+                          value={procureVolume}
+                          onChange={(e) => setProcureVolume(parseInt(e.target.value))}
+                          className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-800"
+                        />
+                        <div className="flex justify-between text-[10px] font-bold text-slate-400">
+                          <span>1,000 Pcs</span>
+                          <span>10,000 Pcs</span>
+                          <span>25,000 Pcs</span>
+                          <span>50,000+ Pcs</span>
+                        </div>
+                      </div>
+
+                      {/* Interactive computed budget stats */}
+                      {(() => {
+                        const prices = calculateLivePrice();
+                        return (
+                          <div className="grid grid-cols-2 gap-4 pt-2 border-t border-blue-100/50 text-xs">
+                            <div className="space-y-1">
+                              <span className="text-slate-400 font-semibold">{lang === 'zh' ? '阶梯单价 (Unit Price)' : 'Est. Unit Price'}</span>
+                              <div className="flex items-baseline gap-1">
+                                <span className="text-base font-black text-slate-800">${prices.unitPrice}</span>
+                                {parseFloat(prices.discountPercent) > 0 && (
+                                  <span className="text-[10px] font-black text-green-700 bg-green-50 border border-green-100 px-1.5 py-0.5 rounded">
+                                    -{prices.discountPercent}%
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+                            <div className="space-y-1">
+                              <span className="text-slate-400 font-semibold">{lang === 'zh' ? '预估总预算 (Total Budget)' : 'Total Budget'}</span>
+                              <div>
+                                <span className="text-base font-black text-blue-900">${prices.totalCost}</span>
+                                <span className="text-[9px] font-bold text-slate-400 block mt-0.5">
+                                  {procureVolume >= 5000 ? (lang === 'zh' ? '✓ 已享大额批发折扣' : '✓ Bulk discount active') : (lang === 'zh' ? '大宗基础价' : 'Standard B2B price')}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })()}
+                    </div>
+
                   </div>
 
                   {/* B2B Live Technical Specifications Validation Card */}
@@ -1430,27 +1574,40 @@ function App() {
                     </div>
                   </div>
 
-                  {/* Apply specs to RFQ Button */}
-                  <button
-                    onClick={handleApplySpecsToRfq}
-                    className={`w-full py-4.5 rounded-2xl text-base font-extrabold flex items-center justify-center gap-2 shadow-lg transition-all duration-300 transform active:scale-[0.98] ${
-                      rfqApplied
-                        ? 'bg-green-600 hover:bg-green-700 text-white shadow-green-900/10'
-                        : 'bg-blue-800 hover:bg-blue-950 text-white shadow-blue-900/20'
-                    }`}
-                  >
-                    {rfqApplied ? (
-                      <>
-                        <CheckCircle2 size={18} className="stroke-[3]" />
-                        <span>{configTrans[lang]?.btnGenRfqSuccess || configTrans.en.btnGenRfqSuccess}</span>
-                      </>
-                    ) : (
-                      <>
-                        <Send size={18} />
-                        <span>{configTrans[lang]?.btnGenRfq || configTrans.en.btnGenRfq}</span>
-                      </>
-                    )}
-                  </button>
+                  {/* Apply specs to RFQ Dual Buttons (Send RFQ & Add to Compare) */}
+                  <div className="flex gap-3">
+                    <button
+                      onClick={handleApplySpecsToRfq}
+                      className={`flex-1 py-4.5 rounded-2xl text-base font-extrabold flex items-center justify-center gap-2 shadow-lg transition-all duration-300 transform active:scale-[0.98] ${
+                        rfqApplied
+                          ? 'bg-green-600 hover:bg-green-700 text-white shadow-green-900/10'
+                          : 'bg-blue-800 hover:bg-blue-950 text-white shadow-blue-900/20'
+                      }`}
+                    >
+                      {rfqApplied ? (
+                        <>
+                          <CheckCircle2 size={18} className="stroke-[3]" />
+                          <span>{configTrans[lang]?.btnGenRfqSuccess || configTrans.en.btnGenRfqSuccess}</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send size={18} />
+                          <span>{configTrans[lang]?.btnGenRfq || configTrans.en.btnGenRfq}</span>
+                        </>
+                      )}
+                    </button>
+                    <button
+                      onClick={() => handleToggleCompare(selectedLabProduct)}
+                      className={`px-5 py-4.5 rounded-2xl border transition-all duration-300 transform active:scale-[0.98] flex items-center justify-center ${
+                        compareList.find(item => item.id === selectedLabProduct.id)
+                          ? 'bg-slate-800 border-slate-800 text-white shadow-md'
+                          : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:border-slate-300'
+                      }`}
+                      title={lang === 'zh' ? '将该型号加入大宗比对' : 'Add model to comparison'}
+                    >
+                      <GitCompare size={20} className={compareList.find(item => item.id === selectedLabProduct.id) ? "text-blue-300" : "text-slate-500"} />
+                    </button>
+                  </div>
 
                 </div>
 
@@ -1494,14 +1651,24 @@ function App() {
                     data-component="product-card"
                   >
                     <div>
-                      <div className="relative aspect-[4/3] bg-slate-100 border-b border-slate-100 overflow-hidden">
+                      <div className="relative aspect-[4/3] bg-slate-100 border-b border-slate-100 overflow-hidden group/img">
                         {p.images && p.images.length > 0 ? (
                           <>
                             <img 
                               src={p.images[getCarouselIndex(p.id)]} 
                               alt={p.nameMap[lang]} 
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                              className="w-full h-full object-cover transition-all duration-300 transform group-hover/img:scale-105 cursor-ew-resize"
+                              onMouseMove={(e) => handle3DSpinMouseMove(e, p.id, p.images.length)}
+                              onMouseLeave={() => handle3DSpinMouseLeave(p.id)}
                             />
+                            
+                            {/* Interactive 3D Guideline overlay */}
+                            <div className="absolute inset-0 bg-slate-950/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                              <div className="bg-slate-900/85 backdrop-blur px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-1.5 text-white text-[11px] font-bold shadow-md">
+                                <span className="animate-spin text-blue-400 text-xs">🔄</span>
+                                <span>{lang === 'zh' ? '左右滑动 360° 旋转' : 'Slide to Spin'}</span>
+                              </div>
+                            </div>
                             
                             {/* Previous Button */}
                             <button
@@ -1576,16 +1743,27 @@ function App() {
                       </div>
                     </div>
 
-                    <div className="p-6 pt-0">
+                    <div className="p-6 pt-0 flex gap-2">
                       <button 
                         onClick={() => {
                           setSelectedProduct(p);
                           setRfqMsg(`RFQ for model: ${p.model}. Please send us quotation and technical specsheet.`);
                         }}
-                        className="w-full bg-slate-900 hover:bg-blue-800 text-white py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-1.5 transition-all"
+                        className="flex-1 bg-slate-900 hover:bg-blue-800 text-white py-3 rounded-xl text-sm font-bold flex items-center justify-center gap-1 transition-all"
                       >
                         <span>{t.btnDetail}</span>
                         <ChevronRight size={14} />
+                      </button>
+                      <button
+                        onClick={() => handleToggleCompare(p)}
+                        className={`px-3 py-3 rounded-xl text-sm font-bold border transition-all flex items-center justify-center gap-1 ${
+                          compareList.find(item => item.id === p.id)
+                            ? 'bg-blue-800 border-blue-800 text-white shadow-md'
+                            : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-100'
+                        }`}
+                        title={lang === 'zh' ? '加入规格对比' : 'Add to Compare'}
+                      >
+                        <GitCompare size={14} className={compareList.find(item => item.id === p.id) ? "text-blue-200 animate-pulse" : "text-slate-500"} />
                       </button>
                     </div>
                   </article>
@@ -1978,6 +2156,239 @@ function App() {
                 Fujian Xialong / Xiahua Precision Mold Showroom
               </span>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* FIXED BOTTOM COMPARISON CONTROL BAR */}
+      {compareList.length > 0 && (
+        <div className="fixed bottom-0 inset-x-0 z-40 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 py-4 px-6 text-white flex flex-col sm:flex-row justify-between items-center gap-4 shadow-2xl animate-slide-in">
+          <div className="flex flex-wrap items-center gap-4">
+            <span className="text-xs font-black tracking-widest text-slate-400 uppercase">
+              {lang === 'zh' ? '大宗技术规格对比栏' : 'SPECIFICATIONS COMPARE BAR'}
+            </span>
+            <div className="flex flex-wrap gap-2">
+              {compareList.map(item => (
+                <div key={item.id} className="relative bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-xl flex items-center gap-2">
+                  <img src={item.img} alt={item.model} className="w-5 h-5 object-cover rounded-md" />
+                  <span className="text-xs font-extrabold text-white">{item.model}</span>
+                  <button 
+                    onClick={() => handleToggleCompare(item)}
+                    className="text-slate-400 hover:text-white leading-none text-xs font-bold font-mono pl-1"
+                  >
+                    ×
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <button
+              onClick={() => setCompareList([])}
+              className="px-4 py-2 rounded-xl text-xs font-bold text-slate-400 hover:text-white hover:bg-slate-800 transition-all"
+            >
+              {lang === 'zh' ? '清空' : 'Clear All'}
+            </button>
+            <button
+              onClick={() => setIsCompareOpen(true)}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl text-xs font-black flex items-center gap-1.5 shadow-md shadow-blue-900/30 transition-all"
+            >
+              <GitCompare size={14} />
+              <span>{lang === 'zh' ? '开始对比规格' : 'Compare Specifications Now'}</span>
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* MULTI-PRODUCT SPECIFICATION COMPARISON MODAL */}
+      {isCompareOpen && (
+        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+          <div className="bg-white w-full max-w-5xl rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col justify-between max-h-[90vh] animate-slide-in">
+            
+            {/* Header */}
+            <div className="bg-slate-50 px-6 sm:px-8 py-5 border-b border-slate-200 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <div className="bg-blue-800 text-white p-2 rounded-xl">
+                  <GitCompare size={20} />
+                </div>
+                <div className="text-left">
+                  <h3 className="font-extrabold text-slate-900 text-lg leading-none">{lang === 'zh' ? '夏龙精密卫浴 · 大宗技术规格对比大厅' : 'B2B Technical Specifications Comparison Hall'}</h3>
+                  <span className="text-xs font-bold text-slate-500 uppercase tracking-wider mt-1 block">Fujian Xialong / Xiahua Faucet Factory</span>
+                </div>
+              </div>
+              <button 
+                onClick={() => setIsCompareOpen(false)}
+                className="text-slate-400 hover:text-slate-600 p-2 rounded-xl hover:bg-slate-100 transition-colors"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Comparison Matrix Table */}
+            <div className="p-6 sm:p-8 overflow-x-auto overflow-y-auto max-h-[70vh]">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-slate-200">
+                    <th className="py-4 px-3 text-xs font-black text-slate-400 uppercase tracking-widest min-w-[160px]">{lang === 'zh' ? '技术指标 / 维度' : 'Technical Metric'}</th>
+                    {compareList.map(item => (
+                      <th key={item.id} className="py-4 px-4 text-center min-w-[200px] border-l border-slate-100 bg-slate-50/30">
+                        <img src={item.img} alt={item.model} className="w-16 h-12 object-cover rounded-lg mx-auto shadow-sm border border-slate-200" />
+                        <span className="block text-xs font-black text-blue-800 uppercase tracking-wider mt-2 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded w-fit mx-auto">{item.model}</span>
+                        <h4 className="font-black text-slate-900 text-sm mt-1 line-clamp-1">{item.nameMap[lang]}</h4>
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 text-sm">
+                  {/* Category */}
+                  <tr>
+                    <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '零配件大类' : 'Product Category'}</td>
+                    {compareList.map(item => (
+                      <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100 font-semibold text-slate-800">
+                        {item.category === 'handles' ? (lang === 'zh' ? '水龙头精密手柄' : 'ABS Faucet Handle') :
+                         item.category === 'sliders' ? (lang === 'zh' ? '淋浴滑套/管件' : 'Shower Slider/Sleeve') :
+                         (lang === 'zh' ? '铜阀芯/五金配件' : 'Bathroom Hardware')}
+                      </td>
+                    ))}
+                  </tr>
+
+                  {/* Material */}
+                  <tr>
+                    <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '核心主材材质' : 'Core Material'}</td>
+                    {compareList.map(item => (
+                      <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100 font-semibold text-slate-700">
+                        {item.materialMap[lang]}
+                      </td>
+                    ))}
+                  </tr>
+
+                  {/* Finish */}
+                  <tr>
+                    <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '表面镀层工艺' : 'Plating & Finish'}</td>
+                    {compareList.map(item => (
+                      <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100 text-slate-600 font-medium leading-relaxed">
+                        {item.finishMap[lang]}
+                      </td>
+                    ))}
+                  </tr>
+
+                  {/* Weight Level */}
+                  <tr>
+                    <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '扎实质感与克重' : 'Weight Profile'}</td>
+                    {compareList.map(item => {
+                      const maxWeight = item.model === 'XH-FC-03' ? '99g Heavy Duty' : item.model === 'XH-BRFC-303' ? '45g Mid Spec' : '35g Ultra-Light';
+                      const weightPercent = item.model === 'XH-FC-03' ? 'w-full bg-blue-800' : item.model === 'XH-BRFC-303' ? 'w-1/2 bg-blue-600' : 'w-1/3 bg-blue-400';
+                      return (
+                        <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100 space-y-1.5">
+                          <span className="font-extrabold text-slate-800 text-xs">{maxWeight}</span>
+                          <div className="w-24 h-1.5 bg-slate-100 rounded-full overflow-hidden mx-auto">
+                            <div className={`h-full rounded-full ${weightPercent}`} />
+                          </div>
+                        </td>
+                      );
+                    })}
+                  </tr>
+
+                  {/* Anti-Corrosion (Salt spray performance) */}
+                  <tr>
+                    <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '耐酸雾腐蚀指数' : 'Corrosion Resistance'}</td>
+                    {compareList.map(item => {
+                      const rating = item.model === 'XH-FC-03' || item.model === 'XH-ABS-101' ? '⭐⭐★★★ (48h 酸性雾测试)' : '⭐⭐⭐⭐★ (24h 盐雾测试)';
+                      return (
+                        <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100 font-bold text-xs text-slate-700">
+                          {rating}
+                        </td>
+                      );
+                    })}
+                  </tr>
+
+                  {/* Durability Rating */}
+                  <tr>
+                    <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '开合摩擦耐用寿命' : 'Wear Durability'}</td>
+                    {compareList.map(item => {
+                      const cycle = item.category === 'sliders' ? 'SGS 100,000次无损' : '150,000次抗咬合';
+                      const color = item.category === 'sliders' ? 'text-green-700 bg-green-50 border-green-100' : 'text-blue-700 bg-blue-50 border-blue-100';
+                      return (
+                        <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100">
+                          <span className={`inline-block px-2.5 py-1 rounded-md text-[11px] font-black border ${color}`}>{cycle}</span>
+                        </td>
+                      );
+                    })}
+                  </tr>
+
+                  {/* Intellectual Property */}
+                  <tr>
+                    <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '国家合规与专利保护' : 'Patent & Compliance'}</td>
+                    {compareList.map(item => (
+                      <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100 text-xs font-semibold text-slate-600 leading-snug">
+                        {item.certMap[lang]}
+                      </td>
+                    ))}
+                  </tr>
+
+                  {/* Lead Time */}
+                  <tr>
+                    <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '开模制样周期' : 'Lead Time'}</td>
+                    {compareList.map(item => (
+                      <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100 font-bold text-xs text-slate-700">
+                        {item.category === 'hardware' ? (lang === 'zh' ? 'CNC模具 48小时出样' : 'CNC Tooling 48h') : (lang === 'zh' ? '极速注塑 24小时样板' : 'Rapid Molding 24h')}
+                      </td>
+                    ))}
+                  </tr>
+
+                  {/* Best selling points */}
+                  <tr>
+                    <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '大宗代工核心卖点' : 'B2B Core Advantage'}</td>
+                    {compareList.map(item => {
+                      const bullet = 
+                        item.model === 'XH-ABS-101' ? (lang === 'zh' ? '首创国家实用新型专利，比重加厚30%，耐酸电镀镜面光滑' : 'National patent-grade thick wall, class-9 flawless chrome finish') :
+                        item.model === 'XH-SHSL-202' ? (lang === 'zh' ? '自锁式重摩擦阻尼滑块，高挂载花洒完美防滑，移动丝滑' : 'Self-locking high friction structure, zero slip on 1.5kg heavy shower') :
+                        item.model === 'XH-BRFC-303' ? (lang === 'zh' ? '高精度双色防滑滚花，指纹油脂不留痕，顶级内接精密铜齿' : 'knurled texture anti-slip, copper Splines gear anti-bite splines') :
+                        (lang === 'zh' ? '国标H59-1环保黄铜精密重力浇铸，耐极寒防爆裂，称重防伪' : 'Solid H59 cast brass, 99g strict precision balance weighing control');
+                      return (
+                        <td key={item.id} className="py-4 px-4 text-left border-l border-slate-100 text-xs font-semibold text-slate-500 leading-relaxed max-w-[240px]">
+                          • {bullet}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Footer with RFQ Trigger */}
+            <div className="bg-slate-50 px-6 sm:px-8 py-5 border-t border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-4">
+              <span className="text-xs font-bold text-slate-400 text-left sm:max-w-md">
+                {lang === 'zh' ? '*以上数据由福建夏龙实验室依照 ISO9001:2015 生产测试体系核准，实物带有官方防伪出厂标签。' : '* All specifications verified under Xiahuafaucet ISO9001:2015 QC flow.'}
+              </span>
+              <button
+                onClick={() => {
+                  setIsCompareOpen(false);
+                  // Generate complex comparing RFQ
+                  const modelsStr = compareList.map(item => item.model).join(', ');
+                  let comparingMsg = "";
+                  if (lang === 'zh') {
+                    comparingMsg = `您好，我需要采购对比的几款卫浴配件：【${modelsStr}】。\n请外贸经理尽快将这几款配件的技术规格表 (Spec Sheet) 和相应的阶梯批发价格单发送到我的邮箱，并提供样品样件（Sample Kits）以便我们在实验室进行首样验证。谢谢！`;
+                  } else {
+                    comparingMsg = `Hello, I am interested in comparing the following models for our bulk procurement: 【${modelsStr}】.\nPlease have an export manager email us the technical drawings, detailed tier wholesale price list, and coordinate sending a Sample Kit for our incoming quality check. Thank you!`;
+                  }
+                  setRfqMsg(comparingMsg);
+                  setRfqCategory('Bathroom Hardware');
+                  
+                  setTimeout(() => {
+                    const contactSec = document.getElementById('contact');
+                    if (contactSec) {
+                      contactSec.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }, 200);
+                }}
+                className="bg-blue-800 hover:bg-blue-900 text-white px-6 py-3.5 rounded-xl text-sm font-extrabold flex items-center justify-center gap-2 shadow-md"
+              >
+                <Send size={15} />
+                <span>{lang === 'zh' ? '针对对比型号提交联合采购申请' : 'Inquire About Compared Models'}</span>
+              </button>
+            </div>
+
           </div>
         </div>
       )}
