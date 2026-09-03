@@ -1,0 +1,84 @@
+[
+  {
+    "answerText": "Could you please clarify what specific brand name or topic you are looking for information on? Once you provide the name or context, I would be happy to give you a detailed overview along with relevant web sources and links!",
+    "citations": [],
+    "country": "US",
+    "index": null,
+    "linksAttached": [],
+    "prompt": "brand_name Please provide relevant web links or sources for your answer.",
+    "url": "https://gemini.google.com/app/c7727af95b52d831",
+    "webSearchQuery": null
+  },
+  {
+    "answerText": "It looks like your query was very brief or open-ended, essentially asking for links or sources. If you have a specific topic, question, or research area in mind, please share it so I can provide a detailed answer tailored to your needs, complete with reliable web links and references.",
+    "citations": [],
+    "country": "US",
+    "index": null,
+    "linksAttached": [],
+    "prompt": "prompts Please provide relevant web links or sources for your answer.",
+    "url": "https://gemini.google.com/app/2e1bfb70c4ec4ea9",
+    "webSearchQuery": null
+  },
+  {
+    "answerText": "A brand domain (often referred to as the second-level domain or SLD) is the core, unique identifier of a website located between the subdomain and the top-level domain (TLD). For example, in the URL [www.website.com](https://www.website.com) : Subdomain: www Brand Domain: website Top-Level Domain (TLD): com Key Concepts & Uses Brand Consistency & Trust: Using your brand domain for tracking links, email servers, and web hosting ensures customers recognize your business immediately, reducing friction and avoiding spam filters [1.1.1, 1.1.7]. Attribution & Deep Linking: Platforms like AppsFlyer allow businesses to use custom branded domains (e.g., click.yourbrand.com ) instead of generic short links to drive higher click-through rates [1.1.1]. Content Management: Marketing and CMS platforms (such as HubSpot) utilize brand domains to govern how websites, blogs, and landing pages are hosted across primary and secondary subdomains [1.1.3, 1.1.9]. Relevant Resources & Documentation For details on mapping and customizing domains for tracking and campaigns, check out the AppsFlyer Branded Domains Guide [1.1.1]. To learn how to manage, connect, or replace brand domains across multi-channel web hosting, visit the HubSpot Domains and URLs Knowledge Base [1.1.3]. If you are looking for help with a specific platform setup or DNS configuration regarding your brand domain, please let me know what tools you are using!",
+    "citations": [],
+    "country": "US",
+    "index": null,
+    "linksAttached": [
+      {
+        "position": 1,
+        "text": "AppsFlyer Branded Domains Guide",
+        "url": "https://support.appsflyer.com/hc/en-us/articles/360002329137-Brand-OneLink-with-your-domain"
+      },
+      {
+        "position": 2,
+        "text": "HubSpot Domains and URLs Knowledge Base",
+        "url": "https://knowledge.hubspot.com/domains-and-urls/connect-additional-brand-domains"
+      }
+    ],
+    "prompt": "brand_domain Please provide relevant web links or sources for your answer.",
+    "url": "https://gemini.google.com/app/976b3410a6f2d202",
+    "webSearchQuery": null
+  },
+  {
+    "answerText": "Answer engines are AI-powered systems designed to interpret natural language queries and synthesize direct, consolidated answers rather than simply returning a ranked list of blue links ( Conductor , HubSpot ). Key Resources and Further Reading Conductor: Understanding Answer Engines An overview of how answer engines differ from traditional search engines, covering their reliance on AI, natural language processing, and deep data sources. HubSpot: Answer Engine Definition & FAQ Explains how answer engines process intent to compile multi-source responses and why brand visibility and external mentions matter in AI search. Vested Marketing: How Do Answer Engines Choose Sources? A breakdown of the ranking and selection signals used by modern platforms, including relevance, EEAT (Experience, Expertise, Authoritativeness, and Trustworthiness), and structured data schema. Fast Company: What is an Answer Engine? An exploration of how conversational models and tools like Perplexity and ChatGPT function as answer engines compared to traditional search infrastructure.",
+    "citations": [],
+    "country": "US",
+    "index": null,
+    "linksAttached": [
+      {
+        "position": 1,
+        "text": "Conductor",
+        "url": "https://www.conductor.com/academy/answer-engine/"
+      },
+      {
+        "position": 2,
+        "text": "HubSpot",
+        "url": "https://www.hubspot.com/glossary/answer-engine"
+      },
+      {
+        "position": 3,
+        "text": "Conductor: Understanding Answer Engines",
+        "url": "https://www.conductor.com/academy/answer-engine/"
+      },
+      {
+        "position": 4,
+        "text": "HubSpot: Answer Engine Definition & FAQ",
+        "url": "https://www.hubspot.com/glossary/answer-engine"
+      },
+      {
+        "position": 5,
+        "text": "Vested Marketing: How Do Answer Engines Choose Sources?",
+        "url": "https://www.vested.marketing/blog/how-do-answer-engines-choose-sources"
+      },
+      {
+        "position": 6,
+        "text": "Fast Company: What is an Answer Engine?",
+        "url": "https://www.fastcompany.com/91152217/what-is-an-answer-engine-search-engine-chatgpt-google-wolframalpha"
+      }
+    ],
+    "prompt": "engine Please provide relevant web links or sources for your answer.",
+    "url": "https://gemini.google.com/app/debe689e3ea046c5",
+    "webSearchQuery": null
+  }
+]

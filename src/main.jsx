@@ -52,8 +52,8 @@ const trans = {
     adv2Desc: "Our designs are backed by multiple Chinese national patents (e.g., ZL 2016 2 0363475.1), assuring bulletproof intellectual property safety.",
     adv3Title: "100% Quality Assurance",
     adv3Desc: "Advanced injection molders and pressure benches coupled with strict manual testing prevent retail complaints entirely.",
-    adv4Title: "24-Hour Rapid Prototyping",
-    adv4Desc: "Direct in-house mold tooling allows lightning-fast sampling and shipping to keep your supply chain running smoothly.",
+    adv4Title: "24-Hour Drawing & Design Support",
+    adv4Desc: "Our in-house engineering team delivers detailed CAD/3D drawings and tooling proposals within 24 hours, so you can validate the design before mold production begins.",
     catalogTitle: "Core Product Catalog",
     catalogLede: "Explore our export-tested products. Click 'View Specifications' for technical spec sheets, patents, and wholesale volume pricing.",
     catAll: "All Accessories",
@@ -128,8 +128,8 @@ const trans = {
     adv2Desc: "Наши проекты защищены многочисленными национальными патентами Китая (например, ZL 2016 2 0363475.1), обеспечивая безопасность вашей интеллектуальной собственности.",
     adv3Title: "100% гарантия качества",
     adv3Desc: "Современные термопластавтоматы, испытательные стенды высокого давления и ручной контроль качества полностью исключают протечки.",
-    adv4Title: "Разработка прототипа за 24 часа",
-    adv4Desc: "Собственный цех пресс-форм позволяет быстро создавать прототипы и отправлять образцы для бесперебойной работы вашей сети поставок.",
+    adv4Title: "Чертежи и дизайн за 24 часа",
+    adv4Desc: "Наша инженерная команда подготовит подробные CAD/3D-чертежи и предложение по оснастке в течение 24 часов — вы утверждаете дизайн до начала производства пресс-формы.",
     catalogTitle: "Основной каталог продукции",
     catalogLede: "Изучите нашу продукцию, проверенную экспортом. Нажмите 'Посмотреть спецификации' для получения оптовых цен и патентов.",
     catAll: "Все аксессуары",
@@ -204,8 +204,8 @@ const trans = {
     adv2Desc: "Nossos designs são respaldados por múltiplas patentes nacionais chinesas (ex: ZL 2016 2 0363475.1), garantindo segurança jurídica intelectual absoluta.",
     adv3Title: "Controle de Qualidade 100% Rigoroso",
     adv3Desc: "Máquinas injetoras de precisão e testes hidráulicos avançados eliminam 100% de quaisquer reclamações de vazamento por parte dos consumidores.",
-    adv4Title: "Prototipagem Rápida em 24 Horas",
-    adv4Desc: "Ferramentaria interna de moldes própria garante desenvolvimento de amostras rápido para otimizar sua linha de importação.",
+    adv4Title: "Desenhos Técnicos em 24 Horas",
+    adv4Desc: "Nossa equipe de engenharia entrega desenhos CAD/3D detalhados e propostas de ferramentaria em até 24 horas, permitindo validar o projeto antes da produção do molde.",
     catalogTitle: "Catálogo de Produtos",
     catalogLede: "Explore nossos produtos certificados para exportação. Clique em 'Ver Especificações' para ver dados técnicos e patentes.",
     catAll: "Todos os Acessórios",
@@ -280,8 +280,8 @@ const trans = {
     adv2Desc: "हमारे डिजाइन कई चीनी राष्ट्रीय पेटेंट (उदा. ZL 2016 2 0363475.1) द्वारा समर्थित हैं, जो आपकी बौद्धिक संपदा की सुरक्षा सुनिश्चित करते हैं।",
     adv3Title: "100% गुणवत्ता आश्वासन",
     adv3Desc: "उन्नत इंजेक्शन मोल्डिंग मशीनें और कड़े परीक्षण दबाव बेंच रिसाव की संभावना को पूरी तरह से समाप्त करते हैं।",
-    adv4Title: "24-घंटे रैपिड प्रोटोटाइप",
-    adv4Desc: "इन-हाउस मोल्ड डिजाइन और टूलिंग आपूर्ति श्रृंखला को सुचारू रखने के लिए त्वरित नमूना प्रेषण की अनुमति देती है।",
+    adv4Title: "24 घंटे में ड्रॉइंग और डिज़ाइन",
+    adv4Desc: "हमारी इंजीनियरिंग टीम 24 घंटों के भीतर विस्तृत CAD/3D ड्रॉइंग और टूलिंग प्रस्ताव देती है, ताकि मोल्ड उत्पादन से पहले आप डिज़ाइन मंज़ूर कर सकें।",
     catalogTitle: "मुख्य उत्पाद सूची (Catalog)",
     catalogLede: "हमारे निर्यात-परीक्षणित उत्पादों का अन्वेषण करें। थोक मूल्य निर्धारण और पेटेंट विनिर्देशों के लिए क्लिक करें।",
     catAll: "सभी सहायक उपकरण",
@@ -356,8 +356,8 @@ const trans = {
     adv2Desc: "自主研发成果均已获得中华人民共和国国家知识产权局实用新型专利授权（如 ZL 2016 2 0363475.1 等），采购出海无侵权风险。",
     adv3Title: "100% 气密与水压双重测试",
     adv3Desc: "拥有全自动高频注塑机组、气密测试台，严格执行 ISO9001 质量体系，从源头确保产品零瑕疵出厂，免除终端索赔风险。",
-    adv4Title: "24 小时开模与极速样板",
-    adv4Desc: "自有磨具设计与数控精密雕刻车间。调整或开发新磨具最快仅需 24 小时出样，大幅缩减您的工程及开发周期。",
+    adv4Title: "24 小时快速出图与模具设计",
+    adv4Desc: "自有模具设计团队与精密数控车间。最快 24 小时内即可交付专业 CAD/3D 模具设计图纸与开模可行性方案；图纸确认后再进入模具制造与打样，大幅缩短工程开发周期。",
     catalogTitle: "核心卫浴配件产品大类",
     catalogLede: "已通过国际工程与零售市场严格验证的核心零配件。点击“查看技术规格”获取专属规格书与专利批文说明。",
     catAll: "全部卫浴零配件",
@@ -557,11 +557,11 @@ const faqs = [
       zh: "工厂支持 OEM/ODM 定制开模服务吗？"
     },
     aMap: {
-      en: "Yes. Custom B2B tooling is our core specialty. We have an in-house mold-making department that can adjust, modify, or create brand-new molds from your engineering drawings or physical samples within 24 hours.",
-      ru: "Да. Изготовление пресс-форм под заказ — наша главная специализация. Собственный цех пресс-форм позволяет модифицировать или проектировать новые формы по вашим чертежам за 24 часа.",
-      pt: "Sim. O desenvolvimento de ferramentaria própria é a nossa especialidade. Nossa equipe interna projeta e otimiza novos moldes de acordo com seus desenhos técnicos em tempo recorde.",
-      hi: "हाँ। कस्टम मोल्डिंग हमारी मुख्य विशेषता है। हम आपके चित्र के अनुसार 24 घंटे के भीतर मोल्ड बना सकते हैं।",
-      zh: "支持。大宗定制开模是我们的核心业务。工厂建有独立的模具开发与精密数控CNC车间。能够根据您的 CAD/3D 图纸或实物样板，最快在 24 小时内完成出样及开模修正。"
+      en: "Yes. Custom B2B tooling is our core specialty. Our in-house engineering team will deliver detailed CAD/3D design drawings and a tooling feasibility proposal within 24 hours of receiving your requirements. Actual mold making and sampling start right after drawing confirmation, following a transparent production schedule.",
+      ru: "Да. Изготовление пресс-форм под заказ — наша главная специализация. В течение 24 часов после получения ваших требований инженерный отдел подготовит подробные CAD/3D-чертежи и предложение по оснастке. Производство пресс-формы и образцов начинается после утверждения чертежей по согласованному графику.",
+      pt: "Sim. O desenvolvimento de ferramentaria própria é a nossa especialidade. Nossa equipe de engenharia entrega desenhos CAD/3D detalhados e uma proposta de ferramentaria em até 24 horas. A fabricação do molde e as amostras começam após a aprovação dos desenhos, dentro de um cronograma transparente.",
+      hi: "हाँ। कस्टम मोल्डिंग हमारी मुख्य विशेषता है। हमारी इंजीनियरिंग टीम 24 घंटों के भीतर विस्तृत CAD/3D ड्रॉइंग और टूलिंग प्रस्ताव देगी। ड्रॉइंग की मंज़ूरी के बाद ही मोल्ड निर्माण और सैंपलिंग शुरू होती है।",
+      zh: "支持。大宗定制开模是我们的核心业务。工厂建有独立的模具开发与精密数控 CNC 车间。收到您的需求后，最快 24 小时内即可交付专业的 CAD/3D 模具设计图纸与开模可行性方案；图纸确认后，再按透明排期进入模具制造与打样环节。"
     }
   }
 ];
@@ -756,7 +756,7 @@ function App() {
     console.log(`Company: ${rfqCompany}`);
     console.log(`Category: ${rfqCategory}`);
     console.log(`Message: ${rfqMsg}`);
-    console.log(`Submitting to: 375039137@qq.com`);
+    console.log(`Submitting to: 375039134@qq.com`);
     console.log("==========================");
 
     setIsSubmitted(true);
@@ -767,7 +767,7 @@ function App() {
      console.log(`=== SPECIAL MODAL RFQ SUBMITTED FOR MODEL: ${productModel} ===`);
      console.log(`Name: ${rfqName || "Prospect Buyer"}`);
      console.log(`Email: ${rfqEmail || "Pending"}`);
-     console.log(`Sending to target email: 375039137@qq.com`);
+     console.log(`Sending to target email: 375039134@qq.com`);
      
      setIsSubmitted(true);
      setSelectedProduct(null);
@@ -1554,7 +1554,7 @@ function App() {
                       <span className="text-slate-400">{configTrans[lang]?.leadTime || configTrans.en.leadTime}</span>
                       <span className="text-slate-800 font-extrabold flex items-center gap-1.5">
                         <Zap size={14} className="text-yellow-600 fill-yellow-600" />
-                        <span>{lang === 'zh' ? '极速 24 小时 3D 制样' : 'Ultra-fast 24h Prototyping'}</span>
+                        <span>{lang === 'zh' ? '24 小时内交付 3D 设计图纸' : '24h CAD Drawing Delivery'}</span>
                       </span>
                     </div>
                     <div className="flex justify-between items-center pb-2.5 border-b border-slate-200/60">
@@ -2023,7 +2023,7 @@ function App() {
             <div className="md:col-span-4 space-y-2.5 text-left md:text-right">
               <div className="flex items-center md:justify-end gap-2 text-sm text-slate-300 font-bold">
                 <Mail size={16} className="text-blue-400 shrink-0" />
-                <a href="mailto:375039137@qq.com" className="hover:text-blue-400 transition-colors">375039137@qq.com</a>
+                <a href="mailto:375039134@qq.com" className="hover:text-blue-400 transition-colors">375039134@qq.com</a>
               </div>
               <div className="flex items-center md:justify-end gap-2 text-sm text-slate-300 font-bold">
                 <Phone size={16} className="text-green-400 shrink-0" />
@@ -2331,7 +2331,7 @@ function App() {
                     <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '开模制样周期' : 'Lead Time'}</td>
                     {compareList.map(item => (
                       <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100 font-bold text-xs text-slate-700">
-                        {item.category === 'hardware' ? (lang === 'zh' ? 'CNC模具 48小时出样' : 'CNC Tooling 48h') : (lang === 'zh' ? '极速注塑 24小时样板' : 'Rapid Molding 24h')}
+                        {item.category === 'hardware' ? (lang === 'zh' ? 'CNC 快速打样 48 小时' : 'CNC Prototyping 48h') : (lang === 'zh' ? '注塑开模 24 小时出图' : 'Injection Mold Drawing 24h')}
                       </td>
                     ))}
                   </tr>

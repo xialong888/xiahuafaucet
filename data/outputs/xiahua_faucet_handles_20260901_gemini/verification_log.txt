@@ -1,0 +1,14 @@
+GEO Analyzer Verification Log
+Total records: 30
+
+⚠️  1 brand(s) at 0% — running per-brand verification: LONGGEM
+   Fields in data: ['answerText', 'citations', 'country', 'index', 'linksAttached', 'prompt', 'url', 'webSearchQuery']
+   Sample answerText (first 200 chars): Preventing chrome plating from peeling on ABS (Acrylonitrile Butadiene Styrene) faucet handles involves understanding why it happens—typically caused by poor initial manufacturing adhesion, thermal st
+   ○ LONGGEM: still 0/30 (tried: LONGGEM) — likely a genuine zero
+❌ No additional mentions found — the zeros look genuine.
+
+Final results:
+  XiahuaFaucetHandles: 2 mentions (6.67%)
+  LONGGEM: 0 mentions (0.00%)
+  VIGA: 5 mentions (16.67%)
+  Lankko: 1 mentions (3.33%)
