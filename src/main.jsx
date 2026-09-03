@@ -441,11 +441,11 @@ const products = [
     id: 2,
     category: "sliders",
     nameMap: {
-      en: "Adjustable ABS Shower Slide Sleeves & Rails",
-      ru: "Регулируемый держатель душевой лейки на штангу",
-      pt: "Suporte Deslizante de Chuveiro Ajustável em ABS",
-      hi: "समायोज्य एबीएस शावर रेल स्लाइड आस्तीन",
-      zh: "高顺滑自锁式 ABS 升降花洒滑套滑块配件"
+      en: "Quick-Install Shower Head Socket",
+      ru: "Держатель лейки с быстрой установкой",
+      pt: "Soquete de Chuveiro de Instalação Rápida",
+      hi: "क्विक-इंस्टॉल शاور हेड सॉकेट",
+      zh: "快捷安装淋浴花洒插座"
     },
     model: "XH-SHSL-202",
     materialMap: { en: "Reinforced ABS + Built-in Friction Pads", ru: "Армированный ABS с силиконовой прокладкой", pt: "ABS Reforçado + Pastilha de Fricção", hi: "प्रबलित एबीएस + घर्षण पैड", zh: "高阻尼防磨韧性 ABS + 内置高阻尼耐老化硅胶片" },
@@ -590,7 +590,7 @@ const configTrans = {
     finGold: "Vacuum Ion PVD Brushed Gold",
     spec15: "Standard 15-Teeth Spline Axis (Ø 7.6mm)",
     spec20: "European 20-Teeth Spline Axis (Ø 8.2mm)",
-    specSlider: "Universal Friction Slider Sleeve (Ø 22-25mm)",
+    specSlider: "Quick-Install Shower Head Socket (Ø 22-25mm)",
     specCustom: "Custom Drawing / Non-standard Spec",
     pkgColor: "OEM Customized High-End Color Box",
     pkgBulk: "Neutral Bubble Polybag Industrial Pack",
@@ -618,7 +618,7 @@ const configTrans = {
     finGold: "Вакуумное напыление PVD-золото",
     spec15: "Стандартный 15-зубчатый вал (Ø 7,6 мм)",
     spec20: "Европейский 20-зубчатый вал (Ø 8,2 мм)",
-    specSlider: "Универсальный держатель лейки (Ø 22-25 мм)",
+    specSlider: "Быстросъемный держатель лейки (Ø 22-25 мм)",
     specCustom: "Чертеж / Нестандартная спецификация",
     pkgColor: "Фирменная цветная коробка OEM",
     pkgBulk: "Промышленная воздушно-пузырьковая пленка",
@@ -646,7 +646,7 @@ const configTrans = {
     finGold: "PVD Escovado a Vácuo de Alta Performance",
     spec15: "Eixo de Estria Padrão de 15 Dentes (Ø 7.6mm)",
     spec20: "Eixo de Estria Europeu de 20 Dentes (Ø 8.2mm)",
-    specSlider: "Suporte Deslizador com Dupla Fricção (Ø 22-25mm)",
+    specSlider: "Soquete de Chuveiro de Instalação Rápida (Ø 22-25mm)",
     specCustom: "Desenho Técnico / Especificação Não-padrão",
     pkgColor: "Caixa Colorida de Alta Qualidade OEM",
     pkgBulk: "Embalagem Plástico Bolha Industrial Neutro",
@@ -674,7 +674,7 @@ const configTrans = {
     finGold: "PVD ब्रश गोल्ड",
     spec15: "15-दांतेदार स्प्लिन (7.6 मिमी)",
     spec20: "20-दांतेदार स्प्लिन (8.2 मिमी)",
-    specSlider: "यूनिवर्सल स्लाइडर (22-25 मिमी)",
+    specSlider: "क्विक-इंस्टॉल शاور हेड सॉकेट (22-25 मिमी)",
     specCustom: "कस्टम विनिर्देश",
     pkgColor: "ब्रांड रंग बॉक्स",
     pkgBulk: "तटस्थ बुलबुला पॉलीबैग",
@@ -702,7 +702,7 @@ const configTrans = {
     finGold: "物理真空气相沉积 (PVD) 真空拉丝金",
     spec15: "国标标准 15 齿精密花键轴 (Ø 7.6mm)",
     spec20: "欧标标准 20 齿精密花键轴 (Ø 8.2mm)",
-    specSlider: "标准自锁重载双阻尼花洒滑套 (Ø 22-25mm 淋浴管)",
+    specSlider: "快捷安装淋浴花洒插座 (适配 Ø 22-25mm 淋浴管)",
     specCustom: "非标开模定制 (提供图纸/实物样件)",
     pkgColor: "采购商专属贴牌高档加强型五层彩盒",
     pkgBulk: "大宗工业中性厚气泡袋双层减震安全袋装",
@@ -1127,12 +1127,12 @@ function App() {
               <div className="relative mx-auto max-w-[420px] lg:max-w-none rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 p-3">
                 <img 
                   src="/assets/images/hero-slider.jpg" 
-                  alt="Premium chrome shower slider sleeve with adjustable friction" 
+                  alt="Quick-Install Shower Head Socket with adjustable friction" 
                   className="w-full h-[380px] object-cover rounded-2xl grayscale-[5%] brightness-95"
                 />
                 <div className="absolute inset-x-3 bottom-3 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent p-5 rounded-2xl flex flex-col justify-end text-left">
                   <span className="text-xs font-extrabold text-blue-400 uppercase tracking-widest">{t.specModel}: XH-SHSL-202</span>
-                  <h3 className="text-base sm:text-lg font-bold text-white mt-1">Double-Friction Adjustable Shower Slider</h3>
+                  <h3 className="text-base sm:text-lg font-bold text-white mt-1">{lang === 'zh' ? '快捷安装淋浴花洒插座' : 'Quick-Install Shower Head Socket'}</h3>
                 </div>
               </div>
             </div>
@@ -2246,7 +2246,7 @@ function App() {
                     {compareList.map(item => (
                       <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100 font-semibold text-slate-800">
                         {item.category === 'handles' ? (lang === 'zh' ? '水龙头精密手柄' : 'ABS Faucet Handle') :
-                         item.category === 'sliders' ? (lang === 'zh' ? '淋浴滑套/管件' : 'Shower Slider/Sleeve') :
+                         item.category === 'sliders' ? (lang === 'zh' ? '淋浴花洒插座' : 'Shower Head Socket') :
                          (lang === 'zh' ? '铜阀芯/五金配件' : 'Bathroom Hardware')}
                       </td>
                     ))}
@@ -2331,7 +2331,7 @@ function App() {
                     <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '开模制样周期' : 'Lead Time'}</td>
                     {compareList.map(item => (
                       <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100 font-bold text-xs text-slate-700">
-                        {item.category === 'hardware' ? (lang === 'zh' ? 'CNC 快速打样 48 小时' : 'CNC Prototyping 48h') : (lang === 'zh' ? '注塑开模 24 小时出图' : 'Injection Mold Drawing 24h')}
+                        {item.category === 'hardware' ? (lang === 'zh' ? 'CNC 快速打样 48 小时' : 'CNC Prototyping 48h') : (item.category === 'sliders' ? (lang === 'zh' ? '快捷免工具安装，24 小时出图' : 'Tool-Free Quick Install, Drawing in 24h') : (lang === 'zh' ? '注塑开模 24 小时出图' : 'Injection Mold Drawing 24h'))}
                       </td>
                     ))}
                   </tr>
