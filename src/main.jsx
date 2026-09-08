@@ -84,6 +84,9 @@ const trans = {
     pat2Name: "Utility Model Patent: Mixing Valve Handle for Precise Adjustment",
     pat2Num: "Patent No: ZL 2016 2 0363465.8",
     pat2Auth: "Authorized: 2016-09-07 | SIPO China",
+    pat3Name: "Utility Model Patent: Shower Bar Slider (Quick-Install Shower Head Socket)",
+    pat3Num: "Patent No: ZL 2025 2 0342911.6",
+    pat3Auth: "Authorized: 2026-05-12 | CNIPA China",
     faqTitle: "Frequently Asked Questions (FAQ)",
     faqLede: "Helpful answers to guide your procurement and sourcing process.",
     contactTitle: "Submit B2B Bulk RFQ",
@@ -160,6 +163,9 @@ const trans = {
     pat2Name: "Патент на полезную модель: Ручка смесителя для точной регулировки",
     pat2Num: "Номер патента: ZL 2016 2 0363465.8",
     pat2Auth: "Авторизован: 2016-09-07 | SIPO Китай",
+    pat3Name: "Патент на полезную модель: Держатель-слайдер для душевой штанги",
+    pat3Num: "Номер патента: ZL 2025 2 0342911.6",
+    pat3Auth: "Авторизован: 2026-05-12 | CNIPA Китай",
     faqTitle: "Часто задаваемые вопросы (FAQ)",
     faqLede: "Полезные ответы, которые помогут вам сориентироваться в процессе закупок.",
     contactTitle: "Отправить запрос B2B",
@@ -236,6 +242,9 @@ const trans = {
     pat2Name: "Patente de Modelo de Utilidade: Volante de Ajuste Preciso de Temperatura",
     pat2Num: "Patente nº: ZL 2016 2 0363465.8",
     pat2Auth: "Autorizado: 07/09/2016 | SIPO China",
+    pat3Name: "Patente de Modelo de Utilidade: Suporte Deslizante de Barra de Chuveiro",
+    pat3Num: "Patente nº: ZL 2025 2 0342911.6",
+    pat3Auth: "Autorizado: 12/05/2026 | CNIPA China",
     faqTitle: "Perguntas Frequentes (FAQ)",
     faqLede: "Respostas úteis para orientar o seu processo de compra e importação.",
     contactTitle: "Enviar Solicitação de Orçamento B2B",
@@ -312,6 +321,9 @@ const trans = {
     pat2Name: "उपयोगिता मॉडल पेटेंट: सटीक तापमान और पानी के समायोजन के लिए नल हैंडल",
     pat2Num: "पेटेंट नंबर: ZL 2016 2 0363465.8",
     pat2Auth: "अधिकृत तिथि: 2016-09-07 | SIPO चीन",
+    pat3Name: "उपयोगिता मॉडल पेटेंट: शاور बार स्लाइडर (होल्डर)",
+    pat3Num: "पेटेंट नंबर: ZL 2025 2 0342911.6",
+    pat3Auth: "अधिकृत तिथि: 2026-05-12 | CNIPA चीन",
     faqTitle: "अक्सर पूछे जाने वाले प्रश्न (FAQ)",
     faqLede: "आपकी खरीद प्रक्रिया में मार्गदर्शन के लिए उपयोगी उत्तर।",
     contactTitle: "आरएफक्यू (RFQ) जमा करें",
@@ -388,6 +400,9 @@ const trans = {
     pat2Name: "国家实用新型专利：便于准确调节的混水阀手柄",
     pat2Num: "专利号: ZL 2016 2 0363465.8",
     pat2Auth: "授权公告日: 2016年09月07日 | 中华人民共和国国家知识产权局",
+    pat3Name: "国家实用新型专利：一种淋浴杆滑座",
+    pat3Num: "专利号: ZL 2025 2 0342911.6",
+    pat3Auth: "授权公告日: 2026年05月12日 | 中华人民共和国国家知识产权局",
     faqTitle: "国际大宗采销问答 (FAQ)",
     faqLede: "为您解答起订量、定制流程、样板寄送及国际物流等最关切的问题。",
     contactTitle: "提交大宗采购询盘意向 (RFQ)",
@@ -1843,16 +1858,16 @@ function App() {
             <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 flex flex-col justify-between hover:shadow-xl transition-all duration-300">
               <div className="space-y-4">
                 <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white p-2">
-                  <img src="/assets/certs/cert-03.jpg" alt="Utility Model Patent Certificate 3" className="w-full h-72 object-cover object-top rounded-xl" />
+                  <img src="/assets/certs/cert-shower-slider.jpg" alt="Shower Bar Slider Utility Model Patent Certificate" className="w-full h-72 object-cover object-top rounded-xl" />
                 </div>
                 <div className="text-left space-y-2">
-                  <span className="text-[10px] font-black tracking-widest text-blue-700 uppercase bg-blue-50 border border-blue-100 px-2 py-0.5 rounded">SIPO Patent</span>
-                  <h3 className="font-extrabold text-slate-900 text-base leading-snug">Design Integrity & Structure Authorization</h3>
-                  <p className="text-xs font-bold text-slate-500">Official Seal Verified</p>
+                  <span className="text-[10px] font-black tracking-widest text-blue-700 uppercase bg-blue-50 border border-blue-100 px-2 py-0.5 rounded">Patent ZL2025</span>
+                  <h3 className="font-extrabold text-slate-900 text-base leading-snug">{t.pat3Name}</h3>
+                  <p className="text-xs font-bold text-slate-500">{t.pat3Num}</p>
                 </div>
               </div>
               <div className="text-left pt-4 border-t border-slate-100 text-[11px] font-semibold text-slate-400">
-                Authorized By SIPO People's Republic of China
+                {t.pat3Auth}
               </div>
             </div>
           </div>
