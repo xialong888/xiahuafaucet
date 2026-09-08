@@ -2026,6 +2026,10 @@ function App() {
                 <a href="mailto:375039134@qq.com" className="hover:text-blue-400 transition-colors">375039134@qq.com</a>
               </div>
               <div className="flex items-center md:justify-end gap-2 text-sm text-slate-300 font-bold">
+                <Mail size={16} className="text-blue-400 shrink-0" />
+                <a href="mailto:xiahuahyr@gmail.com" className="hover:text-blue-400 transition-colors">xiahuahyr@gmail.com</a>
+              </div>
+              <div className="flex items-center md:justify-end gap-2 text-sm text-slate-300 font-bold">
                 <Phone size={16} className="text-green-400 shrink-0" />
                 <span>+86 18965758892 (WhatsApp / Mobile)</span>
               </div>
