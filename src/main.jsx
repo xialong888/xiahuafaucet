@@ -1137,18 +1137,14 @@ function App() {
 
             </div>
 
-            {/* Right Hero Image Frame (Fidelity Balance test representation) */}
+            {/* Right Hero Image Frame (ABS single-lever handle marketing poster) */}
             <div className="lg:col-span-5 relative">
               <div className="relative mx-auto max-w-[420px] lg:max-w-none rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 p-3">
                 <img 
-                  src="/assets/images/hero-slider.jpg" 
-                  alt="Quick-Install Shower Head Socket with adjustable friction" 
-                  className="w-full h-[380px] object-cover rounded-2xl grayscale-[5%] brightness-95"
+                  src="/assets/images/single-lever-handle-poster.jpg" 
+                  alt="ABS single-lever faucet handle with high-standard chrome plating" 
+                  className="w-full aspect-[3/4] object-cover rounded-2xl"
                 />
-                <div className="absolute inset-x-3 bottom-3 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent p-5 rounded-2xl flex flex-col justify-end text-left">
-                  <span className="text-xs font-extrabold text-blue-400 uppercase tracking-widest">{t.specModel}: XH-SHSL-202</span>
-                  <h3 className="text-base sm:text-lg font-bold text-white mt-1">{lang === 'zh' ? '快捷安装淋浴花洒插座' : 'Quick-Install Shower Head Socket'}</h3>
-                </div>
               </div>
             </div>
 
