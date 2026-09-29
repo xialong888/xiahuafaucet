@@ -7,8 +7,13 @@
   "buildCommand": "vite build",
   "outputDir": "dist",
   "entry": "index.html",
-  "databaseUrl": "",
   "createdBy": "accio-site-builder",
   "createdAt": "2026-09-01T01:48:00.087Z",
-  "installedAt": "2026-09-01T01:58:49.543Z"
+  "siteIdSyncStatus": "synced",
+  "installedAt": "2026-09-01T01:58:49.543Z",
+  "databaseUrl": "",
+  "subdomain": "xiahuafa-004a8d22",
+  "publishedUrl": "https://xiahuafa-004a8d22.site.accio.ai",
+  "publishedAt": "2026-09-27T07:18:21.057Z",
+  "deployId": "dep_1790493494035_ce6051b1"
 }

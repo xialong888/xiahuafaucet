@@ -22,7 +22,8 @@ import {
   Play,
   Maximize2,
   GitCompare,
-  Sliders
+  Sliders,
+  Sparkles
 } from 'lucide-react';
 import './styles.css';
 
@@ -59,6 +60,7 @@ const trans = {
     catAll: "All Accessories",
     catHandles: "ABS Faucet Handles",
     catSliders: "Shower Sliders & Sleeves",
+    catSockets: "Quick-Install Shower Sockets",
     catHardware: "Bathroom Hardware",
     specModel: "Model",
     specMaterial: "Material",
@@ -138,6 +140,7 @@ const trans = {
     catAll: "Все аксессуары",
     catHandles: "Ручки смесителя из ABS",
     catSliders: "Держатели душа на штангу",
+    catSockets: "Быстросъемные держатели душа",
     catHardware: "Сантехническая фурнитура",
     specModel: "Модель",
     specMaterial: "Материал",
@@ -217,6 +220,7 @@ const trans = {
     catAll: "Todos os Acessórios",
     catHandles: "Volantes de ABS",
     catSliders: "Deslizadores de Chuveiro",
+    catSockets: "Suportes de Instalação Rápida",
     catHardware: "Ferragens para Banheiro",
     specModel: "Modelo",
     specMaterial: "Material",
@@ -296,6 +300,7 @@ const trans = {
     catAll: "सभी सहायक उपकरण",
     catHandles: "एबीएस नल हैंडल",
     catSliders: "शावर स्लाइडर्स",
+    catSockets: "त्वरित-स्थापना शावर सॉकेट",
     catHardware: "बाथरूम हार्डवेयर",
     specModel: "मॉडल",
     specMaterial: "सामग्री",
@@ -375,6 +380,7 @@ const trans = {
     catAll: "全部卫浴零配件",
     catHandles: "ABS 龙头手柄系列",
     catSliders: "花洒滑套与升降洁具系列",
+    catSockets: "快捷安装淋浴花洒插座",
     catHardware: "精工铜/不锈钢阀芯及五金",
     specModel: "产品型号",
     specMaterial: "核心主材",
@@ -449,80 +455,136 @@ const products = [
       hi: "हमारे चीनी राष्ट्रीय पेटेंट के अनुसार निर्मित। जंग प्रतिरोधी और चमकदार सतह।",
       zh: "严格按照国家实用新型专利 ZL 2016 2 0363475.1 制造。注塑壁厚提升30%，防滑阻尼平衡优异，能通过48小时严苛乙酸雾测试，历久不剥落。"
     },
-    images: ["/assets/products/xh-product-1.jpg", "/assets/products/xh-product-2.jpg", "/assets/products/xh-product-3.jpg", "/assets/products/xh-product-4.jpg", "/assets/products/xh-product-5.jpg", "/assets/products/xh-product-6.jpg"],
-    img: "/assets/products/xh-product-1.jpg"
+    images: ["/assets/products/xh-product-101-7.jpg", "/assets/products/xh-product-101-8.jpg", "/assets/products/xh-product-101-9.jpg", "/assets/products/xh-product-101-10.jpg", "/assets/products/xh-product-2.jpg", "/assets/products/xh-product-4.jpg", "/assets/products/xh-product-5.jpg"],
+    img: "/assets/products/xh-product-101-7.jpg"
   },
   {
     id: 2,
-    category: "sliders",
+    category: "handles",
     nameMap: {
-      en: "Quick-Install Shower Head Socket",
-      ru: "Держатель лейки с быстрой установкой",
-      pt: "Soquete de Chuveiro de Instalação Rápida",
-      hi: "क्विक-इंस्टॉल शاور हेड सॉकेट",
-      zh: "快捷安装淋浴花洒插座"
+      en: "Xialong Patented High-Grade ABS Electroplated Single-Lever Handle & Accessories",
+      ru: "Запатентованная гальваническая ручка смесителя из ABS Xialong и аксессуары",
+      pt: "Volante Monocomando de ABS Cromado Patenteado Xialong e Acessórios",
+      hi: "शियालॉन्ग पेटेंट उच्च-ग्रेड एबीएस इलेक्ट्रोप्लेटेड सिंगल-लीवर हैंडल और सहायक उपकरण",
+      zh: "夏龙专利型高标ABS电镀单把手柄及配件"
     },
     model: "XH-SHSL-202",
-    materialMap: { en: "Reinforced ABS + Built-in Friction Pads", ru: "Армированный ABS с силиконовой прокладкой", pt: "ABS Reforçado + Pastilha de Fricção", hi: "प्रबलित एबीएस + घर्षण पैड", zh: "高阻尼防磨韧性 ABS + 内置高阻尼耐老化硅胶片" },
-    finishMap: { en: "High Gloss Polished Chrome / Matte White", ru: "Зеркальный хром / матовый белый", pt: "Cromado Brilhante / Branco Fosco", hi: "दर्पण पॉलिश क्रोम", zh: "镜面高光电镀铬 / 原装环保乳白双色" },
-    certMap: { en: "SGS 100,000 Wear Cycles Checked", ru: "Испытано SGS на 100 000 циклов износа", pt: "Certificado de Desgaste SGS 100 mil ciclos", hi: "एसजीएस पहनने के परीक्षण प्रमाणित", zh: "通过 SGS 10万次循环往复摩擦耐磨性无损寿命认证" },
+    materialMap: { en: "High-Impact Virgin Engineering ABS + Precision Brass Spline Bushing", ru: "Ударопрочный первичный ABS + латунная втулка", pt: "ABS Virgem de Alto Impacto + Bucha Interna de Latão", hi: "उच्च प्रभाव वर्जिन एबीएस + पीतल बुशिंग", zh: "全新高抗冲环保工程 ABS 原生料 + 高精度内齿铜衬套" },
+    finishMap: { en: "Class-9 Multi-Layer Mirror Electroplated Chrome", ru: "Многослойный глянцевый хром 9 класса", pt: "Cromagem Multicamada Espelhada Classe 9", hi: "मल्टी-लेयर मिरर क्रोम", zh: "9级加厚多层镜面电镀铬（耐酸蚀耐磨损，历久如新）" },
+    certMap: { en: "ZL 2016 2 0363465.8 | 48h Acid Salt Spray Tested", ru: "Патент ZL 2016 2 0363465.8 / 48ч тест тумана", pt: "Patente ZL 2016 2 0363465.8 / Teste 48h", hi: "पेटेंट ZL 2016 2 0363465.8", zh: "中国国家实用新型专利 ZL 2016 2 0363465.8 | 48h 乙酸盐雾测试达标" },
     descMap: {
-      en: "Precision slider sleeve for standard 22mm/25mm shower tubes. Advanced self-locking mechanism prevents heavy brass handheld showers from slipping or wobbling.",
-      ru: "Прецизионный держатель для стандартных штанг 22 мм и 25 мм. Плотная фиксация предотвращает сползание тяжелых душевых леек.",
-      pt: "Suporte deslizante para barras padrão de 22mm e 25mm. Mecanismo de travamento ultra-firme impedindo a queda da ducha.",
-      hi: "आसान स्लाइड रेल समायोजन की अनुमति देता है। 22 मिमी / 25 मिमी मानक शावर छड़ के लिए उपयुक्त।",
-      zh: "适配国际标准 22mm 及 25mm 淋浴管。独创内自锁重摩擦力结构，挂载 1.5kg 重载黄铜花洒不产生滑落、不晃动，移动手感如丝绸般顺滑。"
+      en: "Engineered with Xialong's patented precision mixing control structure, molded from premium virgin ABS for solid weight and feel. Features Class-9 multi-layer mirror chrome plating for superior corrosion resistance and wear durability, with precision internal brass splines for silky-smooth handle operation.",
+      ru: "Изготовлена из высококачественного первичного ABS с многослойным зеркальным хромированием 9 класса. Плавный ход и устойчивость к коррозии.",
+      pt: "Fabricado em ABS virgem de alta densidade com cromagem espelhada de classe 9. Encaixes internos de latão para controle suave e preciso.",
+      hi: "प्रीमियम वर्जिन एबीएस से निर्मित, क्लास-9 मल्टी-लेयर मिरर क्रोम प्लेटिंग के साथ।",
+      zh: "采用夏龙自主研发专利精密控温与装配结构，精选高标原生 ABS 注塑成型，比重加厚、手感沉稳。表面覆盖 9 级多层加厚电镀铬，具备优异的耐酸碱腐蚀、耐磨防指纹性能；内衬高精度铜芯齿轮，旋转调节手感顺滑阻尼均衡，是全球各大主流卫浴水龙头品牌 OEM/ODM 的优质配套手柄。"
     },
-    images: ["/assets/products/xh-product-7.jpg", "/assets/products/xh-product-8.jpg", "/assets/products/xh-product-9.jpg", "/assets/products/xh-product-10.jpg", "/assets/products/xh-product-11.jpg", "/assets/products/xh-product-12.jpg"],
+    images: ["/assets/products/xh-product-7.jpg", "/assets/products/xh-product-8.jpg", "/assets/products/xh-product-9.jpg", "/assets/products/xh-product-10.jpg", "/assets/products/xh-product-11.jpg", "/assets/products/xh-product-12.jpg", "/assets/products/xh-product-1.jpg", "/assets/products/xh-product-3.jpg", "/assets/products/xh-product-6.jpg"],
     img: "/assets/products/xh-product-7.jpg"
   },
   {
     id: 3,
-    category: "hardware",
+    category: "sockets",
     nameMap: {
-      en: "Patented Knurled Grip Chrome Handle Control",
-      ru: "Запатентованная хромированная ручка-регулятор с накаткой",
-      pt: "Volante de Acionamento com Textura Serrilhada Patenteada",
-      hi: "पेटेंट ग्रिप क्रोम हैंडल कंट्रोल",
-      zh: "国家专利型精工双色滚花防滑龙头单柄/温控旋钮手柄"
+      en: "Patented Quick-Install Shower Bracket Socket",
+      ru: "Запатентованный быстросъемный настенный держатель для душа",
+      pt: "Suporte de Chuveiro de Instalação Rápida Patenteado",
+      hi: "पेटेंट त्वरित-स्थापना शावर ब्रैकेट सॉकेट",
+      zh: "国家专利快捷安装淋浴花洒插座 / 方形快装免拆固定座"
     },
     model: "XH-BRFC-303",
-    materialMap: { en: "Virgin Heavy ABS + Internal Copper Splines", ru: "Ударопрочный ABS + медные шлицы", pt: "ABS Injetado + Encaixe Interno de Bronze", hi: "भारी एबीएस + आंतरिक तांबा स्प्लिन", zh: "高抗冲击 ABS 主体 + 内部抗咬合高硬度精密铜阀齿" },
-    finishMap: { en: "Knurled Pattern Grip + Platinum Chrome", ru: "Текстура с накаткой + платиновый хром", pt: "Textura Serrilhada + Cromagem Platinum", hi: "पैटर्न ग्रिप + क्रोम", zh: "高精度防滑滚花纹理 + 物理铂金电镀工艺 (防油防指纹)" },
-    certMap: { en: "ZL 2016 2 0363465.8 | WRAS Compliant", ru: "Патент ZL 2016 2 0363465.8 / WRAS", pt: "Patente ZL 2016 2 0363465.8 / WRAS", hi: "पेटेंट ZL 2016 2 0363465.8", zh: "中国实用新型专利 ZL 2016 2 0363465.8 | 涉水材料符合 WRAS" },
+    materialMap: { en: "High-Strength Virgin Engineering Polymer + Silicone Socket", ru: "Высокопрочный первичный полимер + силиконовая вставка", pt: "Polímero de Engenharia Virgem + Encaixe de Silicone", hi: "उच्च शक्ति वर्जिन पॉलीमर + सिलिकॉन", zh: "高韧性全新环保工程原料 + 内部阻尼防滑硅胶插口" },
+    finishMap: { en: "Dual-Tone Minimalist Design (Pure White / Slate Grey)", ru: "Двухцветный минималистичный дизайн (Белый / Серый)", pt: "Design Minimalista Bicolor (Branco Puro / Cinza)", hi: "डुअल-टोन डिज़ाइन (सफ़ेद / ग्रे)", zh: "双色极简设计（优雅纯白 / 雅致灰）+ 耐磨抗污防刮工艺" },
+    certMap: { en: "ZL 2016 2 0363475.1 | SIPO Authorized", ru: "Патент ZL 2016 2 0363475.1 / SIPO", pt: "Patente ZL 2016 2 0363475.1 / SIPO", hi: "पेटेंट ZL 2016 2 0363475.1", zh: "中国国家实用新型专利 ZL 2016 2 0363475.1 | 质检全检出厂" },
     descMap: {
-      en: "Incorporates our Chinese national patent ZL 2016 2 0363465.8 for precise water mixing. Features premium textured knurling for smooth grip even with soap on hands. Highly requested in high-end shower lines.",
-      ru: "Соответствует нашему китайскому патенту ZL 2016 2 0363465.8 на точное смешивание воды. Не скользит в мыльных руках.",
-      pt: "Incorpora nossa patente para mistura de água super precisa. Textura serrilhada de alto atrito facilitando o acionamento.",
-      hi: "सटीक पानी के मिश्रण के लिए पेटेंट। चिकनी पकड़ के लिए पैटर्न डिजाइन।",
-      zh: "采用国家实用新型专利 ZL 2016 2 0363465.8 精准控温结构。表面精密加工的防滑滚花图案，即便手覆肥皂水也依然能精准转动调节，是五星级酒店淋浴器代工首选配件。"
+      en: "Engineered with Chinese National Patent ZL 2016 2 0363475.1 quick-mount mechanism. Modular quick-install design fits standard handheld shower heads firmly without wobbling, offering effortless installation and clean modern aesthetics.",
+      ru: "Оснащен запатентованным механизмом быстрой установки ZL 2016 2 0363475.1. Надежно фиксирует ручной душ, прост в монтаже и очистке.",
+      pt: "Projetado com mecanismo de encaixe rápido sob a patente ZL 2016 2 0363475.1. Instalação rápida e suporte firme para chuveiros de mão.",
+      hi: "राष्ट्रीय पेटेंट ZL 2016 2 0363475.1 त्वरित-माउंट तंत्र के साथ डिज़ाइन किया गया। हैंडहेल्ड शावर हेड को मजबूती से रखता है।",
+      zh: "采用国家实用新型专利 ZL 2016 2 0363475.1 快捷卡入安装结构。模块化快装免拆/快速卡固设计，适配标准手持花洒，牢固承重不晃动，拆装清理极度便捷，是现代简约卫浴与出口工程的理想配套配件。"
     },
-    images: ["/assets/products/xh-product-13.jpg", "/assets/products/xh-product-14.jpg", "/assets/products/xh-product-15.jpg", "/assets/products/xh-product-16.jpg", "/assets/products/xh-product-17.jpg", "/assets/products/xh-product-18.jpg"],
-    img: "/assets/products/xh-product-13.jpg"
+    images: ["/assets/products/xh-product-socket-303.jpg", "/assets/products/xh-product-socket-303-2.jpg", "/assets/products/xh-product-socket-303-3.jpg"],
+    img: "/assets/products/xh-product-socket-303.jpg"
   },
   {
     id: 4,
+    category: "handles",
+    nameMap: {
+      en: "Xialong Patented High-Grade ABS Electroplated Single-Lever Handle",
+      ru: "Запатентованная гальваническая ручка смесителя из ABS Xialong",
+      pt: "Volante Monocomando de ABS Cromado Patenteado Xialong",
+      hi: "शियालॉन्ग पेटेंट उच्च-ग्रेड एबीएस इलेक्ट्रोप्लेटेड सिंगल-लीवर हैंडल",
+      zh: "夏龙专利型高标ABS电镀单把手柄"
+    },
+    model: "XH-ABS-102",
+    materialMap: { en: "High-Impact Virgin Engineering ABS + Precision Brass Splines", ru: "Высокопрочный первичный полимер ABS + латунные шлицы", pt: "ABS Virgem de Alto Impacto + Encaixe de Bronze", hi: "उच्च प्रभाव वर्जिन एबीएस + पीतल स्प्लिन", zh: "全新高韧性抗冲击工程 ABS 原生料 + 高精度内衬铜齿" },
+    finishMap: { en: "Class-9 Multi-Layer Mirror Electroplated Chrome", ru: "Зеркальный многослойный хром 9 класса", pt: "Cromagem Multicamada Espelhada Classe 9", hi: "मल्टी-लेयर मिरर क्रोम", zh: "9级加厚多层镜面电镀铬（耐酸蚀抗盐雾腐蚀，历久弥新）" },
+    certMap: { en: "ZL 2016 2 0363475.1 | BS EN 200 Compliant", ru: "Патент ZL 2016 2 0363475.1 / BS EN 200", pt: "Patente Nacional ZL 2016 2 0363475.1", hi: "राष्ट्रीय पेटेंट ZL 2016 2 0363475.1", zh: "中国国家实用新型专利 ZL 2016 2 0363475.1 | 符合 BS EN 200 标准" },
+    descMap: {
+      en: "XH-ABS-102 features Xialong's patented ergonomic single-lever design, injection-molded from premium virgin engineering ABS for solid weight and feel. Treated with Class-9 multi-layer mirror chrome electroplating passing 48h acid salt-spray tests, equipped with precision brass splines for smooth, reliable temperature and flow adjustment.",
+      ru: "XH-ABS-102 — эргономичная одинарная ручка из первичного инженерного ABS с зеркальным хромированием 9 класса. Устойчива к коррозии и царапинам.",
+      pt: "XH-ABS-102 apresenta volante ergonômico em ABS virgem de alta densidade com cromagem espelhada classe 9 e estrias internas de precisão em latão.",
+      hi: "XH-ABS-102 में पेटेंट एर्गोनोमिक सिंगल-लीवर डिज़ाइन है, जो क्लास-9 मल्टी-लेयर मिरर क्रोम इलेक्ट्रोप्लेटिंग के साथ प्रीमियम वर्जिन एबीएस से बना है।",
+      zh: "XH-ABS-102 采用夏龙独家专利精工流线型人体工学把手设计，精选优质全新高标 ABS 原生材料注塑成型，比重加厚、手感扎实。表面覆盖 9 级加厚多层镜面电镀铬，经过 48 小时严苛乙酸雾测试，抗酸蚀、防刮擦、耐指纹；内嵌高精度铜齿接口，旋转调温阻尼均匀顺畅，是高端卫浴水暖代工的经典选型。"
+    },
+    images: ["/assets/products/xh-product-102-1.jpg", "/assets/products/xh-product-102-2.jpg", "/assets/products/xh-product-102-3.jpg", "/assets/products/xh-product-102-4.jpg", "/assets/products/xh-product-102-5.jpg", "/assets/products/xh-product-102-6.jpg", "/assets/products/xh-product-102-7.jpg", "/assets/products/xh-product-102-8.jpg", "/assets/products/xh-product-102-9.jpg", "/assets/products/xh-product-102-10.jpg", "/assets/products/xh-product-102-11.jpg", "/assets/products/xh-product-102-12.jpg"],
+    img: "/assets/products/xh-product-102-1.jpg"
+  },
+  {
+    id: 5,
+    category: "sliders",
+    nameMap: {
+      en: "Push-Button Adjustable Shower Bar Slider Bracket",
+      ru: "Регулируемый кнопочный держатель для душа на штангу",
+      pt: "Suporte Deslizante de Chuveiro Ajustável com Botão",
+      hi: "पुश-बटन समायोज्य शावर बार स्लाइडर ब्रैकेट",
+      zh: "经典按键升降花洒座 / 淋浴杆滑座"
+    },
+    model: "XH-71",
+    materialMap: { en: "Virgin Heavy ABS + Internal Anti-Slip Pads", ru: "Ударопрочный первичный ABS с антискользящими вставками", pt: "ABS Virgem de Alto Impacto + Almofada Antiderrapante", hi: "उच्च प्रभाव वर्जिन एबीएस + एंटी-स्लिप कुशन", zh: "高韧性全新工程 ABS 原料 + 内置防滑耐磨硅胶衬垫" },
+    finishMap: { en: "9-Class Multi-layer Electroplated Chrome", ru: "Многослойный глянцевый хром 9 класса", pt: "Cromagem Multicamada Classe 9", hi: "इलेक्ट्रोप्लेटेड क्रोम", zh: "9级加厚多层镜面电镀铬（耐酸抗盐雾耐磨损）" },
+    certMap: { en: "ZL 2025 2 0342911.6 | SGS 100,000 Wear Cycles", ru: "Патент ZL 2025 2 0342911.6 / SGS 100 000 циклов", pt: "Patente ZL 2025 2 0342911.6 / SGS 100 mil ciclos", hi: "पेटेंट ZL 2025 2 0342911.6 / एसजीएस प्रमाणित", zh: "中国实用新型专利 ZL 2025 2 0342911.6 | SGS 10万次耐磨认证" },
+    descMap: {
+      en: "XH-71 premium push-button shower bar slider bracket, engineered for 18-25mm standard shower rails. Features effortless one-touch button height adjustment, 360° rotatable shower head cradle, and heavy-duty internal silicone grip preventing slippage.",
+      ru: "Премиальный держатель для душа XH-71 с кнопочной регулировкой высоты на штангу 18-25 мм. Плавное перемещение и надежная фиксация лейки.",
+      pt: "Suporte deslizante premium XH-71 com botão de liberação rápida para barras de 18-25mm. Ajuste de altura com um toque e berço giratório de 360°.",
+      hi: "मानक 18-25 मिमी शावर रॉड के लिए पुश-बटन शावर हेड स्लाइडर ब्रैकेट XH-71। एक स्पर्श ऊंचाई समायोजन और 360° घूर्णन।",
+      zh: "XH-71 经典按键式升降花洒座，专为 18-25mm 标准升降淋浴杆研发。顶部配备一触式按钮，按压即可顺滑调节高度；内置高阻尼防滑硅胶内衬，紧锁不晃动、不滑落；插槽支持 360° 灵活旋转调节喷淋角度，通用适配各类国际标准手持花洒。"
+    },
+    images: ["/assets/products/xh-product-71.jpg", "/assets/products/xh-product-71-3.jpg", "/assets/products/xh-product-71-2.jpg"],
+    img: "/assets/products/xh-product-71.jpg",
+    video: "/assets/videos/xh-71-intro.mp4"
+  },
+  {
+    id: 6,
     category: "hardware",
     nameMap: {
-      en: "Heavy gravity-casted solid brass body",
-      ru: "Латунный корпус смесителя для раковины и ванны",
-      pt: "Corpo de Torneira Monocomando de Latão Maciço",
-      hi: "ठोस पीतल स्नान और बेसिन नल शरीर",
-      zh: "出厂全检 99g 黄金净重精工龙头把手与阀壳"
+      en: "Xialong High-Grade ABS Shower Body Piano Key Button Model",
+      ru: "Клавишный переключатель для душа из высококачественного ABS Xialong",
+      pt: "Botão Estilo Tecla de Piano em ABS para Corpo de Chuveiro Xialong",
+      hi: "शियालॉन्ग हाई-ग्रेड एबीएस शावर बॉडी पियानो की बटन मॉडल",
+      zh: "夏龙高标ABS花洒主体钢琴按键款"
     },
-    model: "XH-FC-03",
-    materialMap: { en: "Gravity-Cast Solid Brass / Low Lead", ru: "Тяжелая литая латунь с низким содержанием свинца", pt: "Latão Maciço de Baixo Chumbo", hi: "भारी कास्ट पीतल", zh: "H59-1 环保重力浇铸国标黄铜" },
-    finishMap: { en: "High Gloss Anti-scratch Multiplating", ru: "Зеркальный хром высокой плотности", pt: "Cromado Brilhante Espelhado", hi: "मिरर क्रोम", zh: "镜面精抛 + 多层防护酸性耐腐蚀电镀" },
-    certMap: { en: "SGS Multi-Metal Analysis Approved", ru: "Сертификат SGS на отсутствие тяжелых металлов", pt: "Aprovado em Análise de Metais Pesados SGS", hi: "SGS भारी धातु विश्लेषण स्वीकृत", zh: "通过国家建筑材料测试中心及 SGS 无重金属无害解析" },
+    model: "XH-ABSGQ-101",
+    materialMap: { en: "High-Strength Virgin Engineering ABS + Precision Key Mechanism", ru: "Высокопрочный первичный полимер ABS с прецизионным механизмом", pt: "ABS Virgem de Engenharia de Alta Resistência + Mecanismo de Precisão", hi: "उच्च शक्ति वर्जिन एबीएस + सटीक कुंजी तंत्र", zh: "高韧性原生抗冲击工程 ABS 原料 + 精密内部按键传动机构" },
+    finishMap: { en: "Anti-Scratch Gunmetal Grey / Electroplated Mirror Chrome", ru: "Оружейный серый цвет с защитой от царапин / Зеркальный хром", pt: "Cinza Gunmetal Anti-Risco / Cromagem Espelhada", hi: "गनमेटल ग्रे / इलेक्ट्रोप्लेटेड क्रोम", zh: "防刮防指纹高雅喷镀枪灰 / 9级加厚多层镜面电镀铬" },
+    certMap: { en: "SGS 100,000 Key-Press Tested | Factory 100% Inspection", ru: "Тест нажатия SGS 100 000 циклов / 100% заводской контроль", pt: "SGS 100 Mil Ciclos de Pressionamento / Inspeção 100%", hi: "एसजीएस 100,000 प्रेस टेस्ट प्रमाणित", zh: "SGS 10万次按压耐久寿命测试 | 出厂气密水压全检" },
     descMap: {
-      en: "Heavy cast solid brass core, weighed on precision balance to guarantee strict 99g weight and Wall-thickness tolerance. Prevents burst under cold winter pressure.",
-      ru: "Тяжелый латунный корпус, отлитый под давлением. Проверен на весах на соответствие весу 99 г для защиты от замерзания и разрывов зимой.",
-      pt: "Corpo de latão maciço fundido por gravidade. Peso de 99g aferido em balança de precisão para garantir durabilidade contra intempéries.",
-      hi: "भारी पीतल शरीर 99g वजन की गारंटी देता है। शून्य हवा के बुलबुले।",
-      zh: "主体采用精密重力浇铸，出厂逐个精密电子天平复称，保证其 99克 的扎实净重与壁厚。无气孔沙眼，彻底断绝寒冷冬季管道上冻时壳体膨胀开裂的风险。"
+      en: "XH-ABSGQ-101 premium piano-key style shower valve button, precision injection molded from high-impact virgin ABS. Features ergonomic mechanical key actuation, multi-color anti-scratch finishes, and seamless integration for modern multi-function shower main bodies.",
+      ru: "Клавишный переключатель XH-ABSGQ-101 для душевых систем из первичного ABS. Четкий тактильный отклик и износостойкое покрытие.",
+      pt: "Botão estilo tecla de piano XH-ABSGQ-101 em ABS virgem para corpos de chuveiro. Acionamento mecânico preciso e acabamento de alta durabilidade.",
+      hi: "मल्टी-फंक्शन शावर बॉडी के लिए XH-ABSGQ-101 पियानो-की स्टाइल शावर वॉल्व बटन।",
+      zh: "XH-ABSGQ-101 夏龙高标 ABS 花洒主体钢琴按键款，精选高抗冲原生工程 ABS 注塑精制。采用人体工学琴键式机械式按压结构，触感反馈清晰干脆、顺畅不卡滞；提供高雅防刮枪灰与镜面电镀等多色表面工艺，完美适配现代多功能暗装/明装淋浴主体大宗 OEM/ODM 采购定制。"
     },
-    images: ["/assets/products/xh-product-19.jpg", "/assets/products/xh-product-20.jpg", "/assets/products/xh-product-21.jpg", "/assets/products/xh-product-22.jpg", "/assets/products/xh-product-23.jpg", "/assets/products/xh-product-24.jpg", "/assets/products/xh-product-25.jpg"],
-    img: "/assets/products/xh-product-19.jpg"
+    images: [
+      "/assets/products/xh-product-pianokey-1.jpg",
+      "/assets/products/xh-product-pianokey-2.jpg",
+      "/assets/products/xh-product-pianokey-3.jpg",
+      "/assets/products/xh-product-pianokey-4.jpg",
+      "/assets/products/xh-product-pianokey-5.jpg",
+      "/assets/products/xh-product-pianokey-6.jpg"
+    ],
+    img: "/assets/products/xh-product-pianokey-1.jpg"
   }
 ];
 
@@ -598,13 +660,9 @@ const configTrans = {
     btnGenRfq: "Apply Specifications to RFQ Form",
     btnGenRfqSuccess: "Specifications Applied! Scrolled to submit business details.",
     matAbs: "Premium Virgin ABS Plastic",
-    matBrass: "H59-1 Gravity-Casted Solid Brass",
-    matSteel: "304 Food-Grade Stainless Steel",
     finChrome: "9-Class Mirror electroplated Chrome",
     finBlack: "Anti-scratch Electrophoretic Matte Black",
-    finGold: "Vacuum Ion PVD Brushed Gold",
-    spec15: "Standard 15-Teeth Spline Axis (Ø 7.6mm)",
-    spec20: "European 20-Teeth Spline Axis (Ø 8.2mm)",
+    finGold: "Anti-Scratch Stain-Resistant Elegant Gunmetal Grey",
     specSlider: "Quick-Install Shower Head Socket (Ø 22-25mm)",
     specCustom: "Custom Drawing / Non-standard Spec",
     pkgColor: "OEM Customized High-End Color Box",
@@ -626,13 +684,9 @@ const configTrans = {
     btnGenRfq: "Применить спецификации к форме RFQ",
     btnGenRfqSuccess: "Спецификации применены! Заполните контактные данные.",
     matAbs: "Первичный высокопрочный ABS-пластик",
-    matBrass: "Латунь H59-1 гравитационного литья",
-    matSteel: "Пищевая нержавеющая сталь 304",
     finChrome: "Зеркальный хром 9-го класса",
     finBlack: "Устойчивый к царапинам матовый черный",
-    finGold: "Вакуумное напыление PVD-золото",
-    spec15: "Стандартный 15-зубчатый вал (Ø 7,6 мм)",
-    spec20: "Европейский 20-зубчатый вал (Ø 8,2 мм)",
+    finGold: "Элегантный оружейный серый цвет с защитой от царапин",
     specSlider: "Быстросъемный держатель лейки (Ø 22-25 мм)",
     specCustom: "Чертеж / Нестандартная спецификация",
     pkgColor: "Фирменная цветная коробка OEM",
@@ -654,13 +708,9 @@ const configTrans = {
     btnGenRfq: "Aplicar Especificações ao Formulário RFQ",
     btnGenRfqSuccess: "Especificações Aplicadas! Preencha os dados abaixo.",
     matAbs: "Plástico ABS Virgem de Alta Resistência",
-    matBrass: "Latão Maciço H59-1 Fundido por Gravidade",
-    matSteel: "Aço Inoxidável Grau Alimentício 304",
     finChrome: "Cromagem Espelhada Multicamada Classe 9",
     finBlack: "Preto Fosco Eletroforético Anti-risco",
-    finGold: "PVD Escovado a Vácuo de Alta Performance",
-    spec15: "Eixo de Estria Padrão de 15 Dentes (Ø 7.6mm)",
-    spec20: "Eixo de Estria Europeu de 20 Dentes (Ø 8.2mm)",
+    finGold: "Cinza Gunmetal Elegante Anti-Risco e Anti-Manchas",
     specSlider: "Soquete de Chuveiro de Instalação Rápida (Ø 22-25mm)",
     specCustom: "Desenho Técnico / Especificação Não-padrão",
     pkgColor: "Caixa Colorida de Alta Qualidade OEM",
@@ -682,13 +732,9 @@ const configTrans = {
     btnGenRfq: "विनिर्देशों को आरएफक्यू फॉर्म में लागू करें",
     btnGenRfqSuccess: "विनिर्देश लागू! जमा करने के लिए नीचे स्क्रॉल करें।",
     matAbs: "प्रीमियम वर्जिन एबीएस",
-    matBrass: "H59 ठोस पीतल",
-    matSteel: "304 स्टेनलेस स्टील",
     finChrome: "9-श्रेणी दर्पण क्रोम",
     finBlack: "मैट ब्लैक",
-    finGold: "PVD ब्रश गोल्ड",
-    spec15: "15-दांतेदार स्प्लिन (7.6 मिमी)",
-    spec20: "20-दांतेदार स्प्लिन (8.2 मिमी)",
+    finGold: "एंटी-स्क्रैच सुरुचिपूर्ण गनमेटल ग्रे",
     specSlider: "क्विक-इंस्टॉल शاور हेड सॉकेट (22-25 मिमी)",
     specCustom: "कस्टम विनिर्देश",
     pkgColor: "ब्रांड रंग बॉक्स",
@@ -701,7 +747,7 @@ const configTrans = {
     selectProduct: "选择基准卫浴产品型号",
     customizeMaterial: "1. 核心承载主材 (Core Material)",
     customizeFinish: "2. 表面电镀/涂层工艺 (Surface Finish)",
-    customizeSpec: "3. 连接阀芯花键轴/滑动规格 (Connection Spec)",
+    customizeSpec: "3. 连接规格 / 适配类型 (Connection Spec)",
     customizePkg: "4. 大宗出口环保包装方案 (Export Packaging)",
     moq: "工厂推荐大宗起订量",
     leadTime: "磨具微调与极速打样",
@@ -710,13 +756,9 @@ const configTrans = {
     btnGenRfq: "将定制规格一键导入询盘表 (RFQ)",
     btnGenRfqSuccess: "定制参数成功导入！页面已自动滑动到下方，请填写联系人提交询盘。",
     matAbs: "进口原生高坚韧级 ABS 原料",
-    matBrass: "H59-1 重力浇铸低铅国标黄铜",
-    matSteel: "304 食品级无缝精密不锈钢",
     finChrome: "9级高光镜面酸铜镍铬联合电镀 (盐雾测试超48小时)",
     finBlack: "防滑防指纹耐刮擦电泳哑光黑",
-    finGold: "物理真空气相沉积 (PVD) 真空拉丝金",
-    spec15: "国标标准 15 齿精密花键轴 (Ø 7.6mm)",
-    spec20: "欧标标准 20 齿精密花键轴 (Ø 8.2mm)",
+    finGold: "防刮防脏高雅喷镀枪灰色",
     specSlider: "快捷安装淋浴花洒插座 (适配 Ø 22-25mm 淋浴管)",
     specCustom: "非标开模定制 (提供图纸/实物样件)",
     pkgColor: "采购商专属贴牌高档加强型五层彩盒",
@@ -731,7 +773,7 @@ function App() {
   const [selectedLabProduct, setSelectedLabProduct] = useState(products[0]);
   const [labMaterial, setLabMaterial] = useState('abs');
   const [labFinish, setLabFinish] = useState('chrome');
-  const [labSpec, setLabSpec] = useState('15t');
+  const [labSpec, setLabSpec] = useState('slider');
   const [labPkg, setLabPkg] = useState('carton');
   const [rfqApplied, setRfqApplied] = useState(false);
   const [toastMessage, setToastMessage] = useState('');
@@ -751,6 +793,8 @@ function App() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [carouselIndex, setCarouselIndex] = useState({});
+  const [xh71ActiveImage, setXh71ActiveImage] = useState('/assets/products/xh-product-71.jpg');
+  const [heroPosterPage, setHeroPosterPage] = useState(0);
 
   const t = trans[lang] || trans.en;
 
@@ -838,14 +882,14 @@ function App() {
 
     const calculateLivePrice = () => {
       let baseUnitCost = 0.85; // Base abs handle
-      if (selectedLabProduct.model === 'XH-SHSL-202') baseUnitCost = 1.20;
-      else if (selectedLabProduct.model === 'XH-BRFC-303') baseUnitCost = 1.50;
-      else if (selectedLabProduct.model === 'XH-FC-03') baseUnitCost = 2.40;
+      if (selectedLabProduct.model === 'XH-SHSL-202' || selectedLabProduct.model === 'XH-71') baseUnitCost = 1.20;
+      else if (selectedLabProduct.model === 'XH-BRFC-303') baseUnitCost = 0.95;
+      else if (selectedLabProduct.model === 'XH-ABS-102') baseUnitCost = 0.88;
+      else if (selectedLabProduct.model === 'XH-ABSGQ-101') baseUnitCost = 1.15;
 
       // Material Surcharges
       let materialAdd = 0;
       if (labMaterial === 'brass') materialAdd = 1.60;
-      else if (labMaterial === 'steel') materialAdd = 0.95;
 
       // Finish Surcharges
       let finishAdd = 0;
@@ -878,10 +922,7 @@ function App() {
     const handleApplySpecsToRfq = () => {
       const currentConfigTrans = configTrans[lang] || configTrans.en;
       
-      let materialName = "";
-      if (labMaterial === 'abs') materialName = currentConfigTrans.matAbs;
-      else if (labMaterial === 'brass') materialName = currentConfigTrans.matBrass;
-      else materialName = currentConfigTrans.matSteel;
+      let materialName = currentConfigTrans.matAbs;
 
       let finishName = "";
       if (labFinish === 'chrome') finishName = currentConfigTrans.finChrome;
@@ -889,9 +930,7 @@ function App() {
       else finishName = currentConfigTrans.finGold;
 
       let specName = "";
-      if (labSpec === '15t') specName = currentConfigTrans.spec15;
-      else if (labSpec === '20t') specName = currentConfigTrans.spec20;
-      else if (labSpec === 'slider') specName = currentConfigTrans.specSlider;
+      if (labSpec === 'slider') specName = currentConfigTrans.specSlider;
       else specName = currentConfigTrans.specCustom;
 
       let pkgName = "";
@@ -964,7 +1003,7 @@ function App() {
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
               <img 
-                src="/assets/images/logo.jpg" 
+                src="https://sc02.alicdn.com/kf/H43f3be7076d6431080a2f10db571f6d1a.jpg" 
                 alt="Xiahua Logo" 
                 className="h-11 w-auto object-contain rounded-lg border border-slate-100 shadow-sm"
                 onError={(e) => {
@@ -1073,7 +1112,6 @@ function App() {
           </div>
         )}
       </header>
-
       {/* HERO SECTION */}
       <section id="home" className="relative bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white py-20 lg:py-28 overflow-hidden" data-component="hero-section">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
@@ -1137,30 +1175,111 @@ function App() {
 
             </div>
 
-            {/* Right Hero Image Frame (ABS single-lever handle marketing poster) */}
+            {/* Right Hero Image Frame (Multi-page marketing showcase: Page 1 = Faucet Handle, Page 2 = Shower Socket) */}
             <div className="lg:col-span-5 relative">
-              <div className="relative mx-auto max-w-[420px] lg:max-w-none rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 p-3">
-                <img 
-                  src="/assets/images/single-lever-handle-poster.jpg" 
-                  alt="ABS single-lever faucet handle with high-standard chrome plating" 
-                  className="w-full aspect-[3/4] object-cover rounded-2xl"
-                />
+              <div className="relative mx-auto max-w-[420px] lg:max-w-none rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 p-3 group">
+                
+                {/* Poster Image Container */}
+                <div className="relative overflow-hidden rounded-2xl aspect-[3/4] bg-slate-950">
+                  <img 
+                    src={heroPosterPage === 0 ? "/assets/images/hero-poster-1.jpg" : "/assets/images/hero-poster-2.jpg"} 
+                    alt={heroPosterPage === 0 ? "ABS single-lever faucet handle marketing poster" : "Quick-install shower head bracket socket poster"} 
+                    className="w-full h-full object-cover transition-all duration-500 transform group-hover:scale-[1.02]"
+                  />
+                  
+                  {/* Page Badge Indicator */}
+                  <div className="absolute top-3 right-3 bg-slate-950/80 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/20 shadow-lg flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                    <span>{heroPosterPage + 1} / 2</span>
+                  </div>
+
+                  {/* Left / Right Navigation Arrows */}
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setHeroPosterPage((prev) => (prev === 0 ? 1 : 0));
+                    }}
+                    className="absolute left-2.5 top-1/2 -translate-y-1/2 bg-slate-900/80 hover:bg-blue-600 text-white p-2 rounded-full backdrop-blur-sm border border-white/10 opacity-80 hover:opacity-100 transition-all shadow-lg cursor-pointer"
+                    aria-label="Previous Page"
+                  >
+                    <ChevronLeft size={18} />
+                  </button>
+
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setHeroPosterPage((prev) => (prev === 0 ? 1 : 0));
+                    }}
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 bg-slate-900/80 hover:bg-blue-600 text-white p-2 rounded-full backdrop-blur-sm border border-white/10 opacity-80 hover:opacity-100 transition-all shadow-lg cursor-pointer"
+                    aria-label="Next Page"
+                  >
+                    <ChevronRight size={18} />
+                  </button>
+                </div>
+
+                {/* Bottom Pagination Switcher Tabs */}
+                <div className="flex items-center justify-between gap-2 mt-3 px-1">
+                  <button
+                    onClick={() => setHeroPosterPage(0)}
+                    className={`flex-1 py-2 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer border ${
+                      heroPosterPage === 0 
+                        ? 'bg-blue-600 text-white border-blue-400 shadow-md' 
+                        : 'bg-slate-800 text-slate-400 hover:text-white border-white/5 hover:bg-slate-700'
+                    }`}
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                    <span className="truncate">{lang === 'zh' ? '第 1 页 · 水龙头单把手柄' : 'Page 1 · Faucet Handle'}</span>
+                  </button>
+
+                  <button
+                    onClick={() => setHeroPosterPage(1)}
+                    className={`flex-1 py-2 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer border ${
+                      heroPosterPage === 1 
+                        ? 'bg-blue-600 text-white border-blue-400 shadow-md' 
+                        : 'bg-slate-800 text-slate-400 hover:text-white border-white/5 hover:bg-slate-700'
+                    }`}
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                    <span className="truncate">{lang === 'zh' ? '第 2 页 · 淋浴花洒插座' : 'Page 2 · Shower Socket'}</span>
+                  </button>
+                </div>
+
               </div>
             </div>
 
           </div>
         </div>
       </section>
-
       {/* CORE ADVANTAGES */}
-      <section className="py-20 bg-white" data-component="features">
+      <section
+        className="py-20 bg-white"
+        data-component="features"
+        style={{
+          backgroundColor: "rgb(249, 245, 220)"
+        }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-12">
           
           <div className="max-w-3xl mx-auto space-y-4">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2
+              className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight"
+              style={{
+                textDecoration: "none",
+                fontSize: "32px",
+                borderColor: "rgb(255, 255, 255)",
+                borderRadius: "0px",
+                display: "block"
+              }}>
               {t.advantageTitle}
             </h2>
-            <p className="text-slate-500 text-lg leading-relaxed">
+            <p
+              className="text-slate-500 text-lg leading-relaxed hover:text-[rgb(0,0,0)] hover:bg-[rgb(255,255,255)] transition-colors"
+              style={{
+                fontFamily: "-apple-system",
+                textAlign: "center",
+                textDecoration: "none",
+                letterSpacing: "1px",
+                fontSize: "20px"
+              }}>
               {t.advantageLede}
             </p>
           </div>
@@ -1205,16 +1324,30 @@ function App() {
 
         </div>
       </section>
-
       {/* PRODUCT CATALOG SECTION */}
-      <section id="products" className="py-20 bg-slate-50 border-t border-slate-200" data-component="product-catalog">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section
+        id="products"
+        className="py-20 bg-slate-50 border-t border-slate-200 hover:text-[rgb(191,59,85)] transition-colors"
+        data-component="product-catalog"
+        style={{
+          backgroundColor: "rgb(255, 255, 255)"
+        }}>
+        <div
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12"
+          style={{
+            backgroundColor: "rgb(255, 255, 255)"
+          }}>
           
           <div className="text-center max-w-3xl mx-auto space-y-4">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               {t.catalogTitle}
             </h2>
-            <p className="text-slate-500 text-lg leading-relaxed">
+            <p
+              className="text-slate-500 text-lg leading-relaxed"
+              style={{
+                fontFamily: "-apple-system",
+                textDecoration: "none"
+              }}>
               {t.catalogLede}
             </p>
           </div>
@@ -1239,7 +1372,9 @@ function App() {
                   ? 'bg-blue-800 border-blue-800 text-white shadow-lg shadow-blue-800/10'
                   : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-100 shadow-sm'
               }`}
-            >
+              style={{
+                backgroundColor: "rgb(243, 253, 191)"
+              }}>
               <FileText size={16} className={activeCatalogView === 'catalog' ? "text-blue-200" : "text-slate-400"} />
               <span>{lang === 'zh' ? '查看标准型录 (Standard Grid)' : 'Standard Grid Specifications'}</span>
             </button>
@@ -1250,26 +1385,25 @@ function App() {
             <div className="space-y-8 animate-fade-in" data-component="b2b-configurator-showroom">
               
               {/* Product Base Model Select Cards */}
-              <div className="bg-white border border-slate-200 p-6 rounded-3xl shadow-sm text-left">
+              <div
+                className="bg-white border border-slate-200 p-6 rounded-3xl shadow-sm text-left"
+                style={{
+                  backgroundColor: "rgb(252, 252, 252)"
+                }}>
                 <span className="block text-xs font-black tracking-widest text-slate-400 uppercase mb-4">
                   {configTrans[lang]?.selectProduct || configTrans.en.selectProduct}
                 </span>
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
                   {products.map((p) => (
                     <button
                       key={p.id}
                       onClick={() => {
                         setSelectedLabProduct(p);
-                        // Sensible auto-defaults based on product category for B2B precision
-                        if (p.category === 'handles') {
-                          setLabMaterial('abs');
-                          setLabSpec('15t');
-                        } else if (p.category === 'sliders') {
-                          setLabMaterial('abs');
+                        setLabMaterial('abs');
+                        if (p.category === 'sliders' || p.category === 'sockets') {
                           setLabSpec('slider');
                         } else {
-                          setLabMaterial('brass');
-                          setLabSpec('20t');
+                          setLabSpec('custom');
                         }
                       }}
                       className={`p-4 rounded-2xl border text-left transition-all duration-300 ${
@@ -1277,7 +1411,9 @@ function App() {
                           ? 'border-blue-800 bg-blue-50/40 ring-4 ring-blue-500/10 shadow-sm'
                           : 'border-slate-200 bg-slate-50/50 hover:bg-slate-100 hover:border-slate-300'
                       }`}
-                    >
+                      style={{
+                        backgroundColor: "rgba(250, 251, 252, 0.4)"
+                      }}>
                       <span className="inline-block text-[10px] font-black text-blue-800 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded leading-none uppercase tracking-wider">{p.model}</span>
                       <span className="block font-black text-slate-800 text-sm mt-2 truncate">{p.nameMap[lang]}</span>
                     </button>
@@ -1394,9 +1530,7 @@ function App() {
                       </label>
                       <div className="flex flex-wrap gap-2">
                         {[
-                          ['abs', configTrans[lang]?.matAbs || configTrans.en.matAbs],
-                          ['brass', configTrans[lang]?.matBrass || configTrans.en.matBrass],
-                          ['steel', configTrans[lang]?.matSteel || configTrans.en.matSteel]
+                          ['abs', configTrans[lang]?.matAbs || configTrans.en.matAbs]
                         ].map(([val, label]) => (
                           <button
                             key={val}
@@ -1446,8 +1580,6 @@ function App() {
                       </label>
                       <div className="flex flex-wrap gap-2">
                         {[
-                          ['15t', configTrans[lang]?.spec15 || configTrans.en.spec15],
-                          ['20t', configTrans[lang]?.spec20 || configTrans.en.spec20],
                           ['slider', configTrans[lang]?.specSlider || configTrans.en.specSlider],
                           ['custom', configTrans[lang]?.specCustom || configTrans.en.specCustom]
                         ].map(([val, label]) => (
@@ -1637,6 +1769,7 @@ function App() {
                   ['all', t.catAll],
                   ['handles', t.catHandles],
                   ['sliders', t.catSliders],
+                  ['sockets', t.catSockets],
                   ['hardware', t.catHardware]
                 ].map(([key, label]) => (
                   <button
@@ -1784,6 +1917,182 @@ function App() {
             </div>
           )}
 
+          {/* FEATURED SPOTLIGHT: XH-71 SHOWER SLIDER BRACKET */}
+          <div className="mt-14 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 rounded-3xl p-8 sm:p-10 border border-blue-800/40 shadow-2xl text-white relative overflow-hidden" data-component="featured-product-spotlight">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+            
+            <div className="space-y-8 relative z-10">
+              {/* Header banner */}
+              <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-6">
+                <div className="space-y-1 text-left">
+                  <div className="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-blue-400/30">
+                    <Sparkles size={13} className="text-blue-300" />
+                    <span>{lang === 'zh' ? '核心配件产品大类 · 新品重点推介' : 'Core Accessories · Featured Product Spotlight'}</span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-snug">
+                    {lang === 'zh' ? 'XH-71 经典按键升降花洒座 / 淋浴杆滑座' : 'XH-71 Push-Button Adjustable Shower Bar Slider Bracket'}
+                  </h3>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="bg-slate-800 text-slate-300 text-xs font-bold px-3 py-1.5 rounded-lg border border-white/10">
+                    Model: XH-71
+                  </span>
+                  <span className="bg-blue-600 text-white text-xs font-black px-3 py-1.5 rounded-lg uppercase tracking-wider shadow">
+                    {lang === 'zh' ? '双色可选' : '2 Colors Available'}
+                  </span>
+                </div>
+              </div>
+
+              {/* Main Grid: Media (Images + Video) & Specs */}
+              <div className="grid lg:grid-cols-12 gap-8 items-start">
+                
+                {/* Left Column: Product Photos & Color Switcher */}
+                <div className="lg:col-span-5 space-y-4">
+                  <div className="relative group w-full aspect-[4/3] bg-slate-800/90 rounded-2xl p-4 border border-white/10 flex items-center justify-center overflow-hidden shadow-inner">
+                    <img 
+                      src={xh71ActiveImage} 
+                      alt="XH-71 Push-Button Shower Bar Slider" 
+                      className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 filter drop-shadow-2xl"
+                    />
+                    <div className="absolute top-3 left-3 bg-blue-600/90 backdrop-blur text-white text-[10px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider shadow-md">
+                      {xh71ActiveImage.includes('71-2') ? (lang === 'zh' ? '枪灰色 / 哑黑' : 'Gunmetal Grey') : (lang === 'zh' ? '镜面高光电镀铬' : 'Mirror Chrome')}
+                    </div>
+                  </div>
+
+                  {/* Color / Variant Selector Thumbnails */}
+                  <div className="grid grid-cols-3 gap-2">
+                    <button
+                      onClick={() => setXh71ActiveImage('/assets/products/xh-product-71.jpg')}
+                      className={`flex items-center gap-2 p-2 rounded-xl border transition-all text-left ${
+                        xh71ActiveImage === '/assets/products/xh-product-71.jpg'
+                          ? 'bg-blue-600/30 border-blue-400 text-white shadow-md'
+                          : 'bg-slate-800/60 border-white/10 text-slate-400 hover:text-white hover:bg-slate-800'
+                      }`}
+                    >
+                      <div className="w-7 h-7 rounded-lg bg-slate-700 overflow-hidden flex-shrink-0 border border-white/20">
+                        <img src="/assets/products/xh-product-71.jpg" alt="Chrome 1" className="w-full h-full object-cover" />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="text-[11px] font-bold leading-tight truncate">{lang === 'zh' ? '镜面铬 1' : 'Chrome 1'}</div>
+                        <div className="text-[9px] opacity-75 truncate">{lang === 'zh' ? '加厚电镀' : 'Plated'}</div>
+                      </div>
+                    </button>
+
+                    <button
+                      onClick={() => setXh71ActiveImage('/assets/products/xh-product-71-3.jpg')}
+                      className={`flex items-center gap-2 p-2 rounded-xl border transition-all text-left ${
+                        xh71ActiveImage === '/assets/products/xh-product-71-3.jpg'
+                          ? 'bg-blue-600/30 border-blue-400 text-white shadow-md'
+                          : 'bg-slate-800/60 border-white/10 text-slate-400 hover:text-white hover:bg-slate-800'
+                      }`}
+                    >
+                      <div className="w-7 h-7 rounded-lg bg-slate-700 overflow-hidden flex-shrink-0 border border-white/20">
+                        <img src="/assets/products/xh-product-71-3.jpg" alt="Chrome 2" className="w-full h-full object-cover" />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="text-[11px] font-bold leading-tight truncate">{lang === 'zh' ? '镜面铬 2' : 'Chrome 2'}</div>
+                        <div className="text-[9px] opacity-75 truncate">{lang === 'zh' ? '新款实拍' : 'Studio'}</div>
+                      </div>
+                    </button>
+
+                    <button
+                      onClick={() => setXh71ActiveImage('/assets/products/xh-product-71-2.jpg')}
+                      className={`flex items-center gap-2 p-2 rounded-xl border transition-all text-left ${
+                        xh71ActiveImage === '/assets/products/xh-product-71-2.jpg'
+                          ? 'bg-blue-600/30 border-blue-400 text-white shadow-md'
+                          : 'bg-slate-800/60 border-white/10 text-slate-400 hover:text-white hover:bg-slate-800'
+                      }`}
+                    >
+                      <div className="w-7 h-7 rounded-lg bg-slate-700 overflow-hidden flex-shrink-0 border border-white/20">
+                        <img src="/assets/products/xh-product-71-2.jpg" alt="Gunmetal Grey" className="w-full h-full object-cover" />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="text-[11px] font-bold leading-tight truncate">{lang === 'zh' ? '枪灰色' : 'Gunmetal'}</div>
+                        <div className="text-[9px] opacity-75 truncate">{lang === 'zh' ? '哑光防指纹' : 'Matte'}</div>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Right Column: Specs, Video Player & CTAs */}
+                <div className="lg:col-span-7 space-y-6 text-left">
+                  <p className="text-slate-300 text-sm leading-relaxed">
+                    {lang === 'zh' 
+                      ? '专为 18-25mm 国际标准升降淋浴杆量身研发。顶部配备一键式机械阻尼按压升降机构，单手轻松滑动调节高度；内置高阻尼耐老化防滑硅胶衬垫，紧密贴合防滑防刮；插座支持 360° 旋转调节喷淋角度，全件提供 9 级加厚镜面电镀铬与哑光枪灰双色工艺，耐酸耐磨，专供国际大宗卫浴 OEM/ODM 采购。'
+                      : 'Engineered for standard 18-25mm shower riser rails. Features one-touch push-button smooth height adjustment, high-grip anti-slip internal padding to prevent slipping under heavy hand showers, 360° swivel cradle, and durable Class-9 electroplated chrome & matte gunmetal grey finishes.'}
+                  </p>
+
+                  {/* Feature Badges */}
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                    <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
+                      <div className="text-blue-400 font-bold">{lang === 'zh' ? '一键按压' : 'One-Touch'}</div>
+                      <div className="text-slate-300 text-[11px] mt-0.5">{lang === 'zh' ? '单手顺滑升降' : 'Smooth Sliding'}</div>
+                    </div>
+                    <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
+                      <div className="text-blue-400 font-bold">{lang === 'zh' ? '360° 旋转' : '360° Swivel'}</div>
+                      <div className="text-slate-300 text-[11px] mt-0.5">{lang === 'zh' ? '多角度自由调节' : 'Multi-Angle'}</div>
+                    </div>
+                    <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
+                      <div className="text-blue-400 font-bold">{lang === 'zh' ? '18-25mm 通用' : '18-25mm'}</div>
+                      <div className="text-slate-300 text-[11px] mt-0.5">{lang === 'zh' ? '适配主流淋浴管' : 'Universal Fit'}</div>
+                    </div>
+                    <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
+                      <div className="text-blue-400 font-bold">{lang === 'zh' ? '9级加厚电镀' : 'Class-9 Chrome'}</div>
+                      <div className="text-slate-300 text-[11px] mt-0.5">{lang === 'zh' ? '耐酸抗盐雾腐蚀' : 'Anti-Corrosion'}</div>
+                    </div>
+                  </div>
+
+                  {/* Product Introduction Video Player */}
+                  <div className="bg-slate-800/80 rounded-2xl p-4 border border-white/10 space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className="inline-flex items-center gap-2 text-xs font-bold text-blue-300">
+                        <Play size={14} className="text-blue-400 fill-blue-400" />
+                        <span>{lang === 'zh' ? '产品介绍视频 · 演示与功能实拍' : 'Product Introduction Video · Live Demonstration'}</span>
+                      </div>
+                      <span className="text-[11px] font-semibold text-slate-400">1080P HD / 真实操作实拍</span>
+                    </div>
+
+                    <div className="relative rounded-xl overflow-hidden bg-black/60 aspect-video border border-white/10 shadow-lg">
+                      <video 
+                        controls 
+                        playsInline 
+                        preload="metadata"
+                        poster="/assets/products/xh-product-71.jpg"
+                        className="w-full h-full object-cover"
+                      >
+                        <source src="/assets/videos/xh-71-intro.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="flex flex-wrap items-center gap-4 pt-1">
+                    <button
+                      onClick={() => {
+                        const p71 = products.find(item => item.model === 'XH-71') || products[1];
+                        setSelectedProduct(p71);
+                        setRfqMsg(`RFQ for model: XH-71 Push-Button Shower Slider Bracket. Please provide wholesale volume quotation and technical drawing.`);
+                      }}
+                      className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-bold text-sm flex items-center gap-2 shadow-lg hover:shadow-blue-500/25 transition-all cursor-pointer"
+                    >
+                      <span>{lang === 'zh' ? '获取 XH-71 规格与阶梯报价' : 'View XH-71 Specs & Volume Pricing'}</span>
+                      <ChevronRight size={16} />
+                    </button>
+                    <a
+                      href="https://wa.me/8618965758892?text=Hello%2C%20I%20am%20interested%20in%20XH-71%20Push-Button%20Shower%20Slider%20Bracket."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3 rounded-xl font-bold text-sm flex items-center gap-2 shadow-lg transition-all"
+                    >
+                      <span>WhatsApp 直联咨询</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Interactive Absolute Success Toast for Configurator */}
           {rfqApplied && (
             <div className="fixed bottom-6 right-6 z-50 bg-green-600 border border-green-500 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 animate-slide-in hover:translate-y-[-2px] transition-transform">
@@ -1797,7 +2106,6 @@ function App() {
 
         </div>
       </section>
-
       {/* NATIONAL PATENTS SECTION (High-Fidelity PDF integration) */}
       <section id="patents" className="py-20 bg-white border-t border-slate-200" data-component="patent-showcase">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
@@ -1870,7 +2178,6 @@ function App() {
 
         </div>
       </section>
-
       {/* FACTORY AND QC SECTION (with embedded custom MP4 players) */}
       <section id="factory" className="py-20 bg-slate-50 border-t border-slate-200" data-component="factory-showroom">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
@@ -1889,13 +2196,13 @@ function App() {
             {/* Left Image grid */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 p-3 bg-white">
               <img 
-                src="/assets/images/factory-b2b.jpg" 
-                alt="Production Workshop of Fujian Xialong / Xiahua" 
-                className="w-full h-[400px] object-cover rounded-2xl"
+                src="https://sc02.alicdn.com/kf/H9ea350f2db8341f5a7deba915284a698b.jpg" 
+                onError={(e) => {
+                  e.target.src = '/assets/images/factory-head-office-v2.jpg';
+                }}
+                alt="Fujian Xialong Head Office Building and Factory Workshop" 
+                className="w-full h-[400px] object-cover rounded-2xl shadow-sm"
               />
-              <div className="absolute top-6 left-6 bg-blue-800 text-white py-1.5 px-3 rounded-lg text-xs font-bold tracking-widest uppercase shadow-md">
-                Fujian Xialong Head Office Building
-              </div>
             </div>
 
             {/* Right Text */}
@@ -1985,9 +2292,14 @@ function App() {
 
         </div>
       </section>
-
       {/* FAQ SECTION */}
-      <section id="faq" className="py-20 bg-white border-t border-slate-200" data-component="faq-section">
+      <section
+        id="faq"
+        className="py-20 bg-white border-t border-slate-200"
+        data-component="faq-section"
+        style={{
+          backgroundColor: "rgb(249, 245, 220)"
+        }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="text-center space-y-4">
@@ -2015,7 +2327,6 @@ function App() {
 
         </div>
       </section>
-
       {/* FOOTER */}
       <footer className="bg-slate-900 text-white py-12 border-t border-slate-800" data-component="footer">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -2058,7 +2369,6 @@ function App() {
 
         </div>
       </footer>
-
       {/* PRODUCT SPECIFICATION MODAL */}
       {selectedProduct && (
         <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
@@ -2149,7 +2459,6 @@ function App() {
           </div>
         </div>
       )}
-
       {/* FULLSCREEN LIGHTBOX FOR REAL PRODUCTS GALLERY */}
       {selectedGalleryImg && (
         <div className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur flex items-center justify-center p-4">
@@ -2174,7 +2483,6 @@ function App() {
           </div>
         </div>
       )}
-
       {/* FIXED BOTTOM COMPARISON CONTROL BAR */}
       {compareList.length > 0 && (
         <div className="fixed bottom-0 inset-x-0 z-40 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 py-4 px-6 text-white flex flex-col sm:flex-row justify-between items-center gap-4 shadow-2xl animate-slide-in">
@@ -2214,7 +2522,6 @@ function App() {
           </div>
         </div>
       )}
-
       {/* MULTI-PRODUCT SPECIFICATION COMPARISON MODAL */}
       {isCompareOpen && (
         <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
@@ -2291,8 +2598,8 @@ function App() {
                   <tr>
                     <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '扎实质感与克重' : 'Weight Profile'}</td>
                     {compareList.map(item => {
-                      const maxWeight = item.model === 'XH-FC-03' ? '99g Heavy Duty' : item.model === 'XH-BRFC-303' ? '45g Mid Spec' : '35g Ultra-Light';
-                      const weightPercent = item.model === 'XH-FC-03' ? 'w-full bg-blue-800' : item.model === 'XH-BRFC-303' ? 'w-1/2 bg-blue-600' : 'w-1/3 bg-blue-400';
+                      const maxWeight = item.model === 'XH-ABSGQ-101' ? '48g Piano Key' : item.model === 'XH-ABS-102' ? '52g Solid Handle' : item.model === 'XH-BRFC-303' ? '45g Compact Socket' : item.model === 'XH-71' ? '42g Ergonomic' : '35g Ultra-Light';
+                      const weightPercent = item.model === 'XH-ABS-102' ? 'w-3/4 bg-blue-700' : item.model === 'XH-BRFC-303' ? 'w-1/2 bg-blue-600' : 'w-1/3 bg-blue-400';
                       return (
                         <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100 space-y-1.5">
                           <span className="font-extrabold text-slate-800 text-xs">{maxWeight}</span>
@@ -2308,7 +2615,7 @@ function App() {
                   <tr>
                     <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '耐酸雾腐蚀指数' : 'Corrosion Resistance'}</td>
                     {compareList.map(item => {
-                      const rating = item.model === 'XH-FC-03' || item.model === 'XH-ABS-101' ? '⭐⭐★★★ (48h 酸性雾测试)' : '⭐⭐⭐⭐★ (24h 盐雾测试)';
+                      const rating = item.model === 'XH-ABS-102' || item.model === 'XH-ABS-101' ? '⭐⭐★★★ (48h 酸性雾测试)' : '⭐⭐⭐⭐★ (24h 盐雾测试)';
                       return (
                         <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100 font-bold text-xs text-slate-700">
                           {rating}
@@ -2346,7 +2653,7 @@ function App() {
                     <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '开模制样周期' : 'Lead Time'}</td>
                     {compareList.map(item => (
                       <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100 font-bold text-xs text-slate-700">
-                        {item.category === 'hardware' ? (lang === 'zh' ? 'CNC 快速打样 48 小时' : 'CNC Prototyping 48h') : (item.category === 'sliders' ? (lang === 'zh' ? '快捷免工具安装，24 小时出图' : 'Tool-Free Quick Install, Drawing in 24h') : (lang === 'zh' ? '注塑开模 24 小时出图' : 'Injection Mold Drawing 24h'))}
+                        {item.category === 'hardware' ? (lang === 'zh' ? 'CNC 快速打样 48 小时' : 'CNC Prototyping 48h') : (item.category === 'sliders' || item.category === 'sockets' ? (lang === 'zh' ? '快捷免工具安装，24 小时出图' : 'Tool-Free Quick Install, Drawing in 24h') : (lang === 'zh' ? '注塑开模 24 小时出图' : 'Injection Mold Drawing 24h'))}
                       </td>
                     ))}
                   </tr>
@@ -2357,9 +2664,11 @@ function App() {
                     {compareList.map(item => {
                       const bullet = 
                         item.model === 'XH-ABS-101' ? (lang === 'zh' ? '首创国家实用新型专利，比重加厚30%，耐酸电镀镜面光滑' : 'National patent-grade thick wall, class-9 flawless chrome finish') :
-                        item.model === 'XH-SHSL-202' ? (lang === 'zh' ? '自锁式重摩擦阻尼滑块，高挂载花洒完美防滑，移动丝滑' : 'Self-locking high friction structure, zero slip on 1.5kg heavy shower') :
-                        item.model === 'XH-BRFC-303' ? (lang === 'zh' ? '高精度双色防滑滚花，指纹油脂不留痕，顶级内接精密铜齿' : 'knurled texture anti-slip, copper Splines gear anti-bite splines') :
-                        (lang === 'zh' ? '国标H59-1环保黄铜精密重力浇铸，耐极寒防爆裂，称重防伪' : 'Solid H59 cast brass, 99g strict precision balance weighing control');
+                        item.model === 'XH-SHSL-202' ? (lang === 'zh' ? '夏龙国家专利控温结构，原生ABS加厚注塑，9级镜面电镀耐酸抗蚀' : 'Xialong patented control structure, thick-wall virgin ABS, class-9 chrome') :
+                        item.model === 'XH-71' ? (lang === 'zh' ? '一键按压轻便升降，内置高阻尼防滑硅胶垫，360°旋转插座' : 'One-touch push button smooth adjustment, anti-slip silicone pads, 360° swivel holder') :
+                        item.model === 'XH-BRFC-303' ? (lang === 'zh' ? '国家实用新型专利快装结构，双色极简防刮，手持花洒插拔顺畅稳固' : 'National patent quick-mount socket, dual-tone sleek finish, wobble-free grip') :
+                        item.model === 'XH-ABSGQ-101' ? (lang === 'zh' ? '独立琴键式机械切换，原生抗冲高标ABS，触感清脆顺畅不卡滞' : 'Piano-key independent actuation, virgin high-impact ABS, crisp tactile response') :
+                        (lang === 'zh' ? '夏龙专利流线型设计，原生高标ABS注塑，48h耐酸电镀' : 'Xialong patented ergonomic design, virgin ABS injection, 48h acid-tested chrome');
                       return (
                         <td key={item.id} className="py-4 px-4 text-left border-l border-slate-100 text-xs font-semibold text-slate-500 leading-relaxed max-w-[240px]">
                           • {bullet}
@@ -2407,7 +2716,6 @@ function App() {
           </div>
         </div>
       )}
-
     </div>
   );
 }
