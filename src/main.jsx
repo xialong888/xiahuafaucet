@@ -76,8 +76,12 @@ const trans = {
     videoTitle: "Watch Our Factory & Production Lines",
     video1Name: "1. Corporate Headquarters & Showroom Tour",
     video1Desc: "Explore our state-of-the-art office building, testing labs, and completed sanitary products showroom.",
-    video2Name: "2. Precision Molding & 100% Pressure-Testing Process",
+    video2Name: "2. Precision Molding, Assembly & 100% Pressure-Testing Process",
     video2Desc: "See our heavy injection-molding machines, automated electroplating, and rigorous leak testing on every component.",
+    video2Part1: "Video 2.1: Precision Molding & Plating",
+    video2Part1Desc: "View automated heavy-duty plastic injection molding machines and high-gloss multi-layer electroplating lines.",
+    video2Part2: "Video 2.2: Assembly & Pressure Testing (New)",
+    video2Part2Desc: "See our dedicated manual & semi-auto assembly lines, leak tests, and 100% hydraulic pressure testing before packaging.",
     patentTitle: "National Patents & Certifications",
     patentLede: "Fujian Xialong (Xiahua) holds multiple utility model patents registered under the State Intellectual Property Office of China, ensuring elite design authority.",
     pat1Name: "Utility Model Patent: Easy-to-Manufacture Mixing Valve Handle",
@@ -156,8 +160,12 @@ const trans = {
     videoTitle: "Видеоэкскурсия по нашему заводу и линиям",
     video1Name: "1. Экскурсия по штаб-квартире и шоуруму",
     video1Desc: "Посетите наше современное офисное здание, испытательные лаборатории и шоурум готовой сантехники.",
-    video2Name: "2. Высокоточное литье и 100% проверка давлением",
+    video2Name: "2. Высокоточное литье, сборка и 100% проверка давлением",
     video2Desc: "Посмотрите на тяжелые термопластавтоматы, автоматическую гальванику и строгие испытания на утечку каждого компонента.",
+    video2Part1: "Видео 2.1: Литье и гальваника",
+    video2Part1Desc: "Ознакомьтесь с автоматическими термопластавтоматами и линиями многослойной гальваники.",
+    video2Part2: "Видео 2.2: Сборка и опрессовка (Новое)",
+    video2Part2Desc: "Посмотрите на сборочные линии, строгий контроль герметичности и 100% гидравлические испытания.",
     patentTitle: "Национальные патенты и сертификаты",
     patentLede: "Fujian Xialong (Xiahua) владеет многочисленными патентами на полезные модели, зарегистрированными Государственным управлением интеллектуальной собственности Китая.",
     pat1Name: "Патент на полезную модель: Простая в производстве ручка смесителя",
@@ -236,8 +244,12 @@ const trans = {
     videoTitle: "Assista aos Vídeos de Nossa Fábrica e Linhas",
     video1Name: "1. Tour pela Sede e Showroom",
     video1Desc: "Explore nosso moderno edifício administrativo, laboratórios de testes e o showroom de metais sanitários.",
-    video2Name: "2. Moldagem de Precisão e Processo de Teste de Pressão 100%",
+    video2Name: "2. Moldagem de Precisão, Montagem e Processo de Teste 100%",
     video2Desc: "Veja nossas injetoras de alta capacidade, galvânica automatizada e o rigoroso teste de estanqueidade em cada componente.",
+    video2Part1: "Vídeo 2.1: Injeção e Galvanoplastia",
+    video2Part1Desc: "Veja as máquinas de injeção plástica automatizadas e as linhas de revestimento eletrolítico espelhado.",
+    video2Part2: "Vídeo 2.2: Montagem e Teste de Pressão (Novo)",
+    video2Part2Desc: "Acompanhe as linhas de montagem dedicadas e o teste hidráulico e pneumático de estanqueidade 100%.",
     patentTitle: "Patentes Nacionais & Certificações",
     patentLede: "A Fujian Xialong (Xiahua) detém várias patentes de modelos de utilidade devidamente registradas no órgão oficial de patentes da China.",
     pat1Name: "Patente de Modelo de Utilidade: Volante de Misturador Fácil de Produzir",
@@ -316,8 +328,12 @@ const trans = {
     videoTitle: "हमारे कारखाने और विनिर्माण वीडियो देखें",
     video1Name: "1. कॉर्पोरेट मुख्यालय और शोरूम यात्रा",
     video1Desc: "हमारे कार्यालय, परीक्षण प्रयोगशालाओं और तैयार उत्पादों के शोरूम का अन्वेषण करें।",
-    video2Name: "2. इंजेक्शन मोल्डिंग और 100% दबाव परीक्षण",
+    video2Name: "2. इंजेक्शन मोल्डिंग, असेंबली और 100% दबाव परीक्षण",
     video2Desc: "हमारे इंजेक्शन-मोल्डिंग, विद्युत लेपन और रिसाव परीक्षण कार्यप्रवाह देखें।",
+    video2Part1: "वीडियो 2.1: इंजेक्शन मोल्डिंग और लेपन",
+    video2Part1Desc: "स्वचालित भारी इंजेक्शन मोल्डिंग मशीनें और बहु-परत इलेक्ट्रोप्लेटिंग लाइनें देखें।",
+    video2Part2: "वीडियो 2.2: असेंबली और 100% दबाव परीक्षण (नया)",
+    video2Part2Desc: "हमारी समर्पित असेंबली लाइनें और पैकेजिंग से पहले 100% हाइड्रोलिक दबाव परीक्षण देखें।",
     patentTitle: "राष्ट्रीय पेटेंट और प्रमाण पत्र",
     patentLede: "फ़ुज़ियान शियालॉन्ग (शियाहुआ) के पास चीन के पेटेंट कार्यालय (SIPO) द्वारा अधिकृत कई पेटेंट अधिकार हैं, जो हमारे डिजाइन की मौलिकता की गारंटी देते हैं।",
     pat1Name: "उपयोगिता मॉडल पेटेंट: निर्माण में आसान नल मिक्सर हैंडल",
@@ -398,6 +414,10 @@ const trans = {
     video1Desc: "点击播放视频，实地考察我们的高新技术园区大楼、模具测试车间和全品类高端卫浴展厅，彰显大厂硬核底气。",
     video2Name: "2. ABS 龙头手柄与花洒配件注塑、装配及 100% 水压测试流程",
     video2Desc: "点击播放视频，全景还原全自动精密注塑成型机组运行、高光无暇电镀以及出厂前 100% 气密性/液压全检装配流程。",
+    video2Part1: "视频 2.1：注塑成型与电镀质检",
+    video2Part1Desc: "全景还原全自动精密注塑成型机组运行与高光无暇电镀表面处理工艺。",
+    video2Part2: "视频 2.2：流水线装配与水压全检 (新添)",
+    video2Part2Desc: "实拍配件标准化流水线组装、100% 气密性防漏检测与高压水压全检出厂流程。",
     patentTitle: "国家实用新型专利证书展示",
     patentLede: "夏龙卫浴（厦华手柄）系列研发产品已获得国家知识产权局多项实用新型专利授权，确保您的采购合规无忧、技术卓越。",
     pat1Name: "国家实用新型专利：便于生产的混水阀手柄",
@@ -795,6 +815,7 @@ function App() {
   const [carouselIndex, setCarouselIndex] = useState({});
   const [xh71ActiveImage, setXh71ActiveImage] = useState('/assets/products/xh-product-71.jpg');
   const [heroPosterPage, setHeroPosterPage] = useState(0);
+  const [video2Tab, setVideo2Tab] = useState(0);
 
   const t = trans[lang] || trans.en;
 
@@ -2267,23 +2288,64 @@ function App() {
 
               {/* Video 2 Player */}
               <div className="bg-white border border-slate-200 p-5 rounded-3xl space-y-4 shadow-sm hover:shadow-md transition-shadow">
-                <div className="relative rounded-2xl overflow-hidden bg-slate-950 aspect-video">
-                  <video 
-                    controls 
-                    className="w-full h-full object-contain"
-                    preload="metadata"
+                {/* Sub-video Tab Switcher for Option 2 */}
+                <div className="flex items-center gap-2 bg-slate-100 p-1.5 rounded-2xl">
+                  <button
+                    type="button"
+                    onClick={() => setVideo2Tab(0)}
+                    className={`flex-1 py-1.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                      video2Tab === 0
+                        ? "bg-white text-blue-700 shadow-sm font-extrabold"
+                        : "text-slate-600 hover:text-slate-900"
+                    }`}
                   >
-                    <source src="/assets/videos/713225503.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
+                    <span className="w-2 h-2 rounded-full bg-blue-600 inline-block"></span>
+                    <span>{t.video2Part1}</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setVideo2Tab(1)}
+                    className={`flex-1 py-1.5 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                      video2Tab === 1
+                        ? "bg-white text-blue-700 shadow-sm font-extrabold"
+                        : "text-slate-600 hover:text-slate-900"
+                    }`}
+                  >
+                    <span className="w-2 h-2 rounded-full bg-amber-500 inline-block"></span>
+                    <span>{t.video2Part2}</span>
+                  </button>
+                </div>
+
+                <div className="relative rounded-2xl overflow-hidden bg-slate-950 aspect-video">
+                  {video2Tab === 0 ? (
+                    <video 
+                      key="v2-molding-plating"
+                      controls 
+                      className="w-full h-full object-contain"
+                      preload="metadata"
+                    >
+                      <source src="/assets/videos/713225503.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : (
+                    <video 
+                      key="v2-assembly-testing"
+                      controls 
+                      className="w-full h-full object-contain"
+                      preload="metadata"
+                    >
+                      <source src="/assets/videos/xh-assembly-testing.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  )}
                 </div>
                 <div className="space-y-1.5 px-1">
                   <h4 className="font-extrabold text-slate-900 text-base flex items-center gap-2">
                     <Play size={16} className="text-blue-700 fill-blue-700/10 shrink-0" />
-                    <span>{t.video2Name}</span>
+                    <span>{video2Tab === 0 ? t.video2Part1 : t.video2Part2}</span>
                   </h4>
                   <p className="text-slate-500 text-sm font-semibold leading-relaxed">
-                    {t.video2Desc}
+                    {video2Tab === 0 ? t.video2Part1Desc : t.video2Part2Desc}
                   </p>
                 </div>
               </div>
