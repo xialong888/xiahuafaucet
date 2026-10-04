@@ -71,6 +71,8 @@ const trans = {
     galleryLede: "Interactive catalog showing 25+ real custom molds, precision faucet levers, brackets, and raw factory parts. Click any image to examine our flawless mirror-chrome finish and tooling details.",
     factoryTitle: "Our Factory & Quality Control",
     factoryLede: "Established on 2006-02-27 in Nan'an Luncang Plumbing High-Tech Park, Quanzhou, Fujian.",
+    factImg1Title: "1. Head Office Building & Campus",
+    factImg2Title: "2. Xiahua Handle Brand Reception Wall",
     factParagraph1: "Fujian Xialong Sanitary Ware Co., Ltd. (also known as Fujian Nan'an Luncang Xiahua Sanitary Ware Factory) was established in 2006 in Luncang, Nan'an, Quanzhou, Fujian, the world-renowned capital of plumbing and sanitary fittings. Our facility features a dedicated 3,000+ sqm production area, housing advanced high-precision injection-molding equipment, automated plating lines, and strict water/air pressure test benches.",
     factParagraph2: "Operating with 80 highly skilled workers and top-tier quality inspectors, we have built stable, long-term partnerships with major sanitary corporations. Over the past 17 years, our insistence on using virgin premium materials and strict ISO9001-compliant production has earned the absolute trust of global importers, wholesales, and engineering procurement managers across Southeast Asia, South America, and the Middle East.",
     videoTitle: "Watch Our Factory & Production Lines",
@@ -155,6 +157,8 @@ const trans = {
     galleryLede: "Интерактивный каталог, демонстрирующий 25+ реальных индивидуальных пресс-форм, рычагов смесителей, держателей и заводских деталей. Нажмите на изображение для детального осмотра.",
     factoryTitle: "Наше производство и контроль качества",
     factoryLede: "Основано 2006-02-27 в индустриальном парке сантехники Луньцань, Наньань, Цюаньчжоу, Фуцзянь.",
+    factImg1Title: "1. Главное здание и территория",
+    factImg2Title: "2. Фирменная стена Xiahua Handle",
     factParagraph1: "Компания Fujian Xialong Sanitary Ware Co., Ltd. (также известная как завод сантехники Сяхуа) была основана в 2006 году в городе Луньцань — всемирно известной столице сантехнического литья. Наша фабрика площадью более 3000 кв.м оснащена автоматизированными инжекционными линиями, цехом гальваники и передовыми испытательными стендами.",
     factParagraph2: "На заводе работают 80 высококвалифицированных рабочих и первоклассных инспекторов качества. За последние 17 лет наше стремление использовать только первичное сырье и соответствие стандартам ISO9001 принесли нам абсолютное доверие импортеров и дистрибьюторов в Юго-Восточной Азии, Южной Америке и на Ближнем Востоке.",
     videoTitle: "Видеоэкскурсия по нашему заводу и линиям",
@@ -239,6 +243,8 @@ const trans = {
     galleryLede: "Catálogo interativo com mais de 25 moldes personalizados reais, alavancas de torneira de precisão e componentes. Clique em qualquer imagem para ampliar os detalhes.",
     factoryTitle: "Nossa Fábrica e Controle de Qualidade",
     factoryLede: "Fundada em 27/02/2006 na Zona de Alta Tecnologia de Metais Sanitários de Luncang, Nan'an, Quanzhou, Fujian.",
+    factImg1Title: "1. Edifício Central e Fábrica",
+    factImg2Title: "2. Parede Institucional Xiahua Handle",
     factParagraph1: "A Fujian Xialong Sanitary Ware Co., Ltd. (também conhecida como Fábrica de Metais Sanitários Xiahua) foi fundada em 2006 em Luncang, Nan'an, Quanzhou, a renomada capital de metais sanitários da China. Nossa fábrica possui área industrial própria de mais de 3.000m² com injetoras de última geração.",
     factParagraph2: "Operando com uma equipe de 80 operários e inspetores altamente qualificados, fornecemos peças premium em ABS e latão. Nosso foco em conformidade e qualidade rígida ISO9001 garantiu parcerias estáveis de longo prazo com grandes importadores e marcas no Sudeste Asiático, América do Sul e Oriente Médio.",
     videoTitle: "Assista aos Vídeos de Nossa Fábrica e Linhas",
@@ -323,6 +329,8 @@ const trans = {
     galleryLede: "25+ वास्तविक मोल्ड्स, नल लीवर और पार्ट्स दिखाने वाली गैलरी। विवरण ज़ूम करने के लिए किसी भी छवि पर क्लिक करें।",
     factoryTitle: "हमारी फैक्टरी और गुणवत्ता नियंत्रण",
     factoryLede: "फ़ुज़ियान, चीन के नान'आन लुनचांग नलसाजी विनिर्माण पार्क में 27-02-2006 को स्थापित।",
+    factImg1Title: "1. मुख्यालय भवन और परिसर",
+    factImg2Title: "2. ज़ियाहुआ हैंडल ब्रांड दीवार",
     factParagraph1: "फ़ुज़ियान शियालॉन्ग सेनेटरी वेयर कंपनी लिमिटेड की स्थापना 2006 में लुनचांग, नान'आन, फ़ुज़ियान में हुई थी। हमारा 3000+ वर्गमीटर का विनिर्माण संयंत्र उच्च-परिशुद्धता इंजेक्शन-मोल्डिंग लाइनों और परीक्षण बेंचों से लैस है।",
     factParagraph2: "80 कुशल श्रमिकों और समर्पित निरीक्षकों के साथ, हम वैश्विक卫浴 ब्रांडों को दोषरहित उत्पाद प्रदान करते हैं। पिछले 17 वर्षों में हमारे सख्त विनिर्माण ने दक्षिण पूर्व एशिया, दक्षिण अमेरिका और मध्य पूर्व के खरीदारों का विश्वास जीता है।",
     videoTitle: "हमारे कारखाने और विनिर्माण वीडियो देखें",
@@ -407,6 +415,8 @@ const trans = {
     galleryLede: "本区域汇总了工厂 25 套真实的卫浴手柄、五金配件实拍与高精图纸。点击任意图片可弹窗灯箱放大，看清卓越的镜面电镀表面和精细开模螺纹齿轮。",
     factoryTitle: "现代化厂房与质量控制体系",
     factoryLede: "工厂于 2006-02-27 创立于福建南安仑苍镇水暖高新技术园区。",
+    factImg1Title: "1. 厂区全景与高新办公大楼",
+    factImg2Title: "2. 厦华手柄企业形象背景墙",
     factParagraph1: "福建夏龙卫浴有限公司（又名福建南安仑苍厦华卫浴洁具制造厂）座落于举世闻名的中国水暖卫浴制造中心——福建省泉州南安市仑苍镇水暖高新技术园区。我们拥有一座面积逾3000平方米的现代化工业厂房，引进了国内外先进的自动化精密注塑机、模具精密数控雕刻机、电镀表面处理流水线以及全套气密性/液压测试设备。",
     factParagraph2: "工厂现有在职资深技工 80 余人，由经验丰富的检验人员层层把关，严格遵循 ISO9001 质量管理体系运行。作为首创塑料 ABS 材质水龙头手柄的先驱，过去17年间我们与多家知名中大型卫浴企业建立了长期、稳固的开模与贴牌代工战略合作关系。诚实、守信、积极、创新是我们始终坚守的核心信条，我们全力跟随客户需求，提供最可靠的产品供应链服务。",
     videoTitle: "大厂车间实拍与装配工艺流程视频",
@@ -816,6 +826,7 @@ function App() {
   const [xh71ActiveImage, setXh71ActiveImage] = useState('/assets/products/xh-product-71.jpg');
   const [heroPosterPage, setHeroPosterPage] = useState(0);
   const [video2Tab, setVideo2Tab] = useState(0);
+  const [factoryImageIndex, setFactoryImageIndex] = useState(0);
 
   const t = trans[lang] || trans.en;
 
@@ -2214,16 +2225,79 @@ function App() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             
-            {/* Left Image grid */}
-            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 p-3 bg-white">
-              <img 
-                src="https://sc02.alicdn.com/kf/H9ea350f2db8341f5a7deba915284a698b.jpg" 
-                onError={(e) => {
-                  e.target.src = '/assets/images/factory-head-office-v2.jpg';
-                }}
-                alt="Fujian Xialong Head Office Building and Factory Workshop" 
-                className="w-full h-[400px] object-cover rounded-2xl shadow-sm"
-              />
+            {/* Left Image Showcase with Dual-Slide Selector */}
+            <div className="space-y-3">
+              <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 p-3 bg-white group">
+                <div className="relative rounded-2xl overflow-hidden bg-slate-950 h-[380px] sm:h-[420px]">
+                  <img 
+                    src={factoryImageIndex === 0 
+                      ? "https://sc02.alicdn.com/kf/H9ea350f2db8341f5a7deba915284a698b.jpg" 
+                      : "https://sc04.alicdn.com/kf/A95095abb84c040169cc45099558868ecJ.jpg"} 
+                    onError={(e) => {
+                      e.target.src = factoryImageIndex === 0 
+                        ? '/assets/images/factory-head-office-v2.jpg' 
+                        : '/assets/images/factory-brand-wall.jpg';
+                    }}
+                    alt={factoryImageIndex === 0 
+                      ? "Fujian Xialong Head Office Building and Factory Workshop" 
+                      : "Xiahua Handle Brand Reception Wall"} 
+                    className="w-full h-full object-cover transition-all duration-500 transform group-hover:scale-[1.02]"
+                  />
+
+                  {/* Badge showing slide number */}
+                  <div className="absolute top-3 right-3 bg-slate-900/80 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/20 shadow-lg flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                    <span>{factoryImageIndex + 1} / 2</span>
+                  </div>
+
+                  {/* Left / Right navigation arrows */}
+                  <button
+                    type="button"
+                    onClick={() => setFactoryImageIndex((prev) => (prev === 0 ? 1 : 0))}
+                    className="absolute left-2.5 top-1/2 -translate-y-1/2 bg-slate-900/70 hover:bg-blue-600 text-white p-2 rounded-full backdrop-blur-sm border border-white/10 opacity-75 hover:opacity-100 transition-all shadow-lg cursor-pointer"
+                    aria-label="Previous Factory Photo"
+                  >
+                    <ChevronLeft size={18} />
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setFactoryImageIndex((prev) => (prev === 0 ? 1 : 0))}
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 bg-slate-900/70 hover:bg-blue-600 text-white p-2 rounded-full backdrop-blur-sm border border-white/10 opacity-75 hover:opacity-100 transition-all shadow-lg cursor-pointer"
+                    aria-label="Next Factory Photo"
+                  >
+                    <ChevronRight size={18} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Bottom Switcher Tabs */}
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setFactoryImageIndex(0)}
+                  className={`flex-1 py-2 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer border ${
+                    factoryImageIndex === 0
+                      ? 'bg-blue-800 text-white border-blue-800 shadow-sm'
+                      : 'bg-white text-slate-600 hover:text-slate-900 border-slate-200 hover:bg-slate-50'
+                  }`}
+                >
+                  <span className={`w-2 h-2 rounded-full ${factoryImageIndex === 0 ? 'bg-white' : 'bg-blue-600'}`} />
+                  <span className="truncate">{t.factImg1Title}</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setFactoryImageIndex(1)}
+                  className={`flex-1 py-2 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer border ${
+                    factoryImageIndex === 1
+                      ? 'bg-blue-800 text-white border-blue-800 shadow-sm'
+                      : 'bg-white text-slate-600 hover:text-slate-900 border-slate-200 hover:bg-slate-50'
+                  }`}
+                >
+                  <span className={`w-2 h-2 rounded-full ${factoryImageIndex === 1 ? 'bg-white' : 'bg-amber-500'}`} />
+                  <span className="truncate">{t.factImg2Title}</span>
+                </button>
+              </div>
             </div>
 
             {/* Right Text */}
