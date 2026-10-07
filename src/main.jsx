@@ -23,6 +23,8 @@ import {
   Maximize2,
   GitCompare,
   Sliders,
+  SlidersHorizontal,
+  ArrowLeft,
   Sparkles
 } from 'lucide-react';
 import './styles.css';
@@ -111,7 +113,25 @@ const trans = {
     footerAddress: "Address: Luncang Plumbing High-Tech Zone, Nan'an, Quanzhou, Fujian, China",
     modalRFQTitle: "Inquire About",
     modalBtnSubmit: "Submit Inquiry for this Model",
-    specSheet: "Technical Specifications Sheet"
+    specSheet: "Technical Specifications Sheet",
+    xh71TabOverview: "Product Specs & Video",
+    xh71TabGallery: "XH-71 Showcase Gallery",
+    xh71GalleryTitle: "XH-71 3D Renders & Multi-Scene Effect Showcase",
+    xh71GalleryDesc: "Explore high-definition 3D effect renderings of model XH-71 in Mirror Chrome and Matte Gunmetal Grey finishes with shower rail installation effects.",
+    xh71Card1Title: "Mirror Chrome Front Effect",
+    xh71Card1Desc: "Class-9 multi-layer mirror electroplated chrome finish with standard rail mounting.",
+    xh71Card2Title: "3D Perspective & Button Angle",
+    xh71Card2Desc: "360° rotatable cradle and mechanical push-button damping structure.",
+    xh71Card3Title: "Matte Gunmetal Grey Effect",
+    xh71Card3Desc: "Matte anti-fingerprint dark titanium grey for minimalist luxury bathrooms.",
+    xh71Card4Title: "XH-71 Official Poster & Riser Scene",
+    xh71Card4Desc: "Complete shower rail setup and ergonomic one-touch adjustment showcase.",
+    xh71Card5Title: "Chrome Studio High-Res Detail",
+    xh71Card5Desc: "Studio close-up showing anti-slip silicone lining and precision tolerances.",
+    xh71Card6Title: "Gunmetal Studio High-Res Detail",
+    xh71Card6Desc: "Matte gunmetal edition studio shot with high-grip interior.",
+    xh71SwitchToGallery: "Open 《XH-71 Showcase Gallery》 (Page 2)",
+    xh71SwitchToOverview: "Back to Product Specs & Video"
   },
   ru: {
     navHome: "Главная",
@@ -195,7 +215,25 @@ const trans = {
     footerAddress: "Адрес: Промышленная зона Луньцань, Наньань, Цюаньчжоу, Фуцзянь, Китай",
     modalRFQTitle: "Запрос по продукту",
     modalBtnSubmit: "Отправить запрос по этой модели",
-    specSheet: "Лист технических характеристик"
+    specSheet: "Лист технических характеристик",
+    xh71TabOverview: "Спецификации и видео",
+    xh71TabGallery: "XH-71 Эффекты и рендеры",
+    xh71GalleryTitle: "XH-71 3D-рендеры и примеры установки на штанге",
+    xh71GalleryDesc: "Рендеры высокого разрешения XH-71 в зеркальном хроме и матовом оружейном сером цвете с примерами установки.",
+    xh71Card1Title: "Зеркальный хром — вид спереди",
+    xh71Card1Desc: "Многослойный зеркальный хром 9 класса на стандартной штанге 18-25 мм.",
+    xh71Card2Title: "3D-ракурс и механизм кнопки",
+    xh71Card2Desc: "Поворотная на 360° чаша и механическая кнопка плавной регулировки высоты.",
+    xh71Card3Title: "Матовый оружейный серый",
+    xh71Card3Desc: "Матовое покрытие с защитой от отпечатков пальцев для современных ванных комнат.",
+    xh71Card4Title: "Официальный постер XH-71 на штанге",
+    xh71Card4Desc: "Полный пример монтажа на душевой стойке и легкая регулировка одной рукой.",
+    xh71Card5Title: "Студийное макро — Зеркальный хром",
+    xh71Card5Desc: "Студийное фото с силиконовыми антискользящими вставками.",
+    xh71Card6Title: "Студийное макро — Оружейный серый",
+    xh71Card6Desc: "Студийное фото матовой версии с высокой коррозионной стойкостью.",
+    xh71SwitchToGallery: "Открыть 《XH-71 Эффекты и рендеры》 (Стр. 2)",
+    xh71SwitchToOverview: "Назад к характеристикам и видео"
   },
   pt: {
     navHome: "Início",
@@ -279,7 +317,25 @@ const trans = {
     footerAddress: "Endereço: Zona de Fabricação de Luncang, Nan'an, Quanzhou, Fujian, China",
     modalRFQTitle: "Consultar Sobre",
     modalBtnSubmit: "Enviar Consulta para este Modelo",
-    specSheet: "Ficha de Especificações Técnicas"
+    specSheet: "Ficha de Especificações Técnicas",
+    xh71TabOverview: "Especificações e Vídeo",
+    xh71TabGallery: "XH-71 Galeria de Efeitos",
+    xh71GalleryTitle: "XH-71 Renders 3D e Demonstração de Efeitos em Cenário",
+    xh71GalleryDesc: "Renders em alta resolução do XH-71 em Cromo Espelhado e Gunmetal Fosco, mostrando instalação em barras de 18-25mm.",
+    xh71Card1Title: "Cromo Espelhado — Vista Frontal",
+    xh71Card1Desc: "Acabamento cromado brilhante classe 9 montado em barra padrão.",
+    xh71Card2Title: "Perspectiva 3D e Botão de Ajuste",
+    xh71Card2Desc: "Berço giratório 360° e mecanismo de liberação rápida com botão ergonômico.",
+    xh71Card3Title: "Cinza Gunmetal Fosco",
+    xh71Card3Desc: "Acabamento acetinado anti-marcas para banheiros modernos e de alto padrão.",
+    xh71Card4Title: "Pôster Oficial de Instalação XH-71",
+    xh71Card4Desc: "Cenário completo de instalação em barra deslizante com ajuste suave.",
+    xh71Card5Title: "Foto de Estúdio — Cromo",
+    xh71Card5Desc: "Detalhe de estúdio com guarnição de silicone antiderrapante integrada.",
+    xh71Card6Title: "Foto de Estúdio — Gunmetal",
+    xh71Card6Desc: "Versão gunmetal com alta resistência ao desgaste e névoa salina.",
+    xh71SwitchToGallery: "Abrir 《XH-71 Galeria de Efeitos》 (Pág. 2)",
+    xh71SwitchToOverview: "Voltar para Especificações e Vídeo"
   },
   hi: {
     navHome: "होम",
@@ -363,7 +419,25 @@ const trans = {
     footerAddress: "पता: लुनचांग विनिर्माण क्षेत्र, नान'आन, क्वानझोउ, फ़ुज़ियान, चीन",
     modalRFQTitle: "के बारे में पूछताछ",
     modalBtnSubmit: "इस मॉडल के लिए पूछताछ भेजें",
-    specSheet: "तकनीकी विनिर्देश शीट"
+    specSheet: "तकनीकी विनिर्देश शीट",
+    xh71TabOverview: "उत्पाद विनिर्देश और वीडियो",
+    xh71TabGallery: "XH-71 प्रभाव और रेंडर",
+    xh71GalleryTitle: "XH-71 3D रेंडर और स्थापना प्रभाव गैलरी",
+    xh71GalleryDesc: "मिरर क्रोम और मैट गनमेटल ग्रे में XH-71 के उच्च-रिज़ॉल्यूशन प्रभाव रेंडर और शावर रॉड इंस्टॉलेशन।",
+    xh71Card1Title: "मिरर क्रोम फ्रंट प्रभाव",
+    xh71Card1Desc: "कक्षा-9 बहु-परत इलेक्ट्रोप्लेटेड क्रोम मानक रॉड स्थापना के साथ।",
+    xh71Card2Title: "3D परिप्रेक्ष्य और पुश-बटन विवरण",
+    xh71Card2Desc: "360° घूमने वाला सॉकेट और मैकेनिकल पुश-बटन स्लाइडिंग तंत्र।",
+    xh71Card3Title: "मैट गनमेटल ग्रे प्रभाव",
+    xh71Card3Desc: "आधुनिक बाथरूम के लिए मैट एंटी-फिंगरप्रिंट डार्क टाइटेनियम ग्रे फिनिश।",
+    xh71Card4Title: "XH-71 आधिकारिक स्थापना पोस्टर",
+    xh71Card4Desc: "शावर रेल सेटअप और एक-स्पर्श ऊंचाई समायोजन प्रदर्शन।",
+    xh71Card5Title: "क्रोम स्टूडियो विवरण",
+    xh71Card5Desc: "एंटी-स्लिप सिलिकॉन लाइनिंग और सटीक सहिष्णुता दिखाते हुए स्टूडियो क्लोज़-अप।",
+    xh71Card6Title: "गनमेटल स्टूडियो विवरण",
+    xh71Card6Desc: "उच्च-पकड़ इंटीरियर के साथ मैट गनमेटल संस्करण स्टूडियो शॉट।",
+    xh71SwitchToGallery: "《XH-71 प्रभाव और रेंडर》 खोलें (पृष्ठ 2)",
+    xh71SwitchToOverview: "विनिर्देश और वीडियो पर वापस जाएं"
   },
   zh: {
     navHome: "独立站首页",
@@ -447,7 +521,25 @@ const trans = {
     footerAddress: "地址: 中国·福建·泉州市南安市仑苍镇水暖高新技术园区",
     modalRFQTitle: "针对此专利型号发起采购询盘",
     modalBtnSubmit: "提交该型号采购申请",
-    specSheet: "技术数据规格表"
+    specSheet: "技术数据规格表",
+    xh71TabOverview: "产品规格与视频实拍",
+    xh71TabGallery: "XH-71展示效果图",
+    xh71GalleryTitle: "XH-71 经典按键滑座 · 3D展示效果图与实装渲染展区",
+    xh71GalleryDesc: "汇总 XH-71 镜面加厚电镀铬、哑光防指纹枪灰以及淋浴杆安装搭配多场景效果图，点击任意图片可放大看清细节。",
+    xh71Card1Title: "镜面高光电镀铬 · 正面效果图",
+    xh71Card1Desc: "9级加厚多层镜面电镀铬工艺，适配 18-25mm 淋浴杆标准安装效果。",
+    xh71Card2Title: "立体侧视角 · 阻尼按键细节",
+    xh71Card2Desc: "360°自由旋转插座与一键式机械阻尼按压升降机构特写展示。",
+    xh71Card3Title: "哑光防指纹枪灰色 · 效果图",
+    xh71Card3Desc: "哑光耐磨防指纹深枪灰工艺，专供现代极简与轻奢风格卫浴工程。",
+    xh71Card4Title: "XH-71 官方实装宣传海报",
+    xh71Card4Desc: "整套淋浴升降杆实装效果海报，单手顺滑升降与严密防滑防刮表现。",
+    xh71Card5Title: "高精细节白底图 · 镜面铬",
+    xh71Card5Desc: "影棚级高清白底产品展示，内置高阻尼耐老化防滑硅胶衬垫细节。",
+    xh71Card6Title: "高精细节白底图 · 枪灰",
+    xh71Card6Desc: "影棚级高清白底枪灰产品展示，全件耐酸耐磨抗盐雾腐蚀。",
+    xh71SwitchToGallery: "点击打开《XH-71展示效果图》第二页",
+    xh71SwitchToOverview: "返回产品规格与视频实拍"
   }
 };
 
@@ -814,6 +906,8 @@ function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [carouselIndex, setCarouselIndex] = useState({});
   const [xh71ActiveImage, setXh71ActiveImage] = useState('/assets/products/xh-product-71.jpg');
+  const [xh71Tab, setXh71Tab] = useState('overview'); // 'overview' = specs & video, 'gallery' = XH-71展示效果图
+  const [xh71EffectImg, setXh71EffectImg] = useState('/assets/products/xh-product-71.jpg');
   const [heroPosterPage, setHeroPosterPage] = useState(0);
   const [video2Tab, setVideo2Tab] = useState(0);
 
@@ -1938,12 +2032,12 @@ function App() {
             </div>
           )}
 
-          {/* FEATURED SPOTLIGHT: XH-71 SHOWER SLIDER BRACKET */}
-          <div className="mt-14 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 rounded-3xl p-8 sm:p-10 border border-blue-800/40 shadow-2xl text-white relative overflow-hidden" data-component="featured-product-spotlight">
+          {/* FEATURED SPOTLIGHT: XH-71 SHOWER SLIDER BRACKET (Multi-Page Spotlight) */}
+          <div className="mt-14 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 rounded-3xl p-6 sm:p-10 border border-blue-800/40 shadow-2xl text-white relative overflow-hidden" data-component="featured-product-spotlight">
             <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
             
             <div className="space-y-8 relative z-10">
-              {/* Header banner */}
+              {/* Header banner with Multi-Page Navigation */}
               <div className="flex flex-wrap items-center justify-between gap-4 border-b border-white/10 pb-6">
                 <div className="space-y-1 text-left">
                   <div className="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-blue-400/30">
@@ -1954,163 +2048,452 @@ function App() {
                     {lang === 'zh' ? 'XH-71 经典按键升降花洒座 / 淋浴杆滑座' : 'XH-71 Push-Button Adjustable Shower Bar Slider Bracket'}
                   </h3>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="bg-slate-800 text-slate-300 text-xs font-bold px-3 py-1.5 rounded-lg border border-white/10">
+                
+                {/* Two-Page Tab Navigation Buttons */}
+                <div className="flex flex-wrap items-center gap-2">
+                  <div className="flex items-center bg-slate-950/80 p-1.5 rounded-2xl border border-white/10 shadow-inner">
+                    <button
+                      type="button"
+                      onClick={() => setXh71Tab('overview')}
+                      className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                        xh71Tab === 'overview'
+                          ? 'bg-blue-600 text-white shadow-md'
+                          : 'text-slate-300 hover:text-white hover:bg-white/5'
+                      }`}
+                    >
+                      <SlidersHorizontal size={14} />
+                      <span>{t.xh71TabOverview}</span>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setXh71Tab('gallery')}
+                      className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                        xh71Tab === 'gallery'
+                          ? 'bg-blue-600 text-white shadow-md'
+                          : 'text-slate-300 hover:text-white hover:bg-white/5'
+                      }`}
+                    >
+                      <Sparkles size={14} className="text-amber-300" />
+                      <span>{t.xh71TabGallery}</span>
+                      <span className="bg-amber-400 text-slate-950 text-[10px] font-black px-1.5 py-0.5 rounded-md uppercase">2P</span>
+                    </button>
+                  </div>
+
+                  <span className="bg-slate-800 text-slate-300 text-xs font-bold px-3 py-2 rounded-xl border border-white/10 hidden sm:inline-block">
                     Model: XH-71
                   </span>
-                  <span className="bg-blue-600 text-white text-xs font-black px-3 py-1.5 rounded-lg uppercase tracking-wider shadow">
+                  <span className="bg-blue-600 text-white text-xs font-black px-3 py-2 rounded-xl uppercase tracking-wider shadow hidden sm:inline-block">
                     {lang === 'zh' ? '双色可选' : '2 Colors Available'}
                   </span>
                 </div>
               </div>
 
-              {/* Main Grid: Media (Images + Video) & Specs */}
-              <div className="grid lg:grid-cols-12 gap-8 items-start">
-                
-                {/* Left Column: Product Photos & Color Switcher */}
-                <div className="lg:col-span-5 space-y-4">
-                  <div className="relative group w-full aspect-[4/3] bg-slate-800/90 rounded-2xl p-4 border border-white/10 flex items-center justify-center overflow-hidden shadow-inner">
-                    <img 
-                      src={xh71ActiveImage} 
-                      alt="XH-71 Push-Button Shower Bar Slider" 
-                      className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 filter drop-shadow-2xl"
-                    />
-                    <div className="absolute top-3 left-3 bg-blue-600/90 backdrop-blur text-white text-[10px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider shadow-md">
-                      {xh71ActiveImage.includes('71-2') ? (lang === 'zh' ? '枪灰色 / 哑黑' : 'Gunmetal Grey') : (lang === 'zh' ? '镜面高光电镀铬' : 'Mirror Chrome')}
-                    </div>
-                  </div>
-
-                  {/* Color / Variant Selector Thumbnails */}
-                  <div className="grid grid-cols-3 gap-2">
-                    <button
-                      onClick={() => setXh71ActiveImage('/assets/products/xh-product-71.jpg')}
-                      className={`flex items-center gap-2 p-2 rounded-xl border transition-all text-left ${
-                        xh71ActiveImage === '/assets/products/xh-product-71.jpg'
-                          ? 'bg-blue-600/30 border-blue-400 text-white shadow-md'
-                          : 'bg-slate-800/60 border-white/10 text-slate-400 hover:text-white hover:bg-slate-800'
-                      }`}
-                    >
-                      <div className="w-7 h-7 rounded-lg bg-slate-700 overflow-hidden flex-shrink-0 border border-white/20">
-                        <img src="/assets/products/xh-product-71.jpg" alt="Chrome 1" className="w-full h-full object-cover" />
+              {/* PAGE 1: Product Overview, 3-Angle Switcher, Specs & Live Video */}
+              {xh71Tab === 'overview' && (
+                <div className="grid lg:grid-cols-12 gap-8 items-start animate-fade-in">
+                  
+                  {/* Left Column: Product Photos & Color Switcher */}
+                  <div className="lg:col-span-5 space-y-4">
+                    <div className="relative group w-full aspect-[4/3] bg-slate-800/90 rounded-2xl p-4 border border-white/10 flex items-center justify-center overflow-hidden shadow-inner">
+                      <img 
+                        src={xh71ActiveImage} 
+                        alt="XH-71 Push-Button Shower Bar Slider" 
+                        className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 filter drop-shadow-2xl"
+                      />
+                      <div className="absolute top-3 left-3 bg-blue-600/90 backdrop-blur text-white text-[10px] font-black px-2.5 py-1 rounded-md uppercase tracking-wider shadow-md">
+                        {xh71ActiveImage.includes('71-2') ? (lang === 'zh' ? '枪灰色 / 哑黑' : 'Gunmetal Grey') : (lang === 'zh' ? '镜面高光电镀铬' : 'Mirror Chrome')}
                       </div>
-                      <div className="min-w-0">
-                        <div className="text-[11px] font-bold leading-tight truncate">{lang === 'zh' ? '镜面铬 1' : 'Chrome 1'}</div>
-                        <div className="text-[9px] opacity-75 truncate">{lang === 'zh' ? '加厚电镀' : 'Plated'}</div>
-                      </div>
-                    </button>
 
-                    <button
-                      onClick={() => setXh71ActiveImage('/assets/products/xh-product-71-3.jpg')}
-                      className={`flex items-center gap-2 p-2 rounded-xl border transition-all text-left ${
-                        xh71ActiveImage === '/assets/products/xh-product-71-3.jpg'
-                          ? 'bg-blue-600/30 border-blue-400 text-white shadow-md'
-                          : 'bg-slate-800/60 border-white/10 text-slate-400 hover:text-white hover:bg-slate-800'
-                      }`}
-                    >
-                      <div className="w-7 h-7 rounded-lg bg-slate-700 overflow-hidden flex-shrink-0 border border-white/20">
-                        <img src="/assets/products/xh-product-71-3.jpg" alt="Chrome 2" className="w-full h-full object-cover" />
-                      </div>
-                      <div className="min-w-0">
-                        <div className="text-[11px] font-bold leading-tight truncate">{lang === 'zh' ? '镜面铬 2' : 'Chrome 2'}</div>
-                        <div className="text-[9px] opacity-75 truncate">{lang === 'zh' ? '新款实拍' : 'Studio'}</div>
-                      </div>
-                    </button>
-
-                    <button
-                      onClick={() => setXh71ActiveImage('/assets/products/xh-product-71-2.jpg')}
-                      className={`flex items-center gap-2 p-2 rounded-xl border transition-all text-left ${
-                        xh71ActiveImage === '/assets/products/xh-product-71-2.jpg'
-                          ? 'bg-blue-600/30 border-blue-400 text-white shadow-md'
-                          : 'bg-slate-800/60 border-white/10 text-slate-400 hover:text-white hover:bg-slate-800'
-                      }`}
-                    >
-                      <div className="w-7 h-7 rounded-lg bg-slate-700 overflow-hidden flex-shrink-0 border border-white/20">
-                        <img src="/assets/products/xh-product-71-2.jpg" alt="Gunmetal Grey" className="w-full h-full object-cover" />
-                      </div>
-                      <div className="min-w-0">
-                        <div className="text-[11px] font-bold leading-tight truncate">{lang === 'zh' ? '枪灰色' : 'Gunmetal'}</div>
-                        <div className="text-[9px] opacity-75 truncate">{lang === 'zh' ? '哑光防指纹' : 'Matte'}</div>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-
-                {/* Right Column: Specs, Video Player & CTAs */}
-                <div className="lg:col-span-7 space-y-6 text-left">
-                  <p className="text-slate-300 text-sm leading-relaxed">
-                    {lang === 'zh' 
-                      ? '专为 18-25mm 国际标准升降淋浴杆量身研发。顶部配备一键式机械阻尼按压升降机构，单手轻松滑动调节高度；内置高阻尼耐老化防滑硅胶衬垫，紧密贴合防滑防刮；插座支持 360° 旋转调节喷淋角度，全件提供 9 级加厚镜面电镀铬与哑光枪灰双色工艺，耐酸耐磨，专供国际大宗卫浴 OEM/ODM 采购。'
-                      : 'Engineered for standard 18-25mm shower riser rails. Features one-touch push-button smooth height adjustment, high-grip anti-slip internal padding to prevent slipping under heavy hand showers, 360° swivel cradle, and durable Class-9 electroplated chrome & matte gunmetal grey finishes.'}
-                  </p>
-
-                  {/* Feature Badges */}
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-                    <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
-                      <div className="text-blue-400 font-bold">{lang === 'zh' ? '一键按压' : 'One-Touch'}</div>
-                      <div className="text-slate-300 text-[11px] mt-0.5">{lang === 'zh' ? '单手顺滑升降' : 'Smooth Sliding'}</div>
-                    </div>
-                    <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
-                      <div className="text-blue-400 font-bold">{lang === 'zh' ? '360° 旋转' : '360° Swivel'}</div>
-                      <div className="text-slate-300 text-[11px] mt-0.5">{lang === 'zh' ? '多角度自由调节' : 'Multi-Angle'}</div>
-                    </div>
-                    <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
-                      <div className="text-blue-400 font-bold">{lang === 'zh' ? '18-25mm 通用' : '18-25mm'}</div>
-                      <div className="text-slate-300 text-[11px] mt-0.5">{lang === 'zh' ? '适配主流淋浴管' : 'Universal Fit'}</div>
-                    </div>
-                    <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
-                      <div className="text-blue-400 font-bold">{lang === 'zh' ? '9级加厚电镀' : 'Class-9 Chrome'}</div>
-                      <div className="text-slate-300 text-[11px] mt-0.5">{lang === 'zh' ? '耐酸抗盐雾腐蚀' : 'Anti-Corrosion'}</div>
-                    </div>
-                  </div>
-
-                  {/* Product Introduction Video Player */}
-                  <div className="bg-slate-800/80 rounded-2xl p-4 border border-white/10 space-y-3">
-                    <div className="flex items-center justify-between">
-                      <div className="inline-flex items-center gap-2 text-xs font-bold text-blue-300">
-                        <Play size={14} className="text-blue-400 fill-blue-400" />
-                        <span>{lang === 'zh' ? '产品介绍视频 · 演示与功能实拍' : 'Product Introduction Video · Live Demonstration'}</span>
-                      </div>
-                      <span className="text-[11px] font-semibold text-slate-400">1080P HD / 真实操作实拍</span>
-                    </div>
-
-                    <div className="relative rounded-xl overflow-hidden bg-black/60 aspect-video border border-white/10 shadow-lg">
-                      <video 
-                        controls 
-                        playsInline 
-                        preload="metadata"
-                        poster="/assets/products/xh-product-71.jpg"
-                        className="w-full h-full object-cover"
+                      {/* Click to open Lightbox */}
+                      <button
+                        type="button"
+                        onClick={() => setSelectedGalleryImg(xh71ActiveImage)}
+                        className="absolute bottom-3 right-3 bg-slate-900/80 hover:bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-lg border border-white/20 shadow opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 cursor-pointer"
                       >
-                        <source src="/assets/videos/xh-71-intro.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
+                        <Maximize2 size={12} />
+                        <span>{lang === 'zh' ? '查看高清大图' : 'Zoom'}</span>
+                      </button>
                     </div>
+
+                    {/* Color / Variant Selector Thumbnails */}
+                    <div className="grid grid-cols-3 gap-2">
+                      <button
+                        onClick={() => setXh71ActiveImage('/assets/products/xh-product-71.jpg')}
+                        className={`flex items-center gap-2 p-2 rounded-xl border transition-all text-left cursor-pointer ${
+                          xh71ActiveImage === '/assets/products/xh-product-71.jpg'
+                            ? 'bg-blue-600/30 border-blue-400 text-white shadow-md'
+                            : 'bg-slate-800/60 border-white/10 text-slate-400 hover:text-white hover:bg-slate-800'
+                        }`}
+                      >
+                        <div className="w-7 h-7 rounded-lg bg-slate-700 overflow-hidden flex-shrink-0 border border-white/20">
+                          <img src="/assets/products/xh-product-71.jpg" alt="Chrome 1" className="w-full h-full object-cover" />
+                        </div>
+                        <div className="min-w-0">
+                          <div className="text-[11px] font-bold leading-tight truncate">{lang === 'zh' ? '镜面铬 1' : 'Chrome 1'}</div>
+                          <div className="text-[9px] opacity-75 truncate">{lang === 'zh' ? '加厚电镀' : 'Plated'}</div>
+                        </div>
+                      </button>
+
+                      <button
+                        onClick={() => setXh71ActiveImage('/assets/products/xh-product-71-3.jpg')}
+                        className={`flex items-center gap-2 p-2 rounded-xl border transition-all text-left cursor-pointer ${
+                          xh71ActiveImage === '/assets/products/xh-product-71-3.jpg'
+                            ? 'bg-blue-600/30 border-blue-400 text-white shadow-md'
+                            : 'bg-slate-800/60 border-white/10 text-slate-400 hover:text-white hover:bg-slate-800'
+                        }`}
+                      >
+                        <div className="w-7 h-7 rounded-lg bg-slate-700 overflow-hidden flex-shrink-0 border border-white/20">
+                          <img src="/assets/products/xh-product-71-3.jpg" alt="Chrome 2" className="w-full h-full object-cover" />
+                        </div>
+                        <div className="min-w-0">
+                          <div className="text-[11px] font-bold leading-tight truncate">{lang === 'zh' ? '镜面铬 2' : 'Chrome 2'}</div>
+                          <div className="text-[9px] opacity-75 truncate">{lang === 'zh' ? '新款实拍' : 'Studio'}</div>
+                        </div>
+                      </button>
+
+                      <button
+                        onClick={() => setXh71ActiveImage('/assets/products/xh-product-71-2.jpg')}
+                        className={`flex items-center gap-2 p-2 rounded-xl border transition-all text-left cursor-pointer ${
+                          xh71ActiveImage === '/assets/products/xh-product-71-2.jpg'
+                            ? 'bg-blue-600/30 border-blue-400 text-white shadow-md'
+                            : 'bg-slate-800/60 border-white/10 text-slate-400 hover:text-white hover:bg-slate-800'
+                        }`}
+                      >
+                        <div className="w-7 h-7 rounded-lg bg-slate-700 overflow-hidden flex-shrink-0 border border-white/20">
+                          <img src="/assets/products/xh-product-71-2.jpg" alt="Gunmetal Grey" className="w-full h-full object-cover" />
+                        </div>
+                        <div className="min-w-0">
+                          <div className="text-[11px] font-bold leading-tight truncate">{lang === 'zh' ? '枪灰色' : 'Gunmetal'}</div>
+                          <div className="text-[9px] opacity-75 truncate">{lang === 'zh' ? '哑光防指纹' : 'Matte'}</div>
+                        </div>
+                      </button>
+                    </div>
+
+                    {/* Switch Page Banner Hint */}
+                    <button
+                      type="button"
+                      onClick={() => setXh71Tab('gallery')}
+                      className="w-full bg-slate-800/90 hover:bg-blue-900/50 text-blue-300 hover:text-white p-3 rounded-2xl border border-blue-500/30 flex items-center justify-between text-xs font-bold transition-all cursor-pointer group shadow"
+                    >
+                      <span className="flex items-center gap-2">
+                        <Sparkles size={14} className="text-amber-300" />
+                        <span>{t.xh71SwitchToGallery}</span>
+                      </span>
+                      <ChevronRight size={15} className="group-hover:translate-x-1 transition-transform" />
+                    </button>
                   </div>
 
-                  {/* Actions */}
-                  <div className="flex flex-wrap items-center gap-4 pt-1">
-                    <button
-                      onClick={() => {
-                        const p71 = products.find(item => item.model === 'XH-71') || products[1];
-                        setSelectedProduct(p71);
-                        setRfqMsg(`RFQ for model: XH-71 Push-Button Shower Slider Bracket. Please provide wholesale volume quotation and technical drawing.`);
-                      }}
-                      className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-bold text-sm flex items-center gap-2 shadow-lg hover:shadow-blue-500/25 transition-all cursor-pointer"
-                    >
-                      <span>{lang === 'zh' ? '获取 XH-71 规格与阶梯报价' : 'View XH-71 Specs & Volume Pricing'}</span>
-                      <ChevronRight size={16} />
-                    </button>
-                    <a
-                      href="https://wa.me/8618965758892?text=Hello%2C%20I%20am%20interested%20in%20XH-71%20Push-Button%20Shower%20Slider%20Bracket."
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3 rounded-xl font-bold text-sm flex items-center gap-2 shadow-lg transition-all"
-                    >
-                      <span>WhatsApp 直联咨询</span>
-                    </a>
+                  {/* Right Column: Specs, Video Player & CTAs */}
+                  <div className="lg:col-span-7 space-y-6 text-left">
+                    <p className="text-slate-300 text-sm leading-relaxed">
+                      {lang === 'zh' 
+                        ? '专为 18-25mm 国际标准升降淋浴杆量身研发。顶部配备一键式机械阻尼按压升降机构，单手轻松滑动调节高度；内置高阻尼耐老化防滑硅胶衬垫，紧密贴合防滑防刮；插座支持 360° 旋转调节喷淋角度，全件提供 9 级加厚镜面电镀铬与哑光枪灰双色工艺，耐酸耐磨，专供国际大宗卫浴 OEM/ODM 采购。'
+                        : 'Engineered for standard 18-25mm shower riser rails. Features one-touch push-button smooth height adjustment, high-grip anti-slip internal padding to prevent slipping under heavy hand showers, 360° swivel cradle, and durable Class-9 electroplated chrome & matte gunmetal grey finishes.'}
+                    </p>
+
+                    {/* Feature Badges */}
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                      <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
+                        <div className="text-blue-400 font-bold">{lang === 'zh' ? '一键按压' : 'One-Touch'}</div>
+                        <div className="text-slate-300 text-[11px] mt-0.5">{lang === 'zh' ? '单手顺滑升降' : 'Smooth Sliding'}</div>
+                      </div>
+                      <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
+                        <div className="text-blue-400 font-bold">{lang === 'zh' ? '360° 旋转' : '360° Swivel'}</div>
+                        <div className="text-slate-300 text-[11px] mt-0.5">{lang === 'zh' ? '多角度自由调节' : 'Multi-Angle'}</div>
+                      </div>
+                      <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
+                        <div className="text-blue-400 font-bold">{lang === 'zh' ? '18-25mm 通用' : '18-25mm'}</div>
+                        <div className="text-slate-300 text-[11px] mt-0.5">{lang === 'zh' ? '适配主流淋浴管' : 'Universal Fit'}</div>
+                      </div>
+                      <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
+                        <div className="text-blue-400 font-bold">{lang === 'zh' ? '9级加厚电镀' : 'Class-9 Chrome'}</div>
+                        <div className="text-slate-300 text-[11px] mt-0.5">{lang === 'zh' ? '耐酸抗盐雾腐蚀' : 'Anti-Corrosion'}</div>
+                      </div>
+                    </div>
+
+                    {/* Product Introduction Video Player */}
+                    <div className="bg-slate-800/80 rounded-2xl p-4 border border-white/10 space-y-3">
+                      <div className="flex items-center justify-between">
+                        <div className="inline-flex items-center gap-2 text-xs font-bold text-blue-300">
+                          <Play size={14} className="text-blue-400 fill-blue-400" />
+                          <span>{lang === 'zh' ? '产品介绍视频 · 演示与功能实拍' : 'Product Introduction Video · Live Demonstration'}</span>
+                        </div>
+                        <span className="text-[11px] font-semibold text-slate-400">1080P HD / 真实操作实拍</span>
+                      </div>
+
+                      <div className="relative rounded-xl overflow-hidden bg-black/60 aspect-video border border-white/10 shadow-lg">
+                        <video 
+                          controls 
+                          playsInline 
+                          preload="metadata"
+                          poster="/assets/products/xh-product-71.jpg"
+                          className="w-full h-full object-cover"
+                        >
+                          <source src="/assets/videos/xh-71-intro.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
+                    </div>
+
+                    {/* Actions */}
+                    <div className="flex flex-wrap items-center gap-4 pt-1">
+                      <button
+                        onClick={() => {
+                          const p71 = products.find(item => item.model === 'XH-71') || products[1];
+                          setSelectedProduct(p71);
+                          setRfqMsg(`RFQ for model: XH-71 Push-Button Shower Slider Bracket. Please provide wholesale volume quotation and technical drawing.`);
+                        }}
+                        className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-bold text-sm flex items-center gap-2 shadow-lg hover:shadow-blue-500/25 transition-all cursor-pointer"
+                      >
+                        <span>{lang === 'zh' ? '获取 XH-71 规格与阶梯报价' : 'View XH-71 Specs & Volume Pricing'}</span>
+                        <ChevronRight size={16} />
+                      </button>
+                      <a
+                        href="https://wa.me/8618965758892?text=Hello%2C%20I%20am%20interested%20in%20XH-71%20Push-Button%20Shower%20Slider%20Bracket."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3 rounded-xl font-bold text-sm flex items-center gap-2 shadow-lg transition-all"
+                      >
+                        <span>WhatsApp 直联咨询</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
+
+              {/* PAGE 2: 《XH-71展示效果图》 Showcase Gallery & 3D Effect Renderings */}
+              {xh71Tab === 'gallery' && (
+                <div className="space-y-6 animate-fade-in text-left">
+                  {/* Top Intro bar for Page 2 */}
+                  <div className="bg-slate-800/80 p-5 rounded-2xl border border-blue-500/30 flex flex-wrap items-center justify-between gap-4">
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
+                        <h4 className="text-lg sm:text-xl font-black text-white">{t.xh71GalleryTitle}</h4>
+                      </div>
+                      <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">{t.xh71GalleryDesc}</p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setXh71Tab('overview')}
+                      className="bg-slate-700 hover:bg-slate-600 text-slate-100 px-4 py-2 rounded-xl text-xs font-bold transition-all border border-white/10 flex items-center gap-1.5 cursor-pointer shadow"
+                    >
+                      <ArrowLeft size={14} />
+                      <span>{t.xh71SwitchToOverview}</span>
+                    </button>
+                  </div>
+
+                  {/* Main Grid: Left Large Preview & Right 6 Effect Render Cards */}
+                  <div className="grid lg:grid-cols-12 gap-8 items-start">
+                    
+                    {/* Left Column: Interactive Main HD Preview with Zoom */}
+                    <div className="lg:col-span-6 space-y-4">
+                      <div className="relative group w-full aspect-[4/3] bg-slate-950/90 rounded-2xl p-4 border border-blue-500/30 flex items-center justify-center overflow-hidden shadow-2xl">
+                        <img
+                          src={xh71EffectImg}
+                          alt="XH-71 High-Resolution Effect Render"
+                          className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 filter drop-shadow-2xl"
+                        />
+                        {/* Current selected label badge */}
+                        <div className="absolute top-3 left-3 bg-blue-600/90 backdrop-blur text-white text-[11px] font-black px-3 py-1.5 rounded-lg uppercase tracking-wider shadow-md border border-white/10 flex items-center gap-1.5">
+                          <Sparkles size={12} className="text-amber-300" />
+                          <span>
+                            {xh71EffectImg.includes('hero-poster') ? (lang === 'zh' ? '官方实装海报效果图' : 'Official Poster Scene') :
+                             xh71EffectImg.includes('71-2') ? (lang === 'zh' ? '哑光枪灰色效果图' : 'Matte Gunmetal Grey') :
+                             xh71EffectImg.includes('71-3') ? (lang === 'zh' ? '3D立体侧视角效果' : '3D Swivel Angle') :
+                             xh71EffectImg.includes('gunmetal') ? (lang === 'zh' ? '枪灰白底精修' : 'Gunmetal Studio') :
+                             xh71EffectImg.includes('xh-71.jpg') ? (lang === 'zh' ? '电镀铬白底精修' : 'Chrome Studio') :
+                             (lang === 'zh' ? '镜面高光电镀铬效果图' : 'Mirror Chrome Front')}
+                          </span>
+                        </div>
+
+                        {/* Fullscreen Lightbox Button */}
+                        <button
+                          type="button"
+                          onClick={() => setSelectedGalleryImg(xh71EffectImg)}
+                          className="absolute bottom-3 right-3 bg-slate-900/90 hover:bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg border border-white/20 shadow-lg flex items-center gap-1.5 transition-all cursor-pointer"
+                        >
+                          <Maximize2 size={13} />
+                          <span>{lang === 'zh' ? '点击查看 4K 高清大图' : 'View Full-Res Lightbox'}</span>
+                        </button>
+                      </div>
+
+                      {/* Technical Advantage Tag Bar */}
+                      <div className="bg-slate-800/40 border border-white/10 p-3 rounded-xl flex items-center justify-between text-xs text-slate-300">
+                        <span className="flex items-center gap-1.5">
+                          <CheckCircle2 size={14} className="text-emerald-400" />
+                          <span>{lang === 'zh' ? '标准 18-25mm 淋浴杆通用装配' : 'Universal Fit 18-25mm Shower Riser Rails'}</span>
+                        </span>
+                        <span className="text-blue-400 font-bold">{lang === 'zh' ? '支持大宗外贸定制开模' : 'OEM/ODM Tooling Ready'}</span>
+                      </div>
+                    </div>
+
+                    {/* Right Column: 6 Effect Cards Interactive Selector */}
+                    <div className="lg:col-span-6 space-y-4">
+                      <div className="grid grid-cols-2 gap-3">
+                        {/* Card 1 */}
+                        <button
+                          type="button"
+                          onClick={() => setXh71EffectImg('/assets/products/xh-product-71.jpg')}
+                          className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
+                            xh71EffectImg === '/assets/products/xh-product-71.jpg'
+                              ? 'bg-blue-600/30 border-blue-400 text-white shadow-lg ring-1 ring-blue-400'
+                              : 'bg-slate-800/60 border-white/10 text-slate-300 hover:bg-slate-800 hover:text-white'
+                          }`}
+                        >
+                          <div className="w-full aspect-[4/3] rounded-xl bg-slate-900/80 overflow-hidden mb-2 p-1 border border-white/10 flex items-center justify-center">
+                            <img src="/assets/products/xh-product-71.jpg" alt="Chrome 1" className="w-full h-full object-contain" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-black text-white flex items-center justify-between">
+                              <span className="truncate">{t.xh71Card1Title}</span>
+                              <span className="text-[10px] bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded flex-shrink-0">Chrome</span>
+                            </div>
+                            <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">{t.xh71Card1Desc}</p>
+                          </div>
+                        </button>
+
+                        {/* Card 2 */}
+                        <button
+                          type="button"
+                          onClick={() => setXh71EffectImg('/assets/products/xh-product-71-3.jpg')}
+                          className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
+                            xh71EffectImg === '/assets/products/xh-product-71-3.jpg'
+                              ? 'bg-blue-600/30 border-blue-400 text-white shadow-lg ring-1 ring-blue-400'
+                              : 'bg-slate-800/60 border-white/10 text-slate-300 hover:bg-slate-800 hover:text-white'
+                          }`}
+                        >
+                          <div className="w-full aspect-[4/3] rounded-xl bg-slate-900/80 overflow-hidden mb-2 p-1 border border-white/10 flex items-center justify-center">
+                            <img src="/assets/products/xh-product-71-3.jpg" alt="Chrome 2" className="w-full h-full object-contain" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-black text-white flex items-center justify-between">
+                              <span className="truncate">{t.xh71Card2Title}</span>
+                              <span className="text-[10px] bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded flex-shrink-0">360°</span>
+                            </div>
+                            <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">{t.xh71Card2Desc}</p>
+                          </div>
+                        </button>
+
+                        {/* Card 3 */}
+                        <button
+                          type="button"
+                          onClick={() => setXh71EffectImg('/assets/products/xh-product-71-2.jpg')}
+                          className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
+                            xh71EffectImg === '/assets/products/xh-product-71-2.jpg'
+                              ? 'bg-blue-600/30 border-blue-400 text-white shadow-lg ring-1 ring-blue-400'
+                              : 'bg-slate-800/60 border-white/10 text-slate-300 hover:bg-slate-800 hover:text-white'
+                          }`}
+                        >
+                          <div className="w-full aspect-[4/3] rounded-xl bg-slate-900/80 overflow-hidden mb-2 p-1 border border-white/10 flex items-center justify-center">
+                            <img src="/assets/products/xh-product-71-2.jpg" alt="Gunmetal" className="w-full h-full object-contain" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-black text-white flex items-center justify-between">
+                              <span className="truncate">{t.xh71Card3Title}</span>
+                              <span className="text-[10px] bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded flex-shrink-0">Gunmetal</span>
+                            </div>
+                            <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">{t.xh71Card3Desc}</p>
+                          </div>
+                        </button>
+
+                        {/* Card 4 */}
+                        <button
+                          type="button"
+                          onClick={() => setXh71EffectImg('/assets/images/hero-poster-2.jpg')}
+                          className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
+                            xh71EffectImg === '/assets/images/hero-poster-2.jpg'
+                              ? 'bg-blue-600/30 border-blue-400 text-white shadow-lg ring-1 ring-blue-400'
+                              : 'bg-slate-800/60 border-white/10 text-slate-300 hover:bg-slate-800 hover:text-white'
+                          }`}
+                        >
+                          <div className="w-full aspect-[4/3] rounded-xl bg-slate-900/80 overflow-hidden mb-2 p-1 border border-white/10 flex items-center justify-center">
+                            <img src="/assets/images/hero-poster-2.jpg" alt="Poster Scene" className="w-full h-full object-cover" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-black text-white flex items-center justify-between">
+                              <span className="truncate">{t.xh71Card4Title}</span>
+                              <span className="text-[10px] bg-amber-500/20 text-amber-300 px-1.5 py-0.5 rounded flex-shrink-0">Poster</span>
+                            </div>
+                            <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">{t.xh71Card4Desc}</p>
+                          </div>
+                        </button>
+
+                        {/* Card 5 */}
+                        <button
+                          type="button"
+                          onClick={() => setXh71EffectImg('/assets/products/xh-71.jpg')}
+                          className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
+                            xh71EffectImg === '/assets/products/xh-71.jpg'
+                              ? 'bg-blue-600/30 border-blue-400 text-white shadow-lg ring-1 ring-blue-400'
+                              : 'bg-slate-800/60 border-white/10 text-slate-300 hover:bg-slate-800 hover:text-white'
+                          }`}
+                        >
+                          <div className="w-full aspect-[4/3] rounded-xl bg-slate-900/80 overflow-hidden mb-2 p-1 border border-white/10 flex items-center justify-center">
+                            <img src="/assets/products/xh-71.jpg" alt="Chrome Studio" className="w-full h-full object-contain" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-black text-white flex items-center justify-between">
+                              <span className="truncate">{t.xh71Card5Title}</span>
+                              <span className="text-[10px] bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded flex-shrink-0">Studio</span>
+                            </div>
+                            <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">{t.xh71Card5Desc}</p>
+                          </div>
+                        </button>
+
+                        {/* Card 6 */}
+                        <button
+                          type="button"
+                          onClick={() => setXh71EffectImg('/assets/products/xh-71-gunmetal.jpg')}
+                          className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
+                            xh71EffectImg === '/assets/products/xh-71-gunmetal.jpg'
+                              ? 'bg-blue-600/30 border-blue-400 text-white shadow-lg ring-1 ring-blue-400'
+                              : 'bg-slate-800/60 border-white/10 text-slate-300 hover:bg-slate-800 hover:text-white'
+                          }`}
+                        >
+                          <div className="w-full aspect-[4/3] rounded-xl bg-slate-900/80 overflow-hidden mb-2 p-1 border border-white/10 flex items-center justify-center">
+                            <img src="/assets/products/xh-71-gunmetal.jpg" alt="Gunmetal Studio" className="w-full h-full object-contain" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-black text-white flex items-center justify-between">
+                              <span className="truncate">{t.xh71Card6Title}</span>
+                              <span className="text-[10px] bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded flex-shrink-0">Studio</span>
+                            </div>
+                            <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">{t.xh71Card6Desc}</p>
+                          </div>
+                        </button>
+                      </div>
+
+                      {/* Bottom Action CTAs */}
+                      <div className="flex flex-wrap items-center gap-4 pt-2">
+                        <button
+                          type="button"
+                          onClick={() => setXh71Tab('overview')}
+                          className="bg-slate-700 hover:bg-slate-600 text-white px-5 py-3 rounded-xl font-bold text-sm flex items-center gap-2 shadow-lg transition-all cursor-pointer"
+                        >
+                          <ArrowLeft size={16} />
+                          <span>{t.xh71SwitchToOverview}</span>
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() => {
+                            const p71 = products.find(item => item.model === 'XH-71') || products[1];
+                            setSelectedProduct(p71);
+                            setRfqMsg(`RFQ for model: XH-71 Push-Button Shower Slider Bracket with 3D Effect Renderings. Please provide wholesale volume quotation and technical drawing.`);
+                          }}
+                          className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-bold text-sm flex items-center gap-2 shadow-lg hover:shadow-blue-500/25 transition-all cursor-pointer"
+                        >
+                          <span>{lang === 'zh' ? '获取 XH-71 效果图源文件及大宗报价' : 'Request XH-71 HD Renders & Volume Pricing'}</span>
+                          <ChevronRight size={16} />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
             </div>
           </div>
 
