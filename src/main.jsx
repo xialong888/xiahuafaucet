@@ -2282,29 +2282,10 @@ function App() {
                 </div>
               )}
 
-              {/* PAGE 2: 《XH-71展示效果图》 Showcase Gallery & 3D Effect Renderings */}
+              {/* PAGE 2: 《XH-71展示效果图》 Showcase Gallery */}
               {xh71Tab === 'gallery' && (
                 <div className="space-y-6 animate-fade-in text-left">
-                  {/* Top Intro bar for Page 2 */}
-                  <div className="bg-slate-800/80 p-5 rounded-2xl border border-blue-500/30 flex flex-wrap items-center justify-between gap-4">
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-2">
-                        <span className="w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
-                        <h4 className="text-lg sm:text-xl font-black text-white">{t.xh71GalleryTitle}</h4>
-                      </div>
-                      <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">{t.xh71GalleryDesc}</p>
-                    </div>
-                    <button
-                      type="button"
-                      onClick={() => setXh71Tab('overview')}
-                      className="bg-slate-700 hover:bg-slate-600 text-slate-100 px-4 py-2 rounded-xl text-xs font-bold transition-all border border-white/10 flex items-center gap-1.5 cursor-pointer shadow"
-                    >
-                      <ArrowLeft size={14} />
-                      <span>{t.xh71SwitchToOverview}</span>
-                    </button>
-                  </div>
-
-                  {/* Main Grid: Left Large Preview & Right 6 Effect Render Cards */}
+                  {/* Main Grid: Left Large Preview & Right 4 Real Bathroom Scene Render Cards */}
                   <div className="grid lg:grid-cols-12 gap-8 items-start">
                     
                     {/* Left Column: Interactive Main HD Preview with Zoom */}
@@ -2322,11 +2303,7 @@ function App() {
                             {xh71EffectImg.includes('scene-warm') ? (lang === 'zh' ? '暖色意式轻奢实装 · 封面' : 'Warm Marble Scene (Cover)') :
                              xh71EffectImg.includes('scene-dark') ? (lang === 'zh' ? '深色现代岩板实装' : 'Dark Slate Modern Scene') :
                              xh71EffectImg.includes('scene-white') ? (lang === 'zh' ? '雅白大理石明朗实装' : 'Pure White Marble Scene') :
-                             xh71EffectImg.includes('scene-gunmetal') ? (lang === 'zh' ? '哑光枪灰特写实装' : 'Gunmetal Detail Scene') :
-                             xh71EffectImg.includes('hero-poster') ? (lang === 'zh' ? '官方实装海报效果图' : 'Official Poster Scene') :
-                             xh71EffectImg.includes('71-2') ? (lang === 'zh' ? '3D渲染 · 哑光枪灰色' : '3D Matte Gunmetal Grey') :
-                             xh71EffectImg.includes('71-3') ? (lang === 'zh' ? '3D立体视角与阻尼细节' : '3D Swivel & Button Angle') :
-                             (lang === 'zh' ? '3D渲染 · 镜面高光电镀铬' : '3D Mirror Chrome Front')}
+                             (lang === 'zh' ? '哑光枪灰多功能特写实装' : 'Gunmetal Detail Scene')}
                           </span>
                         </div>
 
@@ -2351,9 +2328,9 @@ function App() {
                       </div>
                     </div>
 
-                    {/* Right Column: 8 Multi-Scene Effect Cards Interactive Selector */}
+                    {/* Right Column: 4 Real Bathroom Scene Render Cards */}
                     <div className="lg:col-span-6 space-y-4">
-                      <div className="grid grid-cols-2 gap-3 max-h-[500px] overflow-y-auto pr-1 custom-scrollbar">
+                      <div className="grid grid-cols-2 gap-3">
                         
                         {/* Card 1: 图二 (封面图 - 暖色意式轻奢) */}
                         <button
@@ -2443,94 +2420,6 @@ function App() {
                               <span className="text-[10px] bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded flex-shrink-0">Gunmetal</span>
                             </div>
                             <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">{t.xh71CardGunmetalSceneDesc}</p>
-                          </div>
-                        </button>
-
-                        {/* Card 5: 3D正面渲染 - 镜面电镀铬 */}
-                        <button
-                          type="button"
-                          onClick={() => setXh71EffectImg('/assets/products/xh-product-71.jpg')}
-                          className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
-                            xh71EffectImg === '/assets/products/xh-product-71.jpg'
-                              ? 'bg-blue-600/30 border-blue-400 text-white shadow-lg ring-1 ring-blue-400'
-                              : 'bg-slate-800/60 border-white/10 text-slate-300 hover:bg-slate-800 hover:text-white'
-                          }`}
-                        >
-                          <div className="w-full aspect-[4/3] rounded-xl bg-slate-900/80 overflow-hidden mb-2 p-1 border border-white/10 flex items-center justify-center">
-                            <img src="/assets/products/xh-product-71.jpg" alt="Chrome 1" className="w-full h-full object-contain" />
-                          </div>
-                          <div>
-                            <div className="text-xs font-black text-white flex items-center justify-between">
-                              <span className="truncate">{t.xh71Card3DChromeTitle}</span>
-                              <span className="text-[10px] bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded flex-shrink-0">3D Render</span>
-                            </div>
-                            <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">{t.xh71Card3DChromeDesc}</p>
-                          </div>
-                        </button>
-
-                        {/* Card 6: 3D立体侧视角与阻尼细节 */}
-                        <button
-                          type="button"
-                          onClick={() => setXh71EffectImg('/assets/products/xh-product-71-3.jpg')}
-                          className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
-                            xh71EffectImg === '/assets/products/xh-product-71-3.jpg'
-                              ? 'bg-blue-600/30 border-blue-400 text-white shadow-lg ring-1 ring-blue-400'
-                              : 'bg-slate-800/60 border-white/10 text-slate-300 hover:bg-slate-800 hover:text-white'
-                          }`}
-                        >
-                          <div className="w-full aspect-[4/3] rounded-xl bg-slate-900/80 overflow-hidden mb-2 p-1 border border-white/10 flex items-center justify-center">
-                            <img src="/assets/products/xh-product-71-3.jpg" alt="Chrome 2" className="w-full h-full object-contain" />
-                          </div>
-                          <div>
-                            <div className="text-xs font-black text-white flex items-center justify-between">
-                              <span className="truncate">{t.xh71CardDetailTitle}</span>
-                              <span className="text-[10px] bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded flex-shrink-0">360° Swivel</span>
-                            </div>
-                            <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">{t.xh71CardDetailDesc}</p>
-                          </div>
-                        </button>
-
-                        {/* Card 7: 3D渲染 - 哑光枪灰 */}
-                        <button
-                          type="button"
-                          onClick={() => setXh71EffectImg('/assets/products/xh-product-71-2.jpg')}
-                          className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
-                            xh71EffectImg === '/assets/products/xh-product-71-2.jpg'
-                              ? 'bg-blue-600/30 border-blue-400 text-white shadow-lg ring-1 ring-blue-400'
-                              : 'bg-slate-800/60 border-white/10 text-slate-300 hover:bg-slate-800 hover:text-white'
-                          }`}
-                        >
-                          <div className="w-full aspect-[4/3] rounded-xl bg-slate-900/80 overflow-hidden mb-2 p-1 border border-white/10 flex items-center justify-center">
-                            <img src="/assets/products/xh-product-71-2.jpg" alt="Gunmetal 3D" className="w-full h-full object-contain" />
-                          </div>
-                          <div>
-                            <div className="text-xs font-black text-white flex items-center justify-between">
-                              <span className="truncate">{t.xh71Card3DGunmetalTitle}</span>
-                              <span className="text-[10px] bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded flex-shrink-0">3D Render</span>
-                            </div>
-                            <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">{t.xh71Card3DGunmetalDesc}</p>
-                          </div>
-                        </button>
-
-                        {/* Card 8: 官方宣传海报 */}
-                        <button
-                          type="button"
-                          onClick={() => setXh71EffectImg('/assets/images/hero-poster-2.jpg')}
-                          className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
-                            xh71EffectImg === '/assets/images/hero-poster-2.jpg'
-                              ? 'bg-blue-600/30 border-blue-400 text-white shadow-lg ring-1 ring-blue-400'
-                              : 'bg-slate-800/60 border-white/10 text-slate-300 hover:bg-slate-800 hover:text-white'
-                          }`}
-                        >
-                          <div className="w-full aspect-[4/3] rounded-xl bg-slate-900/80 overflow-hidden mb-2 p-0.5 border border-white/10 flex items-center justify-center">
-                            <img src="/assets/images/hero-poster-2.jpg" alt="Poster Scene" className="w-full h-full object-cover rounded-lg" />
-                          </div>
-                          <div>
-                            <div className="text-xs font-black text-white flex items-center justify-between">
-                              <span className="truncate">{t.xh71CardPosterTitle}</span>
-                              <span className="text-[10px] bg-amber-500/20 text-amber-300 px-1.5 py-0.5 rounded flex-shrink-0">Poster</span>
-                            </div>
-                            <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">{t.xh71CardPosterDesc}</p>
                           </div>
                         </button>
 
