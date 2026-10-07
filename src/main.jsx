@@ -118,13 +118,13 @@ const trans = {
     xh71TabGallery: "XH-71 Showcase Gallery",
     xh71GalleryTitle: "XH-71 3D Renders & Multi-Scene Installation Showcase",
     xh71GalleryDesc: "Explore realistic bathroom scene renders and 3D studio views of model XH-71 in Mirror Chrome and Matte Gunmetal Grey finishes.",
-    xh71CardWarmTitle: "Warm Marble Scene (Cover)",
+    xh71CardWarmTitle: "Warm Marble Luxury Scene",
     xh71CardWarmDesc: "Mirror chrome slider mounted on a riser rail against warm travertine marble.",
     xh71CardDarkTitle: "Dark Slate Modern Scene",
     xh71CardDarkDesc: "Class-9 mirror chrome on shower column in contemporary dark stone interior.",
     xh71CardWhiteTitle: "Pure White Marble Scene",
     xh71CardWhiteDesc: "Minimalist white marble bathroom setup showing seamless rail integration.",
-    xh71CardGunmetalSceneTitle: "Gunmetal Precision Detail Scene",
+    xh71CardGunmetalSceneTitle: "Matte Gunmetal Detail Scene",
     xh71CardGunmetalSceneDesc: "Matte dark gunmetal edition with knurled knob and push-button mechanism.",
     xh71Card3DChromeTitle: "3D Studio Mirror Chrome",
     xh71Card3DChromeDesc: "Studio 3D render highlighting flawless electroplated gloss and 360° swivel socket.",
@@ -224,7 +224,7 @@ const trans = {
     xh71TabGallery: "XH-71 Эффекты и рендеры",
     xh71GalleryTitle: "XH-71 3D-рендеры и примеры установки на штанге",
     xh71GalleryDesc: "Рендеры высокого разрешения XH-71 в зеркальном хроме и матовом оружейном сером цвете с примерами установки.",
-    xh71CardWarmTitle: "Теплый мрамор (Обложка)",
+    xh71CardWarmTitle: "Теплый мрамор",
     xh71CardWarmDesc: "Зеркальный хромированный держатель на стойке в теплой бежевой ванной комнате.",
     xh71CardDarkTitle: "Темный сланец — Модерн",
     xh71CardDarkDesc: "Хромированный держатель 9 класса на фоне современного темного сланца.",
@@ -330,7 +330,7 @@ const trans = {
     xh71TabGallery: "XH-71 Galeria de Efeitos",
     xh71GalleryTitle: "XH-71 Renders 3D e Demonstração de Efeitos em Cenário",
     xh71GalleryDesc: "Renders em alta resolução do XH-71 em Cromo Espelhado e Gunmetal Fosco, mostrando instalação em barras de 18-25mm.",
-    xh71CardWarmTitle: "Cenário Mármore Quente (Capa)",
+    xh71CardWarmTitle: "Cenário Mármore Quente",
     xh71CardWarmDesc: "Suporte cromado espelhado instalado em barra sobre mármore travertino aconchegante.",
     xh71CardDarkTitle: "Cenário Ardósia Escura Moderna",
     xh71CardDarkDesc: "Cromagem classe 9 em coluna de banho com fundo contemporâneo de pedra escura.",
@@ -436,7 +436,7 @@ const trans = {
     xh71TabGallery: "XH-71 प्रभाव और रेंडर",
     xh71GalleryTitle: "XH-71 3D रेंडर और स्थापना प्रभाव गैलरी",
     xh71GalleryDesc: "मिरर क्रोम और मैट गनमेटल ग्रे में XH-71 के उच्च-रिज़ॉल्यूशन प्रभाव रेंडर और शावर रॉड इंस्टॉलेशन।",
-    xh71CardWarmTitle: "वार्म मार्बल सीन (कवर)",
+    xh71CardWarmTitle: "वार्म मार्बल सीन",
     xh71CardWarmDesc: "वार्म बेज मार्बल बाथरूम में शॉवर रॉड पर लगा मिरर क्रोम स्लाइडर।",
     xh71CardDarkTitle: "डार्क स्लेट मॉडर्न सीन",
     xh71CardDarkDesc: "आधुनिक डार्क स्टोन इंटीरियर में क्लास-9 मिरर क्रोम शॉवर कॉलम।",
@@ -542,14 +542,14 @@ const trans = {
     xh71TabGallery: "XH-71展示效果图",
     xh71GalleryTitle: "XH-71 经典按键滑座 · 实景渲染与3D展示效果图",
     xh71GalleryDesc: "汇总 XH-71 在暖色大理石、深色岩板、纯白卫浴及哑光枪灰等多种真实卫浴淋浴杆实装渲染效果，点击可放大看清细节。",
-    xh71CardWarmTitle: "暖色意式轻奢实装效果 (封面)",
+    xh71CardWarmTitle: "暖色意式轻奢实装效果",
     xh71CardWarmDesc: "镜面高光电镀铬在暖调微水泥/米色大理石淋浴房中的实装效果展示。",
     xh71CardDarkTitle: "深色现代岩板实装效果",
-    xh71CardDarkDesc: "9级加厚镜面铬在深灰岩板极简浴室中的高亮对比与稳固滑升表现。",
+    xh71CardDarkDesc: "9级加厚镜面铬在深灰岩板极简浴室中的高亮对比与支架滑升表现。",
     xh71CardWhiteTitle: "雅白大理石明朗实装效果",
-    xh71CardWhiteDesc: "极简纯白卫浴空间搭配，贴合紧密防滑防刮，展现通透高级感。",
-    xh71CardGunmetalSceneTitle: "哑光枪灰多功能特写效果",
-    xh71CardGunmetalSceneDesc: "哑光深枪灰旋钮与按键阻尼机构实装特写，专供轻奢高端工程项目。",
+    xh71CardWhiteDesc: "极简纯白卫浴空间搭配，贴合紧密外套防刮，透视通透高级感。",
+    xh71CardGunmetalSceneTitle: "哑光枪灰多功能效果",
+    xh71CardGunmetalSceneDesc: "哑光深枪灰色旋钮与按键阻尼机构实装特色，专供轻奢高端工程项目。",
     xh71Card3DChromeTitle: "3D渲染图 · 镜面电镀铬",
     xh71Card3DChromeDesc: "影棚级3D产品正面渲染，展现如镜面般平整的电镀表面与旋转插座。",
     xh71Card3DGunmetalTitle: "3D渲染图 · 哑光枪灰",
@@ -2300,10 +2300,10 @@ function App() {
                         <div className="absolute top-3 left-3 bg-blue-600/90 backdrop-blur text-white text-[11px] font-black px-3 py-1.5 rounded-lg uppercase tracking-wider shadow-md border border-white/10 flex items-center gap-1.5">
                           <Sparkles size={12} className="text-amber-300" />
                           <span>
-                            {xh71EffectImg.includes('scene-warm') ? (lang === 'zh' ? '暖色意式轻奢实装 · 封面' : 'Warm Marble Scene (Cover)') :
-                             xh71EffectImg.includes('scene-dark') ? (lang === 'zh' ? '深色现代岩板实装' : 'Dark Slate Modern Scene') :
-                             xh71EffectImg.includes('scene-white') ? (lang === 'zh' ? '雅白大理石明朗实装' : 'Pure White Marble Scene') :
-                             (lang === 'zh' ? '哑光枪灰多功能特写实装' : 'Gunmetal Detail Scene')}
+                            {xh71EffectImg.includes('scene-warm') ? (lang === 'zh' ? '暖色意式轻奢实装效果' : 'Warm Marble Luxury Scene') :
+                             xh71EffectImg.includes('scene-dark') ? (lang === 'zh' ? '深色现代岩板实装效果' : 'Dark Slate Modern Scene') :
+                             xh71EffectImg.includes('scene-white') ? (lang === 'zh' ? '雅白大理石明朗实装效果' : 'Pure White Marble Scene') :
+                             (lang === 'zh' ? '哑光枪灰多功能实装效果' : 'Matte Gunmetal Detail Scene')}
                           </span>
                         </div>
 
@@ -2332,7 +2332,7 @@ function App() {
                     <div className="lg:col-span-6 space-y-4">
                       <div className="grid grid-cols-2 gap-3">
                         
-                        {/* Card 1: 图二 (封面图 - 暖色意式轻奢) */}
+                        {/* Card 1: 暖色意式轻奢实装 */}
                         <button
                           type="button"
                           onClick={() => setXh71EffectImg('/assets/products/xh-71-scene-warm.jpg')}
@@ -2342,22 +2342,18 @@ function App() {
                               : 'bg-slate-800/60 border-white/10 text-slate-300 hover:bg-slate-800 hover:text-white'
                           }`}
                         >
-                          <div className="w-full aspect-[4/3] rounded-xl bg-slate-900/80 overflow-hidden mb-2 p-0.5 border border-white/10 flex items-center justify-center relative">
-                            <img src="/assets/products/xh-71-scene-warm.jpg" alt="Warm Scene Cover" className="w-full h-full object-cover rounded-lg" />
-                            <span className="absolute top-1.5 left-1.5 bg-amber-400 text-slate-950 text-[9px] font-black px-1.5 py-0.5 rounded shadow">
-                              {lang === 'zh' ? '封面' : 'Cover'}
-                            </span>
+                          <div className="w-full aspect-[4/3] rounded-xl bg-slate-900/80 overflow-hidden mb-2 p-0.5 border border-white/10 flex items-center justify-center">
+                            <img src="/assets/products/xh-71-scene-warm.jpg" alt="Warm Scene" className="w-full h-full object-cover rounded-lg" />
                           </div>
                           <div>
-                            <div className="text-xs font-black text-white flex items-center justify-between">
+                            <div className="text-xs font-black text-white">
                               <span className="truncate">{t.xh71CardWarmTitle}</span>
-                              <span className="text-[10px] bg-amber-500/20 text-amber-300 px-1.5 py-0.5 rounded flex-shrink-0">Scene 1</span>
                             </div>
                             <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">{t.xh71CardWarmDesc}</p>
                           </div>
                         </button>
 
-                        {/* Card 2: 图一 (深色现代岩板) */}
+                        {/* Card 2: 深色现代岩板实装 */}
                         <button
                           type="button"
                           onClick={() => setXh71EffectImg('/assets/products/xh-71-scene-dark.jpg')}
@@ -2371,15 +2367,14 @@ function App() {
                             <img src="/assets/products/xh-71-scene-dark.jpg" alt="Dark Slate Scene" className="w-full h-full object-cover rounded-lg" />
                           </div>
                           <div>
-                            <div className="text-xs font-black text-white flex items-center justify-between">
+                            <div className="text-xs font-black text-white">
                               <span className="truncate">{t.xh71CardDarkTitle}</span>
-                              <span className="text-[10px] bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded flex-shrink-0">Scene 2</span>
                             </div>
                             <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">{t.xh71CardDarkDesc}</p>
                           </div>
                         </button>
 
-                        {/* Card 3: 图三 (雅白大理石) */}
+                        {/* Card 3: 雅白大理石实装 */}
                         <button
                           type="button"
                           onClick={() => setXh71EffectImg('/assets/products/xh-71-scene-white.jpg')}
@@ -2393,15 +2388,14 @@ function App() {
                             <img src="/assets/products/xh-71-scene-white.jpg" alt="White Marble Scene" className="w-full h-full object-cover rounded-lg" />
                           </div>
                           <div>
-                            <div className="text-xs font-black text-white flex items-center justify-between">
+                            <div className="text-xs font-black text-white">
                               <span className="truncate">{t.xh71CardWhiteTitle}</span>
-                              <span className="text-[10px] bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded flex-shrink-0">Scene 3</span>
                             </div>
                             <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">{t.xh71CardWhiteDesc}</p>
                           </div>
                         </button>
 
-                        {/* Card 4: 图四 (枪灰特写实装) */}
+                        {/* Card 4: 哑光枪灰实装 */}
                         <button
                           type="button"
                           onClick={() => setXh71EffectImg('/assets/products/xh-71-scene-gunmetal.jpg')}
@@ -2415,9 +2409,8 @@ function App() {
                             <img src="/assets/products/xh-71-scene-gunmetal.jpg" alt="Gunmetal Detail Scene" className="w-full h-full object-cover rounded-lg" />
                           </div>
                           <div>
-                            <div className="text-xs font-black text-white flex items-center justify-between">
+                            <div className="text-xs font-black text-white">
                               <span className="truncate">{t.xh71CardGunmetalSceneTitle}</span>
-                              <span className="text-[10px] bg-slate-700 text-slate-200 px-1.5 py-0.5 rounded flex-shrink-0">Gunmetal</span>
                             </div>
                             <p className="text-[11px] text-slate-400 line-clamp-2 mt-1">{t.xh71CardGunmetalSceneDesc}</p>
                           </div>
