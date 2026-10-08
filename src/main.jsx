@@ -587,7 +587,7 @@ const products = [
       hi: "हमारे चीनी राष्ट्रीय पेटेंट के अनुसार निर्मित। जंग प्रतिरोधी और चमकदार सतह।",
       zh: "严格按照国家实用新型专利 ZL 2016 2 0363475.1 制造。注塑壁厚提升30%，防滑阻尼平衡优异，能通过48小时严苛乙酸雾测试，历久不剥落。"
     },
-    images: ["/assets/products/xh-product-101-7.jpg", "/assets/products/xh-product-101-8.jpg", "/assets/products/xh-product-101-9.jpg", "/assets/products/xh-product-101-10.jpg", "/assets/products/xh-product-2.jpg", "/assets/products/xh-product-4.jpg", "/assets/products/xh-product-5.jpg"],
+    images: ["/assets/products/xh-product-101-7.jpg", "/assets/products/xh-product-101-8.jpg", "/assets/products/xh-product-101-9.jpg", "/assets/products/xh-product-101-10.jpg", "/assets/products/xh-product-7.jpg", "/assets/products/xh-product-8.jpg", "/assets/products/xh-product-9.jpg", "/assets/products/xh-product-2.jpg", "/assets/products/xh-product-4.jpg", "/assets/products/xh-product-5.jpg"],
     img: "/assets/products/xh-product-101-7.jpg"
   },
   {
@@ -611,8 +611,8 @@ const products = [
       hi: "प्रीमियम वर्जिन एबीएस से निर्मित, क्लास-9 मल्टी-लेयर मिरर क्रोम प्लेटिंग के साथ।",
       zh: "采用夏龙自主研发专利精密控温与装配结构，精选高标原生 ABS 注塑成型，比重加厚、手感沉稳。表面覆盖 9 级多层加厚电镀铬，具备优异的耐酸碱腐蚀、耐磨防指纹性能；内衬高精度铜芯齿轮，旋转调节手感顺滑阻尼均衡，是全球各大主流卫浴水龙头品牌 OEM/ODM 的优质配套手柄。"
     },
-    images: ["/assets/products/xh-product-7.jpg", "/assets/products/xh-product-8.jpg", "/assets/products/xh-product-9.jpg", "/assets/products/xh-product-10.jpg", "/assets/products/xh-product-11.jpg", "/assets/products/xh-product-12.jpg", "/assets/products/xh-product-1.jpg", "/assets/products/xh-product-3.jpg", "/assets/products/xh-product-6.jpg"],
-    img: "/assets/products/xh-product-7.jpg"
+    images: ["/assets/products/xh-product-10.jpg", "/assets/products/xh-product-11.jpg", "/assets/products/xh-product-12.jpg", "/assets/products/xh-product-1.jpg", "/assets/products/xh-product-3.jpg", "/assets/products/xh-product-6.jpg"],
+    img: "/assets/products/xh-product-10.jpg"
   },
   {
     id: 3,
