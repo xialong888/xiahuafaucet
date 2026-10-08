@@ -1310,15 +1310,15 @@ function App() {
 
             </div>
 
-            {/* Right Hero Image Frame (Multi-page marketing showcase: Page 1 = Faucet Handle, Page 2 = Shower Socket) */}
+            {/* Right Hero Image Frame (Multi-page marketing showcase: Page 1 = Shower Socket, Page 2 = Faucet Handle) */}
             <div className="lg:col-span-5 relative">
               <div className="relative mx-auto max-w-[420px] lg:max-w-none rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 p-3 group">
                 
                 {/* Poster Image Container */}
                 <div className="relative overflow-hidden rounded-2xl aspect-[3/4] bg-slate-950">
                   <img 
-                    src={heroPosterPage === 0 ? "/assets/images/hero-poster-1.jpg" : "/assets/images/hero-poster-2.jpg"} 
-                    alt={heroPosterPage === 0 ? "ABS single-lever faucet handle marketing poster" : "Quick-install shower head bracket socket poster"} 
+                    src={heroPosterPage === 0 ? "/assets/images/hero-poster-2.jpg" : "/assets/images/hero-poster-1.jpg"} 
+                    alt={heroPosterPage === 0 ? "Quick-install shower head bracket socket poster" : "ABS single-lever faucet handle marketing poster"} 
                     className="w-full h-full object-cover transition-all duration-500 transform group-hover:scale-[1.02]"
                   />
                   
@@ -1363,7 +1363,7 @@ function App() {
                     }`}
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-current" />
-                    <span className="truncate">{lang === 'zh' ? '第 1 页 · 水龙头单把手柄' : 'Page 1 · Faucet Handle'}</span>
+                    <span className="truncate">{lang === 'zh' ? '第 1 页 · 淋浴花洒插座' : 'Page 1 · Shower Socket'}</span>
                   </button>
 
                   <button
@@ -1375,7 +1375,7 @@ function App() {
                     }`}
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-current" />
-                    <span className="truncate">{lang === 'zh' ? '第 2 页 · 淋浴花洒插座' : 'Page 2 · Shower Socket'}</span>
+                    <span className="truncate">{lang === 'zh' ? '第 2 页 · 水龙头单把手柄' : 'Page 2 · Faucet Handle'}</span>
                   </button>
                 </div>
 
