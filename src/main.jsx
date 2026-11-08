@@ -1310,31 +1310,57 @@ function App() {
 
             </div>
 
-            {/* Right Hero Image Frame (Multi-page marketing showcase: Page 1 = Shower Socket, Page 2 = Faucet Handle) */}
+            {/* Right Hero Image Frame (Multi-page marketing showcase: Page 1 = Shower Socket, Page 2 = Socket Video, Page 3 = Faucet Handle) */}
             <div className="lg:col-span-5 relative">
               <div className="relative mx-auto max-w-[420px] lg:max-w-none rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 p-3 group">
                 
-                {/* Poster Image Container */}
-                <div className="relative overflow-hidden rounded-2xl aspect-[3/4] bg-slate-950">
-                  <img 
-                    src={heroPosterPage === 0 ? "/assets/images/hero-poster-2.jpg" : "/assets/images/hero-poster-1.jpg"} 
-                    alt={heroPosterPage === 0 ? "Quick-install shower head bracket socket poster" : "ABS single-lever faucet handle marketing poster"} 
-                    className="w-full h-full object-cover transition-all duration-500 transform group-hover:scale-[1.02]"
-                  />
+                {/* Poster Image / Video Container */}
+                <div className="relative overflow-hidden rounded-2xl aspect-[3/4] bg-slate-950 flex items-center justify-center">
+                  {heroPosterPage === 0 && (
+                    <img 
+                      src="/assets/images/hero-poster-2.jpg" 
+                      alt="Quick-install shower head bracket socket poster" 
+                      className="w-full h-full object-cover transition-all duration-500 transform group-hover:scale-[1.02]"
+                    />
+                  )}
+
+                  {heroPosterPage === 1 && (
+                    <video 
+                      controls 
+                      playsInline 
+                      autoPlay
+                      muted
+                      loop
+                      preload="metadata"
+                      poster="/assets/images/hero-poster-2.jpg"
+                      className="w-full h-full object-cover"
+                    >
+                      <source src="/assets/videos/xh-shower-socket-video.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  )}
+
+                  {heroPosterPage === 2 && (
+                    <img 
+                      src="/assets/images/hero-poster-1.jpg" 
+                      alt="ABS single-lever faucet handle marketing poster" 
+                      className="w-full h-full object-cover transition-all duration-500 transform group-hover:scale-[1.02]"
+                    />
+                  )}
                   
                   {/* Page Badge Indicator */}
-                  <div className="absolute top-3 right-3 bg-slate-950/80 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/20 shadow-lg flex items-center gap-1.5">
+                  <div className="absolute top-3 right-3 bg-slate-950/80 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/20 shadow-lg flex items-center gap-1.5 z-10 pointer-events-none">
                     <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                    <span>{heroPosterPage + 1} / 2</span>
+                    <span>{heroPosterPage + 1} / 3</span>
                   </div>
 
                   {/* Left / Right Navigation Arrows */}
                   <button
                     onClick={(e) => {
                       e.preventDefault();
-                      setHeroPosterPage((prev) => (prev === 0 ? 1 : 0));
+                      setHeroPosterPage((prev) => (prev === 0 ? 2 : prev - 1));
                     }}
-                    className="absolute left-2.5 top-1/2 -translate-y-1/2 bg-slate-900/80 hover:bg-blue-600 text-white p-2 rounded-full backdrop-blur-sm border border-white/10 opacity-80 hover:opacity-100 transition-all shadow-lg cursor-pointer"
+                    className="absolute left-2.5 top-1/2 -translate-y-1/2 bg-slate-900/80 hover:bg-blue-600 text-white p-2 rounded-full backdrop-blur-sm border border-white/10 opacity-80 hover:opacity-100 transition-all shadow-lg cursor-pointer z-10"
                     aria-label="Previous Page"
                   >
                     <ChevronLeft size={18} />
@@ -1343,9 +1369,9 @@ function App() {
                   <button
                     onClick={(e) => {
                       e.preventDefault();
-                      setHeroPosterPage((prev) => (prev === 0 ? 1 : 0));
+                      setHeroPosterPage((prev) => (prev === 2 ? 0 : prev + 1));
                     }}
-                    className="absolute right-2.5 top-1/2 -translate-y-1/2 bg-slate-900/80 hover:bg-blue-600 text-white p-2 rounded-full backdrop-blur-sm border border-white/10 opacity-80 hover:opacity-100 transition-all shadow-lg cursor-pointer"
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 bg-slate-900/80 hover:bg-blue-600 text-white p-2 rounded-full backdrop-blur-sm border border-white/10 opacity-80 hover:opacity-100 transition-all shadow-lg cursor-pointer z-10"
                     aria-label="Next Page"
                   >
                     <ChevronRight size={18} />
@@ -1353,29 +1379,41 @@ function App() {
                 </div>
 
                 {/* Bottom Pagination Switcher Tabs */}
-                <div className="flex items-center justify-between gap-2 mt-3 px-1">
+                <div className="flex items-center justify-between gap-1.5 sm:gap-2 mt-3 px-1">
                   <button
                     onClick={() => setHeroPosterPage(0)}
-                    className={`flex-1 py-2 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer border ${
+                    className={`flex-1 py-2 px-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer border ${
                       heroPosterPage === 0 
                         ? 'bg-blue-600 text-white border-blue-400 shadow-md' 
                         : 'bg-slate-800 text-slate-400 hover:text-white border-white/5 hover:bg-slate-700'
                     }`}
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-current shrink-0" />
                     <span className="truncate">{lang === 'zh' ? '第 1 页 · 淋浴花洒插座' : 'Page 1 · Shower Socket'}</span>
                   </button>
 
                   <button
                     onClick={() => setHeroPosterPage(1)}
-                    className={`flex-1 py-2 px-3 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer border ${
+                    className={`flex-1 py-2 px-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer border ${
                       heroPosterPage === 1 
                         ? 'bg-blue-600 text-white border-blue-400 shadow-md' 
                         : 'bg-slate-800 text-slate-400 hover:text-white border-white/5 hover:bg-slate-700'
                     }`}
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-current" />
-                    <span className="truncate">{lang === 'zh' ? '第 2 页 · 水龙头单把手柄' : 'Page 2 · Faucet Handle'}</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-current shrink-0" />
+                    <span className="truncate">{lang === 'zh' ? '第 2 页 · 花洒插座视频' : 'Page 2 · Socket Video'}</span>
+                  </button>
+
+                  <button
+                    onClick={() => setHeroPosterPage(2)}
+                    className={`flex-1 py-2 px-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer border ${
+                      heroPosterPage === 2 
+                        ? 'bg-blue-600 text-white border-blue-400 shadow-md' 
+                        : 'bg-slate-800 text-slate-400 hover:text-white border-white/5 hover:bg-slate-700'
+                    }`}
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-current shrink-0" />
+                    <span className="truncate">{lang === 'zh' ? '第 3 页 · 水龙头单把手柄' : 'Page 3 · Faucet Handle'}</span>
                   </button>
                 </div>
 
