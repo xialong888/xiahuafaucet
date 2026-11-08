@@ -329,7 +329,7 @@ const trans = {
     xh71TabOverview: "Especificações e Vídeo",
     xh71TabGallery: "XH-71 Galeria de Efeitos",
     xh71GalleryTitle: "XH-71 Renders 3D e Demonstração de Efeitos em Cenário",
-    xh71GalleryDesc: "Renders em alta resolução do XH-71 em Cromo Espelhado e Gunmetal Fosco, mostrando instalação em barras de 18-25mm.",
+    xh71GalleryDesc: "Renders em alta resolução do XH-71 em Cromo Espelhado e Gunmetal Fosco, mostrando instalação em barras de 19-25mm.",
     xh71CardWarmTitle: "Cenário Mármore Quente",
     xh71CardWarmDesc: "Suporte cromado espelhado instalado em barra sobre mármore travertino aconchegante.",
     xh71CardDarkTitle: "Cenário Ardósia Escura Moderna",
@@ -677,11 +677,11 @@ const products = [
     finishMap: { en: "9-Class Multi-layer Electroplated Chrome", ru: "Многослойный глянцевый хром 9 класса", pt: "Cromagem Multicamada Classe 9", hi: "इलेक्ट्रोप्लेटेड क्रोम", zh: "9级加厚多层镜面电镀铬（耐酸抗盐雾耐磨损）" },
     certMap: { en: "ZL 2025 2 0342911.6 | SGS 100,000 Wear Cycles", ru: "Патент ZL 2025 2 0342911.6 / SGS 100 000 циклов", pt: "Patente ZL 2025 2 0342911.6 / SGS 100 mil ciclos", hi: "पेटेंट ZL 2025 2 0342911.6 / एसजीएस प्रमाणित", zh: "中国实用新型专利 ZL 2025 2 0342911.6 | SGS 10万次耐磨认证" },
     descMap: {
-      en: "XH-71 premium push-button shower bar slider bracket, engineered for 18-25mm standard shower rails. Features effortless one-touch button height adjustment, 360° rotatable shower head cradle, and heavy-duty internal silicone grip preventing slippage.",
-      ru: "Премиальный держатель для душа XH-71 с кнопочной регулировкой высоты на штангу 18-25 мм. Плавное перемещение и надежная фиксация лейки.",
-      pt: "Suporte deslizante premium XH-71 com botão de liberação rápida para barras de 18-25mm. Ajuste de altura com um toque e berço giratório de 360°.",
-      hi: "मानक 18-25 मिमी शावर रॉड के लिए पुश-बटन शावर हेड स्लाइडर ब्रैकेट XH-71। एक स्पर्श ऊंचाई समायोजन और 360° घूर्णन।",
-      zh: "XH-71 经典按键式升降花洒座，专为 18-25mm 标准升降淋浴杆研发。顶部配备一触式按钮，按压即可顺滑调节高度；内置高阻尼防滑硅胶内衬，紧锁不晃动、不滑落；插槽支持 360° 灵活旋转调节喷淋角度，通用适配各类国际标准手持花洒。"
+      en: "XH-71 premium push-button shower bar slider bracket, engineered for 19-25mm standard shower rails. Features effortless one-touch button height adjustment, 360° rotatable shower head cradle, and heavy-duty internal silicone grip preventing slippage.",
+      ru: "Премиальный держатель для душа XH-71 с кнопочной регулировкой высоты на штангу 19-25 мм. Плавное перемещение и надежная фиксация лейки.",
+      pt: "Suporte deslizante premium XH-71 com botão de liberação rápida para barras de 19-25mm. Ajuste de altura com um toque e berço giratório de 360°.",
+      hi: "मानक 19-25 मिमी शावर रॉड के लिए पुश-बटन शावर हेड स्लाइडर ब्रैकेट XH-71। एक स्पर्श ऊंचाई समायोजन और 360° घूर्णन।",
+      zh: "XH-71 经典按键式升降花洒座，专为 19-25mm 标准升降淋浴杆研发。顶部配备一触式按钮，按压即可顺滑调节高度；内置高阻尼防滑硅胶内衬，紧锁不晃动、不滑落；插槽支持 360° 灵活旋转调节喷淋角度，通用适配各类国际标准手持花洒。"
     },
     images: ["/assets/products/xh-product-71.jpg", "/assets/products/xh-product-71-3.jpg", "/assets/products/xh-product-71-2.jpg"],
     img: "/assets/products/xh-product-71.jpg",
@@ -2246,8 +2246,8 @@ function App() {
                   <div className="lg:col-span-7 space-y-6 text-left">
                     <p className="text-slate-300 text-sm leading-relaxed">
                       {lang === 'zh' 
-                        ? '专为 18-25mm 国际标准升降淋浴杆量身研发。顶部配备一键式机械阻尼按压升降机构，单手轻松滑动调节高度；内置高阻尼耐老化防滑硅胶衬垫，紧密贴合防滑防刮；插座支持 360° 旋转调节喷淋角度，全件提供 9 级加厚镜面电镀铬与哑光枪灰双色工艺，耐酸耐磨，专供国际大宗卫浴 OEM/ODM 采购。'
-                        : 'Engineered for standard 18-25mm shower riser rails. Features one-touch push-button smooth height adjustment, high-grip anti-slip internal padding to prevent slipping under heavy hand showers, 360° swivel cradle, and durable Class-9 electroplated chrome & matte gunmetal grey finishes.'}
+                        ? '专为 19-25mm 国际标准升降淋浴杆量身研发。顶部配备一键式机械阻尼按压升降机构，单手轻松滑动调节高度；内置高阻尼耐老化防滑硅胶衬垫，紧密贴合防滑防刮；插座支持 360° 旋转调节喷淋角度，全件提供 9 级加厚镜面电镀铬与哑光枪灰双色工艺，耐酸耐磨，专供国际大宗卫浴 OEM/ODM 采购。'
+                        : 'Engineered for standard 19-25mm shower riser rails. Features one-touch push-button smooth height adjustment, high-grip anti-slip internal padding to prevent slipping under heavy hand showers, 360° swivel cradle, and durable Class-9 electroplated chrome & matte gunmetal grey finishes.'}
                     </p>
 
                     {/* Feature Badges */}
@@ -2261,7 +2261,7 @@ function App() {
                         <div className="text-slate-300 text-[11px] mt-0.5">{lang === 'zh' ? '多角度自由调节' : 'Multi-Angle'}</div>
                       </div>
                       <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
-                        <div className="text-blue-400 font-bold">{lang === 'zh' ? '18-25mm 通用' : '18-25mm'}</div>
+                        <div className="text-blue-400 font-bold">{lang === 'zh' ? '19-25mm 通用' : '19-25mm'}</div>
                         <div className="text-slate-300 text-[11px] mt-0.5">{lang === 'zh' ? '适配主流淋浴管' : 'Universal Fit'}</div>
                       </div>
                       <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
@@ -2360,7 +2360,7 @@ function App() {
                       <div className="bg-slate-800/40 border border-white/10 p-3 rounded-xl flex items-center justify-between text-xs text-slate-300">
                         <span className="flex items-center gap-1.5">
                           <CheckCircle2 size={14} className="text-emerald-400" />
-                          <span>{lang === 'zh' ? '标准 18-25mm 淋浴杆通用装配' : 'Universal Fit 18-25mm Shower Riser Rails'}</span>
+                          <span>{lang === 'zh' ? '标准 19-25mm 淋浴杆通用装配' : 'Universal Fit 19-25mm Shower Riser Rails'}</span>
                         </span>
                         <span className="text-blue-400 font-bold">{lang === 'zh' ? '支持大宗外贸定制开模' : 'OEM/ODM Tooling Ready'}</span>
                       </div>
