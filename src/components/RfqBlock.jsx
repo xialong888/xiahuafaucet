@@ -77,13 +77,14 @@ const FIELD_ORDER = ['name', 'email', 'company', 'country', 'whatsapp', 'qty'];
  * and offers a WhatsApp fallback, so no enquiry is lost before a form endpoint exists.
  * Copy switches with the site language (en / vi) via <html lang>.
  */
-export default function RfqBlock({ model = '', intent = 'product' }) {
+export default function RfqBlock({ model = '', intent = 'product', lang: langProp }) {
   const [form, setForm] = useState({});
   const [sent, setSent] = useState(false);
   const [mailto, setMailto] = useState('');
   const [copied, setCopied] = useState(false);
 
-  const docLang = typeof document !== 'undefined' ? document.documentElement.lang : 'en';
+  const docLang =
+    langProp || (typeof document !== 'undefined' ? document.documentElement.lang : 'en') || 'en';
   const s = STRINGS[docLang] || STRINGS.en;
 
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
