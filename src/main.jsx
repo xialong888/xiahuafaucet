@@ -398,7 +398,7 @@ const trans = {
     factoryTitle: "हमारी फैक्टरी और गुणवत्ता नियंत्रण",
     factoryLede: "फ़ुज़ियान, चीन के नान'आन लुनचांग नलसाजी विनिर्माण पार्क में 27-02-2006 को स्थापित।",
     factParagraph1: "फ़ुज़ियान शियालॉन्ग सेनेटरी वेयर कंपनी लिमिटेड की स्थापना 2006 में लुनचांग, नान'आन, फ़ुज़ियान में हुई थी। हमारा 3000+ वर्गमीटर का विनिर्माण संयंत्र उच्च-परिशुद्धता इंजेक्शन-मोल्डिंग लाइनों और परीक्षण बेंचों से लैस है।",
-    factParagraph2: "80 कुशल श्रमिकों और समर्पित निरीक्षकों के साथ, हम वैश्विक卫浴 ब्रांडों को दोषरहित उत्पाद प्रदान करते हैं। पिछले 17 वर्षों में हमारे सख्त विनिर्माण ने दक्षिण पूर्व एशिया, दक्षिण अमेरिका और मध्य पूर्व के खरीदारों का विश्वास जीता है।",
+    factParagraph2: "80 कुशल श्रमिकों और समर्पित निरीक्षकों के साथ, हम वैश्विक बाथरूम ब्रांडों को दोषरहित उत्पाद प्रदान करते हैं। पिछले 17 वर्षों में हमारे सख्त विनिर्माण ने दक्षिण पूर्व एशिया, दक्षिण अमेरिका और मध्य पूर्व के खरीदारों का विश्वास जीता है।",
     videoTitle: "हमारे कारखाने और विनिर्माण वीडियो देखें",
     video1Name: "1. कॉर्पोरेट मुख्यालय और शोरूम यात्रा",
     video1Desc: "हमारे कार्यालय, परीक्षण प्रयोगशालाओं और तैयार उत्पादों के शोरूम का अन्वेषण करें।",
@@ -468,9 +468,9 @@ const trans = {
     navAbout: "企业厂区 Showroom",
     navFAQ: "大宗采销答疑",
     navContact: "提交询盘",
-    heroBadge: "始于 2006 年 | 首创塑料 ABS 材质水龙头手柄先驱 | 17 年精工制造",
+    heroBadge: "始于 2006 年 | 首创塑料 ABS 材质水龙头手柄先驱 | 20 年精工制造",
     heroTitle: "全球大型卫浴品牌可信赖的龙头手柄及五金配件 OEM/ODM 合作伙伴",
-    heroLede: "福建夏龙卫浴有限公司（又名福建南安仑苍厦华卫浴洁具制造厂），坐落于中国水暖之都南安仑苍。自 2006 年创立以来，首创 ABS 材质龙头手柄，彻底解决传统手柄易腐蚀、高成本痛点。17年精工代工，已成为多家国际知名卫浴集团的长期战略供应商。",
+    heroLede: "福建夏龙卫浴有限公司（又名福建南安仑苍厦华卫浴洁具制造厂），坐落于中国水暖之都南安仑苍。自 2006 年创立以来，首创 ABS 材质龙头手柄，彻底解决传统手柄易腐蚀、高成本痛点。20年精工代工，已成为多家国际知名卫浴集团的长期战略供应商。",
     btnRFQ: "大宗采购询盘 (RFQ)",
     btnWhatsApp: "WhatsApp 业务直联",
     statClients: "大型合作卫浴品牌",
@@ -504,7 +504,7 @@ const trans = {
     factoryTitle: "现代化厂房与质量控制体系",
     factoryLede: "工厂于 2006-02-27 创立于福建南安仑苍镇水暖高新技术园区。",
     factParagraph1: "福建夏龙卫浴有限公司（又名福建南安仑苍厦华卫浴洁具制造厂）座落于举世闻名的中国水暖卫浴制造中心——福建省泉州南安市仑苍镇水暖高新技术园区。我们拥有一座面积逾3000平方米的现代化工业厂房，引进了国内外先进的自动化精密注塑机、模具精密数控雕刻机、电镀表面处理流水线以及全套气密性/液压测试设备。",
-    factParagraph2: "工厂现有在职资深技工 80 余人，由经验丰富的检验人员层层把关，严格遵循 ISO9001 质量管理体系运行。作为首创塑料 ABS 材质水龙头手柄的先驱，过去17年间我们与多家知名中大型卫浴企业建立了长期、稳固的开模与贴牌代工战略合作关系。诚实、守信、积极、创新是我们始终坚守的核心信条，我们全力跟随客户需求，提供最可靠的产品供应链服务。",
+    factParagraph2: "工厂现有在职资深技工 80 余人，由经验丰富的检验人员层层把关，严格遵循 ISO9001 质量管理体系运行。作为首创塑料 ABS 材质水龙头手柄的先驱，过去20年间我们与多家知名中大型卫浴企业建立了长期、稳固的开模与贴牌代工战略合作关系。诚实、守信、积极、创新是我们始终坚守的核心信条，我们全力跟随客户需求，提供最可靠的产品供应链服务。",
     videoTitle: "大厂车间实拍与装配工艺流程视频",
     video1Name: "1. 夏龙/厦华官方研发大楼与生产基地实地探厂",
     video1Desc: "点击播放视频，实地考察我们的高新技术园区大楼、模具测试车间和全品类高端卫浴展厅，彰显大厂硬核底气。",
@@ -2495,7 +2495,7 @@ function App() {
                           <Play size={14} className="text-blue-400 fill-blue-400" />
                           <span>{lang === 'zh' ? '产品介绍视频 · 演示与功能实拍' : 'Product Introduction Video · Live Demonstration'}</span>
                         </div>
-                        <span className="text-[11px] font-semibold text-slate-400">1080P HD / 真实操作实拍</span>
+                        <span className="text-[11px] font-semibold text-slate-400">1080P HD / Factory Footage</span>
                       </div>
 
                       <div className="relative rounded-xl overflow-hidden bg-black/60 aspect-video border border-white/10 shadow-lg">
@@ -2531,7 +2531,7 @@ function App() {
                         rel="noopener noreferrer"
                         className="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3 rounded-xl font-bold text-sm flex items-center gap-2 shadow-lg transition-all"
                       >
-                        <span>WhatsApp 直联咨询</span>
+                        <span>WhatsApp Direct Chat</span>
                       </a>
                     </div>
                   </div>
@@ -2993,7 +2993,7 @@ function App() {
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed">{t.contactLede}</p>
           </div>
-          <RfqBlock intent="home" />
+          <RfqBlock intent="home" lang={lang} />
         </div>
       </section>
       {/* FOOTER */}
