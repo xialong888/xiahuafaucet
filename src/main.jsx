@@ -1,5 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
+import RfqBlock from './components/RfqBlock';
+import ProductABSHandles from './pages/ProductABSHandles';
+import BlogABSvsBrass from './pages/BlogABSvsBrass';
+import NotFound from './pages/NotFound';
+import { bindGlobalTracking, initAnalytics, track } from './lib/analytics';
+import { BRAND, rfqMailto } from './lib/site';
 import { 
   Phone, 
   Mail, 
@@ -38,7 +44,7 @@ const trans = {
     navAbout: "Factory Showroom",
     navFAQ: "FAQ",
     navContact: "Contact Us",
-    heroBadge: "17+ Years of Precision Manufacturing | Pioneer of ABS Faucet Handles",
+    heroBadge: "20+ Years of Precision Manufacturing | Pioneer of ABS Faucet Handles",
     heroTitle: "Global OEM/ODM Partner for Faucet Handles & Sanitary Fittings",
     heroLede: "Fujian Xialong Sanitary Ware Co., Ltd. (also known as Fujian Nan'an Luncang Xiahua Sanitary Ware Factory) is the pioneer of high-performance ABS faucet handles, adjustable shower sliders, and brass fittings since 2006. Supplying standard-setting global sanitary corporations.",
     btnRFQ: "Request a Quote",
@@ -144,7 +150,7 @@ const trans = {
     navAbout: "О Заводе",
     navFAQ: "Вопросы",
     navContact: "Контакты",
-    heroBadge: "17+ Лет высокоточного производства | Пионер ручек смесителя из ABS",
+    heroBadge: "20+ Лет высокоточного производства | Пионер ручек смесителя из ABS",
     heroTitle: "Глобальный партнер OEM/ODM для ручек смесителей и фитингов",
     heroLede: "Fujian Xialong Sanitary Ware Co., Ltd. (также известный как завод сантехники Сяхуа) — пионер в производстве высококачественных пластиковых ручек для смесителей из ABS, регулируемых держателей для душа и сантехнической арматуры с 2006 года.",
     btnRFQ: "Запросить цену",
@@ -250,7 +256,7 @@ const trans = {
     navAbout: "Nossa Fábrica",
     navFAQ: "FAQ",
     navContact: "Contato",
-    heroBadge: "17+ Anos de Manufatura de Precisão | Pioneiro de Volantes de ABS",
+    heroBadge: "20+ Anos de Manufatura de Precisão | Pioneiro de Volantes de ABS",
     heroTitle: "Parceiro Global OEM/ODM para Volantes de Torneira e Metais Sanitários",
     heroLede: "A Fujian Xialong Sanitary Ware Co., Ltd. (também conhecida como Fábrica de Metais Sanitários Xiahua) é pioneira na produção de volantes de torneira em ABS, deslizadores de chuveiro e conexões de latão de alta performance desde 2006. Fornecedora de grandes corporações globais.",
     btnRFQ: "Solicitar Orçamento",
@@ -356,7 +362,7 @@ const trans = {
     navAbout: "फैक्टरी ताकत",
     navFAQ: "अक्सर पूछे जाने वाले प्रश्न",
     navContact: "संपर्क करें",
-    heroBadge: "17+ वर्ष परिशुद्धता विनिर्माण | एबीएस नल हैंडल के अग्रणी",
+    heroBadge: "20+ वर्ष परिशुद्धता विनिर्माण | एबीएस नल हैंडल के अग्रणी",
     heroTitle: "नल हैंडल & सेनेटरी फिटिंग के लिए वैश्विक OEM/ODM भागीदार",
     heroLede: "फ़ुज़ियान शियालॉन्ग सेनेटरी वेयर कंपनी लिमिटेड (शिआहुआ सेनेटरी वेयर फैक्ट्री) 2006 से उच्च-प्रदर्शन वाले एबीएस नल हैंडल, शावर स्लाइडर और पीतल फिटिंग के निर्माण में अग्रणी है।",
     btnRFQ: "कोटेशन के लिए अनुरोध",
@@ -560,6 +566,112 @@ const trans = {
     xh71CardDetailDesc: "360°自由旋转插座与一键式机械阻尼按压升降机构特写展示。",
     xh71SwitchToGallery: "点击打开《XH-71展示效果图》第二页",
     xh71SwitchToOverview: "返回产品规格与视频实拍"
+  },
+  vi: {
+    navHome: "Trang chủ",
+    navProducts: "Sản phẩm",
+    navPatents: "Bằng sáng chế & Chứng nhận",
+    navAbout: "Nhà máy",
+    navFAQ: "Câu hỏi thường gặp",
+    navContact: "Liên hệ",
+    heroBadge: "Hơn 20 năm sản xuất chính xác | Tiên phong tay xả vòi bằng ABS",
+    heroTitle: "Đối tác OEM/ODM toàn cầu về tay xả vòi và phụ kiện thiết bị vệ sinh",
+    heroLede: "Công ty TNHH Thiết bị Vệ sinh Xialong Phúc Kiến (còn gọi là Nhà máy Xiahua Luncang Nam An) là đơn vị tiên phong về tay xả vòi ABS hiệu suất cao, thanh trượt sen điều chỉnh và phụ kiện đồng từ năm 2006. Cung cấp cho các tập đoàn thiết bị vệ sinh đặt chuẩn toàn cầu.",
+    btnRFQ: "Yêu cầu báo giá",
+    btnWhatsApp: "Tư vấn qua WhatsApp",
+    statClients: "Thương hiệu hợp tác",
+    statOutput: "Sản lượng/tháng (chiếc)",
+    statExperience: "Năm kinh nghiệm",
+    statQC: "Kiểm tra phun muối",
+    advantageTitle: "Lợi thế kỹ thuật B2B",
+    advantageLede: "Vì sao các nhà phân phối thiết bị vệ sinh tại Đông Nam Á, Nam Mỹ và Trung Đông chọn Xialong / Xiahua.",
+    adv1Title: "Người đầu tiên phát minh tay xả ABS",
+    adv1Desc: "Là đơn vị tiên phong về tay xả vòi nhựa ABS, chúng tôi đặt ra tiêu chuẩn ngành về chống ăn mòn, trọng lượng nhẹ và không gỉ.",
+    adv2Title: "Bảo hộ bằng sáng chế",
+    adv2Desc: "Thiết kế được bảo hộ bởi nhiều bằng sáng chế quốc gia Trung Quốc (ví dụ ZL 2016 2 0363475.1), đảm bảo an toàn sở hữu trí tuệ cho người mua.",
+    adv3Title: "Đảm bảo chất lượng 100%",
+    adv3Desc: "Máy ép phun và bàn thử áp hiện đại kết hợp kiểm tra thủ công nghiêm ngặt, loại bỏ khiếu nại từ kênh bán lẻ.",
+    adv4Title: "Hỗ trợ bản vẽ trong 24 giờ",
+    adv4Desc: "Đội kỹ thuật nội bộ gửi bản vẽ CAD/3D và đề xuất khuôn trong 24 giờ để bạn phê duyệt trước khi sản xuất khuôn.",
+    catalogTitle: "Danh mục sản phẩm chính",
+    catalogLede: "Khám phá các sản phẩm đã kiểm định xuất khẩu. Nhấn 'Xem thông số' để xem bảng kỹ thuật, bằng sáng chế và giá bán buôn.",
+    catAll: "Tất cả phụ kiện",
+    catHandles: "Tay xả vòi ABS",
+    catSliders: "Thanh trượt & ống sen",
+    catSockets: "Giá đỡ sen lắp nhanh",
+    catHardware: "Phụ kiện phòng tắm",
+    specModel: "Mã sản phẩm",
+    specMaterial: "Vật liệu",
+    specFinish: "Bề mặt",
+    specCert: "Chứng nhận",
+    btnDetail: "Xem thông số",
+    galleryTitle: "Thư viện khuôn & sản phẩm thực tế",
+    galleryLede: "Danh mục tương tác với hơn 25 khuôn thực tế, tay xả chính xác, giá đỡ và linh kiện nhà máy. Nhấn vào ảnh để xem bề mặt mạ gương và chi tiết gia công.",
+    factoryTitle: "Nhà máy & kiểm soát chất lượng",
+    factoryLede: "Thành lập ngày 27/02/2006 tại Khu công nghệ cao Luncang, Nam An, Tuyền Châu, Phúc Kiến.",
+    factParagraph1: "Công ty TNHH Thiết bị Vệ sinh Xialong Phúc Kiến (còn gọi là Nhà máy Xiahua Luncang) được thành lập năm 2006 tại Luncang, Nam An, Tuyền Châu, Phúc Kiến - thủ phủ ngành thiết bị vệ sinh. Nhà máy có diện tích sản xuất hơn 3.000 m², trang bị máy ép phun chính xác cao, dây chuyền mạ tự động và bàn thử áp lực nước/khí nghiêm ngặt.",
+    factParagraph2: "Với 80 công nhân tay nghề cao và đội kiểm tra chất lượng hàng đầu, chúng tôi xây dựng quan hệ hợp tác lâu dài với các tập đoàn thiết bị vệ sinh lớn. Trong hơn 20 năm, việc dùng nguyên liệu nguyên sinh cao cấp và quy trình đạt ISO9001 đã giành được niềm tin của nhà nhập khẩu, bán buôn và quản lý mua hàng kỹ thuật tại Đông Nam Á, Nam Mỹ và Trung Đông.",
+    videoTitle: "Xem nhà máy & dây chuyền sản xuất",
+    video1Name: "1. Tham quan trụ sở & showroom",
+    video1Desc: "Khám phá tòa nhà văn phòng, phòng thí nghiệm và showroom sản phẩm.",
+    video2Name: "2. Ép phun chính xác, lắp ráp & thử áp 100%",
+    video2Desc: "Xem máy ép phun công suất lớn, dây chuyền mạ tự động và kiểm tra rò rỉ trên từng linh kiện.",
+    video2Part1: "Video 2.1: Ép phun & mạ",
+    video2Part1Desc: "Máy ép phun nhựa công suất lớn và dây chuyền mạ nhiều lớp độ bóng cao.",
+    video2Part2: "Video 2.2: Lắp ráp & thử áp (mới)",
+    video2Part2Desc: "Dây chuyền lắp ráp thủ công và bán tự động, kiểm tra rò rỉ và thử áp thủy lực 100% trước khi đóng gói.",
+    patentTitle: "Bằng sáng chế & chứng nhận quốc gia",
+    patentLede: "Xialong (Xiahua) sở hữu nhiều bằng sáng chế giải pháp hữu ích đăng ký tại Cục Sở hữu trí tuệ Trung Quốc.",
+    pat1Name: "Bằng sáng chế: Tay van trộn dễ chế tạo",
+    pat1Num: "Số bằng: ZL 2016 2 0363475.1",
+    pat1Auth: "Cấp ngày: 07/09/2016 | SIPO Trung Quốc",
+    pat2Name: "Bằng sáng chế: Tay van trộn điều chỉnh chính xác",
+    pat2Num: "Số bằng: ZL 2016 2 0363465.8",
+    pat2Auth: "Cấp ngày: 07/09/2016 | SIPO Trung Quốc",
+    pat3Name: "Bằng sáng chế: Thanh trượt sen (giá đỡ sen lắp nhanh)",
+    pat3Num: "Số bằng: ZL 2025 2 0342911.6",
+    pat3Auth: "Cấp ngày: 12/05/2026 | CNIPA Trung Quốc",
+    faqTitle: "Câu hỏi thường gặp",
+    faqLede: "Giải đáp giúp quá trình mua hàng và tìm nguồn cung của bạn thuận lợi.",
+    contactTitle: "Gửi yêu cầu báo giá (RFQ)",
+    contactLede: "Quản lý xuất khẩu sẽ phản hồi báo giá chi tiết và tài liệu kỹ thuật trong vòng 12 giờ.",
+    formName: "Họ và tên",
+    formEmail: "Email doanh nghiệp",
+    formWhatsApp: "WhatsApp/Điện thoại",
+    formCompany: "Tên công ty",
+    formCategory: "Nhóm sản phẩm quan tâm",
+    formMsg: "Yêu cầu & sản lượng (ví dụ: mã hàng, số lượng, đóng gói)",
+    formSubmit: "Gửi RFQ",
+    formSuccessTitle: "Đã gửi yêu cầu thành công!",
+    formSuccessDesc: "Cảm ơn bạn đã liên hệ Xialong / Xiahua. Đội xuất khẩu sẽ liên hệ qua email hoặc WhatsApp trong vòng 12 giờ.",
+    btnClose: "Đóng",
+    footerCopyright: "© 2026 Công ty TNHH Thiết bị Vệ sinh Xialong Phúc Kiến. Bảo lưu mọi quyền.",
+    footerAddress: "Địa chỉ: Khu công nghệ cao Luncang, Nam An, Tuyền Châu, Phúc Kiến, Trung Quốc",
+    modalRFQTitle: "Yêu cầu báo giá cho",
+    modalBtnSubmit: "Gửi yêu cầu cho mã này",
+    specSheet: "Bảng thông số kỹ thuật",
+    xh71TabOverview: "Thông số & video",
+    xh71TabGallery: "Thư viện XH-71",
+    xh71GalleryTitle: "Hình ảnh 3D & lắp đặt đa bối cảnh XH-71",
+    xh71GalleryDesc: "Khám phá hình ảnh phòng tắm thực tế và góc studio 3D của XH-71 với bề mặt mạ gương và xám gunmetal mờ.",
+    xh71CardWarmTitle: "Bối cảnh đá marble ấm",
+    xh71CardWarmDesc: "Thanh trượt mạ gương gắn trên thanh treo, nền đá travertine ấm.",
+    xh71CardDarkTitle: "Bối cảnh đá tối hiện đại",
+    xh71CardDarkDesc: "Mạ gương cấp 9 trên cột sen trong không gian đá tối hiện đại.",
+    xh71CardWhiteTitle: "Bối cảnh marble trắng",
+    xh71CardWhiteDesc: "Phòng tắm marble trắng tối giản, thanh trượt tích hợp liền mạch.",
+    xh71CardGunmetalSceneTitle: "Chi tiết gunmetal mờ",
+    xh71CardGunmetalSceneDesc: "Phiên bản gunmetal mờ với núm xoay khía và cơ cấu nhấn.",
+    xh71Card3DChromeTitle: "Studio 3D mạ gương",
+    xh71Card3DChromeDesc: "Render 3D làm nổi bật độ bóng mạ và ổ xoay 360°.",
+    xh71Card3DGunmetalTitle: "Studio 3D gunmetal mờ",
+    xh71Card3DGunmetalDesc: "Render 3D bề mặt xám đậm chống vân tay cho công trình hiện đại.",
+    xh71CardPosterTitle: "Poster chính thức XH-71",
+    xh71CardPosterDesc: "Poster marketing thể hiện thao tác trượt nâng hạ bằng một nút nhấn.",
+    xh71CardDetailTitle: "Góc nhìn 3D & góc nút nhấn",
+    xh71CardDetailDesc: "Cận cảnh lớp silicon chống trượt bên trong và dung sai nút nhấn.",
+    xh71SwitchToGallery: "Mở thư viện XH-71 (Trang 2)",
+    xh71SwitchToOverview: "Quay lại thông số & video",
   }
 };
 
@@ -574,21 +686,26 @@ const products = [
       ru: "Запатентованная хромированная ручка из ABS",
       pt: "Volante Alavanca de ABS Cromado Patenteado",
       hi: "पेटेंट प्रीमियम क्रोम एबीएस लीवर हैंडल",
-      zh: "夏龙专利型加厚多层电镀高光 ABS 龙头杠杆式单手柄"
-    },
+      zh: "夏龙专利型加厚多层电镀高光 ABS 龙头杠杆式单手柄",
+      vi: "Tay xả vòi ABS mạ crôm cao cấp có bằng sáng chế",
+},
     model: "XH-ABS-101",
-    materialMap: { en: "Virgin Heavy ABS (Patent Grade)", ru: "Первичный прочный ABS", pt: "ABS Virgem de Alto Impacto", hi: "उच्च ग्रेड वर्जिन एबीएस", zh: "进口高纯度全新绝缘级 ABS 原料" },
-    finishMap: { en: "9-Class Multi-layer Electroplated Chrome", ru: "Многослойный глянцевый хром 9 класса", pt: "Cromagem Multicamada Classe 9", hi: "इलेक्ट्रोप्लेटेड क्रोम", zh: "9级加厚酸铜镍铬联合电镀 (如镜面般平整)" },
-    certMap: { en: "ZL 2016 2 0363475.1 | BS EN 200", ru: "Патент ZL 2016 2 0363475.1", pt: "Patente ZL 2016 2 0363475.1 / AS200", hi: "पेटेंट ZL 2016 2 0363475.1", zh: "中国实用新型专利 ZL 2016 2 0363475.1 | 符合 BS EN 200" },
+    materialMap: { en: "Virgin Heavy ABS (Patent Grade)", ru: "Первичный прочный ABS", pt: "ABS Virgem de Alto Impacto", hi: "उच्च ग्रेड वर्जिन एबीएस", zh: "进口高纯度全新绝缘级 ABS 原料",       vi: "ABS nguyên sinh cao cấp (cấp bằng sáng chế)",
+},
+    finishMap: { en: "9-Class Multi-layer Electroplated Chrome", ru: "Многослойный глянцевый хром 9 класса", pt: "Cromagem Multicamada Classe 9", hi: "इलेक्ट्रोप्लेटेड क्रोम", zh: "9级加厚酸铜镍铬联合电镀 (如镜面般平整)",       vi: "Mạ crôm nhiều lớp cấp 9",
+},
+    certMap: { en: "ZL 2016 2 0363475.1 | BS EN 200", ru: "Патент ZL 2016 2 0363475.1", pt: "Patente ZL 2016 2 0363475.1 / AS200", hi: "पेटेंट ZL 2016 2 0363475.1", zh: "中国实用新型专利 ZL 2016 2 0363475.1 | 符合 BS EN 200",       vi: "ZL 2016 2 0363475.1 | BS EN 200",
+},
     descMap: {
       en: "Built exactly according to our Chinese national patent. Multilayered chrome passes 48h acetic acid salt spray testing. Excellent ergonomics, perfect for professional sanitary brand integration.",
       ru: "Создан строго в соответствии с китайским национальным патентом. Многослойный хром выдерживает 48-часовой солевой туман. Идеально для брендов.",
       pt: "Desenvolvido em total conformidade com nossa patente nacional. Cromagem premium aprovada em teste de névoa salina de 48h.",
       hi: "हमारे चीनी राष्ट्रीय पेटेंट के अनुसार निर्मित। जंग प्रतिरोधी और चमकदार सतह।",
-      zh: "严格按照国家实用新型专利 ZL 2016 2 0363475.1 制造。注塑壁厚提升30%，防滑阻尼平衡优异，能通过48小时严苛乙酸雾测试，历久不剥落。"
-    },
-    images: ["/assets/products/xh-product-101-7.jpg", "/assets/products/xh-product-101-8.jpg", "/assets/products/xh-product-101-9.jpg", "/assets/products/xh-product-101-10.jpg", "/assets/products/xh-product-7.jpg", "/assets/products/xh-product-8.jpg", "/assets/products/xh-product-9.jpg", "/assets/products/xh-product-2.jpg", "/assets/products/xh-product-4.jpg", "/assets/products/xh-product-5.jpg"],
-    img: "/assets/products/xh-product-101-7.jpg"
+      zh: "严格按照国家实用新型专利 ZL 2016 2 0363475.1 制造。注塑壁厚提升30%，防滑阻尼平衡优异，能通过48小时严苛乙酸雾测试，历久不剥落。",
+      vi: "Sản xuất đúng theo bằng sáng chế quốc gia. Lớp mạ nhiều lớp vượt thử nghiệm phun sương axit axetic 48 giờ. Thiết kế công thái học, phù hợp tích hợp thương hiệu vệ sinh chuyên nghiệp.",
+},
+    images: ["/assets/products/xh-product-101-7.webp", "/assets/products/xh-product-101-8.webp", "/assets/products/xh-product-101-9.webp", "/assets/products/xh-product-101-10.webp", "/assets/products/xh-product-7.webp", "/assets/products/xh-product-8.webp", "/assets/products/xh-product-9.webp", "/assets/products/xh-product-2.webp", "/assets/products/xh-product-4.webp", "/assets/products/xh-product-5.webp"],
+    img: "/assets/products/xh-product-101-7.webp"
   },
   {
     id: 2,
@@ -598,21 +715,26 @@ const products = [
       ru: "Запатентованная гальваническая ручка смесителя из ABS Xialong и аксессуары",
       pt: "Volante Monocomando de ABS Cromado Patenteado Xialong e Acessórios",
       hi: "शियालॉन्ग पेटेंट उच्च-ग्रेड एबीएस इलेक्ट्रोप्लेटेड सिंगल-लीवर हैंडल और सहायक उपकरण",
-      zh: "夏龙专利型高标ABS电镀单把手柄及配件"
-    },
+      zh: "夏龙专利型高标ABS电镀单把手柄及配件",
+      vi: "Tay xả vòi ABS mạ crôm cao cấp có bằng sáng chế",
+},
     model: "XH-SHSL-202",
-    materialMap: { en: "High-Impact Virgin Engineering ABS + Precision Brass Spline Bushing", ru: "Ударопрочный первичный ABS + латунная втулка", pt: "ABS Virgem de Alto Impacto + Bucha Interna de Latão", hi: "उच्च प्रभाव वर्जिन एबीएस + पीतल बुशिंग", zh: "全新高抗冲环保工程 ABS 原生料 + 高精度内齿铜衬套" },
-    finishMap: { en: "Class-9 Multi-Layer Mirror Electroplated Chrome", ru: "Многослойный глянцевый хром 9 класса", pt: "Cromagem Multicamada Espelhada Classe 9", hi: "मल्टी-लेयर मिरर क्रोम", zh: "9级加厚多层镜面电镀铬（耐酸蚀耐磨损，历久如新）" },
-    certMap: { en: "ZL 2016 2 0363465.8 | 48h Acid Salt Spray Tested", ru: "Патент ZL 2016 2 0363465.8 / 48ч тест тумана", pt: "Patente ZL 2016 2 0363465.8 / Teste 48h", hi: "पेटेंट ZL 2016 2 0363465.8", zh: "中国国家实用新型专利 ZL 2016 2 0363465.8 | 48h 乙酸盐雾测试达标" },
+    materialMap: { en: "High-Impact Virgin Engineering ABS + Precision Brass Spline Bushing", ru: "Ударопрочный первичный ABS + латунная втулка", pt: "ABS Virgem de Alto Impacto + Bucha Interna de Latão", hi: "उच्च प्रभाव वर्जिन एबीएस + पीतल बुशिंग", zh: "全新高抗冲环保工程 ABS 原生料 + 高精度内齿铜衬套",       vi: "ABS nguyên sinh cao cấp",
+},
+    finishMap: { en: "Class-9 Multi-Layer Mirror Electroplated Chrome", ru: "Многослойный глянцевый хром 9 класса", pt: "Cromagem Multicamada Espelhada Classe 9", hi: "मल्टी-लेयर मिरर क्रोम", zh: "9级加厚多层镜面电镀铬（耐酸蚀耐磨损，历久如新）",       vi: "Mạ crôm gương cấp 9",
+},
+    certMap: { en: "ZL 2016 2 0363465.8 | 48h Acid Salt Spray Tested", ru: "Патент ZL 2016 2 0363465.8 / 48ч тест тумана", pt: "Patente ZL 2016 2 0363465.8 / Teste 48h", hi: "पेटेंट ZL 2016 2 0363465.8", zh: "中国国家实用新型专利 ZL 2016 2 0363465.8 | 48h 乙酸盐雾测试达标",       vi: "Bằng sáng chế ZL 2016 2 0363465.8",
+},
     descMap: {
       en: "Engineered with Xialong's patented precision mixing control structure, molded from premium virgin ABS for solid weight and feel. Features Class-9 multi-layer mirror chrome plating for superior corrosion resistance and wear durability, with precision internal brass splines for silky-smooth handle operation.",
       ru: "Изготовлена из высококачественного первичного ABS с многослойным зеркальным хромированием 9 класса. Плавный ход и устойчивость к коррозии.",
       pt: "Fabricado em ABS virgem de alta densidade com cromagem espelhada de classe 9. Encaixes internos de latão para controle suave e preciso.",
       hi: "प्रीमियम वर्जिन एबीएस से निर्मित, क्लास-9 मल्टी-लेयर मिरर क्रोम प्लेटिंग के साथ।",
-      zh: "采用夏龙自主研发专利精密控温与装配结构，精选高标原生 ABS 注塑成型，比重加厚、手感沉稳。表面覆盖 9 级多层加厚电镀铬，具备优异的耐酸碱腐蚀、耐磨防指纹性能；内衬高精度铜芯齿轮，旋转调节手感顺滑阻尼均衡，是全球各大主流卫浴水龙头品牌 OEM/ODM 的优质配套手柄。"
-    },
-    images: ["/assets/products/xh-product-10.jpg", "/assets/products/xh-product-11.jpg", "/assets/products/xh-product-12.jpg", "/assets/products/xh-product-1.jpg", "/assets/products/xh-product-3.jpg", "/assets/products/xh-product-6.jpg"],
-    img: "/assets/products/xh-product-10.jpg"
+      zh: "采用夏龙自主研发专利精密控温与装配结构，精选高标原生 ABS 注塑成型，比重加厚、手感沉稳。表面覆盖 9 级多层加厚电镀铬，具备优异的耐酸碱腐蚀、耐磨防指纹性能；内衬高精度铜芯齿轮，旋转调节手感顺滑阻尼均衡，是全球各大主流卫浴水龙头品牌 OEM/ODM 的优质配套手柄。",
+      vi: "Kết cấu điều khiển được cấp bằng sáng chế, thân ABS nguyên sinh dày, lớp mạ cấp 9 chống ăn mòn.",
+},
+    images: ["/assets/products/xh-product-10.webp", "/assets/products/xh-product-11.webp", "/assets/products/xh-product-12.webp", "/assets/products/xh-product-1.webp", "/assets/products/xh-product-3.webp", "/assets/products/xh-product-6.webp"],
+    img: "/assets/products/xh-product-10.webp"
   },
   {
     id: 3,
@@ -622,21 +744,26 @@ const products = [
       ru: "Запатентованный быстросъемный настенный держатель для душа",
       pt: "Suporte de Chuveiro de Instalação Rápida Patenteado",
       hi: "पेटेंट त्वरित-स्थापना शावर ब्रैकेट सॉकेट",
-      zh: "国家专利快捷安装淋浴花洒插座 / 方形快装免拆固定座"
-    },
+      zh: "国家专利快捷安装淋浴花洒插座 / 方形快装免拆固定座",
+      vi: "Tay xả một cần ABS mạ điện cao cấp Xialong & phụ kiện",
+},
     model: "XH-BRFC-303",
-    materialMap: { en: "High-Strength Virgin Engineering Polymer + Silicone Socket", ru: "Высокопрочный первичный полимер + силиконовая вставка", pt: "Polímero de Engenharia Virgem + Encaixe de Silicone", hi: "उच्च शक्ति वर्जिन पॉलीमर + सिलिकॉन", zh: "高韧性全新环保工程原料 + 内部阻尼防滑硅胶插口" },
-    finishMap: { en: "Dual-Tone Minimalist Design (Pure White / Slate Grey)", ru: "Двухцветный минималистичный дизайн (Белый / Серый)", pt: "Design Minimalista Bicolor (Branco Puro / Cinza)", hi: "डुअल-टोन डिज़ाइन (सफ़ेद / ग्रे)", zh: "双色极简设计（优雅纯白 / 雅致灰）+ 耐磨抗污防刮工艺" },
-    certMap: { en: "ZL 2016 2 0363475.1 | SIPO Authorized", ru: "Патент ZL 2016 2 0363475.1 / SIPO", pt: "Patente ZL 2016 2 0363475.1 / SIPO", hi: "पेटेंट ZL 2016 2 0363475.1", zh: "中国国家实用新型专利 ZL 2016 2 0363475.1 | 质检全检出厂" },
+    materialMap: { en: "High-Strength Virgin Engineering Polymer + Silicone Socket", ru: "Высокопрочный первичный полимер + силиконовая вставка", pt: "Polímero de Engenharia Virgem + Encaixe de Silicone", hi: "उच्च शक्ति वर्जिन पॉलीमर + सिलिकॉन", zh: "高韧性全新环保工程原料 + 内部阻尼防滑硅胶插口",       vi: "ABS nguyên sinh cao cấp",
+},
+    finishMap: { en: "Dual-Tone Minimalist Design (Pure White / Slate Grey)", ru: "Двухцветный минималистичный дизайн (Белый / Серый)", pt: "Design Minimalista Bicolor (Branco Puro / Cinza)", hi: "डुअल-टोन डिज़ाइन (सफ़ेद / ग्रे)", zh: "双色极简设计（优雅纯白 / 雅致灰）+ 耐磨抗污防刮工艺",       vi: "Mạ crôm gương cấp 9 / hai tông màu",
+},
+    certMap: { en: "ZL 2016 2 0363475.1 | SIPO Authorized", ru: "Патент ZL 2016 2 0363475.1 / SIPO", pt: "Patente ZL 2016 2 0363475.1 / SIPO", hi: "पेटेंट ZL 2016 2 0363475.1", zh: "中国国家实用新型专利 ZL 2016 2 0363475.1 | 质检全检出厂",       vi: "Bằng sáng chế ZL 2025 2 0342911.6",
+},
     descMap: {
       en: "Engineered with Chinese National Patent ZL 2016 2 0363475.1 quick-mount mechanism. Modular quick-install design fits standard handheld shower heads firmly without wobbling, offering effortless installation and clean modern aesthetics.",
       ru: "Оснащен запатентованным механизмом быстрой установки ZL 2016 2 0363475.1. Надежно фиксирует ручной душ, прост в монтаже и очистке.",
       pt: "Projetado com mecanismo de encaixe rápido sob a patente ZL 2016 2 0363475.1. Instalação rápida e suporte firme para chuveiros de mão.",
       hi: "राष्ट्रीय पेटेंट ZL 2016 2 0363475.1 त्वरित-माउंट तंत्र के साथ डिज़ाइन किया गया। हैंडहेल्ड शावर हेड को मजबूती से रखता है।",
-      zh: "采用国家实用新型专利 ZL 2016 2 0363475.1 快捷卡入安装结构。模块化快装免拆/快速卡固设计，适配标准手持花洒，牢固承重不晃动，拆装清理极度便捷，是现代简约卫浴与出口工程的理想配套配件。"
-    },
-    images: ["/assets/products/xh-product-socket-303.jpg", "/assets/products/xh-product-socket-303-2.jpg", "/assets/products/xh-product-socket-303-3.jpg"],
-    img: "/assets/products/xh-product-socket-303.jpg"
+      zh: "采用国家实用新型专利 ZL 2016 2 0363475.1 快捷卡入安装结构。模块化快装免拆/快速卡固设计，适配标准手持花洒，牢固承重不晃动，拆装清理极度便捷，是现代简约卫浴与出口工程的理想配套配件。",
+      vi: "Kết cấu lắp nhanh có bằng sáng chế, không cần tháo ống, thao tác một chạm, giữ sen chắc chắn.",
+},
+    images: ["/assets/products/xh-product-socket-303.webp", "/assets/products/xh-product-socket-303-2.webp", "/assets/products/xh-product-socket-303-3.webp"],
+    img: "/assets/products/xh-product-socket-303.webp"
   },
   {
     id: 4,
@@ -646,21 +773,26 @@ const products = [
       ru: "Запатентованная гальваническая ручка смесителя из ABS Xialong",
       pt: "Volante Monocomando de ABS Cromado Patenteado Xialong",
       hi: "शियालॉन्ग पेटेंट उच्च-ग्रेड एबीएस इलेक्ट्रोप्लेटेड सिंगल-लीवर हैंडल",
-      zh: "夏龙专利型高标ABS电镀单把手柄"
-    },
+      zh: "夏龙专利型高标ABS电镀单把手柄",
+      vi: "Giá đỡ sen lắp nhanh có bằng sáng chế",
+},
     model: "XH-ABS-102",
-    materialMap: { en: "High-Impact Virgin Engineering ABS + Precision Brass Splines", ru: "Высокопрочный первичный полимер ABS + латунные шлицы", pt: "ABS Virgem de Alto Impacto + Encaixe de Bronze", hi: "उच्च प्रभाव वर्जिन एबीएस + पीतल स्प्लिन", zh: "全新高韧性抗冲击工程 ABS 原生料 + 高精度内衬铜齿" },
-    finishMap: { en: "Class-9 Multi-Layer Mirror Electroplated Chrome", ru: "Зеркальный многослойный хром 9 класса", pt: "Cromagem Multicamada Espelhada Classe 9", hi: "मल्टी-लेयर मिरर क्रोम", zh: "9级加厚多层镜面电镀铬（耐酸蚀抗盐雾腐蚀，历久弥新）" },
-    certMap: { en: "ZL 2016 2 0363475.1 | BS EN 200 Compliant", ru: "Патент ZL 2016 2 0363475.1 / BS EN 200", pt: "Patente Nacional ZL 2016 2 0363475.1", hi: "राष्ट्रीय पेटेंट ZL 2016 2 0363475.1", zh: "中国国家实用新型专利 ZL 2016 2 0363475.1 | 符合 BS EN 200 标准" },
+    materialMap: { en: "High-Impact Virgin Engineering ABS + Precision Brass Splines", ru: "Высокопрочный первичный полимер ABS + латунные шлицы", pt: "ABS Virgem de Alto Impacto + Encaixe de Bronze", hi: "उच्च प्रभाव वर्जिन एबीएस + पीतल स्प्लिन", zh: "全新高韧性抗冲击工程 ABS 原生料 + 高精度内衬铜齿",       vi: "ABS nguyên sinh cao cấp",
+},
+    finishMap: { en: "Class-9 Multi-Layer Mirror Electroplated Chrome", ru: "Зеркальный многослойный хром 9 класса", pt: "Cromagem Multicamada Espelhada Classe 9", hi: "मल्टी-लेयर मिरर क्रोम", zh: "9级加厚多层镜面电镀铬（耐酸蚀抗盐雾腐蚀，历久弥新）",       vi: "Mạ crôm gương cấp 9",
+},
+    certMap: { en: "ZL 2016 2 0363475.1 | BS EN 200 Compliant", ru: "Патент ZL 2016 2 0363475.1 / BS EN 200", pt: "Patente Nacional ZL 2016 2 0363475.1", hi: "राष्ट्रीय पेटेंट ZL 2016 2 0363475.1", zh: "中国国家实用新型专利 ZL 2016 2 0363475.1 | 符合 BS EN 200 标准",       vi: "Bằng sáng chế ZL 2016 2 0363475.1",
+},
     descMap: {
       en: "XH-ABS-102 features Xialong's patented ergonomic single-lever design, injection-molded from premium virgin engineering ABS for solid weight and feel. Treated with Class-9 multi-layer mirror chrome electroplating passing 48h acid salt-spray tests, equipped with precision brass splines for smooth, reliable temperature and flow adjustment.",
       ru: "XH-ABS-102 — эргономичная одинарная ручка из первичного инженерного ABS с зеркальным хромированием 9 класса. Устойчива к коррозии и царапинам.",
       pt: "XH-ABS-102 apresenta volante ergonômico em ABS virgem de alta densidade com cromagem espelhada classe 9 e estrias internas de precisão em latão.",
       hi: "XH-ABS-102 में पेटेंट एर्गोनोमिक सिंगल-लीवर डिज़ाइन है, जो क्लास-9 मल्टी-लेयर मिरर क्रोम इलेक्ट्रोप्लेटिंग के साथ प्रीमियम वर्जिन एबीएस से बना है।",
-      zh: "XH-ABS-102 采用夏龙独家专利精工流线型人体工学把手设计，精选优质全新高标 ABS 原生材料注塑成型，比重加厚、手感扎实。表面覆盖 9 级加厚多层镜面电镀铬，经过 48 小时严苛乙酸雾测试，抗酸蚀、防刮擦、耐指纹；内嵌高精度铜齿接口，旋转调温阻尼均匀顺畅，是高端卫浴水暖代工的经典选型。"
-    },
-    images: ["/assets/products/xh-product-102-1.jpg", "/assets/products/xh-product-102-2.jpg", "/assets/products/xh-product-102-3.jpg", "/assets/products/xh-product-102-4.jpg", "/assets/products/xh-product-102-5.jpg", "/assets/products/xh-product-102-6.jpg", "/assets/products/xh-product-102-7.jpg", "/assets/products/xh-product-102-8.jpg", "/assets/products/xh-product-102-9.jpg", "/assets/products/xh-product-102-10.jpg", "/assets/products/xh-product-102-11.jpg", "/assets/products/xh-product-102-12.jpg"],
-    img: "/assets/products/xh-product-102-1.jpg"
+      zh: "XH-ABS-102 采用夏龙独家专利精工流线型人体工学把手设计，精选优质全新高标 ABS 原生材料注塑成型，比重加厚、手感扎实。表面覆盖 9 级加厚多层镜面电镀铬，经过 48 小时严苛乙酸雾测试，抗酸蚀、防刮擦、耐指纹；内嵌高精度铜齿接口，旋转调温阻尼均匀顺畅，是高端卫浴水暖代工的经典选型。",
+      vi: "Thiết kế tối giản, ren 22-25mm tương thích, bề mặt mạ bền màu.",
+},
+    images: ["/assets/products/xh-product-102-1.webp", "/assets/products/xh-product-102-2.webp", "/assets/products/xh-product-102-3.webp", "/assets/products/xh-product-102-4.webp", "/assets/products/xh-product-102-5.webp", "/assets/products/xh-product-102-6.webp", "/assets/products/xh-product-102-7.webp", "/assets/products/xh-product-102-8.webp", "/assets/products/xh-product-102-9.webp", "/assets/products/xh-product-102-10.webp", "/assets/products/xh-product-102-11.webp", "/assets/products/xh-product-102-12.webp"],
+    img: "/assets/products/xh-product-102-1.webp"
   },
   {
     id: 5,
@@ -670,21 +802,26 @@ const products = [
       ru: "Регулируемый кнопочный держатель для душа на штангу",
       pt: "Suporte Deslizante de Chuveiro Ajustável com Botão",
       hi: "पुश-बटन समायोज्य शावर बार स्लाइडर ब्रैकेट",
-      zh: "经典按键升降花洒座 / 淋浴杆滑座"
-    },
+      zh: "经典按键升降花洒座 / 淋浴杆滑座",
+      vi: "Tay xả một cần ABS mạ điện cao cấp Xialong",
+},
     model: "XH-71",
-    materialMap: { en: "Virgin Heavy ABS + Internal Anti-Slip Pads", ru: "Ударопрочный первичный ABS с антискользящими вставками", pt: "ABS Virgem de Alto Impacto + Almofada Antiderrapante", hi: "उच्च प्रभाव वर्जिन एबीएस + एंटी-स्लिप कुशन", zh: "高韧性全新工程 ABS 原料 + 内置防滑耐磨硅胶衬垫" },
-    finishMap: { en: "9-Class Multi-layer Electroplated Chrome", ru: "Многослойный глянцевый хром 9 класса", pt: "Cromagem Multicamada Classe 9", hi: "इलेक्ट्रोप्लेटेड क्रोम", zh: "9级加厚多层镜面电镀铬（耐酸抗盐雾耐磨损）" },
-    certMap: { en: "ZL 2025 2 0342911.6 | SGS 100,000 Wear Cycles", ru: "Патент ZL 2025 2 0342911.6 / SGS 100 000 циклов", pt: "Patente ZL 2025 2 0342911.6 / SGS 100 mil ciclos", hi: "पेटेंट ZL 2025 2 0342911.6 / एसजीएस प्रमाणित", zh: "中国实用新型专利 ZL 2025 2 0342911.6 | SGS 10万次耐磨认证" },
+    materialMap: { en: "Virgin Heavy ABS + Internal Anti-Slip Pads", ru: "Ударопрочный первичный ABS с антискользящими вставками", pt: "ABS Virgem de Alto Impacto + Almofada Antiderrapante", hi: "उच्च प्रभाव वर्जिन एबीएस + एंटी-स्लिप कुशन", zh: "高韧性全新工程 ABS 原料 + 内置防滑耐磨硅胶衬垫",       vi: "ABS nguyên sinh + lõi đồng",
+},
+    finishMap: { en: "9-Class Multi-layer Electroplated Chrome", ru: "Многослойный глянцевый хром 9 класса", pt: "Cromagem Multicamada Classe 9", hi: "इलेक्ट्रोप्लेटेड क्रोम", zh: "9级加厚多层镜面电镀铬（耐酸抗盐雾耐磨损）",       vi: "Mạ gương / gunmetal mờ",
+},
+    certMap: { en: "ZL 2025 2 0342911.6 | SGS 100,000 Wear Cycles", ru: "Патент ZL 2025 2 0342911.6 / SGS 100 000 циклов", pt: "Patente ZL 2025 2 0342911.6 / SGS 100 mil ciclos", hi: "पेटेंट ZL 2025 2 0342911.6 / एसजीएस प्रमाणित", zh: "中国实用新型专利 ZL 2025 2 0342911.6 | SGS 10万次耐磨认证",       vi: "Bằng sáng chế ZL 2025 2 0342911.6",
+},
     descMap: {
       en: "XH-71 premium push-button shower bar slider bracket, engineered for 19-25mm standard shower rails. Features effortless one-touch button height adjustment, 360° rotatable shower head cradle, and heavy-duty internal silicone grip preventing slippage.",
       ru: "Премиальный держатель для душа XH-71 с кнопочной регулировкой высоты на штангу 19-25 мм. Плавное перемещение и надежная фиксация лейки.",
       pt: "Suporte deslizante premium XH-71 com botão de liberação rápida para barras de 19-25mm. Ajuste de altura com um toque e berço giratório de 360°.",
       hi: "मानक 19-25 मिमी शावर रॉड के लिए पुश-बटन शावर हेड स्लाइडर ब्रैकेट XH-71। एक स्पर्श ऊंचाई समायोजन और 360° घूर्णन।",
-      zh: "XH-71 经典按键式升降花洒座，专为 19-25mm 标准升降淋浴杆研发。顶部配备一触式按钮，按压即可顺滑调节高度；内置高阻尼防滑硅胶内衬，紧锁不晃动、不滑落；插槽支持 360° 灵活旋转调节喷淋角度，通用适配各类国际标准手持花洒。"
-    },
-    images: ["/assets/products/xh-product-71.jpg", "/assets/products/xh-product-71-3.jpg", "/assets/products/xh-product-71-2.jpg"],
-    img: "/assets/products/xh-product-71.jpg",
+      zh: "XH-71 经典按键式升降花洒座，专为 19-25mm 标准升降淋浴杆研发。顶部配备一触式按钮，按压即可顺滑调节高度；内置高阻尼防滑硅胶内衬，紧锁不晃动、不滑落；插槽支持 360° 灵活旋转调节喷淋角度，通用适配各类国际标准手持花洒。",
+      vi: "Nút nhấn một chạm, đệm silicon chống trượt, ổ xoay 360°, phù hợp thanh sen 19-25mm.",
+},
+    images: ["/assets/products/xh-product-71.webp", "/assets/products/xh-product-71-3.webp", "/assets/products/xh-product-71-2.webp"],
+    img: "/assets/products/xh-product-71.webp",
     video: "/assets/videos/xh-71-intro.mp4"
   },
   {
@@ -695,28 +832,33 @@ const products = [
       ru: "Клавишный переключатель для душа из высококачественного ABS Xialong",
       pt: "Botão Estilo Tecla de Piano em ABS para Corpo de Chuveiro Xialong",
       hi: "शियालॉन्ग हाई-ग्रेड एबीएस शावर बॉडी पियानो की बटन मॉडल",
-      zh: "夏龙高标ABS花洒主体钢琴按键款"
-    },
+      zh: "夏龙高标ABS花洒主体钢琴按键款",
+      vi: "Thanh trượt sen điều chỉnh bằng nút nhấn",
+},
     model: "XH-ABSGQ-101",
-    materialMap: { en: "High-Strength Virgin Engineering ABS + Precision Key Mechanism", ru: "Высокопрочный первичный полимер ABS с прецизионным механизмом", pt: "ABS Virgem de Engenharia de Alta Resistência + Mecanismo de Precisão", hi: "उच्च शक्ति वर्जिन एबीएस + सटीक कुंजी तंत्र", zh: "高韧性原生抗冲击工程 ABS 原料 + 精密内部按键传动机构" },
-    finishMap: { en: "Anti-Scratch Gunmetal Grey / Electroplated Mirror Chrome", ru: "Оружейный серый цвет с защитой от царапин / Зеркальный хром", pt: "Cinza Gunmetal Anti-Risco / Cromagem Espelhada", hi: "गनमेटल ग्रे / इलेक्ट्रोप्लेटेड क्रोम", zh: "防刮防指纹高雅喷镀枪灰 / 9级加厚多层镜面电镀铬" },
-    certMap: { en: "SGS 100,000 Key-Press Tested | Factory 100% Inspection", ru: "Тест нажатия SGS 100 000 циклов / 100% заводской контроль", pt: "SGS 100 Mil Ciclos de Pressionamento / Inspeção 100%", hi: "एसजीएस 100,000 प्रेस टेस्ट प्रमाणित", zh: "SGS 10万次按压耐久寿命测试 | 出厂气密水压全检" },
+    materialMap: { en: "High-Strength Virgin Engineering ABS + Precision Key Mechanism", ru: "Высокопрочный первичный полимер ABS с прецизионным механизмом", pt: "ABS Virgem de Engenharia de Alta Resistência + Mecanismo de Precisão", hi: "उच्च शक्ति वर्जिन एबीएस + सटीक कुंजी तंत्र", zh: "高韧性原生抗冲击工程 ABS 原料 + 精密内部按键传动机构",       vi: "ABS nguyên sinh chống va đập cao",
+},
+    finishMap: { en: "Anti-Scratch Gunmetal Grey / Electroplated Mirror Chrome", ru: "Оружейный серый цвет с защитой от царапин / Зеркальный хром", pt: "Cinza Gunmetal Anti-Risco / Cromagem Espelhada", hi: "गनमेटल ग्रे / इलेक्ट्रोप्लेटेड क्रोम", zh: "防刮防指纹高雅喷镀枪灰 / 9级加厚多层镜面电镀铬",       vi: "Mạ crôm cấp 9",
+},
+    certMap: { en: "SGS 100,000 Key-Press Tested | Factory 100% Inspection", ru: "Тест нажатия SGS 100 000 циклов / 100% заводской контроль", pt: "SGS 100 Mil Ciclos de Pressionamento / Inspeção 100%", hi: "एसजीएस 100,000 प्रेस टेस्ट प्रमाणित", zh: "SGS 10万次按压耐久寿命测试 | 出厂气密水压全检",       vi: "ISO 9001:2015",
+},
     descMap: {
       en: "XH-ABSGQ-101 premium piano-key style shower valve button, precision injection molded from high-impact virgin ABS. Features ergonomic mechanical key actuation, multi-color anti-scratch finishes, and seamless integration for modern multi-function shower main bodies.",
       ru: "Клавишный переключатель XH-ABSGQ-101 для душевых систем из первичного ABS. Четкий тактильный отклик и износостойкое покрытие.",
       pt: "Botão estilo tecla de piano XH-ABSGQ-101 em ABS virgem para corpos de chuveiro. Acionamento mecânico preciso e acabamento de alta durabilidade.",
       hi: "मल्टी-फंक्शन शावर बॉडी के लिए XH-ABSGQ-101 पियानो-की स्टाइल शावर वॉल्व बटन।",
-      zh: "XH-ABSGQ-101 夏龙高标 ABS 花洒主体钢琴按键款，精选高抗冲原生工程 ABS 注塑精制。采用人体工学琴键式机械式按压结构，触感反馈清晰干脆、顺畅不卡滞；提供高雅防刮枪灰与镜面电镀等多色表面工艺，完美适配现代多功能暗装/明装淋浴主体大宗 OEM/ODM 采购定制。"
-    },
+      zh: "XH-ABSGQ-101 夏龙高标 ABS 花洒主体钢琴按键款，精选高抗冲原生工程 ABS 注塑精制。采用人体工学琴键式机械式按压结构，触感反馈清晰干脆、顺畅不卡滞；提供高雅防刮枪灰与镜面电镀等多色表面工艺，完美适配现代多功能暗装/明装淋浴主体大宗 OEM/ODM 采购定制。",
+      vi: "Cơ cấu chuyển phím độc lập, cảm giác bấm dứt khoát, không kẹt.",
+},
     images: [
-      "/assets/products/xh-product-pianokey-1.jpg",
-      "/assets/products/xh-product-pianokey-2.jpg",
-      "/assets/products/xh-product-pianokey-3.jpg",
-      "/assets/products/xh-product-pianokey-4.jpg",
-      "/assets/products/xh-product-pianokey-5.jpg",
-      "/assets/products/xh-product-pianokey-6.jpg"
+      "/assets/products/xh-product-pianokey-1.webp",
+      "/assets/products/xh-product-pianokey-2.webp",
+      "/assets/products/xh-product-pianokey-3.webp",
+      "/assets/products/xh-product-pianokey-4.webp",
+      "/assets/products/xh-product-pianokey-5.webp",
+      "/assets/products/xh-product-pianokey-6.webp"
     ],
-    img: "/assets/products/xh-product-pianokey-1.jpg"
+    img: "/assets/products/xh-product-pianokey-1.webp"
   }
 ];
 
@@ -731,15 +873,17 @@ const faqs = [
       ru: "Имеет ли Fujian Xialong / Xiahua подлинные патенты на эти конструкции?",
       pt: "A Fujian Xialong / Xiahua possui patentes autênticas para estes produtos?",
       hi: "क्या फ़ुज़ियान शियालॉन्ग / शियाहुआ के पास इन डिज़ाइनों के लिए वास्तविक पेटेंट हैं?",
-      zh: "夏龙卫浴（厦华手柄厂）的这些专利是真的吗？"
-    },
+      zh: "夏龙卫浴（厦华手柄厂）的这些专利是真的吗？",
+      vi: "Bằng sáng chế của Xialong / Xiahua có thật không?",
+},
     aMap: {
       en: "Yes, absolutely. We hold valid national utility model patents issued by the State Intellectual Property Office (SIPO) of China (e.g. ZL 2016 2 0363475.1 and ZL 2016 2 0363465.8). This protects our buyers from patent disputes when exporting globally.",
       ru: "Да, безусловно. Мы владеем действующими национальными патентами на полезные модели, выданными Государственным ведомством по интеллектуальной собственности (SIPO) Китая. Это защищает наших покупателей.",
       pt: "Sim, absolutamente. Detemos patentes válidas emitidas pelo órgão oficial de marcas e patentes da China (SIPO), garantindo proteção jurídica total a todos os nossos distribuidores.",
       hi: "हाँ, बिल्कुल। हमारे पास चीनी राष्ट्रीय पेटेंट अधिकार हैं, जो हमारे खरीदारों को पेटेंट विवादों से सुरक्षित रखते हैं।",
-      zh: "是的，完全属实。我们所有的专利产品均已获得中华人民共和国国家知识产权局审核并授权，并在网站上公示了实物证书及专利编号。这能百分之百保障大宗出口采购商在海外市场免受专利诉讼侵权风险。"
-    }
+      zh: "是的，完全属实。我们所有的专利产品均已获得中华人民共和国国家知识产权局审核并授权，并在网站上公示了实物证书及专利编号。这能百分之百保障大宗出口采购商在海外市场免受专利诉讼侵权风险。",
+      vi: "Có. Chúng tôi sở hữu bằng sáng chế giải pháp hữu ích hợp lệ do Cục Sở hữu trí tuệ Trung Quốc (SIPO) cấp, ví dụ ZL 2016 2 0363475.1 và ZL 2016 2 0363465.8. Điều này bảo vệ người mua khỏi tranh chấp bằng sáng chế khi xuất khẩu.",
+}
   },
   {
     qMap: {
@@ -747,15 +891,17 @@ const faqs = [
       ru: "Какова история производства и мощность вашего завода?",
       pt: "Qual é o histórico de produção e capacidade de sua fábrica?",
       hi: "आपकी फैक्टरी का उत्पादन इतिहास और क्षमता क्या है?",
-      zh: "工厂的生产历史与生产线产能如何？"
-    },
+      zh: "工厂的生产历史与生产线产能如何？",
+      vi: "Lịch sử sản xuất và công suất của nhà máy?",
+},
     aMap: {
       en: "Our factory was founded on 2006-02-27 in the Nan'an Plumbing High-Tech Park in Fujian. We operate over 3,000 sqm of modern workshop with 80 highly skilled workers, yielding over 800,000 sets of precision injection and hardware faucet accessories monthly.",
       ru: "Наш завод был основан 2006-02-27 в индустриальном парке сантехники в провинции Фуцзянь. Мы управляем заводом площадью более 3000 кв.м с 80 высококлассными рабочими, выпуская более 800 000 комплектов в месяц.",
       pt: "Nossa fábrica foi fundada em 27/02/2006 em Fujian, China. Operamos com uma área produtiva de mais de 3.000m² e 80 trabalhadores experientes, com capacidade produtiva de mais de 800.000 volantes mensais.",
       hi: "हमारी फैक्टरी की स्थापना 27-02-2006 को हुई थी। 80 कुशल कर्मचारियों के साथ, हम मासिक 800,000 टुकड़ों का उत्पादन करते हैं।",
-      zh: "本厂始建于 2006-02-27，深耕水龙头手柄及五金制造已有17年。厂房占地面积超3000平方米，现稳定运行多台伺服注塑及磨具CNC机组，月精密五金注塑配件产能超过80万件。"
-    }
+      zh: "本厂始建于 2006-02-27，深耕水龙头手柄及五金制造已有17年。厂房占地面积超3000平方米，现稳定运行多台伺服注塑及磨具CNC机组，月精密五金注塑配件产能超过80万件。",
+      vi: "Nhà máy thành lập ngày 27/02/2006 tại Khu công nghệ cao Luncang, Phúc Kiến. Diện tích xưởng hơn 3.000 m² với 80 công nhân tay nghề cao, sản lượng hơn 800.000 bộ linh kiện ép phun và phụ kiện vòi mỗi tháng.",
+}
   },
   {
     qMap: {
@@ -763,15 +909,17 @@ const faqs = [
       ru: "Поддерживаете ли вы индивидуальные пресс-формы (OEM/ODM)?",
       pt: "Vocês suportam moldagem personalizada (OEM/ODM)?",
       hi: "क्या आप कस्टम मोल्डिंग (OEM/ODM) का समर्थन करते हैं?",
-      zh: "工厂支持 OEM/ODM 定制开模服务吗？"
-    },
+      zh: "工厂支持 OEM/ODM 定制开模服务吗？",
+      vi: "Quý công ty có nhận đặt khuôn riêng (OEM/ODM)?",
+},
     aMap: {
       en: "Yes. Custom B2B tooling is our core specialty. Our in-house engineering team will deliver detailed CAD/3D design drawings and a tooling feasibility proposal within 24 hours of receiving your requirements. Actual mold making and sampling start right after drawing confirmation, following a transparent production schedule.",
       ru: "Да. Изготовление пресс-форм под заказ — наша главная специализация. В течение 24 часов после получения ваших требований инженерный отдел подготовит подробные CAD/3D-чертежи и предложение по оснастке. Производство пресс-формы и образцов начинается после утверждения чертежей по согласованному графику.",
       pt: "Sim. O desenvolvimento de ferramentaria própria é a nossa especialidade. Nossa equipe de engenharia entrega desenhos CAD/3D detalhados e uma proposta de ferramentaria em até 24 horas. A fabricação do molde e as amostras começam após a aprovação dos desenhos, dentro de um cronograma transparente.",
       hi: "हाँ। कस्टम मोल्डिंग हमारी मुख्य विशेषता है। हमारी इंजीनियरिंग टीम 24 घंटों के भीतर विस्तृत CAD/3D ड्रॉइंग और टूलिंग प्रस्ताव देगी। ड्रॉइंग की मंज़ूरी के बाद ही मोल्ड निर्माण और सैंपलिंग शुरू होती है।",
-      zh: "支持。大宗定制开模是我们的核心业务。工厂建有独立的模具开发与精密数控 CNC 车间。收到您的需求后，最快 24 小时内即可交付专业的 CAD/3D 模具设计图纸与开模可行性方案；图纸确认后，再按透明排期进入模具制造与打样环节。"
-    }
+      zh: "支持。大宗定制开模是我们的核心业务。工厂建有独立的模具开发与精密数控 CNC 车间。收到您的需求后，最快 24 小时内即可交付专业的 CAD/3D 模具设计图纸与开模可行性方案；图纸确认后，再按透明排期进入模具制造与打样环节。",
+      vi: "Có. Đây là thế mạnh cốt lõi của chúng tôi. Đội kỹ thuật gửi bản vẽ CAD/3D và đề xuất khả thi khuôn trong 24 giờ sau khi nhận yêu cầu. Việc làm khuôn và mẫu bắt đầu ngay sau khi chốt bản vẽ, theo lịch sản xuất minh bạch.",
+}
   }
 ];
 
@@ -896,11 +1044,37 @@ const configTrans = {
     pkgColor: "采购商专属贴牌高档加强型五层彩盒",
     pkgBulk: "大宗工业中性厚气泡袋双层减震安全袋装",
     pkgCarton: "出口级重型双瓦楞高强度牛皮纸箱"
+  },
+  vi: {
+    labTitle: "Phòng tùy chỉnh 3D",
+    labSub: "Cấu hình vật liệu, lớp mạ, ren kết nối và bao bì xuất khẩu theo thời gian thực. Áp dụng ngay vào RFQ.",
+    selectProduct: "Chọn mã sản phẩm gốc",
+    customizeMaterial: "1. Vật liệu kết cấu",
+    customizeFinish: "2. Mạ bề mặt",
+    customizeSpec: "3. Ren kết nối / kích thước",
+    customizePkg: "4. Giải pháp bao bì xuất khẩu B2B",
+    moq: "MOQ đề xuất",
+    leadTime: "Thời gian làm mẫu",
+    capacity: "Công suất hàng tháng",
+    patentStatus: "Sở hữu trí tuệ & chứng nhận",
+    btnGenRfq: "Áp dụng thông số vào RFQ",
+    btnGenRfqSuccess: "Đã áp dụng thông số! Đã cuộn xuống phần thông tin liên hệ.",
+    matAbs: "Nhựa ABS nguyên sinh cao cấp",
+    finChrome: "Mạ crôm gương cấp 9",
+    finBlack: "Đen mờ mạ điện chống xước",
+    finGold: "Xám gunmetal chống xước, chống ố",
+    specSlider: "Giá đỡ sen lắp nhanh (Ø 22-25mm)",
+    specCustom: "Bản vẽ riêng / quy cách phi tiêu chuẩn",
+    pkgColor: "Hộp màu OEM cao cấp",
+    pkgBulk: "Túi PE bọc bong bóng công nghiệp",
+    pkgCarton: "Thùng carton 5 lớp gia cố",
   }
 };
 
 function App() {
-  const [lang, setLang] = useState('en');
+  const [lang, setLang] = useState(() => {
+    try { return localStorage.getItem('xiahua_lang') || 'en'; } catch (e) { return 'en'; }
+  });
   const [activeCatalogView, setActiveCatalogView] = useState('lab'); // 'lab' = Interactive configurator, 'catalog' = Standard Grid
   const [selectedLabProduct, setSelectedLabProduct] = useState(products[0]);
   const [labMaterial, setLabMaterial] = useState('abs');
@@ -925,13 +1099,24 @@ function App() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [carouselIndex, setCarouselIndex] = useState({});
-  const [xh71ActiveImage, setXh71ActiveImage] = useState('/assets/products/xh-product-71.jpg');
+  const [xh71ActiveImage, setXh71ActiveImage] = useState('/assets/products/xh-product-71.webp');
   const [xh71Tab, setXh71Tab] = useState('overview'); // 'overview' = specs & video, 'gallery' = XH-71展示效果图
-  const [xh71EffectImg, setXh71EffectImg] = useState('/assets/products/xh-71-scene-warm.jpg'); // 图二作为封面图
+  const [xh71EffectImg, setXh71EffectImg] = useState('/assets/products/xh-71-scene-warm.webp'); // 图二作为封面图
   const [heroPosterPage, setHeroPosterPage] = useState(0);
   const [video2Tab, setVideo2Tab] = useState(0);
 
   const t = trans[lang] || trans.en;
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    try { localStorage.setItem('xiahua_lang', lang); } catch (e) {}
+  }, [lang]);
+
+  useEffect(() => {
+    initAnalytics();
+    track('page_view', { page_path: window.location.pathname, page_title: document.title });
+    return bindGlobalTracking();
+  }, []);
 
   // Filter products
   const filteredProducts = categoryFilter === 'all' 
@@ -939,32 +1124,60 @@ function App() {
     : products.filter(p => p.category === categoryFilter);
 
   // Handle Main RFQ Form Submit
+  // RFQ submit: composes the full enquiry in the visitor's own mail client so the
+  // message is genuinely sent (no backend needed yet), then records generate_lead.
   const handleRfqSubmit = (e) => {
     e.preventDefault();
     if (!rfqName || !rfqEmail) return;
 
-    console.log("=== B2B RFQ SUBMISSION ===");
-    console.log(`Name: ${rfqName}`);
-    console.log(`Email: ${rfqEmail}`);
-    console.log(`WhatsApp: ${rfqWhatsApp}`);
-    console.log(`Company: ${rfqCompany}`);
-    console.log(`Category: ${rfqCategory}`);
-    console.log(`Message: ${rfqMsg}`);
-    console.log(`Submitting to: 375039134@qq.com`);
-    console.log("==========================");
+    const body = [
+      'Hello Xiahua team,',
+      '',
+      `Name: ${rfqName}`,
+      `Company: ${rfqCompany}`,
+      `Business email: ${rfqEmail}`,
+      `WhatsApp / Phone: ${rfqWhatsApp}`,
+      `Target category: ${rfqCategory}`,
+      '',
+      'Message / specifications:',
+      rfqMsg || '(none)',
+      '',
+      `Sent from ${BRAND.siteUrl}`,
+    ].join('\n');
+
+    track('generate_lead', {
+      form_id: 'rfq_home',
+      category: rfqCategory,
+      quantity: procureVolume,
+      method: 'mailto_fallback',
+    });
 
     setIsSubmitted(true);
+    window.location.href = rfqMailto(`RFQ - ${rfqCompany || rfqName}`, body);
   };
 
    // Handle Modal RFQ Form Submit
    const handleModalRfqSubmit = (productModel) => {
-     console.log(`=== SPECIAL MODAL RFQ SUBMITTED FOR MODEL: ${productModel} ===`);
-     console.log(`Name: ${rfqName || "Prospect Buyer"}`);
-     console.log(`Email: ${rfqEmail || "Pending"}`);
-     console.log(`Sending to target email: 375039134@qq.com`);
-     
+     const body = [
+       'Hello Xiahua team,',
+       '',
+       `I would like a quotation for model ${productModel}.`,
+       '',
+       `Name: ${rfqName || ''}`,
+       `Business email: ${rfqEmail || ''}`,
+       '',
+       `Sent from ${BRAND.siteUrl}`,
+     ].join('\n');
+
+     track('generate_lead', {
+       form_id: 'rfq_product_modal',
+       model: productModel,
+       method: 'mailto_fallback',
+     });
+
      setIsSubmitted(true);
      setSelectedProduct(null);
+     window.location.href = rfqMailto(`RFQ ${productModel}`, body);
    };
 
    // Carousel handlers
@@ -1122,6 +1335,7 @@ function App() {
 
   const flags = {
     en: "🇬🇧",
+    vi: "🇻🇳",
     ru: "🇷🇺",
     pt: "🇧🇷",
     hi: "🇮🇳",
@@ -1137,7 +1351,7 @@ function App() {
           {/* Logo with Real Corporate Logo Image fallback to factory icon */}
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
-              <img 
+              <img loading="lazy" decoding="async" 
                 src="https://sc02.alicdn.com/kf/H43f3be7076d6431080a2f10db571f6d1a.jpg" 
                 alt="Xiahua Logo" 
                 className="h-11 w-auto object-contain rounded-lg border border-slate-100 shadow-sm"
@@ -1176,9 +1390,10 @@ function App() {
                 className="bg-transparent text-sm font-bold text-slate-700 cursor-pointer focus:outline-none pr-1.5"
               >
                 <option value="en">English {flags.en}</option>
+                <option value="vi">Tiếng Việt {flags.vi}</option>
+                <option value="hi">हिन्दी {flags.hi}</option>
                 <option value="ru">Русский {flags.ru}</option>
                 <option value="pt">Português {flags.pt}</option>
-                <option value="hi">हिन्दी {flags.hi}</option>
                 <option value="zh">中文 {flags.zh}</option>
               </select>
             </div>
@@ -1205,9 +1420,10 @@ function App() {
                 className="bg-transparent text-sm font-bold text-slate-700 cursor-pointer focus:outline-none"
               >
                 <option value="en">EN</option>
+                <option value="vi">VI</option>
+                <option value="hi">HI</option>
                 <option value="ru">RU</option>
                 <option value="pt">PT</option>
-                <option value="hi">HI</option>
                 <option value="zh">ZH</option>
               </select>
             </div>
@@ -1299,7 +1515,7 @@ function App() {
                   <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t.statOutput}</span>
                 </div>
                 <div>
-                  <span className="block text-2xl sm:text-3xl font-extrabold text-white">17+</span>
+                  <span className="block text-2xl sm:text-3xl font-extrabold text-white">20+</span>
                   <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{t.statExperience}</span>
                 </div>
                 <div>
@@ -1317,8 +1533,8 @@ function App() {
                 {/* Poster Image / Video Container */}
                 <div className="relative overflow-hidden rounded-2xl aspect-[3/4] bg-slate-950 flex items-center justify-center">
                   {heroPosterPage === 0 && (
-                    <img 
-                      src="/assets/images/hero-poster-2.jpg" 
+                    <img fetchPriority="high" 
+                      src="/assets/images/hero-poster-2.webp" 
                       alt="Quick-install shower head bracket socket poster" 
                       className="w-full h-full object-cover transition-all duration-500 transform group-hover:scale-[1.02]"
                     />
@@ -1328,11 +1544,10 @@ function App() {
                     <video 
                       controls 
                       playsInline 
-                      autoPlay
                       muted
                       loop
-                      preload="metadata"
-                      poster="/assets/images/hero-poster-2.jpg"
+                      preload="none"
+                      poster="/assets/images/hero-poster-2.webp"
                       className="w-full h-full object-cover"
                     >
                       <source src="/assets/videos/xh-shower-socket-video.mp4" type="video/mp4" />
@@ -1341,8 +1556,8 @@ function App() {
                   )}
 
                   {heroPosterPage === 2 && (
-                    <img 
-                      src="/assets/images/hero-poster-1.jpg" 
+                    <img fetchPriority="high" 
+                      src="/assets/images/hero-poster-1.webp" 
                       alt="ABS single-lever faucet handle marketing poster" 
                       className="w-full h-full object-cover transition-all duration-500 transform group-hover:scale-[1.02]"
                     />
@@ -1603,7 +1818,7 @@ function App() {
                   {/* Big Active Image display with smooth hover & 360° Interactive Rotate */}
                   <div className="relative bg-white border border-slate-200 rounded-3xl p-3 shadow-sm group overflow-hidden">
                     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100">
-                      <img
+                      <img loading="lazy" decoding="async"
                         src={selectedLabProduct.images[getCarouselIndex(selectedLabProduct.id)] || selectedLabProduct.img}
                         alt={selectedLabProduct.nameMap[lang]}
                         className="w-full h-full object-cover transition-all duration-300 transform group-hover:scale-105 cursor-ew-resize"
@@ -1675,7 +1890,7 @@ function App() {
                               : 'border-slate-200 hover:border-slate-400 hover:scale-105'
                           }`}
                         >
-                          <img
+                          <img loading="lazy" decoding="async"
                             src={imgUrl}
                             alt={`Variant detailing ${idx + 1}`}
                             className="w-full h-full object-cover"
@@ -1854,6 +2069,9 @@ function App() {
                           </div>
                         );
                       })()}
+                    <p className="text-[10px] leading-4 text-slate-400 border-t border-blue-100/50 pt-2">
+                        Indicative price only. Final quotation confirmed by RFQ.
+                      </p>
                     </div>
 
                   </div>
@@ -1971,7 +2189,7 @@ function App() {
                       <div className="relative aspect-[4/3] bg-slate-100 border-b border-slate-100 overflow-hidden group/img">
                         {p.images && p.images.length > 0 ? (
                           <>
-                            <img 
+                            <img loading="lazy" decoding="async" 
                               src={p.images[getCarouselIndex(p.id)]} 
                               alt={p.nameMap[lang]} 
                               className="w-full h-full object-cover transition-all duration-300 transform group-hover/img:scale-105 cursor-ew-resize"
@@ -2029,7 +2247,7 @@ function App() {
                             )}
                           </>
                         ) : (
-                          <img 
+                          <img loading="lazy" decoding="async" 
                             src={p.img} 
                             alt={p.nameMap[lang]} 
                             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -2154,7 +2372,7 @@ function App() {
                   {/* Left Column: Product Photos & Color Switcher */}
                   <div className="lg:col-span-5 space-y-4">
                     <div className="relative group w-full aspect-[4/3] bg-slate-800/90 rounded-2xl p-4 border border-white/10 flex items-center justify-center overflow-hidden shadow-inner">
-                      <img 
+                      <img loading="lazy" decoding="async" 
                         src={xh71ActiveImage} 
                         alt="XH-71 Push-Button Shower Bar Slider" 
                         className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 filter drop-shadow-2xl"
@@ -2177,15 +2395,15 @@ function App() {
                     {/* Color / Variant Selector Thumbnails */}
                     <div className="grid grid-cols-3 gap-2">
                       <button
-                        onClick={() => setXh71ActiveImage('/assets/products/xh-product-71.jpg')}
+                        onClick={() => setXh71ActiveImage('/assets/products/xh-product-71.webp')}
                         className={`flex items-center gap-2 p-2 rounded-xl border transition-all text-left cursor-pointer ${
-                          xh71ActiveImage === '/assets/products/xh-product-71.jpg'
+                          xh71ActiveImage === '/assets/products/xh-product-71.webp'
                             ? 'bg-blue-600/30 border-blue-400 text-white shadow-md'
                             : 'bg-slate-800/60 border-white/10 text-slate-400 hover:text-white hover:bg-slate-800'
                         }`}
                       >
                         <div className="w-7 h-7 rounded-lg bg-slate-700 overflow-hidden flex-shrink-0 border border-white/20">
-                          <img src="/assets/products/xh-product-71.jpg" alt="Chrome 1" className="w-full h-full object-cover" />
+                          <img loading="lazy" decoding="async" src="/assets/products/xh-product-71.webp" alt="Chrome 1" className="w-full h-full object-cover" />
                         </div>
                         <div className="min-w-0">
                           <div className="text-[11px] font-bold leading-tight truncate">{lang === 'zh' ? '镜面铬 1' : 'Chrome 1'}</div>
@@ -2194,15 +2412,15 @@ function App() {
                       </button>
 
                       <button
-                        onClick={() => setXh71ActiveImage('/assets/products/xh-product-71-3.jpg')}
+                        onClick={() => setXh71ActiveImage('/assets/products/xh-product-71-3.webp')}
                         className={`flex items-center gap-2 p-2 rounded-xl border transition-all text-left cursor-pointer ${
-                          xh71ActiveImage === '/assets/products/xh-product-71-3.jpg'
+                          xh71ActiveImage === '/assets/products/xh-product-71-3.webp'
                             ? 'bg-blue-600/30 border-blue-400 text-white shadow-md'
                             : 'bg-slate-800/60 border-white/10 text-slate-400 hover:text-white hover:bg-slate-800'
                         }`}
                       >
                         <div className="w-7 h-7 rounded-lg bg-slate-700 overflow-hidden flex-shrink-0 border border-white/20">
-                          <img src="/assets/products/xh-product-71-3.jpg" alt="Chrome 2" className="w-full h-full object-cover" />
+                          <img loading="lazy" decoding="async" src="/assets/products/xh-product-71-3.webp" alt="Chrome 2" className="w-full h-full object-cover" />
                         </div>
                         <div className="min-w-0">
                           <div className="text-[11px] font-bold leading-tight truncate">{lang === 'zh' ? '镜面铬 2' : 'Chrome 2'}</div>
@@ -2211,15 +2429,15 @@ function App() {
                       </button>
 
                       <button
-                        onClick={() => setXh71ActiveImage('/assets/products/xh-product-71-2.jpg')}
+                        onClick={() => setXh71ActiveImage('/assets/products/xh-product-71-2.webp')}
                         className={`flex items-center gap-2 p-2 rounded-xl border transition-all text-left cursor-pointer ${
-                          xh71ActiveImage === '/assets/products/xh-product-71-2.jpg'
+                          xh71ActiveImage === '/assets/products/xh-product-71-2.webp'
                             ? 'bg-blue-600/30 border-blue-400 text-white shadow-md'
                             : 'bg-slate-800/60 border-white/10 text-slate-400 hover:text-white hover:bg-slate-800'
                         }`}
                       >
                         <div className="w-7 h-7 rounded-lg bg-slate-700 overflow-hidden flex-shrink-0 border border-white/20">
-                          <img src="/assets/products/xh-product-71-2.jpg" alt="Gunmetal Grey" className="w-full h-full object-cover" />
+                          <img loading="lazy" decoding="async" src="/assets/products/xh-product-71-2.webp" alt="Gunmetal Grey" className="w-full h-full object-cover" />
                         </div>
                         <div className="min-w-0">
                           <div className="text-[11px] font-bold leading-tight truncate">{lang === 'zh' ? '枪灰色' : 'Gunmetal'}</div>
@@ -2284,8 +2502,8 @@ function App() {
                         <video 
                           controls 
                           playsInline 
-                          preload="metadata"
-                          poster="/assets/products/xh-product-71.jpg"
+                          preload="none"
+                          poster="/assets/products/xh-product-71.webp"
                           className="w-full h-full object-cover"
                         >
                           <source src="/assets/videos/xh-71-intro.mp4" type="video/mp4" />
@@ -2329,7 +2547,7 @@ function App() {
                     {/* Left Column: Interactive Main HD Preview with Zoom */}
                     <div className="lg:col-span-6 space-y-4">
                       <div className="relative group w-full aspect-[4/3] bg-slate-950/90 rounded-2xl p-4 border border-blue-500/30 flex items-center justify-center overflow-hidden shadow-2xl">
-                        <img
+                        <img loading="lazy" decoding="async"
                           src={xh71EffectImg}
                           alt="XH-71 High-Resolution Effect Render"
                           className="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500 filter drop-shadow-2xl"
@@ -2373,15 +2591,15 @@ function App() {
                         {/* Card 1: 暖色意式轻奢实装 */}
                         <button
                           type="button"
-                          onClick={() => setXh71EffectImg('/assets/products/xh-71-scene-warm.jpg')}
+                          onClick={() => setXh71EffectImg('/assets/products/xh-71-scene-warm.webp')}
                           className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
-                            xh71EffectImg === '/assets/products/xh-71-scene-warm.jpg'
+                            xh71EffectImg === '/assets/products/xh-71-scene-warm.webp'
                               ? 'bg-blue-600/30 border-blue-400 text-white shadow-lg ring-1 ring-blue-400'
                               : 'bg-slate-800/60 border-white/10 text-slate-300 hover:bg-slate-800 hover:text-white'
                           }`}
                         >
                           <div className="w-full aspect-[4/3] rounded-xl bg-slate-900/80 overflow-hidden mb-2 p-0.5 border border-white/10 flex items-center justify-center">
-                            <img src="/assets/products/xh-71-scene-warm.jpg" alt="Warm Scene" className="w-full h-full object-cover rounded-lg" />
+                            <img loading="lazy" decoding="async" src="/assets/products/xh-71-scene-warm.webp" alt="Warm Scene" className="w-full h-full object-cover rounded-lg" />
                           </div>
                           <div>
                             <div className="text-xs font-black text-white">
@@ -2394,15 +2612,15 @@ function App() {
                         {/* Card 2: 深色现代岩板实装 */}
                         <button
                           type="button"
-                          onClick={() => setXh71EffectImg('/assets/products/xh-71-scene-dark.jpg')}
+                          onClick={() => setXh71EffectImg('/assets/products/xh-71-scene-dark.webp')}
                           className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
-                            xh71EffectImg === '/assets/products/xh-71-scene-dark.jpg'
+                            xh71EffectImg === '/assets/products/xh-71-scene-dark.webp'
                               ? 'bg-blue-600/30 border-blue-400 text-white shadow-lg ring-1 ring-blue-400'
                               : 'bg-slate-800/60 border-white/10 text-slate-300 hover:bg-slate-800 hover:text-white'
                           }`}
                         >
                           <div className="w-full aspect-[4/3] rounded-xl bg-slate-900/80 overflow-hidden mb-2 p-0.5 border border-white/10 flex items-center justify-center">
-                            <img src="/assets/products/xh-71-scene-dark.jpg" alt="Dark Slate Scene" className="w-full h-full object-cover rounded-lg" />
+                            <img loading="lazy" decoding="async" src="/assets/products/xh-71-scene-dark.webp" alt="Dark Slate Scene" className="w-full h-full object-cover rounded-lg" />
                           </div>
                           <div>
                             <div className="text-xs font-black text-white">
@@ -2415,15 +2633,15 @@ function App() {
                         {/* Card 3: 雅白大理石实装 */}
                         <button
                           type="button"
-                          onClick={() => setXh71EffectImg('/assets/products/xh-71-scene-white.jpg')}
+                          onClick={() => setXh71EffectImg('/assets/products/xh-71-scene-white.webp')}
                           className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
-                            xh71EffectImg === '/assets/products/xh-71-scene-white.jpg'
+                            xh71EffectImg === '/assets/products/xh-71-scene-white.webp'
                               ? 'bg-blue-600/30 border-blue-400 text-white shadow-lg ring-1 ring-blue-400'
                               : 'bg-slate-800/60 border-white/10 text-slate-300 hover:bg-slate-800 hover:text-white'
                           }`}
                         >
                           <div className="w-full aspect-[4/3] rounded-xl bg-slate-900/80 overflow-hidden mb-2 p-0.5 border border-white/10 flex items-center justify-center">
-                            <img src="/assets/products/xh-71-scene-white.jpg" alt="White Marble Scene" className="w-full h-full object-cover rounded-lg" />
+                            <img loading="lazy" decoding="async" src="/assets/products/xh-71-scene-white.webp" alt="White Marble Scene" className="w-full h-full object-cover rounded-lg" />
                           </div>
                           <div>
                             <div className="text-xs font-black text-white">
@@ -2436,15 +2654,15 @@ function App() {
                         {/* Card 4: 哑光枪灰实装 */}
                         <button
                           type="button"
-                          onClick={() => setXh71EffectImg('/assets/products/xh-71-scene-gunmetal.jpg')}
+                          onClick={() => setXh71EffectImg('/assets/products/xh-71-scene-gunmetal.webp')}
                           className={`p-3 rounded-2xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
-                            xh71EffectImg === '/assets/products/xh-71-scene-gunmetal.jpg'
+                            xh71EffectImg === '/assets/products/xh-71-scene-gunmetal.webp'
                               ? 'bg-blue-600/30 border-blue-400 text-white shadow-lg ring-1 ring-blue-400'
                               : 'bg-slate-800/60 border-white/10 text-slate-300 hover:bg-slate-800 hover:text-white'
                           }`}
                         >
                           <div className="w-full aspect-[4/3] rounded-xl bg-slate-900/80 overflow-hidden mb-2 p-0.5 border border-white/10 flex items-center justify-center">
-                            <img src="/assets/products/xh-71-scene-gunmetal.jpg" alt="Gunmetal Detail Scene" className="w-full h-full object-cover rounded-lg" />
+                            <img loading="lazy" decoding="async" src="/assets/products/xh-71-scene-gunmetal.webp" alt="Gunmetal Detail Scene" className="w-full h-full object-cover rounded-lg" />
                           </div>
                           <div>
                             <div className="text-xs font-black text-white">
@@ -2523,7 +2741,7 @@ function App() {
             <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 flex flex-col justify-between hover:shadow-xl transition-all duration-300">
               <div className="space-y-4">
                 <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white p-2">
-                  <img src="/assets/certs/cert-utility-patent.jpg" alt="Utility Model Patent Certificate" className="w-full h-72 object-cover object-top rounded-xl" />
+                  <img loading="lazy" decoding="async" src="/assets/certs/cert-utility-patent.webp" alt="Utility Model Patent Certificate" className="w-full h-72 object-cover object-top rounded-xl" />
                 </div>
                 <div className="text-left space-y-2">
                   <span className="text-[10px] font-black tracking-widest text-blue-700 uppercase bg-blue-50 border border-blue-100 px-2 py-0.5 rounded">Patent ZL2016</span>
@@ -2540,7 +2758,7 @@ function App() {
             <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 flex flex-col justify-between hover:shadow-xl transition-all duration-300">
               <div className="space-y-4">
                 <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white p-2">
-                  <img src="/assets/certs/cert-02.jpg" alt="Utility Model Patent Certificate 2" className="w-full h-72 object-cover object-top rounded-xl" />
+                  <img loading="lazy" decoding="async" src="/assets/certs/cert-02.webp" alt="Utility Model Patent Certificate 2" className="w-full h-72 object-cover object-top rounded-xl" />
                 </div>
                 <div className="text-left space-y-2">
                   <span className="text-[10px] font-black tracking-widest text-blue-700 uppercase bg-blue-50 border border-blue-100 px-2 py-0.5 rounded">Patent ZL2016</span>
@@ -2557,7 +2775,7 @@ function App() {
             <div className="bg-slate-50 border border-slate-200 rounded-3xl p-6 flex flex-col justify-between hover:shadow-xl transition-all duration-300">
               <div className="space-y-4">
                 <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white p-2">
-                  <img src="/assets/certs/cert-shower-slider.jpg" alt="Shower Bar Slider Utility Model Patent Certificate" className="w-full h-72 object-cover object-top rounded-xl" />
+                  <img loading="lazy" decoding="async" src="/assets/certs/cert-shower-slider.webp" alt="Shower Bar Slider Utility Model Patent Certificate" className="w-full h-72 object-cover object-top rounded-xl" />
                 </div>
                 <div className="text-left space-y-2">
                   <span className="text-[10px] font-black tracking-widest text-blue-700 uppercase bg-blue-50 border border-blue-100 px-2 py-0.5 rounded">Patent ZL2025</span>
@@ -2590,10 +2808,10 @@ function App() {
             
             {/* Left Image grid */}
             <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 p-3 bg-white">
-              <img 
+              <img loading="lazy" decoding="async" 
                 src="https://sc02.alicdn.com/kf/H9ea350f2db8341f5a7deba915284a698b.jpg" 
                 onError={(e) => {
-                  e.target.src = '/assets/images/factory-head-office-v2.jpg';
+                  e.target.src = '/assets/images/factory-head-office-v2.webp';
                 }}
                 alt="Fujian Xialong Head Office Building and Factory Workshop" 
                 className="w-full h-[400px] object-cover rounded-2xl shadow-sm"
@@ -2643,7 +2861,7 @@ function App() {
                   <video 
                     controls 
                     className="w-full h-full object-contain"
-                    preload="metadata"
+                    preload="none"
                   >
                     <source src="/assets/videos/633776121.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
@@ -2696,7 +2914,7 @@ function App() {
                       key="v2-molding-plating"
                       controls 
                       className="w-full h-full object-contain"
-                      preload="metadata"
+                      preload="none"
                     >
                       <source src="/assets/videos/713225503.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
@@ -2706,7 +2924,7 @@ function App() {
                       key="v2-assembly-testing"
                       controls 
                       className="w-full h-full object-contain"
-                      preload="metadata"
+                      preload="none"
                     >
                       <source src="/assets/videos/xh-assembly-testing.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
@@ -2761,6 +2979,21 @@ function App() {
             ))}
           </div>
 
+        </div>
+      </section>
+      {/* CONTACT / RFQ SECTION - anchored target for every "Request a Quote" CTA */}
+      <section
+        id="contact"
+        className="py-20 bg-slate-50 border-t border-slate-200"
+        data-component="contact-section">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-4 mb-10">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              {t.contactTitle}
+            </h2>
+            <p className="text-slate-500 text-lg leading-relaxed">{t.contactLede}</p>
+          </div>
+          <RfqBlock intent="home" />
         </div>
       </section>
       {/* FOOTER */}
@@ -2831,7 +3064,7 @@ function App() {
               
               <div className="grid sm:grid-cols-2 gap-8 items-start">
                 <div className="bg-slate-50 rounded-2xl p-2 border border-slate-200">
-                  <img 
+                  <img loading="lazy" decoding="async" 
                     src={selectedProduct.img} 
                     alt={selectedProduct.nameMap[lang]} 
                     className="w-full h-56 object-cover rounded-xl"
@@ -2899,7 +3132,7 @@ function App() {
       {selectedGalleryImg && (
         <div className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur flex items-center justify-center p-4">
           <div className="relative max-w-4xl max-h-[85vh] overflow-hidden flex items-center justify-center rounded-2xl border border-slate-800 shadow-2xl">
-            <img 
+            <img loading="lazy" decoding="async" 
               src={selectedGalleryImg} 
               alt="High resolution zoom of custom mold item" 
               className="max-w-full max-h-[80vh] object-contain rounded-xl"
@@ -2929,7 +3162,7 @@ function App() {
             <div className="flex flex-wrap gap-2">
               {compareList.map(item => (
                 <div key={item.id} className="relative bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-xl flex items-center gap-2">
-                  <img src={item.img} alt={item.model} className="w-5 h-5 object-cover rounded-md" />
+                  <img loading="lazy" decoding="async" src={item.img} alt={item.model} className="w-5 h-5 object-cover rounded-md" />
                   <span className="text-xs font-extrabold text-white">{item.model}</span>
                   <button 
                     onClick={() => handleToggleCompare(item)}
@@ -2990,7 +3223,7 @@ function App() {
                     <th className="py-4 px-3 text-xs font-black text-slate-400 uppercase tracking-widest min-w-[160px]">{lang === 'zh' ? '技术指标 / 维度' : 'Technical Metric'}</th>
                     {compareList.map(item => (
                       <th key={item.id} className="py-4 px-4 text-center min-w-[200px] border-l border-slate-100 bg-slate-50/30">
-                        <img src={item.img} alt={item.model} className="w-16 h-12 object-cover rounded-lg mx-auto shadow-sm border border-slate-200" />
+                        <img loading="lazy" decoding="async" src={item.img} alt={item.model} className="w-16 h-12 object-cover rounded-lg mx-auto shadow-sm border border-slate-200" />
                         <span className="block text-xs font-black text-blue-800 uppercase tracking-wider mt-2 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded w-fit mx-auto">{item.model}</span>
                         <h4 className="font-black text-slate-900 text-sm mt-1 line-clamp-1">{item.nameMap[lang]}</h4>
                       </th>
@@ -3156,4 +3389,15 @@ function App() {
   );
 }
 
-createRoot(document.getElementById('root')).render(<App />);
+const routePath =
+  window.location.pathname.replace(/index\.html$/, '').replace(/\/+$/, '') || '/';
+
+const ROUTES = {
+  '/': <App />,
+  '/products/abs-faucet-handles': <ProductABSHandles />,
+  '/blog/abs-vs-brass-faucet-handles': <BlogABSvsBrass />,
+};
+
+const CurrentPage = ROUTES[routePath] || <NotFound path={routePath} />;
+
+createRoot(document.getElementById('root')).render(CurrentPage);
