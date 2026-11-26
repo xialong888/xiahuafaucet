@@ -127,7 +127,7 @@ export default function ProductABSHandles() {
           ['Gunmetal', '/assets/products/xh-product-101-10.webp'],
         ].map(([label, src]) => (
           <figure key={label} className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
-            <img src={src} alt={`ABS faucet handle in ${label.toLowerCase()} finish`} width="480" height="640" loading="lazy" decoding="async" className="h-64 w-full object-cover" />
+            <img src={src} alt={`ABS faucet handle in ${label.toLowerCase()} finish`} width="480" height="640" decoding="async" className="h-64 w-full object-cover" />
             <figcaption className="px-4 py-3 text-xs font-bold text-slate-700">{label} finish</figcaption>
           </figure>
         ))}
