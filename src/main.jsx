@@ -934,6 +934,7 @@ const configTrans = {
     customizeSpec: "3. Connection Spline / Size Specifications",
     customizePkg: "4. B2B Export Packaging Solution",
     customizeWeight: "5. Unit Weight (incl. accessories & packaging)",
+    customizeVolume: "6. Estimated Volume",
     moq: "Recommended MOQ",
     leadTime: "Custom Sampling Lead Time",
     capacity: "Monthly Production Capacity",
@@ -958,6 +959,7 @@ const configTrans = {
     customizeSpec: "3. Шлицы клапана / характеристики резьбы",
     customizePkg: "4. Решение для экспортной упаковки B2B",
     customizeWeight: "5. Вес единицы (с аксессуарами и упаковкой)",
+    customizeVolume: "6. Ориентировочный объём",
     moq: "Рекомендуемый MOQ",
     leadTime: "Срок создания прототипа",
     capacity: "Месячная производственная мощность",
@@ -982,6 +984,7 @@ const configTrans = {
     customizeSpec: "3. Estria de Encaixe / Tamanho do Acoplamento",
     customizePkg: "4. Solução de Embalagem de Exportação B2B",
     customizeWeight: "5. Peso unitário (com acessórios e embalagem)",
+    customizeVolume: "6. Volume estimado",
     moq: "MOQ Recomendado pela Fábrica",
     leadTime: "Prazo de Prototipagem / Amostra",
     capacity: "Capacidade de Produção Mensal",
@@ -1006,6 +1009,7 @@ const configTrans = {
     customizeSpec: "3. कनेक्शन विनिर्देश",
     customizePkg: "4. बी2बी निर्यात पैकेजिंग",
     customizeWeight: "5. इकाई वजन (सहायक उपकरण व पैकेजिंग सहित)",
+    customizeVolume: "6. अनुमानित मात्रा",
     moq: "अनुशंसित MOQ",
     leadTime: "प्रोटोटाइप लीड समय",
     capacity: "मासिक क्षमता",
@@ -1030,6 +1034,7 @@ const configTrans = {
     customizeSpec: "3. 连接规格 / 适配类型 (Connection Spec)",
     customizePkg: "4. 大宗出口环保包装方案 (Export Packaging)",
     customizeWeight: "5. 单件重量（含配件与包装）",
+    customizeVolume: "6. 预估采购量",
     moq: "工厂推荐大宗起订量",
     leadTime: "磨具微调与极速打样",
     capacity: "注塑与精密浇铸月产能",
@@ -1054,6 +1059,7 @@ const configTrans = {
     customizeSpec: "3. Ren kết nối / kích thước",
     customizePkg: "4. Giải pháp bao bì xuất khẩu B2B",
     customizeWeight: "5. Trọng lượng đơn vị (gồm phụ kiện & bao bì)",
+    customizeVolume: "6. Sản lượng dự kiến",
     moq: "MOQ đề xuất",
     leadTime: "Thời gian làm mẫu",
     capacity: "Công suất hàng tháng",
@@ -2049,7 +2055,7 @@ function App() {
                       <div className="flex justify-between items-center">
                         <label className="block text-xs font-black tracking-widest text-blue-800 uppercase flex items-center gap-1">
                           <Sliders size={12} />
-                          <span>{lang === 'zh' ? '6. 预估大宗采购量 (Estimated Volume)' : '6. Estimated Volume'}</span>
+                          <span>{configTrans[lang]?.customizeVolume || configTrans.en.customizeVolume}</span>
                         </label>
                         <span className="text-sm font-black text-blue-900 bg-blue-100 border border-blue-200 px-2.5 py-1 rounded-xl">
                           {procureVolume.toLocaleString()} Pcs
@@ -3025,7 +3031,7 @@ function App() {
             </h2>
             <p className="text-slate-500 text-lg leading-relaxed">{t.contactLede}</p>
           </div>
-          <RfqBlock intent="home" lang={lang} />
+          <RfqBlock intent="home" lang={lang} message={rfqMsg} onMessageChange={setRfqMsg} />
         </div>
       </section>
       {/* FOOTER */}
