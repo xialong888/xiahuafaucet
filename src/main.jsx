@@ -933,7 +933,7 @@ const configTrans = {
     customizeFinish: "2. Surface Electroplating & Finish",
     customizeSpec: "3. Connection Spline / Size Specifications",
     customizePkg: "4. B2B Export Packaging Solution",
-    customizeWeight: "5. Net Weight per Piece",
+    customizeWeight: "5. Unit Weight (incl. accessories & packaging)",
     moq: "Recommended MOQ",
     leadTime: "Custom Sampling Lead Time",
     capacity: "Monthly Production Capacity",
@@ -957,7 +957,7 @@ const configTrans = {
     customizeFinish: "2. Гальваническое покрытие и отделка",
     customizeSpec: "3. Шлицы клапана / характеристики резьбы",
     customizePkg: "4. Решение для экспортной упаковки B2B",
-    customizeWeight: "5. Вес изделия (нетто)",
+    customizeWeight: "5. Вес единицы (с аксессуарами и упаковкой)",
     moq: "Рекомендуемый MOQ",
     leadTime: "Срок создания прототипа",
     capacity: "Месячная производственная мощность",
@@ -981,7 +981,7 @@ const configTrans = {
     customizeFinish: "2. Processo de Acabamento e Cromagem",
     customizeSpec: "3. Estria de Encaixe / Tamanho do Acoplamento",
     customizePkg: "4. Solução de Embalagem de Exportação B2B",
-    customizeWeight: "5. Peso líquido por peça",
+    customizeWeight: "5. Peso unitário (com acessórios e embalagem)",
     moq: "MOQ Recomendado pela Fábrica",
     leadTime: "Prazo de Prototipagem / Amostra",
     capacity: "Capacidade de Produção Mensal",
@@ -1005,7 +1005,7 @@ const configTrans = {
     customizeFinish: "2. सतह फिनिश",
     customizeSpec: "3. कनेक्शन विनिर्देश",
     customizePkg: "4. बी2बी निर्यात पैकेजिंग",
-    customizeWeight: "5. प्रति पीस शुद्ध वजन",
+    customizeWeight: "5. इकाई वजन (सहायक उपकरण व पैकेजिंग सहित)",
     moq: "अनुशंसित MOQ",
     leadTime: "प्रोटोटाइप लीड समय",
     capacity: "मासिक क्षमता",
@@ -1029,7 +1029,7 @@ const configTrans = {
     customizeFinish: "2. 表面电镀/涂层工艺 (Surface Finish)",
     customizeSpec: "3. 连接规格 / 适配类型 (Connection Spec)",
     customizePkg: "4. 大宗出口环保包装方案 (Export Packaging)",
-    customizeWeight: "5. 重量规格 (单件净重)",
+    customizeWeight: "5. 单件重量（含配件与包装）",
     moq: "工厂推荐大宗起订量",
     leadTime: "磨具微调与极速打样",
     capacity: "注塑与精密浇铸月产能",
@@ -1053,7 +1053,7 @@ const configTrans = {
     customizeFinish: "2. Mạ bề mặt",
     customizeSpec: "3. Ren kết nối / kích thước",
     customizePkg: "4. Giải pháp bao bì xuất khẩu B2B",
-    customizeWeight: "5. Trọng lượng mỗi chiếc",
+    customizeWeight: "5. Trọng lượng đơn vị (gồm phụ kiện & bao bì)",
     moq: "MOQ đề xuất",
     leadTime: "Thời gian làm mẫu",
     capacity: "Công suất hàng tháng",
@@ -1309,17 +1309,18 @@ function App() {
       const baseModel = selectedLabProduct.model;
       const productName = selectedLabProduct.nameMap[lang];
 
+      const weightLine = PRODUCT_WEIGHTS[baseModel] || WEIGHT_TBD[lang] || WEIGHT_TBD.en;
       let rfqText = "";
       if (lang === 'zh') {
-        rfqText = `您好，我需要采购 【${productName}】(型号: ${baseModel}) 的大宗定制版本。\n\n我的 B2B 规格选配清单如下：\n- 结构主材 (Material)：${materialName}\n- 表面工艺 (Finish)：${finishName}\n- 阀芯花键/尺寸 (Spec)：${specName}\n- 出口包装方案 (Packaging)：${pkgName}\n\n请在 12 小时内安排大客户外贸经理与我对接，并发送专属的阶梯批发报价单 (Wholesale Price Sheet) 与 CAD 出口开模规格书。`;
+        rfqText = `您好，我需要采购 【${productName}】(型号: ${baseModel}) 的大宗定制版本。\n\n我的 B2B 规格选配清单如下：\n- 结构主材 (Material)：${materialName}\n- 表面工艺 (Finish)：${finishName}\n- 阀芯花键/尺寸 (Spec)：${specName}\n- 出口包装方案 (Packaging)：${pkgName}\n- 单件重量（含配件与包装）：${weightLine}\n\n请在 12 小时内安排大客户外贸经理与我对接，并发送专属的阶梯批发报价单 (Wholesale Price Sheet) 与 CAD 出口开模规格书。`;
       } else if (lang === 'ru') {
-        rfqText = `Здравствуйте, меня интересует оптовая закупка кастомизированной версии 【${productName}】 (Модель: ${baseModel}).\n\nМои спецификации:\n- Материал (Material): ${materialName}\n- Отделка поверхности (Finish): ${finishName}\n- Спецификация соединения (Spec): ${specName}\n- Экспортная упаковка (Packaging): ${pkgName}\n\nПожалуйста, отправьте оптовые цены и спецификации в течение 12 часов.`;
+        rfqText = `Здравствуйте, меня интересует оптовая закупка кастомизированной версии 【${productName}】 (Модель: ${baseModel}).\n\nМои спецификации:\n- Материал (Material): ${materialName}\n- Отделка поверхности (Finish): ${finishName}\n- Спецификация соединения (Spec): ${specName}\n- Экспортная упаковка (Packaging): ${pkgName}\n- Вес единицы (с упаковкой): ${weightLine}\n\nПожалуйста, отправьте оптовые цены и спецификации в течение 12 часов.`;
       } else if (lang === 'pt') {
-        rfqText = `Olá, estou interessado na compra em lote da versão personalizada de 【${productName}】 (Modelo: ${baseModel}).\n\nMinhas especificações customizadas:\n- Material Estrutural (Material): ${materialName}\n- Acabamento de Superfície (Finish): ${finishName}\n- Estria de Conexão/Tamanho (Spec): ${specName}\n- Solução de Embalagem (Packaging): ${pkgName}\n\nPor favor, envie a tabela de preços de atacado e especificações dentro de 12 horas.`;
+        rfqText = `Olá, estou interessado na compra em lote da versão personalizada de 【${productName}】 (Modelo: ${baseModel}).\n\nMinhas especificações customizadas:\n- Material Estrutural (Material): ${materialName}\n- Acabamento de Superfície (Finish): ${finishName}\n- Estria de Conexão/Tamanho (Spec): ${specName}\n- Solução de Embalagem (Packaging): ${pkgName}\n- Peso unitário (com embalagem): ${weightLine}\n\nPor favor, envie a tabela de preços de atacado e especificações dentro de 12 horas.`;
       } else if (lang === 'hi') {
-        rfqText = `नमस्ते, मैं 【${productName}】 (मॉडल: ${baseModel}) के कस्टमाइज्ड संस्करण की थोक खरीद में रुचि रखता हूँ।\n\nमेरे विनिर्देश:\n- मुख्य सामग्री (Material): ${materialName}\n- सतह फिनिश (Finish): ${finishName}\n- कनेक्शन विनिर्देश (Spec): ${specName}\n- निर्यात पैकेजिंग (Packaging): ${pkgName}\n\nकृपया 12 घंटे के भीतर थोक मूल्य सूची और विनिर्देश पत्रक भेजें।`;
+        rfqText = `नमस्ते, मैं 【${productName}】 (मॉडल: ${baseModel}) के कस्टमाइज्ड संस्करण की थोक खरीद में रुचि रखता हूँ।\n\nमेरे विनिर्देश:\n- मुख्य सामग्री (Material): ${materialName}\n- सतह फिनिश (Finish): ${finishName}\n- कनेक्शन विनिर्देश (Spec): ${specName}\n- निर्यात पैकेजिंग (Packaging): ${pkgName}\n- इकाई वजन (पैकेजिंग सहित): ${weightLine}\n\nकृपया 12 घंटे के भीतर थोक मूल्य सूची और विनिर्देश पत्रक भेजें।`;
       } else {
-        rfqText = `Hello, I am interested in bulk procurement of a customized version of 【${productName}】 (Model: ${baseModel}).\n\nMy custom B2B specifications:\n- Core Material (Material): ${materialName}\n- Surface Finish (Finish): ${finishName}\n- Connection Spline/Size (Spec): ${specName}\n- Export Packaging (Packaging): ${pkgName}\n\nPlease have an export manager contact me within 12 hours with a volume-based tier quotation and technical specifications.`;
+        rfqText = `Hello, I am interested in bulk procurement of a customized version of 【${productName}】 (Model: ${baseModel}).\n\nMy custom B2B specifications:\n- Core Material (Material): ${materialName}\n- Surface Finish (Finish): ${finishName}\n- Connection Spline/Size (Spec): ${specName}\n- Export Packaging (Packaging): ${pkgName}\n- Unit weight (incl. packaging): ${weightLine}\n\nPlease have an export manager contact me within 12 hours with a volume-based tier quotation and technical specifications.`;
       }
 
       setRfqMsg(rfqText);
