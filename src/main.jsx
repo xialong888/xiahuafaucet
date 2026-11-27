@@ -44,6 +44,8 @@ const trans = {
     navAbout: "Factory Showroom",
     navFAQ: "FAQ",
     navContact: "Contact Us",
+    perHandle: "per handle",
+    weightNote: "Weights refer to one handle only. Handle weight varies by model — up to 110 g.",
     heroBadge: "20+ Years of Precision Manufacturing | Pioneer of ABS Faucet Handles",
     heroTitle: "Global OEM/ODM Partner for Faucet Handles & Sanitary Fittings",
     heroLede: "Fujian Xialong Sanitary Ware Co., Ltd. (also known as Fujian Nan'an Luncang Xiahua Sanitary Ware Factory) is the pioneer of high-performance ABS faucet handles, adjustable shower sliders, and brass fittings since 2006. Supplying standard-setting global sanitary corporations.",
@@ -150,6 +152,8 @@ const trans = {
     navAbout: "О Заводе",
     navFAQ: "Вопросы",
     navContact: "Контакты",
+    perHandle: "за ручку",
+    weightNote: "Указан вес одной ручки. Вес зависит от модели — не более 110 г.",
     heroBadge: "20+ Лет высокоточного производства | Пионер ручек смесителя из ABS",
     heroTitle: "Глобальный партнер OEM/ODM для ручек смесителей и фитингов",
     heroLede: "Fujian Xialong Sanitary Ware Co., Ltd. (также известный как завод сантехники Сяхуа) — пионер в производстве высококачественных пластиковых ручек для смесителей из ABS, регулируемых держателей для душа и сантехнической арматуры с 2006 года.",
@@ -256,6 +260,8 @@ const trans = {
     navAbout: "Nossa Fábrica",
     navFAQ: "FAQ",
     navContact: "Contato",
+    perHandle: "por alavanca",
+    weightNote: "Peso referente a uma única alavanca. Varia por modelo — até 110 g.",
     heroBadge: "20+ Anos de Manufatura de Precisão | Pioneiro de Volantes de ABS",
     heroTitle: "Parceiro Global OEM/ODM para Volantes de Torneira e Metais Sanitários",
     heroLede: "A Fujian Xialong Sanitary Ware Co., Ltd. (também conhecida como Fábrica de Metais Sanitários Xiahua) é pioneira na produção de volantes de torneira em ABS, deslizadores de chuveiro e conexões de latão de alta performance desde 2006. Fornecedora de grandes corporações globais.",
@@ -362,6 +368,8 @@ const trans = {
     navAbout: "फैक्टरी ताकत",
     navFAQ: "अक्सर पूछे जाने वाले प्रश्न",
     navContact: "संपर्क करें",
+    perHandle: "प्रति हैंडल",
+    weightNote: "वजन एक हैंडल का है। मॉडल के अनुसार वजन बदलता है — अधिकतम 110 g।",
     heroBadge: "20+ वर्ष परिशुद्धता विनिर्माण | एबीएस नल हैंडल के अग्रणी",
     heroTitle: "नल हैंडल & सेनेटरी फिटिंग के लिए वैश्विक OEM/ODM भागीदार",
     heroLede: "फ़ुज़ियान शियालॉन्ग सेनेटरी वेयर कंपनी लिमिटेड (शिआहुआ सेनेटरी वेयर फैक्ट्री) 2006 से उच्च-प्रदर्शन वाले एबीएस नल हैंडल, शावर स्लाइडर और पीतल फिटिंग के निर्माण में अग्रणी है।",
@@ -468,6 +476,8 @@ const trans = {
     navAbout: "企业厂区 Showroom",
     navFAQ: "大宗采销答疑",
     navContact: "提交询盘",
+    perHandle: "单只手柄",
+    weightNote: "重量为单只手柄重量。不同型号手柄克重不同，最高不超过 110 g。",
     heroBadge: "始于 2006 年 | 首创塑料 ABS 材质水龙头手柄先驱 | 20 年精工制造",
     heroTitle: "全球大型卫浴品牌可信赖的龙头手柄及五金配件 OEM/ODM 合作伙伴",
     heroLede: "福建夏龙卫浴有限公司（又名福建南安仑苍厦华卫浴洁具制造厂），坐落于中国水暖之都南安仑苍。自 2006 年创立以来，首创 ABS 材质龙头手柄，彻底解决传统手柄易腐蚀、高成本痛点。20年精工代工，已成为多家国际知名卫浴集团的长期战略供应商。",
@@ -574,6 +584,8 @@ const trans = {
     navAbout: "Nhà máy",
     navFAQ: "Câu hỏi thường gặp",
     navContact: "Liên hệ",
+    perHandle: "mỗi tay xả",
+    weightNote: "Trọng lượng tính cho một tay xả. Trọng lượng thay đổi theo mã hàng — tối đa 110 g.",
     heroBadge: "Hơn 20 năm sản xuất chính xác | Tiên phong tay xả vòi bằng ABS",
     heroTitle: "Đối tác OEM/ODM toàn cầu về tay xả vòi và phụ kiện thiết bị vệ sinh",
     heroLede: "Công ty TNHH Thiết bị Vệ sinh Xialong Phúc Kiến (còn gọi là Nhà máy Xiahua Luncang Nam An) là đơn vị tiên phong về tay xả vòi ABS hiệu suất cao, thanh trượt sen điều chỉnh và phụ kiện đồng từ năm 2006. Cung cấp cho các tập đoàn thiết bị vệ sinh đặt chuẩn toàn cầu.",
@@ -3305,13 +3317,14 @@ function App() {
                   <tr>
                     <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '扎实质感与克重' : 'Weight Profile'}</td>
                     {compareList.map(item => {
-                      const maxWeight = item.model === 'XH-ABSGQ-101' ? '48g Piano Key' : item.model === 'XH-ABS-102' ? '52g Solid Handle' : item.model === 'XH-BRFC-303' ? '45g Compact Socket' : item.model === 'XH-71' ? '42g Ergonomic' : '35g Ultra-Light';
-                      const weightPercent = item.model === 'XH-ABS-102' ? 'w-3/4 bg-blue-700' : item.model === 'XH-BRFC-303' ? 'w-1/2 bg-blue-600' : 'w-1/3 bg-blue-400';
+                      const WEIGHT_G = { 'XH-ABS-102': 52, 'XH-ABSGQ-101': 48, 'XH-BRFC-303': 45, 'XH-71': 42 };
+                      const maxWeight = WEIGHT_G[item.model] || 35;
                       return (
                         <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100 space-y-1.5">
-                          <span className="font-extrabold text-slate-800 text-xs">{maxWeight}</span>
+                          <span className="font-extrabold text-slate-800 text-xs">{maxWeight} g</span>
                           <div className="w-24 h-1.5 bg-slate-100 rounded-full overflow-hidden mx-auto">
-                            <div className={`h-full rounded-full ${weightPercent}`} />
+                            <div className="h-full rounded-full bg-blue-600" style={{ width: `${Math.round((maxWeight / 110) * 100)}%` }} />
+                          <div className="text-[10px] font-semibold text-slate-400 leading-tight">{t.perHandle}</div>
                           </div>
                         </td>
                       );
@@ -3385,6 +3398,7 @@ function App() {
                   </tr>
                 </tbody>
               </table>
+              <p className="mt-3 text-[11px] leading-relaxed text-slate-400">{t.weightNote}</p>
             </div>
 
             {/* Footer with RFQ Trigger */}
