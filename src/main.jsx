@@ -44,6 +44,10 @@ const trans = {
     navAbout: "Factory Showroom",
     navFAQ: "FAQ",
     navContact: "Contact Us",
+    cmpCorrosionHigh: "48 h acetic-acid spray",
+    cmpCorrosionStd: "24 h salt spray",
+    cmpWearSlider: "SGS 100,000 cycles",
+    cmpWearHandle: "150,000 anti-bind cycles",
     perHandle: "per handle",
     weightNote: "Weights refer to one handle only. Handle weight varies by model — up to 110 g.",
     heroBadge: "20+ Years of Precision Manufacturing | Pioneer of ABS Faucet Handles",
@@ -152,6 +156,10 @@ const trans = {
     navAbout: "О Заводе",
     navFAQ: "Вопросы",
     navContact: "Контакты",
+    cmpCorrosionHigh: "48 ч кислотный туман",
+    cmpCorrosionStd: "24 ч солевой туман",
+    cmpWearSlider: "SGS 100 000 циклов",
+    cmpWearHandle: "150 000 циклов",
     perHandle: "за ручку",
     weightNote: "Указан вес одной ручки. Вес зависит от модели — не более 110 г.",
     heroBadge: "20+ Лет высокоточного производства | Пионер ручек смесителя из ABS",
@@ -260,6 +268,10 @@ const trans = {
     navAbout: "Nossa Fábrica",
     navFAQ: "FAQ",
     navContact: "Contato",
+    cmpCorrosionHigh: "48 h névoa ácida",
+    cmpCorrosionStd: "24 h névoa salina",
+    cmpWearSlider: "SGS 100.000 ciclos",
+    cmpWearHandle: "150.000 ciclos",
     perHandle: "por alavanca",
     weightNote: "Peso referente a uma única alavanca. Varia por modelo — até 110 g.",
     heroBadge: "20+ Anos de Manufatura de Precisão | Pioneiro de Volantes de ABS",
@@ -368,6 +380,10 @@ const trans = {
     navAbout: "फैक्टरी ताकत",
     navFAQ: "अक्सर पूछे जाने वाले प्रश्न",
     navContact: "संपर्क करें",
+    cmpCorrosionHigh: "48 घंटे अम्लीय स्प्रे",
+    cmpCorrosionStd: "24 घंटे सॉल्ट स्प्रे",
+    cmpWearSlider: "SGS 1,00,000 चक्र",
+    cmpWearHandle: "1,50,000 एंटी-बाइंड चक्र",
     perHandle: "प्रति हैंडल",
     weightNote: "वजन एक हैंडल का है। मॉडल के अनुसार वजन बदलता है — अधिकतम 110 g।",
     heroBadge: "20+ वर्ष परिशुद्धता विनिर्माण | एबीएस नल हैंडल के अग्रणी",
@@ -476,6 +492,10 @@ const trans = {
     navAbout: "企业厂区 Showroom",
     navFAQ: "大宗采销答疑",
     navContact: "提交询盘",
+    cmpCorrosionHigh: "48 小时酸性盐雾",
+    cmpCorrosionStd: "24 小时中性盐雾",
+    cmpWearSlider: "SGS 10 万次无损",
+    cmpWearHandle: "15 万次抗咬合",
     perHandle: "单只手柄",
     weightNote: "重量为单只手柄重量。不同型号手柄克重不同，最高不超过 110 g。",
     heroBadge: "始于 2006 年 | 首创塑料 ABS 材质水龙头手柄先驱 | 20 年精工制造",
@@ -584,6 +604,10 @@ const trans = {
     navAbout: "Nhà máy",
     navFAQ: "Câu hỏi thường gặp",
     navContact: "Liên hệ",
+    cmpCorrosionHigh: "48 giờ phun sương axit",
+    cmpCorrosionStd: "24 giờ phun muối",
+    cmpWearSlider: "SGS 100.000 chu kỳ",
+    cmpWearHandle: "150.000 chu kỳ chống kẹt",
     perHandle: "mỗi tay xả",
     weightNote: "Trọng lượng tính cho một tay xả. Trọng lượng thay đổi theo mã hàng — tối đa 110 g.",
     heroBadge: "Hơn 20 năm sản xuất chính xác | Tiên phong tay xả vòi bằng ABS",
@@ -3317,15 +3341,15 @@ function App() {
                   <tr>
                     <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '扎实质感与克重' : 'Weight Profile'}</td>
                     {compareList.map(item => {
-                      const WEIGHT_G = { 'XH-ABS-102': 52, 'XH-ABSGQ-101': 48, 'XH-BRFC-303': 45, 'XH-71': 42 };
+                      const WEIGHT_G = { 'XH-ABS-101': 52, 'XH-ABS-102': 52, 'XH-ABSGQ-101': 48, 'XH-BRFC-303': 45, 'XH-71': 42 };
                       const maxWeight = WEIGHT_G[item.model] || 35;
                       return (
                         <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100 space-y-1.5">
                           <span className="font-extrabold text-slate-800 text-xs">{maxWeight} g</span>
                           <div className="w-24 h-1.5 bg-slate-100 rounded-full overflow-hidden mx-auto">
                             <div className="h-full rounded-full bg-blue-600" style={{ width: `${Math.round((maxWeight / 110) * 100)}%` }} />
-                          <div className="text-[10px] font-semibold text-slate-400 leading-tight">{t.perHandle}</div>
                           </div>
+                          <div className="text-[10px] font-semibold text-slate-400 leading-tight">{t.perHandle}</div>
                         </td>
                       );
                     })}
@@ -3335,7 +3359,8 @@ function App() {
                   <tr>
                     <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '耐酸雾腐蚀指数' : 'Corrosion Resistance'}</td>
                     {compareList.map(item => {
-                      const rating = item.model === 'XH-ABS-102' || item.model === 'XH-ABS-101' ? '⭐⭐★★★ (48h 酸性雾测试)' : '⭐⭐⭐⭐★ (24h 盐雾测试)';
+                      const isAcid = item.model === 'XH-ABS-102' || item.model === 'XH-ABS-101';
+                      const rating = (isAcid ? '⭐⭐★★★ ' : '⭐⭐⭐⭐★ ') + `(${isAcid ? t.cmpCorrosionHigh : t.cmpCorrosionStd})`;
                       return (
                         <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100 font-bold text-xs text-slate-700">
                           {rating}
@@ -3348,7 +3373,7 @@ function App() {
                   <tr>
                     <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '开合摩擦耐用寿命' : 'Wear Durability'}</td>
                     {compareList.map(item => {
-                      const cycle = item.category === 'sliders' ? 'SGS 100,000次无损' : '150,000次抗咬合';
+                      const cycle = item.category === 'sliders' ? t.cmpWearSlider : t.cmpWearHandle;
                       const color = item.category === 'sliders' ? 'text-green-700 bg-green-50 border-green-100' : 'text-blue-700 bg-blue-50 border-blue-100';
                       return (
                         <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100">
