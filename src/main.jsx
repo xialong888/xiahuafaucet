@@ -1121,8 +1121,8 @@ const configTrans = {
 
 // Net weight per piece (verified for XH-ABS-101 / XH-ABS-102; others confirmed per drawing)
 const PRODUCT_WEIGHTS = {
-  'XH-ABS-101': '100 g',
-  'XH-ABS-102': '100 g'
+  'XH-ABS-101': '110 g',
+  'XH-ABS-102': '110 g'
 };
 
 // Shown for models whose net weight is confirmed per drawing rather than published
