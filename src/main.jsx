@@ -3341,7 +3341,7 @@ function App() {
                   <tr>
                     <td className="py-3.5 px-3 font-bold text-slate-500">{lang === 'zh' ? '扎实质感与克重' : 'Weight Profile'}</td>
                     {compareList.map(item => {
-                      const WEIGHT_G = { 'XH-ABS-101': 52, 'XH-ABS-102': 52, 'XH-ABSGQ-101': 48, 'XH-BRFC-303': 45, 'XH-71': 42 };
+                      const WEIGHT_G = { 'XH-ABS-101': 85, 'XH-ABS-102': 85, 'XH-ABSGQ-101': 48, 'XH-BRFC-303': 45, 'XH-71': 42 };
                       const maxWeight = WEIGHT_G[item.model] || 35;
                       return (
                         <td key={item.id} className="py-3.5 px-4 text-center border-l border-slate-100 space-y-1.5">
