@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Send, MessageCircle, CheckCircle2, Copy } from 'lucide-react';
 import { BRAND, waLink, rfqMailto } from '../lib/site';
 import { track } from '../lib/analytics';
@@ -77,7 +77,7 @@ const FIELD_ORDER = ['name', 'email', 'company', 'country', 'whatsapp', 'qty'];
  * and offers a WhatsApp fallback, so no enquiry is lost before a form endpoint exists.
  * Copy switches with the site language (en / vi) via <html lang>.
  */
-export default function RfqBlock({ model = '', intent = 'product', lang: langProp }) {
+export default function RfqBlock({ model = '', intent = 'product', lang: langProp, message = '', onMessageChange }) {
   const [form, setForm] = useState({});
   const [sent, setSent] = useState(false);
   const [mailto, setMailto] = useState('');
@@ -87,7 +87,18 @@ export default function RfqBlock({ model = '', intent = 'product', lang: langPro
     langProp || (typeof document !== 'undefined' ? document.documentElement.lang : 'en') || 'en';
   const s = STRINGS[docLang] || STRINGS.en;
 
-  const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
+  // keep the textarea in sync when the configurator pushes a composed spec list
+  useEffect(() => {
+    if (typeof message === 'string' && message.length) {
+      setForm((f) => (f.message === message ? f : { ...f, message }));
+    }
+  }, [message]);
+
+  const set = (k) => (e) => {
+    const v = e.target.value;
+    setForm((f) => ({ ...f, [k]: v }));
+    if (k === 'message' && onMessageChange) onMessageChange(v);
+  };
 
   const compose = () => {
     const lines = [
