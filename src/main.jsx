@@ -933,6 +933,7 @@ const configTrans = {
     customizeFinish: "2. Surface Electroplating & Finish",
     customizeSpec: "3. Connection Spline / Size Specifications",
     customizePkg: "4. B2B Export Packaging Solution",
+    customizeWeight: "5. Net Weight per Piece",
     moq: "Recommended MOQ",
     leadTime: "Custom Sampling Lead Time",
     capacity: "Monthly Production Capacity",
@@ -945,7 +946,6 @@ const configTrans = {
     finGold: "Anti-Scratch Stain-Resistant Elegant Gunmetal Grey",
     specSlider: "Quick-Install Shower Head Socket (Ø 22-25mm)",
     specCustom: "Custom Drawing / Non-standard Spec",
-    pkgColor: "OEM Customized High-End Color Box",
     pkgBulk: "Neutral Bubble Polybag Industrial Pack",
     pkgCarton: "Reinforced 5-layer Double-Wall Export Carton"
   },
@@ -957,6 +957,7 @@ const configTrans = {
     customizeFinish: "2. Гальваническое покрытие и отделка",
     customizeSpec: "3. Шлицы клапана / характеристики резьбы",
     customizePkg: "4. Решение для экспортной упаковки B2B",
+    customizeWeight: "5. Вес изделия (нетто)",
     moq: "Рекомендуемый MOQ",
     leadTime: "Срок создания прототипа",
     capacity: "Месячная производственная мощность",
@@ -969,7 +970,6 @@ const configTrans = {
     finGold: "Элегантный оружейный серый цвет с защитой от царапин",
     specSlider: "Быстросъемный держатель лейки (Ø 22-25 мм)",
     specCustom: "Чертеж / Нестандартная спецификация",
-    pkgColor: "Фирменная цветная коробка OEM",
     pkgBulk: "Промышленная воздушно-пузырьковая пленка",
     pkgCarton: "Усиленный 5-слойный экспортный гофрокороб"
   },
@@ -981,6 +981,7 @@ const configTrans = {
     customizeFinish: "2. Processo de Acabamento e Cromagem",
     customizeSpec: "3. Estria de Encaixe / Tamanho do Acoplamento",
     customizePkg: "4. Solução de Embalagem de Exportação B2B",
+    customizeWeight: "5. Peso líquido por peça",
     moq: "MOQ Recomendado pela Fábrica",
     leadTime: "Prazo de Prototipagem / Amostra",
     capacity: "Capacidade de Produção Mensal",
@@ -993,7 +994,6 @@ const configTrans = {
     finGold: "Cinza Gunmetal Elegante Anti-Risco e Anti-Manchas",
     specSlider: "Soquete de Chuveiro de Instalação Rápida (Ø 22-25mm)",
     specCustom: "Desenho Técnico / Especificação Não-padrão",
-    pkgColor: "Caixa Colorida de Alta Qualidade OEM",
     pkgBulk: "Embalagem Plástico Bolha Industrial Neutro",
     pkgCarton: "Caixa de Papelão Duplo Reforçado para Exportação"
   },
@@ -1005,6 +1005,7 @@ const configTrans = {
     customizeFinish: "2. सतह फिनिश",
     customizeSpec: "3. कनेक्शन विनिर्देश",
     customizePkg: "4. बी2बी निर्यात पैकेजिंग",
+    customizeWeight: "5. प्रति पीस शुद्ध वजन",
     moq: "अनुशंसित MOQ",
     leadTime: "प्रोटोटाइप लीड समय",
     capacity: "मासिक क्षमता",
@@ -1017,7 +1018,6 @@ const configTrans = {
     finGold: "एंटी-स्क्रैच सुरुचिपूर्ण गनमेटल ग्रे",
     specSlider: "क्विक-इंस्टॉल शاور हेड सॉकेट (22-25 मिमी)",
     specCustom: "कस्टम विनिर्देश",
-    pkgColor: "ब्रांड रंग बॉक्स",
     pkgBulk: "तटस्थ बुलबुला पॉलीबैग",
     pkgCarton: "मजबूत निर्यात कार्टन"
   },
@@ -1029,6 +1029,7 @@ const configTrans = {
     customizeFinish: "2. 表面电镀/涂层工艺 (Surface Finish)",
     customizeSpec: "3. 连接规格 / 适配类型 (Connection Spec)",
     customizePkg: "4. 大宗出口环保包装方案 (Export Packaging)",
+    customizeWeight: "5. 重量规格 (单件净重)",
     moq: "工厂推荐大宗起订量",
     leadTime: "磨具微调与极速打样",
     capacity: "注塑与精密浇铸月产能",
@@ -1041,7 +1042,6 @@ const configTrans = {
     finGold: "防刮防脏高雅喷镀枪灰色",
     specSlider: "快捷安装淋浴花洒插座 (适配 Ø 22-25mm 淋浴管)",
     specCustom: "非标开模定制 (提供图纸/实物样件)",
-    pkgColor: "采购商专属贴牌高档加强型五层彩盒",
     pkgBulk: "大宗工业中性厚气泡袋双层减震安全袋装",
     pkgCarton: "出口级重型双瓦楞高强度牛皮纸箱"
   },
@@ -1053,6 +1053,7 @@ const configTrans = {
     customizeFinish: "2. Mạ bề mặt",
     customizeSpec: "3. Ren kết nối / kích thước",
     customizePkg: "4. Giải pháp bao bì xuất khẩu B2B",
+    customizeWeight: "5. Trọng lượng mỗi chiếc",
     moq: "MOQ đề xuất",
     leadTime: "Thời gian làm mẫu",
     capacity: "Công suất hàng tháng",
@@ -1065,10 +1066,31 @@ const configTrans = {
     finGold: "Xám gunmetal chống xước, chống ố",
     specSlider: "Giá đỡ sen lắp nhanh (Ø 22-25mm)",
     specCustom: "Bản vẽ riêng / quy cách phi tiêu chuẩn",
-    pkgColor: "Hộp màu OEM cao cấp",
     pkgBulk: "Túi PE bọc bong bóng công nghiệp",
     pkgCarton: "Thùng carton 5 lớp gia cố",
+    weightTbd: "Xác nhận theo bản vẽ",
+    weightTbd: "以图纸确认为准",
+    weightTbd: "ड्राइंग के अनुसार पुष्टि",
+    weightTbd: "Confirmado no desenho",
+    weightTbd: "Уточняется по чертежу",
+    weightTbd: "Confirmed per drawing",
   }
+};
+
+// Net weight per piece (verified for XH-ABS-101 / XH-ABS-102; others confirmed per drawing)
+const PRODUCT_WEIGHTS = {
+  'XH-ABS-101': '100 g',
+  'XH-ABS-102': '100 g'
+};
+
+// Shown for models whose net weight is confirmed per drawing rather than published
+const WEIGHT_TBD = {
+  en: 'Confirmed per drawing',
+  ru: 'Уточняется по чертежу',
+  pt: 'Confirmado no desenho',
+  hi: 'ड्राइंग के अनुसार पुष्टि',
+  zh: '以图纸确认为准',
+  vi: 'Xác nhận theo bản vẽ'
 };
 
 function App() {
@@ -1246,7 +1268,6 @@ function App() {
 
       // Packaging Surcharges
       let pkgAdd = 0;
-      if (labPkg === 'color') pkgAdd = 0.18;
 
       let unitPrice = baseUnitCost + materialAdd + finishAdd + pkgAdd;
 
@@ -1282,8 +1303,7 @@ function App() {
       else specName = currentConfigTrans.specCustom;
 
       let pkgName = "";
-      if (labPkg === 'color') pkgName = currentConfigTrans.pkgColor;
-      else if (labPkg === 'bulk') pkgName = currentConfigTrans.pkgBulk;
+      if (labPkg === 'bulk') pkgName = currentConfigTrans.pkgBulk;
       else pkgName = currentConfigTrans.pkgCarton;
 
       const baseModel = selectedLabProduct.model;
@@ -1994,7 +2014,6 @@ function App() {
                       <div className="flex flex-wrap gap-2">
                          {[
                           ['carton', configTrans[lang]?.pkgCarton || configTrans.en.pkgCarton],
-                          ['color', configTrans[lang]?.pkgColor || configTrans.en.pkgColor],
                           ['bulk', configTrans[lang]?.pkgBulk || configTrans.en.pkgBulk]
                         ].map(([val, label]) => (
                           <button
@@ -2012,12 +2031,24 @@ function App() {
                       </div>
                     </div>
 
+                    {/* Net Weight Section */}
+                    <div className="space-y-2 text-left">
+                      <label className="block text-xs font-black tracking-widest text-slate-400 uppercase">
+                        {configTrans[lang]?.customizeWeight || configTrans.en.customizeWeight}
+                      </label>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="px-4 py-2.5 rounded-xl text-sm font-bold border border-blue-200 bg-blue-50 text-blue-900">
+                          {PRODUCT_WEIGHTS[selectedLabProduct.model] || WEIGHT_TBD[lang] || WEIGHT_TBD.en}
+                        </span>
+                      </div>
+                    </div>
+
                     {/* B2B Procurement Volume & Price Calculator */}
                     <div className="bg-blue-50/30 border border-blue-100 p-5 rounded-2xl space-y-4 text-left shadow-sm">
                       <div className="flex justify-between items-center">
                         <label className="block text-xs font-black tracking-widest text-blue-800 uppercase flex items-center gap-1">
                           <Sliders size={12} />
-                          <span>{lang === 'zh' ? '5. 预估大宗采购量 (Estimated Volume)' : '5. Estimated Volume'}</span>
+                          <span>{lang === 'zh' ? '6. 预估大宗采购量 (Estimated Volume)' : '6. Estimated Volume'}</span>
                         </label>
                         <span className="text-sm font-black text-blue-900 bg-blue-100 border border-blue-200 px-2.5 py-1 rounded-xl">
                           {procureVolume.toLocaleString()} Pcs
