@@ -3088,10 +3088,6 @@ function App() {
             <div className="md:col-span-4 space-y-2.5 text-left md:text-right">
               <div className="flex items-center md:justify-end gap-2 text-sm text-slate-300 font-bold">
                 <Mail size={16} className="text-blue-400 shrink-0" />
-                <a href="mailto:375039134@qq.com" className="hover:text-blue-400 transition-colors">375039134@qq.com</a>
-              </div>
-              <div className="flex items-center md:justify-end gap-2 text-sm text-slate-300 font-bold">
-                <Mail size={16} className="text-blue-400 shrink-0" />
                 <a href="mailto:xiahuahyr@gmail.com" className="hover:text-blue-400 transition-colors">xiahuahyr@gmail.com</a>
               </div>
               <div className="flex items-center md:justify-end gap-2 text-sm text-slate-300 font-bold">
