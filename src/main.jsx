@@ -970,8 +970,10 @@ const configTrans = {
     customizeSpec: "3. Connection Spline / Size Specifications",
     customizePkg: "4. B2B Export Packaging Solution",
     customizeWeight: "5. Unit Weight (incl. accessories & packaging)",
-    customizeVolume: "6. Estimated Volume",
-    moq: "Recommended MOQ",
+    customizeVolume: "Estimated Volume",
+    customizeCarton: "6. Carton Packing",
+    cartonSpec: "120 handles/carton (class-10 plated) · 14 kg",
+    moq: "Factory MOQ",
     leadTime: "Custom Sampling Lead Time",
     capacity: "Monthly Production Capacity",
     patentStatus: "IP & Compliance Backing",
@@ -995,8 +997,10 @@ const configTrans = {
     customizeSpec: "3. Шлицы клапана / характеристики резьбы",
     customizePkg: "4. Решение для экспортной упаковки B2B",
     customizeWeight: "5. Вес единицы (с аксессуарами и упаковкой)",
-    customizeVolume: "6. Ориентировочный объём",
-    moq: "Рекомендуемый MOQ",
+    customizeVolume: "Ориентировочный объём",
+    customizeCarton: "6. Экспортная упаковка",
+    cartonSpec: "120 ручек/короб (класс 10) · 14 кг",
+    moq: "MOQ завода",
     leadTime: "Срок создания прототипа",
     capacity: "Месячная производственная мощность",
     patentStatus: "Защита интеллектуальной собственности",
@@ -1020,8 +1024,10 @@ const configTrans = {
     customizeSpec: "3. Estria de Encaixe / Tamanho do Acoplamento",
     customizePkg: "4. Solução de Embalagem de Exportação B2B",
     customizeWeight: "5. Peso unitário (com acessórios e embalagem)",
-    customizeVolume: "6. Volume estimado",
-    moq: "MOQ Recomendado pela Fábrica",
+    customizeVolume: "Volume estimado",
+    customizeCarton: "6. Embalagem de exportação",
+    cartonSpec: "120 alavancas/caixa (classe 10) · 14 kg",
+    moq: "MOQ da fábrica",
     leadTime: "Prazo de Prototipagem / Amostra",
     capacity: "Capacidade de Produção Mensal",
     patentStatus: "Proteção de Patente e Conformidade",
@@ -1045,8 +1051,10 @@ const configTrans = {
     customizeSpec: "3. कनेक्शन विनिर्देश",
     customizePkg: "4. बी2बी निर्यात पैकेजिंग",
     customizeWeight: "5. इकाई वजन (सहायक उपकरण व पैकेजिंग सहित)",
-    customizeVolume: "6. अनुमानित मात्रा",
-    moq: "अनुशंसित MOQ",
+    customizeVolume: "अनुमानित मात्रा",
+    customizeCarton: "6. निर्यात कार्टन पैकिंग",
+    cartonSpec: "प्रति कार्टन 120 हैंडल (क्लास 10) · 14 किग्रा",
+    moq: "फैक्ट्री MOQ",
     leadTime: "प्रोटोटाइप लीड समय",
     capacity: "मासिक क्षमता",
     patentStatus: "आईपी संरक्षण",
@@ -1070,8 +1078,10 @@ const configTrans = {
     customizeSpec: "3. 连接规格 / 适配类型 (Connection Spec)",
     customizePkg: "4. 大宗出口环保包装方案 (Export Packaging)",
     customizeWeight: "5. 单件重量（含配件与包装）",
-    customizeVolume: "6. 预估采购量",
-    moq: "工厂推荐大宗起订量",
+    customizeVolume: "预估采购量",
+    customizeCarton: "6. 高标单箱包装",
+    cartonSpec: "120 个手柄/箱（10 级电镀）· 14 kg",
+    moq: "工厂起订量",
     leadTime: "磨具微调与极速打样",
     capacity: "注塑与精密浇铸月产能",
     patentStatus: "知识产权与质量背书",
@@ -1095,8 +1105,10 @@ const configTrans = {
     customizeSpec: "3. Ren kết nối / kích thước",
     customizePkg: "4. Giải pháp bao bì xuất khẩu B2B",
     customizeWeight: "5. Trọng lượng đơn vị (gồm phụ kiện & bao bì)",
-    customizeVolume: "6. Sản lượng dự kiến",
-    moq: "MOQ đề xuất",
+    customizeVolume: "Sản lượng dự kiến",
+    customizeCarton: "6. Đóng thùng xuất khẩu",
+    cartonSpec: "120 tay xả/thùng (mạ cấp 10) · 14 kg",
+    moq: "MOQ nhà máy",
     leadTime: "Thời gian làm mẫu",
     capacity: "Công suất hàng tháng",
     patentStatus: "Sở hữu trí tuệ & chứng nhận",
@@ -2086,6 +2098,18 @@ function App() {
                       </div>
                     </div>
 
+                    {/* Carton Packing Section */}
+                    <div className="space-y-2 text-left">
+                      <label className="block text-xs font-black tracking-widest text-slate-400 uppercase">
+                        {configTrans[lang]?.customizeCarton || configTrans.en.customizeCarton}
+                      </label>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="px-4 py-2.5 rounded-xl text-sm font-bold border border-blue-200 bg-blue-50 text-blue-900">
+                          {configTrans[lang]?.cartonSpec || configTrans.en.cartonSpec}
+                        </span>
+                      </div>
+                    </div>
+
                     {/* B2B Procurement Volume & Price Calculator */}
                     <div className="bg-blue-50/30 border border-blue-100 p-5 rounded-2xl space-y-4 text-left shadow-sm">
                       <div className="flex justify-between items-center">
@@ -2155,7 +2179,7 @@ function App() {
                     <div className="flex justify-between items-center pb-2.5 border-b border-slate-200/60">
                       <span className="text-slate-400">{configTrans[lang]?.moq || configTrans.en.moq}</span>
                       <span className="text-blue-900 font-extrabold text-base">
-                        {labMaterial === 'brass' ? '2,000 Pcs (Low Lead Brass Core)' : '5,000 Pcs (Plastic Injection Scale)'}
+                        {labMaterial === 'brass' ? '2,000 Pcs (Low Lead Brass Core)' : '2,000 Pcs (ABS Injection)'}
                       </span>
                     </div>
                     <div className="flex justify-between items-center pb-2.5 border-b border-slate-200/60">
