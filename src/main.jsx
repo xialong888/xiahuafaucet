@@ -935,7 +935,7 @@ const faqs = [
       ru: "Наш завод был основан 2006-02-27 в индустриальном парке сантехники в провинции Фуцзянь. Мы управляем заводом площадью более 3000 кв.м с 80 высококлассными рабочими, выпуская более 800 000 комплектов в месяц.",
       pt: "Nossa fábrica foi fundada em 27/02/2006 em Fujian, China. Operamos com uma área produtiva de mais de 3.000m² e 80 trabalhadores experientes, com capacidade produtiva de mais de 800.000 volantes mensais.",
       hi: "हमारी फैक्टरी की स्थापना 27-02-2006 को हुई थी। 80 कुशल कर्मचारियों के साथ, हम मासिक 800,000 टुकड़ों का उत्पादन करते हैं।",
-      zh: "本厂始建于 2006-02-27，深耕水龙头手柄及五金制造已有17年。厂房占地面积超3000平方米，现稳定运行多台伺服注塑及磨具CNC机组，月精密五金注塑配件产能超过80万件。",
+      zh: "本厂始建于 2006-02-27，深耕水龙头手柄及五金制造已有20年。厂房占地面积超3000平方米，现稳定运行多台伺服注塑及模具CNC机组，月精密五金注塑配件产能超过80万件。",
       vi: "Nhà máy thành lập ngày 27/02/2006 tại Khu công nghệ cao Luncang, Phúc Kiến. Diện tích xưởng hơn 3.000 m² với 80 công nhân tay nghề cao, sản lượng hơn 800.000 bộ linh kiện ép phun và phụ kiện vòi mỗi tháng.",
 }
   },
@@ -1082,7 +1082,7 @@ const configTrans = {
     customizeCarton: "6. 高标单箱包装",
     cartonSpec: "120 个手柄/箱（10 级电镀）· 14 kg",
     moq: "工厂起订量",
-    leadTime: "磨具微调与极速打样",
+    leadTime: "模具微调与极速打样",
     capacity: "注塑与精密浇铸月产能",
     patentStatus: "知识产权与质量背书",
     btnGenRfq: "将定制规格一键导入询盘表 (RFQ)",
