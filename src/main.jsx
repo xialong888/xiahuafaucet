@@ -1147,6 +1147,16 @@ const WEIGHT_TBD = {
   vi: 'Xác nhận theo bản vẽ'
 };
 
+// MOQ note suffixes: [brass, plastic]
+const MOQ_NOTE = {
+  en: ['Low Lead Brass Core', 'ABS Injection'],
+  zh: ['低铅铜芯', 'ABS 注塑'],
+  vi: ['lõi đồng ít chì', 'ABS đúc phun'],
+  hi: ['कम-लेड ब्रास कोर', 'ABS इंजेक्शन'],
+  ru: ['латунное ядро', 'ABS литьё'],
+  pt: ['latão baixo chumbo', 'injeção ABS']
+};
+
 function App() {
   const [lang, setLang] = useState(() => {
     try { return localStorage.getItem('xiahua_lang') || 'en'; } catch (e) { return 'en'; }
@@ -2179,7 +2189,9 @@ function App() {
                     <div className="flex justify-between items-center pb-2.5 border-b border-slate-200/60">
                       <span className="text-slate-400">{configTrans[lang]?.moq || configTrans.en.moq}</span>
                       <span className="text-blue-900 font-extrabold text-base">
-                        {labMaterial === 'brass' ? '2,000 Pcs (Low Lead Brass Core)' : '2,000 Pcs (ABS Injection)'}
+                        {labMaterial === 'brass'
+                          ? `2,000 Pcs (${(MOQ_NOTE[lang] || MOQ_NOTE.en)[0]})`
+                          : `2,000 Pcs (${(MOQ_NOTE[lang] || MOQ_NOTE.en)[1]})`}
                       </span>
                     </div>
                     <div className="flex justify-between items-center pb-2.5 border-b border-slate-200/60">
